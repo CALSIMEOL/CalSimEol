@@ -1,0 +1,99 @@
+html { height: 100% }
+
+/*-----------------------------------Header-----------------------------------*/
+#logoCALSIMEOL{
+    padding: 4px 20px 4px 5px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+/*Homepage*/
+#bigLogoCALSIMEOL{
+    margin: auto;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+/*background for all pages*/
+.clearness {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    padding-bottom: 20px;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+
+/*-----------------------------------Margins----------------------------------*/
+.marginLR{
+    margin: 0px 15px;
+}
+.-marginLR{
+    margin: 0px -15px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------Footer-----------------------------------*/
+#logoECE{
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+#copyright   {
+   background-color: rgba(255, 255, 255, 0.65);
+   border-radius: 4px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*-------------------------modification bootstrap.css-------------------------*/
+body{
+    background: url("../img/img_background.jpg") no-repeat top fixed;
+    background-size: cover;
+    padding-top: 50px;
+}
+.lead {
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+  padding: 20px 15px;
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 21px;
+  }
+}
+.panel-body {
+  padding: 0px 15px 15px 15px;
+}
+.panel-heading {
+  padding: 6px 15px;
+  }
+.table {
+  margin-top: 10px;
+}
+.table th {
+   text-align: center;   
+}
+.modal-footer {
+  margin-top: 20px;
+  display: block;
+  border-top: 0px;
+}
+
+#error {
+    display: none;
+}
+
+#good {
+    display: none;
+}
+/*----------------------------------------------------------------------------*/
