@@ -88,7 +88,7 @@ class Controller_Turbine extends Controller_Template
 		}
 		else
 		{
-			$this->template->title = 'CALSIMEOL - Paramètre éolienne';
+			$this->template->title = 'Paramètre éolienne';
 			$this->template->content = View::forge('turbine/turbineParameters');;
 		}
 	}
