@@ -99,7 +99,7 @@ class Controller_Place extends Controller_Template
 		}
 		else
 		{
-			$this->template->title = 'CALSIMEOL - Choix site';
+			$this->template->title = 'Choix site';
 			$this->template->content = View::forge('place/siteChoice');
 		}
 	}
@@ -114,7 +114,7 @@ class Controller_Place extends Controller_Template
 		}
 		else
 		{
-			$this->template->title = 'CALSIMEOL - Ajout site';
+			$this->template->title = 'Ajout site';
 			$this->template->content = View::forge('place/siteParameters');
 		}
 	}
