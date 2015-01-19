@@ -29,8 +29,8 @@
                                             <td><?php echo $turbine['turbine_id'] ?></td>
                                             <td><?php echo $turbine['turbine_name'] ?></td>
                                             <td>
-                                                    <a href="<?php echo Uri::create('turbine/modify-:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                                    <a href="<?php echo Uri::create('turbine/remove-:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('turbine/edit/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('turbine/delete/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                             </td>
                                     </tr>
 <?php endforeach ?>
@@ -42,30 +42,8 @@
       <!-----------------------------------------------------------turbine list navigation bar------------------------------------------------------------->
         <div class="row">
                 <div class="col-sm-offset-1 col-sm-4">
-                        <a href="<?php echo Uri::create('turbine/form') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
                 </div>
                 <div class="col-sm-4">
-                        <nav>
-                                <ul class="pagination">
-<?php if ($page_id == 1) : ?>
-                                        <li class="disabled"><a href="#" aria-label="Précédent"><span aria-hidden="true">&laquo;</span></a></li>
-<?php else : ?>
-                                        <li><a href="<?php echo Uri::create('turbine/list-:start', array('start' => $page_id - 1)) ?>" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-<?php endif ?>
-<?php for ($i = 1; $i <= $page_count; $i++) : ?>
-<?php if ($i == $page_id) : ?>
-                                        <li class="active"><a href="<?php echo Uri::create('turbine/list-:start', array('start' => $i)) ?>"><?php echo $i ?> <span class="sr-only">(current)</span></a></li>
-<?php else : ?>
-                                        <li><a href="<?php echo Uri::create('turbine/list-:start', array('start' => $i)) ?>"><?php echo $i ?></a></li>
-<?php endif ?>
-<?php endfor ?>
-<?php if ($page_id == $page_count) : ?>
-                                        <li class="disabled"><a href="#" aria-label="Suivant"><span aria-hidden="true">&raquo;</span></a></li>
-<?php else : ?>
-                                        <li><a href="<?php echo Uri::create('turbine/list-:start', array('start' => $page_id + 1)) ?>" aria-label="Suivant"><span aria-hidden="true">&raquo;</span></a></li>
-<?php endif ?>
-                                </ul>
-                        </nav>
                 </div>
         </div>
       <!--------------------------------------------------------------------------------------------------------------------------------------------------->
