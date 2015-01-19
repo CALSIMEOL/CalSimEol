@@ -29,7 +29,7 @@
                                     <label for="siteName" class="control-label">Nom : </label>
                                     <br>
                                     <span class="error help-block">1 à 20 caractères</span>
-                                    <span class="good help-block">Saisie correcte</span> 
+                                    <span class="good help-block"></span> 
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                    <a href="#pop" class="pop" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="AIDE : nom du site">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -51,8 +51,8 @@
                                 <div class="col-md-4">
                                     <label for="latitude" class="control-label">Latitude : </label>
                                     <br>
-                                    <span class="error help-block">Compris entre -90 et 90°</span>
-                                    <span class="good help-block">Saisie correcte</span>
+                                    <span class="error help-block">Chiffre compris entre -90 et 90°</span>
+                                    <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
@@ -64,7 +64,7 @@
                                </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Entrer la latitude comprise entre -90° et 90°." title="AIDE : Latitude du site">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une latitude comprise entre -90° et 90°.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Latitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -76,20 +76,19 @@
                                     <label for="longitude" class="control-label">Longitude : </label>
                                     <br>
                                     <span class="error help-block">Compris entre -180 et 180°</span>
-                                    <span class="good help-block">Saisie correcte</span>
+                                    <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="longitude" type="text" class="form-control" placeholder="123,5000"/>
+                                        <input id="longitude" type="text" class="form-control" placeholder="123.50"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
                                         <span class="input-group-addon">°</span>
                                     </div>
                                 </div>
-                                
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Entrer la longitude comprise entre -180° et 180°." title="AIDE : Longitude du site">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une longitude comprise entre -180° et 180°.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -101,16 +100,23 @@
                                     <label for="altitude" class="control-label">Altitude : </label>
                                     <br>
                                     <span class="error help-block">Compris entre -500 et 3000 mètres</span>
-                                    <span class="good help-block">Saisie correcte</span>
+                                    <span class="good help-block"></span>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
                                         <input id="altitude" type="text" class="form-control" placeholder="1000"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                         <span class="input-group-addon">m</span>
                                     </div>
-                                </div>   
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une altitude comprise entre -500 et 3000 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Altitude du site</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
                             <div id="divTemp" class="form-group">
@@ -118,14 +124,21 @@
                                     <label for="averageannualtemp" class="control-label">Température moyenne annuelle :</label>
                                     <br>
                                     <span class="error help-block">Compris entre -50 et 50°C</span>
-                                    <span class="good help-block">Saisie correcte</span>
+                                    <span class="good help-block"></span>
                                 </div>
-                                 <div class="col-lg-4">
+                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="averageannualtemp" type="text" class="form-control" placeholder="15,00"/>
+                                        <input id="averageannualtemp" type="text" class="form-control" placeholder="15.00"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
                                         <span class="input-group-addon">°C</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une température entre -50 et 50 °C.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Température moyenne annuelle</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +147,17 @@
                                 <div class="col-lg-7">
                                     <label class="control-label">Masse volumique de l'air : </label>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
                                         <input id="density" type="text" class="form-control" disabled="true"/>
                                         <span class="input-group-addon">kg.m<sup>-3</sup></span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Afichée à titre indicatif.<br>Définition à écrire." title="<b>AIDE : Masse volumique de l'air</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -146,17 +166,24 @@
                                 <div class="col-lg-7">
                                     <label for="roughnesslength" class="control-label">Longueur de rugosité :</label>
                                     <br>
-                                    <span class="error help-block">Compris entre 0 et 2 mètres</span>
-                                    <span class="good help-block">Saisie correcte</span>
+                                    <span class="error help-block">Comprise entre 0 et 2 m</span>
+                                    <span class="good help-block"></span>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="roughnesslength" type="text" class="form-control" placeholder="15,00"/>
+                                        <input id="roughnesslength" type="text" class="form-control" placeholder="15.00"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                         <span class="input-group-addon">m</span>
                                     </div>     
                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                           
                       </div>
@@ -164,11 +191,15 @@
 
 
                   <!------------------------------------------------wind rose----------------------------------------------------------->
-                    <div class="col-sm-11">
+                    <div class="col-sm-12 -marginLR" style="margin-left: -30px">
                         <div class="panel panel-default">
 
                             <div class="panel-heading">
-                                <b>Rose des vents</b><br>(n'intervient pas dans le dimensionnement)
+                                <b>Rose des vents</b>
+                                    <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                <br>(n'intervient pas dans le dimensionnement)
                             </div>
 
                             <div class="panel-body">
@@ -233,40 +264,54 @@
 
                                     <div class="panel-heading">
                                         <b>Distribution des vents</b>
+                                        <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" style="margin-top: 1px" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Distribution des vents</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
                                     </div>
 
                                     <div class="panel-body">
 
                                         <div class="form-inline">
-
-                                            <div class="col-xs-6">
-                                                <div class="radio">
-                                                    <label for="simple" class="radio">
-                                                    <input type="radio" name="distribSources" value="simple" id="simple" checked="" onclick="windDistribution()"> Simple </label>
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="radio">
+                                                        <label for="simple" class="radio">
+                                                        <input type="radio" name="distribSources" value="simple" id="simple" checked="" onclick="windDistribution()"> Simple </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="radio">
+                                                        <label for="detailed" class="radio">
+                                                        <input type="radio" name="distribSources" value="detailed" id="detailed" onclick="windDistribution()"> Détaillé </label>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <div class="col-xs-6">
-                                                <div class="radio">
-                                                    <label for="detailed" class="radio">
-                                                    <input type="radio" name="distribSources" value="detailed" id="detailed" onclick="windDistribution()"> Détaillé </label>
+                                            <br>
+                                            <div class="row">
+                                                <div id="divElevation">
+                                                    <div class="col-lg-7">
+                                                        <label for="ElevationOfTheMeasurement" class="control-label">Altitude de la prise de mesure : </label>
+                                                        <br>
+                                                        <span class="error help-block">Compris entre -500 et 3000 mètres</span>
+                                                        <span class="good help-block">Saisie correcte</span>
+                                                    </div>
+                                                    <div class="col-xs-7">
+                                                        <div class="input-group">
+                                                            <input id="ElevationOfTheMeasurement" type="text" class="form-control" placeholder="1000"/>
+                                                            <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
+                                                            <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
+                                                            <span class="input-group-addon">m</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-1">
+                                                        <div class="pop">
+                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Blablabla." title="<b>AIDE : Altitude de la prise<br>de mesure</b>">
+                                                                <span class="glyphicon glyphicon-question-sign"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <br> <br> <br>
-                                            <div id="divElevation">
-                                                <div class="col-lg-8">
-                                                    <label for="ElevationOfTheMeasurement" class="control-label">Altitude de la prise de mesure : </label>
-                                                    <br>
-                                                    <span class="error help-block">Compris entre -500 et 3000 mètres</span>
-                                                    <span class="good help-block">Saisie correcte</span>
-                                                </div>
-                                                    <div class="input-group col-lg-4">
-                                                        <input id="ElevationOfTheMeasurement" type="text" class="form-control"/>
-                                                        <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
-                                                        <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
-                                                        <span class="input-group-addon">m</span>
-                                                    </div>  
-                                            </div>
+                                            </div>                                            
                                         </div>
                     <!-------------------------------------------- Wind distribution - detailed ------------------------------------------>
                                         <br>
@@ -296,31 +341,51 @@
                     <!---------------------------------------------------------------------------------------------------------------------->
                                         
                     <!-------------------------------------------- Wind distribution - simple ------------------------------------------>
+                    
                                         <div id="windsimple" class="marginLR">
 
                                <!-------------------------------- Option 1 ------------------------------------->
                                             <div class="row">
-                                                <div class="col-xs-1">
+                                                <div class="col-xs-2">
+                                                    <br><br><br>
                                                     <input type="radio" name="choiceOption" id="opt1" value="opt1" checked="" onclick="intoxicateOption()">
                                                 </div>
-                                                <div id="option1" class="col-xs-11 panel panel-default">
+                                                <div id="option1" class="col-xs-10 panel panel-default">
                                                     <br>
-                                                    <div class="marginLR">
+                                                    <div class="marginLR" style="margin-top: -15px">
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-8 -marginLR">
                                                                 <label for="averageWindSpeed1" class="control-label">Vitesse moyenne vent : </label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="averageWindSpeed1" type="text" class="form-control"/>
-                                                                <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="averageWindSpeed1" type="text" class="form-control" placeholder="6"/>
+                                                                    <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Vitesse moyenne du vent</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-8 -marginLR">
                                                                 <label for="shape1" class="control-label">Facteur de forme k :</label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur de forme K</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -341,7 +406,7 @@
                                                                 <label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
                                                             </div>
                                                             <div class="input-group col-lg-5">
-                                                                <input id="averageWindSpeed2" type="text" class="form-control"/>
+                                                                <input id="averageWindSpeed2" type="text" class="form-control" placeholder="6"/>
                                                                 <span class="input-group-addon">m.s<sup>-1</sup></span>
                                                             </div>
                                                         </div>
@@ -371,7 +436,7 @@
                                                                 <label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
                                                             </div>
                                                             <div class="input-group col-lg-5">
-                                                                <input id="scaleFactor" type="text" class="form-control"/>
+                                                                <input id="scaleFactor" type="text" class="form-control" placeholder="2"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
