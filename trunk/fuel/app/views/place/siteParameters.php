@@ -9,6 +9,12 @@
                 </div>
             </div>
 
+<?php if (isset($messages)) : ?>
+    <?php foreach ($messages as $message) : ?>
+            <div class="alert alert-danger" role="alert"><?php echo $message ?></div>
+    <?php endforeach ?>
+<?php endif ?>
+
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
@@ -33,7 +39,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="siteName" type="text" class="form-control"/>
+                                        <input id="siteName" type="text" name="place_name" value="<?php echo $place['place_name'] ?>" class="form-control"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback good"></span>                        
                                     </div>
@@ -56,7 +62,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="latitude" type="text" class="form-control" placeholder="49.50"/>
+                                        <input id="latitude" type="text" name="place_latitude" value="<?php echo $place['place_latitude'] ?>" class="form-control" placeholder="49.50"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
                                         <span class="input-group-addon">°</span>
@@ -80,7 +86,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="longitude" type="text" class="form-control" placeholder="123.50"/>
+                                        <input id="longitude" type="text" name="place_longitude" value="<?php echo $place['place_longitude'] ?>" class="form-control" placeholder="123.50"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
                                         <span class="input-group-addon">°</span>
@@ -104,7 +110,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="altitude" type="text" class="form-control" placeholder="1000"/>
+                                        <input id="altitude" type="text" name="place_altitude" value="<?php echo $place['place_altitude'] ?>" class="form-control" placeholder="1000"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                         <span class="input-group-addon">m</span>
@@ -128,7 +134,7 @@
                                 </div>
                                  <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="averageannualtemp" type="text" class="form-control" placeholder="15.00"/>
+                                        <input id="averageannualtemp" type="text" name="place_mean_temp" value="<?php echo $place['place_mean_temp'] ?>" class="form-control" placeholder="15.00"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
                                         <span class="input-group-addon">°C</span>
@@ -171,7 +177,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="roughnesslength" type="text" class="form-control" placeholder="15.00"/>
+                                        <input id="roughnesslength" type="text" name="place_rugosity" value="<?php echo $place['place_rugosity'] ?>" class="form-control" placeholder="15.00"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                         <span class="input-group-addon">m</span>

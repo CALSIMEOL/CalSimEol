@@ -4,7 +4,7 @@ class Controller_Turbine extends Controller_Template
 {
 	public function action_index()
 	{
-		return Response::redirect('*/list');
+		Response::redirect('turbine/list');
 	}
 
 	public function action_list()
@@ -16,7 +16,7 @@ class Controller_Turbine extends Controller_Template
 	public function action_add()
 	{
 		$data = array(
-			'update' => false,
+//			'update' => false, // Not used
 		);
 
 		$fieldset = Fieldset::forge()->add_model('Model_Turbine')->repopulate();
@@ -25,7 +25,7 @@ class Controller_Turbine extends Controller_Template
 		{
 			if (Model_Turbine::forge($fieldset->validated())->save())
 			{
-				Response::redirect_back('*/list');
+				Response::redirect_back('turbine/list');
 			}
 		}
 		else
@@ -42,12 +42,12 @@ class Controller_Turbine extends Controller_Template
 	public function action_edit($id)
 	{
 		$data = array(
-			'update' => true,
+//			'update' => true, // Not used
 		);
 
 		$turbine = Model_Turbine::find($id);
 
-		$turbine ? : Response::redirect_back('*/list');
+		$turbine ? : Response::redirect_back('turbine/list');
 
 		$fieldset = Fieldset::forge()->add_model('Model_Turbine')->populate($turbine);
 
@@ -57,7 +57,7 @@ class Controller_Turbine extends Controller_Template
 
 			if ($turbine->save())
 			{
-				Response::redirect_back('*/list');
+				Response::redirect_back('turbine/list');
 			}
 		}
 		else
@@ -66,7 +66,7 @@ class Controller_Turbine extends Controller_Template
 		}
 
 		$data['turbine'] = array_merge($turbine->to_array(), $fieldset->input());
-		$data['turbine']['powers'] = $turbine->powers;
+//		$data['turbine']['powers'] = $turbine->powers;
 
 		$this->template->title = 'Editer';
 		$this->template->content = View::forge('turbine/form', $data);
@@ -78,7 +78,7 @@ class Controller_Turbine extends Controller_Template
 
 		$turbine ? $turbine->delete() : null;
 
-		Response::redirect_back('*/list');
+		Response::redirect_back('turbine/list');
 	}
 
 	public function action_turbineParameters() {
