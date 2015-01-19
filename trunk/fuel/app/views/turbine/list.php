@@ -42,10 +42,10 @@
       <!-----------------------------------------------------------turbine list navigation bar------------------------------------------------------------->
         <div class="row">
                 <div class="col-sm-offset-1 col-sm-4">
-                        <a href="<?php echo Uri::create('turbine/form') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
+                        <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
                 </div>
                 <div class="col-sm-4">
-                                <ul class="pagination">
+<?php echo $pagination ?>
                 </div>
         </div>
       <!--------------------------------------------------------------------------------------------------------------------------------------------------->
