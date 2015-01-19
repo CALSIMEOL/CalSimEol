@@ -106,9 +106,11 @@ class Controller_Place extends Controller_Template
 
 	public function action_siteParameters()
 	{
+		Response::redirect('place/add');
+
 		if (Input::method() == 'POST')
 		{
-			Response::redirect('*/list');
+			Response::redirect('place/list');
 		}
 		else
 		{
