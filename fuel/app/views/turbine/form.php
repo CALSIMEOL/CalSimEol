@@ -9,6 +9,12 @@
                 </div>
             </div>
 
+<?php if (isset($messages)) : ?>
+    <?php foreach ($messages as $message) : ?>
+            <div class="alert alert-danger" role="alert"><?php echo $message ?></div>
+    <?php endforeach ?>
+<?php endif ?>
+
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
@@ -28,7 +34,7 @@
                                     <label for="turbName" class="control-label">Nom : </label>
                                 </div>
                                 <div class="input-group col-md-8">
-                                    <input id="turbName" type="text" class="form-control"/>
+                                    <input id="turbName" type="text" name="turbine_name" value="<?php echo $turbine['turbine_name'] ?>" class="form-control"/>
                                 </div>
                             </div>
 
@@ -37,7 +43,7 @@
                                     <label for="nbBlade" class="control-label">Nombre de pales : </label>
                                 </div>
                                 <div class="input-group col-md-6">
-                                    <input id="nbBlade" type="text" class="form-control" placeholder="3"/>
+                                    <input id="nbBlade" type="text" name="turbine_blades" value="<?php echo $turbine['turbine_blades'] ?>" class="form-control" placeholder="3"/>
                                 </div>
                             </div>
                           
@@ -46,7 +52,7 @@
                                     <label for="nominalPower" class="control-label">Puissance nominale : </label>
                                 </div>
                                 <div class="input-group col-lg-6">
-                                    <input id="nominalPower" type="text" class="form-control" placeholder="1500"/>
+                                    <input id="nominalPower" type="text" name="turbine_power" value="<?php echo $turbine['turbine_power'] ?>" class="form-control" placeholder="1500"/>
                                     <span class="input-group-addon">kW</span>
                                 </div>
                             </div>
@@ -56,7 +62,7 @@
                                     <label for="diameter" class="control-label">Diamètre du rotor : </label>
                                 </div>
                                 <div class="input-group col-lg-6">
-                                    <input id="diameter" type="text" class="form-control" placeholder="40"/>
+                                    <input id="diameter" type="text" name="turbine_diameter" value="<?php echo $turbine['turbine_diameter'] ?>" class="form-control" placeholder="40"/>
                                     <span class="input-group-addon">m</span>
                                 </div>
                             </div>
@@ -66,7 +72,7 @@
                                     <label for="height" class="control-label">Hauteur du moyeu :</label>
                                 </div>
                                 <div class="input-group col-lg-6">
-                                    <input id="height" type="text" class="form-control" placeholder="60"/>
+                                    <input id="height" type="text" name="turbine_height" value="<?php echo $turbine['turbine_height'] ?>" class="form-control" placeholder="60"/>
                                     <span class="input-group-addon">m</span>
                                 </div>
                             </div>
@@ -76,7 +82,7 @@
                                     <label for="cut-inSpeed" class="control-label">Vitesse de démarrage : </label>
                                 </div>
                                 <div class="input-group col-lg-6">
-                                    <input id="cut-inSpeed" type="text" class="form-control" placeholder="3,0"/>
+                                    <input id="cut-inSpeed" type="text" name="turbine_start_speed" value="<?php echo $turbine['turbine_start_speed'] ?>" class="form-control" placeholder="3,0"/>
                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                 </div>
                             </div>
@@ -86,7 +92,7 @@
                                     <label for="cut-outSpeed" class="control-label">Vitesse de coupure : </label>
                                 </div>
                                 <div class="input-group col-lg-6">
-                                    <input id="cut-outSpeed" type="text" class="form-control" placeholder="25"/>
+                                    <input id="cut-outSpeed" type="text" name="turbine_stop_speed" value="<?php echo $turbine['turbine_stop_speed'] ?>" class="form-control" placeholder="25"/>
                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                 </div>
                             </div>
