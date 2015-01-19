@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><?php echo $title ?></title>
+        <title>CALSIMEOL &bull; <?php echo $title ?></title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -48,9 +48,9 @@
                 
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?php echo Uri::create('index/index') ?>">Accueil</a></li>
+                        <li class="active"><a href="<?php echo Uri::base() ?>">Accueil</a></li>
                         <li><a href="<?php echo Uri::create('place/siteChoice') ?>">Simulation</a></li>
-                        <li><a href="<?php echo Uri::create('index/about') ?>">A propos</a></li>
+                        <li><a href="<?php echo Uri::create('home/about') ?>">A propos</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
                 
