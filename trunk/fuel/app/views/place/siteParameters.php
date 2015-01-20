@@ -34,7 +34,7 @@
                                 <div class="col-md-4">
                                     <label for="siteName" class="control-label">Nom : </label>
                                     <br>
-                                    <span class="error help-block">1 à 20 caractères</span>
+                                    <span class="error help-block">De 1 à 20 caractères</span>
                                     <span class="good help-block"></span> 
                                 </div>
                                 <div class="col-xs-7 -marginLR">
@@ -58,7 +58,7 @@
                                 <div class="col-md-4">
                                     <label for="latitude" class="control-label">Latitude : </label>
                                     <br>
-                                    <span class="error help-block">Doit être compris entre -90 et 90°</span>
+                                    <span class="error help-block">Entre -90 et 90°</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
@@ -73,7 +73,8 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
                                            data-content="Entrer une latitude comprise entre -90° et 90°.<br><br>
-                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           <i>La latitude correspond au positionnement nord/sud d'un point et est représentée par une valeur angulaire. Elle varie entre 0° à l'équateur et +/- 90° aux pôles.</i>
+                                           <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Latitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -85,7 +86,7 @@
                                 <div class="col-md-4">
                                     <label for="longitude" class="control-label">Longitude : </label>
                                     <br>
-                                    <span class="error help-block">Compris entre -180 et 180°</span>
+                                    <span class="error help-block">Entre -180 et 180°</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
@@ -100,7 +101,8 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
                                            data-content="Entrer une longitude comprise entre -180° et 180°.<br><br>
-                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           <i>La longitude correspond au positionnement est/ouest d'un point et est représentée par une valeur angulaire. Elle varie entre 0° (méridien de Greenwich) et +/- 180°.</i>
+                                           <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Longitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -112,7 +114,7 @@
                                 <div class="col-md-4">
                                     <label for="altitude" class="control-label">Altitude : </label>
                                     <br>
-                                    <span class="error help-block">Compris entre -500 et 3000 mètres</span>
+                                    <span class="error help-block">Entre -500 et 3000 mètres</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
@@ -127,7 +129,8 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
                                            data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
-                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           <i>L'altitude est l'élévation verticale d'un lieu par rapport au niveau de la mer.</i>
+                                           <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Altitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -139,7 +142,7 @@
                                 <div class="col-lg-7">
                                     <label for="averageannualtemp" class="control-label">Température moyenne annuelle :</label>
                                     <br>
-                                    <span class="error help-block">Compris entre -50 et 50°C</span>
+                                    <span class="error help-block">Entre -50 et 50°C</span>
                                     <span class="good help-block"></span>
                                 </div>
                                  <div class="col-xs-7 -marginLR">
@@ -154,7 +157,8 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
                                            data-content="Entrer une température entre -50 et 50 °C.<br><br>
-                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           <i>Moyenne des températures enregistrées sur le site sur une année.</i>
+                                           <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Température moyenne annuelle</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -174,7 +178,12 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Afichée à titre indicatif.<br>Définition à écrire." title="<b>AIDE : Masse volumique de l'air</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="<i>La masse volumique de l'air carractérise la masse d'air contenue dans un volume de 1 m<sup>2</sup>.
+                                           Elle varie avec la température et l'altitude.</i><br>
+                                           <?php echo str_replace('"', "'", Asset::img('densityForm.png', array('class' => 'img-responsive'))) ?>
+                                           <small>&rho; : masse volumique de l'air<br>h : altitude<br>T : température en kelvin</small>"
+                                           title="<b>AIDE : Masse volumique de l'air</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -259,18 +268,18 @@
                                                         <tr>
                                                             <th width=22%>Direction</th>
                                                             <th>Heure / an</th>
-                                                            <th>Vitesse moyenne</th>
-                                                            <th>&nbsp;<span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
+                                                            <th>Vitesse moyenne &nbsp;</th>
+                                                            <th>&nbsp <span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
                                                         </tr>
 
-                                                        <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td></tr>
-                                                        <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td><td></td></tr>
 
                                                     </table>
                                                     <span class="error help-block">Nombre total d'heures doit être égal à 8760 h et vitesse moyenne comprise entre 0 et 20 m.s<sup>-1</sup></span>
@@ -326,7 +335,7 @@
                                                         <label for="ElevationOfTheMeasurement" class="control-label">Altitude de la prise de mesure : </label>
                                                         <br>
                                                         <span class="error help-block">Compris entre -500 et 3000 mètres</span>
-                                                        <span class="good help-block">Saisie correcte</span>
+                                                        <span class="good help-block"></span>
                                                     </div>
                                                     <div class="col-xs-7">
                                                         <div class="input-group">
@@ -353,18 +362,19 @@
                                         <br>
                                         <div id="displayWindTable">
                                             
-                                            <div class="col-sm-offset-1 col-sm-10">
+                                            <div class="col-sm-offset-1 col-sm-11">
                                                 <table id="windTable" class="table table-responsive table-striped table-condensed center-block">
 
                                                     <tr>
                                                         <th>Vitesse [m.s<sup>-1</sup>]</th>
                                                         <th>Heure / an</th>
-                                                        <th><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
+                                                        <th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
                                                     </tr>
 
                                                     <tr>
                                                         <td align=center>0</td>
                                                         <td><input type="text" id="windProbability" class="form-control input-sm"/></td>
+                                                        <td></td>
                                                     </tr>
                                                     
                                                 </table>
@@ -394,11 +404,11 @@
                                                     <br>
                                                     <div class="marginLR" style="margin-top: -15px">
                                                         <div id="divAverageSpeed" class="form-group">
-                                                            <div class="col-lg-8 -marginLR">
+                                                            <div class="col-lg-9 -marginLR">
                                                                 <label for="averageWindSpeed1" class="control-label">Vitesse moyenne vent : </label>
                                                                 <br>
                                                                 <span class="error help-block">Nombre entre 0.1 et 20m.s<sup>-1</sup></span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
@@ -406,7 +416,7 @@
                                                                     <input id="averageWindSpeed1" type="text" class="form-control"/>
                                                                     <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
                                                                     <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
-                                                                    <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                                    <span class="input-group-addon">m/s</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-1">
@@ -425,7 +435,7 @@
                                                                 <label for="shape1" class="control-label">Facteur de forme k :</label>
                                                                 <br>
                                                                 <span class="error help-block">Nombre entre 0.5 et 5</span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
@@ -460,18 +470,18 @@
                                                     <br>
                                                     <div class="marginLR" style="margin-top: -15px">
                                                         <div id="divAverageSpeed2" class="form-group">
-                                                            <div class="col-lg-8 -marginLR">
+                                                            <div class="col-lg-9 -marginLR">
                                                                 <label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
                                                                 <br>
                                                                 <span class="error help-block">Nombre entre 0.1 et 20m.s<sup>-1</sup></span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="averageWindSpeed2" type="text" class="form-control"/>
                                                                     <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
                                                                     <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
-                                                                    <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                                    <span class="input-group-addon">m/s</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-1">
@@ -490,7 +500,7 @@
                                                                 <label for="standardDeviation" class="control-label">Ecart type &sigma; :</label>
                                                                 <br>
                                                                 <span class="error help-block">Nombre entre 0.1 et 50</span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
@@ -529,7 +539,7 @@
                                                                 <label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
                                                                 <br>
                                                                 <span class="error help-block">Nombre entre 0.1 et 20</span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
@@ -553,7 +563,7 @@
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="shape2" class="control-label">Facteur de forme k :</label>
                                                                 <span class="error help-block">Nombre entre 0.5 et 5</span>
-                                                                <span class="good help-block">Saisie correcte</span>
+                                                                <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
@@ -629,7 +639,7 @@ $(function () {
 function addRow(){
     if (windSpeed<30){
         windSpeed++;
-        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td></tr>');
+        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
     }
     else{
         
@@ -665,6 +675,7 @@ function intoxicateOption(){
 $(function () {
     intoxicateOption();
 });
+
 
 $(function () {
         $('#siteName').keyup(function() {
@@ -797,6 +808,7 @@ $(function () {
             
         
 });
+
 
 //popover
 $(function (){
