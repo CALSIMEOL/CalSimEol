@@ -430,9 +430,9 @@
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                                 </div>
-                                                                <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
-                                                                <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
