@@ -28,10 +28,12 @@
 <?php else : ?>
                                             <option value="default">Il n'y a pas de sites</option>
 <?php endif ?>
+
+
                                         </optgroup>
                                         <optgroup label="Autre">
                                             <option value="import">Choix d'un site dans la base de données de EolAtlas</option>
-                                            <option value="munual">Création manuelle d'un site</option>
+                                            <option value="manual">Création manuelle d'un site</option>
                                         </optgroup>
                                     </select>
                                 </div>

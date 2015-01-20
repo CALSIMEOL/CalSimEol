@@ -9,7 +9,8 @@ class Controller_Place extends Controller_Template
 
 	public function action_list()
 	{
-		return 'Lister sites.';
+		$this->template->title = 'Liste des sites';
+		$this->template->content = ViewModel::forge('place/list');
 	}
 
 	public function action_add()
@@ -52,7 +53,7 @@ class Controller_Place extends Controller_Template
 
 			if ($place->save())
 			{
-				Reponse::redirect_back('place/list');
+				Response::redirect_back('place/list');
 			}
 		}
 		else
@@ -97,6 +98,7 @@ class Controller_Place extends Controller_Template
 				default:
 			}
 		}
+
 		$data['places'] = Model_Place::find('all');
 
 		$this->template->title = 'Choix site';
