@@ -46,7 +46,8 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -57,7 +58,7 @@
                                 <div class="col-md-4">
                                     <label for="latitude" class="control-label">Latitude : </label>
                                     <br>
-                                    <span class="error help-block">Chiffre compris entre -90 et 90°</span>
+                                    <span class="error help-block">Doit être compris entre -90 et 90°</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7 -marginLR">
@@ -70,7 +71,10 @@
                                </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une latitude comprise entre -90° et 90°.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Latitude du site</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer une latitude comprise entre -90° et 90°.<br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           title="<b>AIDE : Latitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -94,7 +98,10 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une longitude comprise entre -180° et 180°.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longitude du site</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer une longitude comprise entre -180° et 180°.<br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           title="<b>AIDE : Longitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -118,7 +125,10 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une altitude comprise entre -500 et 3000 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Altitude du site</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           title="<b>AIDE : Altitude du site</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -142,7 +152,10 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une température entre -50 et 50 °C.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Température moyenne annuelle</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer une température entre -50 et 50 °C.<br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           title="<b>AIDE : Température moyenne annuelle</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -177,7 +190,7 @@
                                 </div>
                                 <div class="col-xs-7 -marginLR">
                                     <div class="input-group">
-                                        <input id="roughnesslength" type="text" name="place_rugosity" value="<?php echo $place['place_rugosity'] ?>" class="form-control" placeholder="15.00"/>
+                                        <input id="roughnesslength" type="text" name="place_rugosity" value="<?php echo $place['place_rugosity'] ?>" class="form-control" placeholder="0.1"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                         <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                         <span class="input-group-addon">m</span>
@@ -185,7 +198,10 @@
                                </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                           data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           title="<b>AIDE : Longueur de rugosité</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
                                     </div>
@@ -230,7 +246,13 @@
 
                                             <br/> <br/> <br/>
                                             <div id="knowRose">
-                                                La rose des vents ne sera affichée qu'à titre indicatif.
+                                                La rose des vents ne sera affichée qu'à titre indicatif. &nbsp;
+                                                <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="right"
+                                                   data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
+                                                   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                   title="<b>AIDE : Longueur de rugosité</b>">
+                                                    <span class="glyphicon glyphicon-question-sign"></span>
+                                                </a>
                                                 <table class="table table-striped table-condensed">
 
                                                       <tr>
@@ -311,7 +333,10 @@
                                                     </div>
                                                     <div class="col-xs-1">
                                                         <div class="pop">
-                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" data-content="Blablabla." title="<b>AIDE : Altitude de la prise<br>de mesure</b>">
+                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                                               data-content=" <br><br>
+                                                               <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                               accesskey=""title="<b>AIDE : Altitude de la prise<br>de mesure</b>">
                                                                 <span class="glyphicon glyphicon-question-sign"></span>
                                                             </a>
                                                         </div>
@@ -371,7 +396,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Vitesse moyenne du vent</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Vitesse moyenne du vent</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -388,7 +416,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur de forme K</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Facteur de forme K</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -420,7 +451,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Vitesse moyenne du vent</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Vitesse moyenne du vent</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -437,7 +471,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Ecart type &sigma;</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Ecart type &sigma;</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -468,7 +505,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur d'échelle A</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Facteur d'échelle A</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -485,7 +525,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur de forme K</b>">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                       data-content="Blablabla.<br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                                       title="<b>AIDE : Facteur de forme K</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
                                                                 </div>
@@ -507,7 +550,7 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="pull-right btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider</button>
+                            <button type="submit" class="pull-right btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> &nbsp; Valider</button>
                         </div>
 
                     </form>
