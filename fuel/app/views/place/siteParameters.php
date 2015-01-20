@@ -28,7 +28,7 @@
                             <div class="col-sm-6">
 
                   <!---------------------------------------------Site parameters-------------------------------------------------------->
-                      <div>
+                            <div>
 
                             <div id="divSiteName" class="form-group">
                                 <div class="col-md-4">
@@ -192,73 +192,73 @@
                                 </div>
                             </div>
                           
-                      </div>
+                            </div>
                   <!-------------------------------------------------------------------------------------------------------------------->
 
 
                   <!------------------------------------------------wind rose----------------------------------------------------------->
-                    <div class="col-sm-12 -marginLR" style="margin-left: -30px">
-                        <div class="panel panel-default">
+                                <div class="col-sm-12 -marginLR" style="margin-left: -30px">
+                                    <div class="panel panel-default">
 
-                            <div class="panel-heading">
-                                <b>Rose des vents</b>
-                                    <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
-                                        <span class="glyphicon glyphicon-question-sign"></span>
-                                    </a>
-                                <br>(n'intervient pas dans le dimensionnement)
-                            </div>
+                                        <div class="panel-heading">
+                                            <b>Rose des vents</b>
+                                                <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
+                                                    <span class="glyphicon glyphicon-question-sign"></span>
+                                                </a>
+                                            <br>(n'intervient pas dans le dimensionnement)
+                                        </div>
 
-                            <div class="panel-body">
+                                        <div class="panel-body">
 
-                                <div class="form-inline">
+                                            <div class="form-inline">
 
-                                    <div class="col-xs-6">
-                                        <div class="radio">
-                                            <label for="unknown" class="radio">
-                                            <input type="radio" name="roseSources" value="unknown" id="unknown" checked="" onclick="windRose()"> Non connue </label>
+                                                <div class="col-xs-6">
+                                                    <div class="radio">
+                                                        <label for="unknown" class="radio">
+                                                        <input type="radio" name="roseSources" value="unknown" id="unknown" checked="" onclick="windRose()"> Non connue </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="radio">
+                                                        <label for="known" class="radio">
+                                                        <input type="radio" name="roseSources" value="known" id="known" onclick="windRose()"> Connue </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <br/> <br/> <br/>
+                                            <div id="knowRose">
+                                                La rose des vents ne sera affichée qu'à titre indicatif.
+                                                <table class="table table-striped table-condensed">
+
+                                                      <tr>
+                                                          <th width=22%>Direction</th>
+                                                          <th>Heure / an</th>
+                                                          <th>Vitesse moyenne</th>
+                                                      </tr>
+
+                                                      <tr><td>Nord</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Nord-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Sud-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Sud</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Sud-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                                      <tr><td>Nord-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+
+                                                </table>
+                                            </div>
+
+                                            <div id="unknowRose" class="marginLR">
+
+                                                La rose des vents ne sera pas affichée dans les résultats finaux.
+                                            </div>
+
                                         </div>
                                     </div>
-
-                                    <div class="col-xs-6">
-                                        <div class="radio">
-                                            <label for="known" class="radio">
-                                            <input type="radio" name="roseSources" value="known" id="known" onclick="windRose()"> Connue </label>
-                                        </div>
-                                    </div>
-
                                 </div>
-
-                                <br/> <br/> <br/>
-                                <div id="knowRose">
-                                    La rose des vents ne sera affichée qu'à titre indicatif.
-                                    <table class="table table-striped table-condensed">
-
-                                          <tr>
-                                              <th width=22%>Direction</th>
-                                              <th>Heure / an</th>
-                                              <th>Vitesse moyenne</th>
-                                          </tr>
-
-                                          <tr><td>Nord</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Nord-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Sud-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Sud</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Sud-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                          <tr><td>Nord-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-
-                                    </table>
-                                </div>
-
-                                <div id="unknowRose" class="marginLR">
-                                    
-                                    La rose des vents ne sera pas affichée dans les résultats finaux.
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                   <!-------------------------------------------------------------------------------------------------------------------->                  
                             </div>
       <!---------------------------------------------------------------------------------------------------------------------------------------------------------------->                          
@@ -401,56 +401,94 @@
 
                                <!-------------------------------- Option 2 ------------------------------------->
                                             <div class="row">
-                                                <div class="col-xs-1">
+                                                <div class="col-xs-2">
+                                                    <br><br><br>
                                                     <input type="radio" name="choiceOption" id="opt2" value="opt2" onclick="intoxicateOption()">
                                                 </div>
-                                                <div id="option2" class="col-xs-11 panel panel-default">
+                                                <div id="option2" class="col-xs-10 panel panel-default">
                                                     <br>
-                                                    <div class="marginLR">
+                                                    <div class="marginLR" style="margin-top: -15px">
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-8 -marginLR">
                                                                 <label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="averageWindSpeed2" type="text" class="form-control" placeholder="6"/>
-                                                                <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="averageWindSpeed2" type="text" class="form-control" placeholder="6"/>
+                                                                    <span class="input-group-addon">m.s<sup>-1</sup></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Vitesse moyenne du vent</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
-                                                                <label for="standardDeviation" class="control-label">Ecart type :</label>
+                                                            <div class="col-lg-8 -marginLR">
+                                                                <label for="standardDeviation" class="control-label">Ecart type &sigma; :</label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Ecart type &sigma;</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                               <!------------------------------------------------------------------------------->
+                           <!------------------------------------------------------------------------------->
                                             
                                <!-------------------------------- Option 3 ------------------------------------->
                                             <div class="row">
-                                                <div class="col-xs-1">
+                                                <div class="col-xs-2">
+                                                    <br><br><br>
                                                     <input type="radio" name="choiceOption" id="opt3" value="opt3" onclick="intoxicateOption()">
                                                 </div>
-                                                <div id="option3" class="col-xs-11 panel panel-default">
+                                                <div id="option3" class="col-xs-10 panel panel-default">
                                                     <br>
-                                                    <div class="marginLR">
+                                                    <div class="marginLR" style="margin-top: -15px">
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-8 -marginLR">
                                                                 <label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="scaleFactor" type="text" class="form-control" placeholder="2"/>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="scaleFactor" type="text" class="form-control" placeholder="2"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur d'échelle A</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <div class="col-lg-7">
+                                                            <div class="col-lg-8 -marginLR">
                                                                 <label for="shape2" class="control-label">Facteur de forme k :</label>
                                                             </div>
-                                                            <div class="input-group col-lg-5">
-                                                                <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
+                                                            <div class="col-xs-11 -marginLR">
+                                                                <div class="input-group">
+                                                                    <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <div class="pop">
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Blablabla." title="<b>AIDE : Facteur de forme K</b>">
+                                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -460,7 +498,7 @@
                                             
                                         </div>
                     <!---------------------------------------------------------------------------------------------------------------------->
-                    
+
                                     </div>
 
                                 </div>
