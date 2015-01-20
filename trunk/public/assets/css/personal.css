@@ -137,6 +137,10 @@ body{
   right: 38px;
 }
 
+.form-horizontal .has-feedback .form-control-feedback.shift4 {
+  right: 55px;
+}
+
 .table{
     margin-bottom: 10px;
 }
