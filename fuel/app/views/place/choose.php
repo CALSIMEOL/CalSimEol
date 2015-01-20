@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="pull-right btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider</button>
+                                <button type="submit" class="pull-right btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> &nbsp; Valider</button>
                             </div>
 
                         </form>
