@@ -80,28 +80,27 @@ class Controller_Place extends Controller_Template
 		return 'Importer site (EolAtlas).';
 	}
 
-	public function action_siteChoice()
+	public function action_choose()
 	{
 		if (Input::method() == 'POST')
 		{
-			switch (Input::post('choice_site'))
+			switch (Input::post('place_choice'))
 			{
-				case 'EolAtlas':
-					Response::redirect('place/eolatlas');
+				case 'import':
+					Response::redirect('place/import');
 				break;
 
-				case 'site_manu':
+				case 'manual':
+					Response::redirect('place/add');
+				break;
 
 				default:
-					Response::redirect('place/siteParameters');
-				break;
 			}
 		}
-		else
-		{
-			$this->template->title = 'Choix site';
-			$this->template->content = View::forge('place/siteChoice');
-		}
+		$data['places'] = Model_Place::find('all');
+
+		$this->template->title = 'Choix site';
+		$this->template->content = View::forge('place/choose', $data);
 	}
 
 	public function action_siteParameters()
