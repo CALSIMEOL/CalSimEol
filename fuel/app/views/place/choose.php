@@ -19,7 +19,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <select id="select" name="choice_site" class="form-control" >
+                                    <select id="select" name="place_choice" class="form-control" >
                                         <optgroup label="Sites">
 <?php if (count($places) != 0) : ?>
     <?php foreach ($places as $place) : ?>
