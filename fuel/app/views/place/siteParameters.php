@@ -255,23 +255,26 @@
                                                 </a>
                                                 <table class="table table-striped table-condensed">
 
-                                                      <tr>
-                                                          <th width=22%>Direction</th>
-                                                          <th>Heure / an</th>
-                                                          <th>Vitesse moyenne</th>
-                                                      </tr>
+                                          <tr>
+                                              <th width=22%>Direction</th>
+                                              <th>Heure / an</th>
+                                              <th>Vitesse moyenne</th>
+                                              <th><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
+                                          </tr>
 
-                                                      <tr><td>Nord</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Nord-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Sud-ouest</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Sud</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Sud-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
-                                                      <tr><td>Nord-est</td><td><input type="text" class="form-control input-sm"/></td><td><input type="text" class="form-control input-sm"/></td></tr>
+                                          <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td></tr>
+                                          <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td></tr>
 
-                                                </table>
-                                            </div>
+                                    </table>
+                                    <span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
+                                    <span class="good help-block">Saisie correcte</span>
+                                </div>
 
                                             <div id="unknowRose" class="marginLR">
 
@@ -348,20 +351,24 @@
                                         <br>
                                         <div id="displayWindTable">
                                             
-                                            <div  class="col-sm-offset-1 col-sm-10">
+                                            <div class="col-sm-offset-1 col-sm-10">
                                                 <table id="windTable" class="table table-responsive table-striped table-condensed center-block">
 
                                                     <tr>
                                                         <th>Vitesse [m.s<sup>-1</sup>]</th>
                                                         <th>Heure / an</th>
+                                                        <th><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
                                                     </tr>
 
                                                     <tr>
                                                         <td align=center>0</td>
-                                                        <td><input type="text" class="form-control input-sm windProbability"/><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></td>
+                                                        <td><input type="text" id="windProbability" class="form-control input-sm"/></td>
                                                     </tr>
-
+                                                    
                                                 </table>
+                                                <span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
+                                                <span class="good help-block">Saisie correcte</span>
+                                                <br><br>
                                                 <div class="pull-right">
                                                     <span class="btn btn-info btn-xs" onclick="addRow()"><span class="glyphicon glyphicon-plus"></span> Ajouter une ligne</span>
                                                     <span class="btn btn-danger btn-xs" onclick="deleteRow()"><span class="glyphicon glyphicon-trash"></span> Supprimer une ligne</span>
@@ -384,13 +391,19 @@
                                                 <div id="option1" class="col-xs-10 panel panel-default">
                                                     <br>
                                                     <div class="marginLR" style="margin-top: -15px">
-                                                        <div class="form-group">
+                                                        <div id="divAverageSpeed" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="averageWindSpeed1" class="control-label">Vitesse moyenne vent : </label>
+                                                                <br>
+                                                                <span class="error help-block">Nombre entre 0.1 et 20m.s<sup>-1</sup></span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
-                                                                    <input id="averageWindSpeed1" type="text" class="form-control" placeholder="6"/>
+                                                                    
+                                                                    <input id="averageWindSpeed1" type="text" class="form-control"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
                                                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                                                 </div>
                                                             </div>
@@ -405,14 +418,19 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div id="divShapeFactor" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="shape1" class="control-label">Facteur de forme k :</label>
+                                                                <br>
+                                                                <span class="error help-block">Nombre entre 0.5 et 5</span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
                                                                 </div>
+                                                                <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
+                                                                <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
@@ -439,13 +457,18 @@
                                                 <div id="option2" class="col-xs-10 panel panel-default">
                                                     <br>
                                                     <div class="marginLR" style="margin-top: -15px">
-                                                        <div class="form-group">
+                                                        <div id="divAverageSpeed2" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
+                                                                <br>
+                                                                <span class="error help-block">Nombre entre 0.1 et 20m.s<sup>-1</sup></span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
-                                                                    <input id="averageWindSpeed2" type="text" class="form-control" placeholder="6"/>
+                                                                    <input id="averageWindSpeed2" type="text" class="form-control"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
                                                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                                                 </div>
                                                             </div>
@@ -460,13 +483,18 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div id="divStdDeviation" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="standardDeviation" class="control-label">Ecart type &sigma; :</label>
+                                                                <br>
+                                                                <span class="error help-block">Nombre entre 0.1 et 50</span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-1">
@@ -494,13 +522,18 @@
                                                 <div id="option3" class="col-xs-10 panel panel-default">
                                                     <br>
                                                     <div class="marginLR" style="margin-top: -15px">
-                                                        <div class="form-group">
+                                                        <div id="divScaleFactor" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
+                                                                <br>
+                                                                <span class="error help-block">Nombre entre 0.1 et 20</span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
-                                                                    <input id="scaleFactor" type="text" class="form-control" placeholder="2"/>
+                                                                    <input id="scaleFactor" type="text" class="form-control"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-1">
@@ -514,13 +547,17 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div id="divShapeFactor2" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="shape2" class="control-label">Facteur de forme k :</label>
+                                                                <span class="error help-block">Nombre entre 0.5 et 5</span>
+                                                                <span class="good help-block">Saisie correcte</span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xs-1">
@@ -590,7 +627,7 @@ $(function () {
 function addRow(){
     if (windSpeed<30){
         windSpeed++;
-        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" class="form-control input-sm"/><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></td></tr>');
+        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td></tr>');
     }
     else{
         
@@ -672,13 +709,76 @@ $(function () {
         $('#roughnesslength').val() >= -50 && $('#roughnesslength').val() <=50 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();     
         });
         
+        $('.windProb').keyup(function() {
+        var totalHours = 0;
+        $('#knowRose').addClass('has-feedback');
+        for(var j=1;j <= 8;j++){
+            totalHours = totalHours + parseInt($('#windProb'+j+'').val());
+        }
+        totalHours ===8760 && totalHours !== '' ? $('#knowRose').addClass('has-success').removeClass('has-error') && $('#knowRose').find('.good').show() && $('#knowRose').find('.error').hide():  $('#knowRose').addClass('has-error').removeClass('has-success') && $('#knowRose').find('.error').show() && $('#knowRose').find('.good').hide();
+        });
+        
+        $('.windMean').keyup(function() {
+        $('#knowRose').addClass('has-feedback');
+        for(var j=1;j <= 8;j++){
+            if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== ''){
+                $('#knowRose').addClass('has-success').removeClass('has-error') && $('#knowRose').find('.good').show() && $('#knowRose').find('.error').hide();
+            }
+            else {
+                $('#knowRose').addClass('has-error').removeClass('has-success') && $('#knowRose').find('.error').show() && $('#knowRose').find('.good').hide();
+                break;
+            }
+        }
+        });
+        
+        $('#averageWindSpeed1').keyup(function() {
+        $('#divAverageSpeed').addClass('has-feedback');
+        $('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();     
+        });
+        
+        $('#shape1').keyup(function() {
+        $('#divShapeFactor').addClass('has-feedback');
+        $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();     
+        });
+        
+        $('#averageWindSpeed2').keyup(function() {
+        $('#divAverageSpeed2').addClass('has-feedback');
+        $('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' ? $('#divAverageSpeed2').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed2').find('.good').show() && $('#divAverageSpeed2').find('.error').hide()  : $('#divAverageSpeed2').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed2').find('.error').show() && $('#divAverageSpeed2').find('.good').hide();     
+        });
+        
+        $('#standardDeviation').keyup(function() {
+        $('#divStdDeviation').addClass('has-feedback');
+        $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ? $('#divStdDeviation').addClass('has-success').removeClass('has-error') && $('#divStdDeviation').find('.good').show() && $('#divStdDeviation').find('.error').hide()  : $('#divStdDeviation').addClass('has-error').removeClass('has-success') && $('#divStdDeviation').find('.error').show() && $('#divStdDeviation').find('.good').hide();     
+        });
+        
+        $('#scaleFactor').keyup(function() {
+        $('#divScaleFactor').addClass('has-feedback');
+        $('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();     
+        });
+        
+        $('#shape2').keyup(function() {
+        $('#divShapeFactor2').addClass('has-feedback');
+        $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $('#divShapeFactor2').addClass('has-success').removeClass('has-error') && $('#divShapeFactor2').find('.good').show() && $('#divShapeFactor2').find('.error').hide()  : $('#divShapeFactor2').addClass('has-error').removeClass('has-success') && $('#divShapeFactor2').find('.error').show() && $('#divShapeFactor2').find('.good').hide();     
+        });
+        
         $('#ElevationOfTheMeasurement').keyup(function() {
         $('#divElevation').addClass('has-feedback');
         $('#ElevationOfTheMeasurement').val() >= -500 && $('#ElevationOfTheMeasurement').val() <=3000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
         });
         
-        $('.windProbability').keyup(function() {
-            
+        $('form').on('keyup', "input[id*='windProbability']", function() {
+        var totalHours2 = 0;
+        $('#windTable').addClass('has-feedback');
+        if (windSpeed===0){
+            totalHours2 = totalHours2 + parseInt($('#windProbability').val());
+        }
+        else {
+            totalHours2 = totalHours2 + parseInt($('#windProbability').val());
+            for(var j=1;j <= windSpeed;j++){
+                totalHours2 = totalHours2 + parseInt($('#windProbability'+j+'').val());
+            }
+        }
+        totalHours2 ===8760 && totalHours2 !== '' ? $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide():  $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
     });
             
         
