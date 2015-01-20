@@ -253,28 +253,30 @@
                                                    title="<b>AIDE : Longueur de rugosité</b>">
                                                     <span class="glyphicon glyphicon-question-sign"></span>
                                                 </a>
-                                                <table class="table table-striped table-condensed">
+                                                <div id="roseTable">
+                                                    <table class="table table-striped table-condensed">
 
-                                          <tr>
-                                              <th width=22%>Direction</th>
-                                              <th>Heure / an</th>
-                                              <th>Vitesse moyenne</th>
-                                              <th><span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
-                                          </tr>
+                                                        <tr>
+                                                            <th width=22%>Direction</th>
+                                                            <th>Heure / an</th>
+                                                            <th>Vitesse moyenne</th>
+                                                            <th>&nbsp;<span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
+                                                        </tr>
 
-                                          <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td></tr>
-                                          <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td></tr>
+                                                        <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td></tr>
 
-                                    </table>
-                                    <span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
-                                    <span class="good help-block">Saisie correcte</span>
-                                </div>
+                                                    </table>
+                                                    <span class="error help-block">Nombre total d'heures doit être égal à 8760 h et vitesse moyenne comprise entre 0 et 20 m.s<sup>-1</sup></span>
+                                                    <span class="good help-block">Saisie correcte</span>
+                                                </div>
+                                            </div>
 
                                             <div id="unknowRose" class="marginLR">
 
@@ -402,8 +404,8 @@
                                                                 <div class="input-group">
                                                                     
                                                                     <input id="averageWindSpeed1" type="text" class="form-control"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
                                                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                                                 </div>
                                                             </div>
@@ -467,8 +469,8 @@
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="averageWindSpeed2" type="text" class="form-control"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift3 error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift3 good"></span>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
                                                                     <span class="input-group-addon">m.s<sup>-1</sup></span>
                                                                 </div>
                                                             </div>
@@ -711,21 +713,33 @@ $(function () {
         
         $('.windProb').keyup(function() {
         var totalHours = 0;
-        $('#knowRose').addClass('has-feedback');
+        $('#roseTable').addClass('has-feedback');
         for(var j=1;j <= 8;j++){
             totalHours = totalHours + parseInt($('#windProb'+j+'').val());
         }
-        totalHours ===8760 && totalHours !== '' ? $('#knowRose').addClass('has-success').removeClass('has-error') && $('#knowRose').find('.good').show() && $('#knowRose').find('.error').hide():  $('#knowRose').addClass('has-error').removeClass('has-success') && $('#knowRose').find('.error').show() && $('#knowRose').find('.good').hide();
+        for(j=1;j <= 8;j++){
+            if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
+                $('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
+            }
+            else {
+                $('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
+                break;
+            }
+        }
         });
         
         $('.windMean').keyup(function() {
-        $('#knowRose').addClass('has-feedback');
+        var totalHours = 0;
+        $('#roseTable').addClass('has-feedback');
         for(var j=1;j <= 8;j++){
-            if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== ''){
-                $('#knowRose').addClass('has-success').removeClass('has-error') && $('#knowRose').find('.good').show() && $('#knowRose').find('.error').hide();
+            totalHours = totalHours + parseInt($('#windProb'+j+'').val());
+        }
+        for(j=1;j <= 8;j++){
+            if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
+                $('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
             }
             else {
-                $('#knowRose').addClass('has-error').removeClass('has-success') && $('#knowRose').find('.error').show() && $('#knowRose').find('.good').hide();
+                $('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
                 break;
             }
         }
