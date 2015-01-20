@@ -120,29 +120,22 @@ body{
   display: block;
   border-top: 0px;
 }
-
 .form-horizontal .has-feedback .form-control-feedback {
   right: 0px;
 }
-
 .form-horizontal .has-feedback .form-control-feedback.shift {
   right: 30px;
 }
-
 .form-horizontal .has-feedback .form-control-feedback.shift2 {
   right: 35px;
 }
-
 .form-horizontal .has-feedback .form-control-feedback.shift3 {
   right: 38px;
 }
-
 .form-horizontal .has-feedback .form-control-feedback.shift4 {
-  right: 55px;
+  right: 48px;
 }
-
 .table{
     margin-bottom: 10px;
 }
-
 /*----------------------------------------------------------------------------*/
