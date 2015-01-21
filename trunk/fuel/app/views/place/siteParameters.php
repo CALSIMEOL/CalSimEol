@@ -209,7 +209,9 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
                                            data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
-                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                           <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est à dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
+                                           <br><small>Exemple : 0.0002m pour une surface d'eau et 1.6m pour une ville avec des gratte-ciels</small></i>
+                                           <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Longueur de rugosité</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -227,7 +229,9 @@
 
                                         <div class="panel-heading">
                                             <b>Rose des vents</b>
-                                                <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br>Entrer un point comme séparateur décimal." title="<b>AIDE : Longueur de rugosité</b>">
+                                                <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                    data-content="<i>La rose des vents est une figure indiquant les vents dominants, c'est à dire la fréquence des vents selon leurs directions.</i>"
+                                                   title="<b>AIDE : Rose des vents</b>">
                                                     <span class="glyphicon glyphicon-question-sign"></span>
                                                 </a>
                                             <br>(n'intervient pas dans le dimensionnement)
@@ -257,9 +261,9 @@
                                             <div id="knowRose">
                                                 La rose des vents ne sera affichée qu'à titre indicatif. &nbsp;
                                                 <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="right"
-                                                   data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
-                                                   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
-                                                   title="<b>AIDE : Longueur de rugosité</b>">
+                                                   data-content="La somme des occurances heure/an doit être égale à 8760h et la vitesse moyenne doit être comprise entre 0 et 20 m.s<sup>-1</sup>
+                                                    <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                   title="<b>AIDE : Rose des vents</b>">
                                                     <span class="glyphicon glyphicon-question-sign"></span>
                                                 </a>
                                                 <div id="roseTable">
@@ -348,7 +352,8 @@
                                                     <div class="col-xs-1">
                                                         <div class="pop">
                                                             <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
-                                                               data-content=" <br><br>
+                                                               data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
+                                                               <i>L'altitude de la prise de mesure est l'élévation verticale à laquelle ont été mesurés les vitesses de vents.</i><br><br>
                                                                <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                                accesskey=""title="<b>AIDE : Altitude de la prise<br>de mesure</b>">
                                                                 <span class="glyphicon glyphicon-question-sign"></span>
