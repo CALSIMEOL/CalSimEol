@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
-
+                        <input id="nbPowerLines" name="nbPowerLines" type="hidden"/>   
                         <div class="form-group">
                             <legend>Paramétrage de l'éolienne</legend>
                         </div>
@@ -195,12 +195,14 @@ var index =0;
 function addRow(){
     index++;
     $('#powerTable').append('<tr><td><input id="windSpeed'+index+'" type="text" class="form-control input-sm"/></td><td><input id="power'+index+'" type="text" class="form-control input-sm"/></td><td><div class="cross"><a href="#cross" class="cross" onclick="removeRow()"><span class="glyphicon glyphicon-remove"></span></a></div></td></tr>');
+    $('#nbPowerLines').val(index);
 }
 
 //remove a row within power table
 function removeRow(){
     $('#powerTable').on('click', '.cross', function() {var $this = $(this); $this.closest('tr').remove(); } );
     index--;
+    $('#nbPowerLines').val(index);
 }
 
 //generation of feedback icons for each input
