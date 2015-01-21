@@ -419,8 +419,8 @@
                                                                 <div class="input-group">
                                                                     
                                                                     <input id="averageWindSpeed1" type="text" class="form-control"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
                                                                     <span class="input-group-addon">m/s</span>
                                                                 </div>
                                                             </div>
@@ -484,8 +484,8 @@
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     <input id="averageWindSpeed2" type="text" class="form-control"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift4 error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift4 good"></span>
+                                                                    <span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
+                                                                    <span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
                                                                     <span class="input-group-addon">m/s</span>
                                                                 </div>
                                                             </div>
