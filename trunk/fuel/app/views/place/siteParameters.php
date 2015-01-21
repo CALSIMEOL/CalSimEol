@@ -731,10 +731,11 @@ $(function () {
         $('#divAltitude').addClass('has-feedback');
         $('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
         $('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
-            var altitude = $('#altitude').val(); 
-            var temp = $('#averageannualtemp').val(); 
+            var altitude = parseFloat($('#altitude').val()); 
+            var temp = parseFloat($('#averageannualtemp').val()); 
             var density; 
-            density=altitude*temp; 
+            density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+            density=density.toFixed(5);
             return density;})
         : $('#density').val('');
         });
@@ -743,10 +744,11 @@ $(function () {
         $('#divTemp').addClass('has-feedback');
         $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
         $('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
-            var altitude = $('#altitude').val(); 
-            var temp = $('#averageannualtemp').val(); 
+            var altitude = parseFloat($('#altitude').val()); 
+            var temp = parseFloat($('#averageannualtemp').val()); 
             var density; 
-            density=altitude*temp; 
+            density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+            density=density.toFixed(5);
             return density;})
         : $('#density').val('');
         });
