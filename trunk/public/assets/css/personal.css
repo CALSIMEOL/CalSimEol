@@ -133,7 +133,10 @@ body{
   right: 38px;
 }
 .form-horizontal .has-feedback .form-control-feedback.shift4 {
-  right: 48px;
+  right: 44px;
+}
+.form-horizontal .has-feedback .form-control-feedback.shift5 {
+  right: 46px;
 }
 .table{
     margin-bottom: 10px;
