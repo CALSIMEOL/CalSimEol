@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
@@ -71,7 +71,7 @@
                                </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une latitude comprise entre -90° et 90°.<br><br>
                                            <i>La latitude correspond au positionnement nord/sud d'un point et est représentée par une valeur angulaire. Elle varie entre 0° à l'équateur et +/- 90° aux pôles.</i>
                                            <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une longitude comprise entre -180° et 180°.<br><br>
                                            <i>La longitude correspond au positionnement est/ouest d'un point et est représentée par une valeur angulaire. Elle varie entre 0° (méridien de Greenwich) et +/- 180°.</i>
                                            <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
                                            <i>L'altitude est l'élévation verticale d'un lieu par rapport au niveau de la mer.</i>
                                            <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une température entre -50 et 50 °C.<br><br>
                                            <i>Moyenne des températures enregistrées sur le site sur une année.</i>
                                            <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
@@ -178,11 +178,11 @@
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="<i>La masse volumique de l'air carractérise la masse d'air contenue dans un volume de 1 m<sup>2</sup>.
                                            Elle varie avec la température et l'altitude.</i><br>
                                            <?php echo str_replace('"', "'", Asset::img('densityForm.png', array('class' => 'img-responsive'))) ?>
-                                           <small>&rho; : masse volumique de l'air<br>h : altitude<br>T : température en kelvin</small>"
+                                           <small>&rho; : masse volumique de l'air h : altitude T : température en kelvin</small>"
                                            title="<b>AIDE : Masse volumique de l'air</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>
@@ -207,7 +207,7 @@
                                </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
-                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
                                            <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est à dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
                                            <br><small>Exemple : 0.0002m pour une surface d'eau et 1.6m pour une ville avec des gratte-ciels</small></i>
@@ -229,7 +229,7 @@
 
                                         <div class="panel-heading">
                                             <b>Rose des vents</b>
-                                                <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                     data-content="<i>La rose des vents est une figure indiquant les vents dominants, c'est à dire la fréquence des vents selon leurs directions.</i>"
                                                    title="<b>AIDE : Rose des vents</b>">
                                                     <span class="glyphicon glyphicon-question-sign"></span>
@@ -260,7 +260,7 @@
                                             <br/> <br/> <br/>
                                             <div id="knowRose">
                                                 La rose des vents ne sera affichée qu'à titre indicatif. &nbsp;
-                                                <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="right"
+                                                <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                    data-content="La somme des occurances heure/an doit être égale à 8760h et la vitesse moyenne doit être comprise entre 0 et 20 m/s
                                                     <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                    title="<b>AIDE : Rose des vents</b>">
@@ -310,7 +310,7 @@
 
                                     <div class="panel-heading">
                                         <b>Distribution des vents</b>
-                                        <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left" style="margin-top: 1px"
+                                        <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
                                            data-content="<i>La vitesse du vent varie en permanence. Pour prévoir la production d'énergie d'une éolienne il faut connaître la vitesse du vent et sa fréquence associée.</i>"
                                            title="<b>AIDE : Distribution des vents</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
@@ -328,7 +328,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-1">
-                                                    <a href="#pop" class="pop pull-left" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="bottom" style="margin-top: 13px"
+                                                    <a href="#pop" class="pop pull-left" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 13px"
                                                        data-content="Choisir parmis les 3 options possibles en fonction des données en votre possession.<br><br>
                                                         <i>La distribution de Weibull permet souvent une bonne approximation de la distribution de la vitesse du vent. La formule de Weibull est la suivante :</i><br>
                                                         <?php echo str_replace('"', "'", Asset::img('weibullForm.png', array('class' => 'img-responsive'))) ?>
@@ -372,11 +372,11 @@
                                                     </div>
                                                     <div class="col-xs-1">
                                                         <div class="pop">
-                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top"
+                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                                data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
                                                                <i>L'altitude de la prise de mesure est l'élévation verticale à laquelle ont été mesurés les vitesses de vents.</i><br><br>
                                                                <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
-                                                               accesskey=""title="<b>AIDE : Altitude de la prise<br>de mesure</b>">
+                                                               accesskey=""title="<b>AIDE : Altitude de la prise de mesure</b>">
                                                                 <span class="glyphicon glyphicon-question-sign"></span>
                                                             </a>
                                                         </div>
@@ -433,7 +433,7 @@
                                                             <div class="col-lg-9 -marginLR">
                                                                 <label for="averageWindSpeed1" class="control-label">Vitesse moyenne vent : </label>
                                                                 <br>
-                                                                <span class="error help-block">Nombre entre 0.1 et 20 m/s</span>
+                                                                <span class="error help-block">Entre 0.1 et 20 m/s</span>
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
@@ -447,9 +447,9 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
-                                                                       data-content="Entrer une vitesse entre 0.1 et<br>20 m/s.<br><br>
-                                                                       <i>Moyenne des vitesses de vents<br>enregistrées sur le site pendant<br>une année.</i><br><br>
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                                       data-content="Entrer une vitesse entre 0.1 et 20 m/s.<br><br>
+                                                                       <i>Moyenne des vitesses de vents enregistrées sur le site pendant une année.</i><br><br>
                                                                        <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                                                        title="<b>AIDE : Vitesse moyenne du vent</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
@@ -473,10 +473,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
-                                                                       data-content="Entrer une valeur comprise entre<br>0.5 et 5.<br><br>
-                                                                       <i>k est le facteur de forme de<br>Weibull. Il donne la forme de la<br>distribution des vents. Une valeur<br>faible implique un vent très variable<br>alors qu'un vent constant implique<br>une valeur élevée.</i><br><br>
-                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                                       data-content="Entrer une valeur comprise entre 0.5 et 5.<br><br>
+                                                                       <i>k est le facteur de forme de Weibull. Il donne la forme de la distribution des vents. Une valeur faible implique un vent très variable alors qu'un vent constant implique une valeur élevée.</i><br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                                        title="<b>AIDE : Facteur de forme K</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
@@ -501,7 +501,7 @@
                                                             <div class="col-lg-9 -marginLR">
                                                                 <label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
                                                                 <br>
-                                                                <span class="error help-block">Nombre entre 0.1 et 20m.s<sup>-1</sup></span>
+                                                                <span class="error help-block">Entre 0.1 et 20m.s<sup>-1</sup></span>
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
@@ -514,9 +514,9 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
-                                                                       data-content="Entrer une vitesse entre 0.1 et<br>20 m/s.<br><br>
-                                                                       <i>Moyenne des vitesses de vents<br>enregistrées sur le site pendant<br>une année.</i><br><br>
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                                       data-content="Entrer une vitesse entre 0.1 et 20 m/s.<br><br>
+                                                                       <i>Moyenne des vitesses de vents enregistrées sur le site pendant une année.</i><br><br>
                                                                        <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                                                        title="<b>AIDE : Vitesse moyenne du vent</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
@@ -528,7 +528,7 @@
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="standardDeviation" class="control-label">Ecart type &sigma; :</label>
                                                                 <br>
-                                                                <span class="error help-block">Nombre entre 0.1 et 50</span>
+                                                                <span class="error help-block">Entre 0.1 et 50</span>
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
@@ -540,10 +540,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                                        data-content="Entrer un nombre entre 0.1 et 50.<br><br>
-                                                                       <i>L'écart type &sigma; est la mesure de la<br>dispertion d'une variable aléatoire<br>comme la vitesse du vent.</i><br><br>
-                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                                                       <i>L'écart type &sigma; est la mesure de la dispertion d'une variable aléatoire comme la vitesse du vent.</i><br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                                        title="<b>AIDE : Ecart type &sigma;</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
@@ -568,7 +568,7 @@
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
                                                                 <br>
-                                                                <span class="error help-block">Nombre entre 0.1 et 20</span>
+                                                                <span class="error help-block">Entre 0.1 et 20</span>
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
@@ -580,10 +580,10 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                                        data-content="Entrer un nombre entre 0.1 et 20.<br><br>
-                                                                       <i>A est le facteur d'échelle de<br>Weibull exprimé en m/s. Il permet<br>d'exprimer la chronologie d'une<br>vitesse caractéristique. A est<br>proportionnel à la vitesse moyenne<br>du vent.</i><br><br>
-                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                                                       <i>A est le facteur d'échelle de Weibull exprimé en m/s. Il permet d'exprimer la chronologie d'une vitesse caractéristique. A est proportionnel à la vitesse moyenne du vent.</i><br><br>
+                                                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                                        title="<b>AIDE : Facteur de forme K</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
                                                                     </a>
@@ -593,7 +593,7 @@
                                                         <div id="divShapeFactor2" class="form-group">
                                                             <div class="col-lg-8 -marginLR">
                                                                 <label for="shape2" class="control-label">Facteur de forme k :</label>
-                                                                <span class="error help-block">Nombre entre 0.5 et 5</span>
+                                                                <span class="error help-block">Entre 0.5 et 5</span>
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
@@ -605,9 +605,9 @@
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
-                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="left"
-                                                                       data-content="Entrer une valeur comprise entre<br>0.5 et 5.<br><br>
-                                                                       <i>k est le facteur de forme de<br>Weibull. Il donne la forme de la<br>distribution des vents. Une valeur<br>faible implique un vent très variable<br>alors qu'un vent constant implique<br>une valeur élevée.</i><br><br>
+                                                                    <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                                       data-content="Entrer une valeur comprise entre 0.5 et 5.<br><br>
+                                                                       <i>k est le facteur de forme de Weibull. Il donne la forme de la distribution des vents. Une valeur faible implique un vent très variable alors qu'un vent constant implique une valeur élevée.</i><br><br>
                                                                        <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                                                        title="<b>AIDE : Facteur de forme K</b>">
                                                                         <span class="glyphicon glyphicon-question-sign"></span>
