@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
-
+                        <input id="nbWindLines" name="nbWindLines" type="hidden"/> 
                         <div class="form-group">
                             <legend>Paramétrage du site</legend>
                         </div>
@@ -645,6 +645,7 @@ function addRow(){
     if (windSpeed<30){
         windSpeed++;
         $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
+        $('#nbWindLines').val(windSpeed);
     }
     else{
         
@@ -656,6 +657,7 @@ function deleteRow(){
 if(windSpeed>0){
         $('#windTable tr:last').remove();
         windSpeed--;
+        $('#nbWindLines').val(windSpeed);
     }
 }
 
