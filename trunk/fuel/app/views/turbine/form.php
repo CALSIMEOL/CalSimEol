@@ -29,9 +29,31 @@
 
                       <div>
 
-                            <div id="divTurbineName" class="form-group">
+                            <div id="divTurbineManufacturer" class="form-group">
                                 <div class="col-md-4">
-                                    <label for="turbName" class="control-label">Nom : </label>
+                                    <label for="turbManufacturer" class="control-label">Constructeur : </label>
+                                    <br>
+                                    <span class="error help-block">1 à 40 caractères</span>
+                                    <span class="good help-block"></span>
+                                </div>
+                                <div class="col-xs-7">
+                                        <input id="turbManufacturer" type="text" name="turbine_manufacturer" value="<?php echo $turbine['turbine_manufacturer'] ?>" class="form-control"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer un nom de constructeur pour cette éolienne entre 1 et 20 caractères." title="<b>AIDE : Constructeur de l'éolienne</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                          <div id="divTurbName" class="form-group">
+                                <div class="col-md-4">
+                                    <label for="turbName" class="control-label">Modèle : </label>
                                     <br>
                                     <span class="error help-block">1 à 40 caractères</span>
                                     <span class="good help-block"></span>
@@ -44,7 +66,7 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                           data-content="Entrer un nom de modèle pour cette éolienne entre 1 et 20 caractères." title="<b>AIDE : Modèle de l'éolienne</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -105,11 +127,21 @@
                                     <span class="error help-block">De 1 à 500m</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-lg-6">
-                                    <input id="diameter" type="text" name="turbine_diameter" value="<?php echo $turbine['turbine_diameter'] ?>" class="form-control" placeholder="40"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error shift2"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good shift2"></span>
-                                    <span class="input-group-addon">m</span>
+                                <div class="col-lg-6">
+                                    <div class="input-group">
+                                        <input id="diameter" type="text" name="turbine_diameter" value="<?php echo $turbine['turbine_diameter'] ?>" class="form-control" placeholder="40"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error shift2"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good shift2"></span>
+                                        <span class="input-group-addon">m</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Diamètre du rotor</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -233,9 +265,14 @@ function removeRow(){
 
 //generation of feedback icons for each input
 $(function () {
+        $('#turbManufacturer').keyup(function() {
+        $('#divTurbineManufacturer').addClass('has-feedback');
+        $('#turbManufacturer').val().length > 0 && $('#turbManufacturer').val().length <=20 ? $('#divTurbineManufacturer').addClass('has-success').removeClass('has-error') && $('#divTurbineManufacturer').find('.good').show() && $('#divTurbineManufacturer').find('.error').hide() : $('#divTurbineManufacturer').addClass('has-error').removeClass('has-success') && $('#divTurbineManufacturer').find('.error').show() && $('#divTurbineManufacturer').find('.good').hide();       
+        });
+        
         $('#turbName').keyup(function() {
-        $('#divTurbineName').addClass('has-feedback');
-        $('#turbName').val().length > 0 && $('#turbName').val().length <=20 ? $('#divTurbineName').addClass('has-success').removeClass('has-error') && $('#divTurbineName').find('.good').show() && $('#divTurbineName').find('.error').hide() : $('#divTurbineName').addClass('has-error').removeClass('has-success') && $('#divTurbineName').find('.error').show() && $('#divTurbineName').find('.good').hide();       
+        $('#divTurbName').addClass('has-feedback');
+        $('#turbName').val().length > 0 && $('#turbName').val().length <=20 ? $('#divTurbName').addClass('has-success').removeClass('has-error') && $('#divTurbName').find('.good').show() && $('#divTurbName').find('.error').hide() : $('#divTurbName').addClass('has-error').removeClass('has-success') && $('#divTurbName').find('.error').show() && $('#divTurbName').find('.good').hide();       
         });
         
         $('#nbBlade').keyup(function() {
