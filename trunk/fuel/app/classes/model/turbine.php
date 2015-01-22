@@ -14,7 +14,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_name' => array(
 			'data_type'  => 'varchar',
-			'label'      => 'Turbine Name',
+			'label'      => 'Turbine Reference',
 			'validation' => array(
 				'required',
 				'max_length' => array(255),
@@ -24,6 +24,19 @@ class Model_Turbine extends \Orm\Model
 				'type' => 'text',
 			),
 			'default' => 'My turbine ###',
+		),
+		'turbine_manufacturer' => array(
+			'data_type' => 'varchar',
+			'label' => 'Turbine Manufacturer',
+			'validation' => array(
+				'required',
+				'max_length' => array(255),
+				'min_length' => array(1),
+			),
+			'form' => array(
+				'type' => 'text',
+			),
+			'default' => 'My windturbine',
 		),
 		'turbine_power' => array(
 			'data_type'  => 'float',

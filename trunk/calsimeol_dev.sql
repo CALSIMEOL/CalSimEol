@@ -3,22 +3,33 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 19 Janvier 2015 à 11:38
+-- Généré le :  Jeu 22 Janvier 2015 à 15:13
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+--
+-- Base de données :  `calsimeol_prod`
+--
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+-- --------------------------------------------------------
 
 --
--- Base de données :  `calsimeol_dev`
+-- Structure de la table `cse_places`
 --
+
+CREATE TABLE IF NOT EXISTS `cse_places` (
+  `place_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `place_name` varchar(255) NOT NULL,
+  `place_longitude` float NOT NULL,
+  `place_latitude` float NOT NULL,
+  `place_altitude` int(11) NOT NULL,
+  `place_mean_temp` float NOT NULL,
+  `place_rugosity` float NOT NULL,
+  PRIMARY KEY (`place_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -51,19 +62,58 @@ CREATE TABLE IF NOT EXISTS `cse_place_weibull` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cse_places`
+-- Structure de la table `cse_turbines`
 --
 
-CREATE TABLE IF NOT EXISTS `cse_places` (
-  `place_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `place_name` varchar(255) NOT NULL,
-  `place_longitude` float NOT NULL,
-  `place_latitude` float NOT NULL,
-  `place_altitude` int(11) NOT NULL,
-  `place_mean_temp` float NOT NULL,
-  `place_rugosity` float NOT NULL,
-  PRIMARY KEY (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `cse_turbines` (
+  `turbine_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `turbine_name` varchar(255) NOT NULL,
+  `turbine_manufacturer` varchar(255) NOT NULL,
+  `turbine_power` int(11) NOT NULL,
+  `turbine_blades` int(11) NOT NULL,
+  `turbine_diameter` float NOT NULL,
+  `turbine_height` float NOT NULL,
+  `turbine_start_speed` float NOT NULL,
+  `turbine_stop_speed` float NOT NULL,
+  PRIMARY KEY (`turbine_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+
+--
+-- Contenu de la table `cse_turbines`
+--
+
+INSERT INTO `cse_turbines` (`turbine_id`, `turbine_name`, `turbine_manufacturer`, `turbine_power`, `turbine_blades`, `turbine_diameter`, `turbine_height`, `turbine_start_speed`, `turbine_stop_speed`) VALUES
+(1, 'Alstom ECO 80 1,67 Class 2A', '', 1670, 3, 80, 80, 3, 25),
+(2, 'Alstom ECO 80 1,67 Class 3A', '', 1670, 3, 80, 80, 3, 25),
+(3, 'Alstom ECO 80 2.0 Class 2A', '', 2000, 3, 80, 80, 4, 25),
+(4, 'Alstom ECO 86 1.67 Class 3A', '', 1670, 3, 85.5, 80, 3, 25),
+(5, 'Alstom ECO 100 3.0 Class 2A', '', 3000, 3, 100.8, 90, 3, 25),
+(6, 'Alstom ECO 110 3.0 Class 3A', '', 3000, 3, 109.8, 90, 3, 25),
+(7, 'Enercon E44', '', 900, 3, 44, 55, 2, 25),
+(8, 'Enercon E53', '', 800, 3, 53, 73, 2, 25),
+(9, 'Enercon E70', '', 2300, 3, 71, 80, 2, 25),
+(10, 'Enercon E82', '', 2000, 3, 82, 80, 2, 25),
+(11, 'Nordex N90', '', 2300, 3, 90, 80, 3, 25),
+(12, 'Nordex N80', '', 2500, 3, 80, 60, 4, 25),
+(13, 'Nordex S77', '', 1500, 3, 77, 61.5, 3, 20),
+(14, 'Nordex S70', '', 1500, 3, 70, 65, 3, 25),
+(15, 'Nordex N62', '', 1300, 3, 62, 60, 3, 25),
+(16, 'Nordex N60', '', 1300, 3, 60, 46, 3, 25),
+(17, 'Nordex N54', '', 1000, 3, 54, 50, 4, 25),
+(18, 'Nordex N50', '', 800, 3, 50, 46, 3, 25),
+(19, 'Nordex N43', '', 600, 3, 43, 40, 3, 25),
+(20, 'Nordex N29', '', 250, 3, 29, 30, 4, 25),
+(21, 'Nordex N27', '', 150, 3, 27, 30, 3, 25),
+(22, 'Vestas V80 2000', '', 2000, 3, 80, 80, 4, 25),
+(23, 'Vestas V66 1750', '', 1750, 3, 66, 66, 4, 25),
+(24, 'Vestas V66 1650', '', 1650, 3, 66, 60, 4.5, 25),
+(25, 'Vestas V52 850', '', 850, 3, 52, 44, 4, 25),
+(26, 'Vestas V47 660', '', 660, 3, 47, 40, 4, 25),
+(27, 'Vestas V44 600', '', 600, 3, 44, 35, 4, 20),
+(28, 'Vestas V42 600', '', 600, 3, 42, 35, 4, 25),
+(29, 'Vestas V39 600', '', 600, 3, 39, 35, 4, 30),
+(30, 'Vestas V29 225', '', 225, 3, 29, 31.5, 3.5, 25),
+(31, 'Vestas V27 225', '', 225, 3, 27, 31.5, 3.5, 25);
 
 -- --------------------------------------------------------
 
@@ -1044,62 +1094,3 @@ INSERT INTO `cse_turbine_powers` (`turbine_id`, `wind_speed`, `turbine_power`) V
 (31, 28, 0),
 (31, 29, 0),
 (31, 30, 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `cse_turbines`
---
-
-CREATE TABLE IF NOT EXISTS `cse_turbines` (
-  `turbine_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `turbine_name` varchar(255) NOT NULL,
-  `turbine_power` int(11) NOT NULL,
-  `turbine_blades` int(11) NOT NULL,
-  `turbine_diameter` float NOT NULL,
-  `turbine_height` float NOT NULL,
-  `turbine_start_speed` float NOT NULL,
-  `turbine_stop_speed` float NOT NULL,
-  PRIMARY KEY (`turbine_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
-
---
--- Contenu de la table `cse_turbines`
---
-
-INSERT INTO `cse_turbines` (`turbine_id`, `turbine_name`, `turbine_power`, `turbine_blades`, `turbine_diameter`, `turbine_height`, `turbine_start_speed`, `turbine_stop_speed`) VALUES
-(1, 'Alstom ECO 80 1,67 Class 2A', 1670, 3, 80, 80, 3, 25),
-(2, 'Alstom ECO 80 1,67 Class 3A', 1670, 3, 80, 80, 3, 25),
-(3, 'Alstom ECO 80 2.0 Class 2A', 2000, 3, 80, 80, 4, 25),
-(4, 'Alstom ECO 86 1.67 Class 3A', 1670, 3, 85.5, 80, 3, 25),
-(5, 'Alstom ECO 100 3.0 Class 2A', 3000, 3, 100.8, 90, 3, 25),
-(6, 'Alstom ECO 110 3.0 Class 3A', 3000, 3, 109.8, 90, 3, 25),
-(7, 'Enercon E44', 900, 3, 44, 55, 2, 25),
-(8, 'Enercon E53', 800, 3, 53, 73, 2, 25),
-(9, 'Enercon E70', 2300, 3, 71, 80, 2, 25),
-(10, 'Enercon E82', 2000, 3, 82, 80, 2, 25),
-(11, 'Nordex N90', 2300, 3, 90, 80, 3, 25),
-(12, 'Nordex N80', 2500, 3, 80, 60, 4, 25),
-(13, 'Nordex S77', 1500, 3, 77, 61.5, 3, 20),
-(14, 'Nordex S70', 1500, 3, 70, 65, 3, 25),
-(15, 'Nordex N62', 1300, 3, 62, 60, 3, 25),
-(16, 'Nordex N60', 1300, 3, 60, 46, 3, 25),
-(17, 'Nordex N54', 1000, 3, 54, 50, 4, 25),
-(18, 'Nordex N50', 800, 3, 50, 46, 3, 25),
-(19, 'Nordex N43', 600, 3, 43, 40, 3, 25),
-(20, 'Nordex N29', 250, 3, 29, 30, 4, 25),
-(21, 'Nordex N27', 150, 3, 27, 30, 3, 25),
-(22, 'Vestas V80 2000', 2000, 3, 80, 80, 4, 25),
-(23, 'Vestas V66 1750', 1750, 3, 66, 66, 4, 25),
-(24, 'Vestas V66 1650', 1650, 3, 66, 60, 4.5, 25),
-(25, 'Vestas V52 850', 850, 3, 52, 44, 4, 25),
-(26, 'Vestas V47 660', 660, 3, 47, 40, 4, 25),
-(27, 'Vestas V44 600', 600, 3, 44, 35, 4, 20),
-(28, 'Vestas V42 600', 600, 3, 42, 35, 4, 25),
-(29, 'Vestas V39 600', 600, 3, 39, 35, 4, 30),
-(30, 'Vestas V29 225', 225, 3, 29, 31.5, 3.5, 25),
-(31, 'Vestas V27 225', 225, 3, 27, 31.5, 3.5, 25);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
