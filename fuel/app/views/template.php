@@ -49,7 +49,7 @@
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?php echo Uri::create('home/index') ?>">Accueil</a></li>
-                        <li><a href="<?php echo Uri::create('place/choose') ?>">Simulation</a></li>
+                        <li><a href="<?php echo Uri::create('simulation/choose') ?>">Simulation</a></li>
                         <li><a href="<?php echo Uri::create('home/about') ?>">A propos</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
