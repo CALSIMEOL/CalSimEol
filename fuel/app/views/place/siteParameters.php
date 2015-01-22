@@ -38,17 +38,15 @@
                                     <span class="good help-block"></span> 
                                 </div>
                                 <div class="col-xs-7 -marginLR">
-                                    <div class="input-group">
-                                        <input id="siteName" type="text" name="place_name" value="<?php echo $place['place_name'] ?>" class="form-control"/>
-                                        <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                        <span class="glyphicon glyphicon-ok form-control-feedback good"></span>                        
-                                    </div>
+                                    <input id="siteName" type="text" name="place_name" value="<?php echo $place['place_name'] ?>" class="form-control"/>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                 </div>
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
-                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                            <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
                                 </div>
@@ -465,11 +463,9 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <div class="input-group">
-                                                                    <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
-                                                                </div>
+                                                                <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
+                                                                <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
@@ -532,11 +528,9 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <div class="input-group">
-                                                                    <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
-                                                                </div>
+                                                                <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
+                                                                <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
@@ -572,11 +566,9 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <div class="input-group">
-                                                                    <input id="scaleFactor" type="text" class="form-control"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
-                                                                </div>
+                                                                <input id="scaleFactor" type="text" class="form-control"/>
+                                                                <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
@@ -597,11 +589,9 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <div class="input-group">
-                                                                    <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
-                                                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
-                                                                </div>
+                                                                <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
+                                                                <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                                                <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
                                                             <div class="col-xs-1">
                                                                 <div class="pop">
