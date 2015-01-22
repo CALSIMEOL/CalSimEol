@@ -1,4 +1,4 @@
-<!-- Simulation - Site parameters - manual -->
+<!-- Simulation - Wind turbine parameters -->
 
     <div class="row">
         <div class="clearness col-sm-12">
@@ -36,10 +36,18 @@
                                     <span class="error help-block">1 à 40 caractères</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-md-8">
-                                    <input id="turbName" type="text" name="turbine_name" value="<?php echo $turbine['turbine_name'] ?>" class="form-control"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
+                                <div class="col-xs-7">
+                                        <input id="turbName" type="text" name="turbine_name" value="<?php echo $turbine['turbine_name'] ?>" class="form-control"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -50,10 +58,18 @@
                                     <span class="error help-block">De 1 à 50 pales</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-md-7">
+                                <div class="col-xs-6">
                                     <input id="nbBlade" type="text" name="turbine_blades" value="<?php echo $turbine['turbine_blades'] ?>" class="form-control" placeholder="3"/>
                                     <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                     <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
                           
@@ -64,11 +80,21 @@
                                     <span class="error help-block">De 1 à 10000kW</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-lg-6">
-                                    <input id="nominalPower" type="text" name="turbine_power" value="<?php echo $turbine['turbine_power'] ?>" class="form-control" placeholder="1500"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error shift4"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good shift4"></span>
-                                    <span class="input-group-addon">kW</span>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <input id="nominalPower" type="text" name="turbine_power" value="<?php echo $turbine['turbine_power'] ?>" class="form-control" placeholder="1500"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error shift4"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good shift4"></span>
+                                        <span class="input-group-addon">kW</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
