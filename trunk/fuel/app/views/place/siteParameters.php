@@ -210,7 +210,7 @@
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
                                            <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est à dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
-                                           <br><small>Exemple : 0.0002m pour une surface d'eau et 1.6m pour une ville avec des gratte-ciels</small></i>
+                                           <br><small><a href='http://eolienne.f4jr.org/rugosite' target='_blank'>Cliquer ici pour des exemples de longueurs de rugosités</a></small></i>
                                            <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Longueur de rugosité</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
@@ -261,7 +261,7 @@
                                             <div id="knowRose">
                                                 La rose des vents ne sera affichée qu'à titre indicatif. &nbsp;
                                                 <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                                   data-content="La somme des occurances heure/an doit être égale à 8760h et la vitesse moyenne doit être comprise entre 0 et 20 m/s
+                                                   data-content="La somme des occurances heures/an doit être égale à 8760h et la vitesse moyenne doit être comprise entre 0 et 20 m/s
                                                     <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                    title="<b>AIDE : Rose des vents</b>">
                                                     <span class="glyphicon glyphicon-question-sign"></span>
@@ -271,7 +271,7 @@
 
                                                         <tr>
                                                             <th width=22%>Direction</th>
-                                                            <th>Heure / an</th>
+                                                            <th>Heurs/an</th>
                                                             <th>Vitesse moyenne &nbsp;</th>
                                                             <th>&nbsp <span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
                                                         </tr>
@@ -346,7 +346,7 @@
                                                 </div>
                                                 <div class="col-xs-1">
                                                     <a href="#pop" class="pop pull-left" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" style="margin-top: 13px"
-                                                        data-content="Entrer pour chaque vitesse de vent son occurence en heure/an. La somme des occurances heure/an doit être égale à 8760h.
+                                                        data-content="Entrer pour chaque vitesse de vent son occurence en heures/an. La somme des occurances heure/an doit être égale à 8760h.
                                                         <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                         title="<b>AIDE : Paramètrage détaillé de la distribution des vents</b>">
                                                          <span class="glyphicon glyphicon-question-sign"></span>
@@ -374,7 +374,7 @@
                                                         <div class="pop">
                                                             <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                                                data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
-                                                               <i>L'altitude de la prise de mesure est l'élévation verticale à laquelle ont été mesurés les vitesses de vents.</i><br><br>
+                                                               <i>L'altitude de la prise de mesure est l'élévation verticale (par rapport au niveau de la mer) à laquelle ont été mesurés les vitesses de vents pour ce site.</i><br><br>
                                                                <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                                                accesskey=""title="<b>AIDE : Altitude de la prise de mesure</b>">
                                                                 <span class="glyphicon glyphicon-question-sign"></span>
@@ -393,7 +393,7 @@
 
                                                     <tr>
                                                         <th>Vitesse [m/s]</th>
-                                                        <th>Heure/an</th>
+                                                        <th>Heures/an</th>
                                                         <th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
                                                     </tr>
 
