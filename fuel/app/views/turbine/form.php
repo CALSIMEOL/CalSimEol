@@ -33,7 +33,7 @@
                                 <div class="col-md-4">
                                     <label for="turbManufacturer" class="control-label">Constructeur : </label>
                                     <br>
-                                    <span class="error help-block">1 à 40 caractères</span>
+                                    <span class="error help-block">1 à 20 caractères</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7">
@@ -44,7 +44,8 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom de constructeur pour cette éolienne entre 1 et 20 caractères." title="<b>AIDE : Constructeur de l'éolienne</b>">
+                                           data-content="Entrer un nom de constructeur pour cette éolienne entre 1 et 20 caractères."
+                                           title="<b>AIDE : Constructeur de l'éolienne</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -55,7 +56,7 @@
                                 <div class="col-md-4">
                                     <label for="turbName" class="control-label">Modèle : </label>
                                     <br>
-                                    <span class="error help-block">1 à 40 caractères</span>
+                                    <span class="error help-block">1 à 30 caractères</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-7">
@@ -66,7 +67,8 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom de modèle pour cette éolienne entre 1 et 20 caractères." title="<b>AIDE : Modèle de l'éolienne</b>">
+                                           data-content="Entrer un nom de modèle pour cette éolienne entre 1 et 30 caractères."
+                                           title="<b>AIDE : Modèle de l'éolienne</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -88,7 +90,8 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                           data-content="Entrer le nombre de pales de l'éolienne (entre 1 et 50 pales)."
+                                           title="<b>AIDE : Nombre de pales de l'éolienne</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -113,7 +116,10 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Nom du site</b>">
+                                           data-content="Entrer la puissance nominale de l'éolienne (de 1 à 10 000 kW).<br><br>
+                                           <i>La puissance nominale est la puissance maximale pouvant être délivrée par l'éolienne.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                           title="<b>AIDE : Puissance nominale de l'éolienne</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -127,7 +133,7 @@
                                     <span class="error help-block">De 1 à 500m</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-xs-6">
                                     <div class="input-group">
                                         <input id="diameter" type="text" name="turbine_diameter" value="<?php echo $turbine['turbine_diameter'] ?>" class="form-control" placeholder="40"/>
                                         <span class="glyphicon glyphicon-remove form-control-feedback error shift2"></span>
@@ -138,7 +144,10 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer un nom pour cette éolienne entre 1 et 0 caractères." title="<b>AIDE : Diamètre du rotor</b>">
+                                           data-content="Entrer le diamètre du rotor de l'éolienne (de 1 à 500 m).<br><br>
+                                           <i>Le rotor est la partie tourante de l'éolienne. Il est composé des pales et du moyeu en son centre.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                           title="<b>AIDE : Diamètre du rotor</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                     </div>
@@ -152,11 +161,24 @@
                                     <span class="error help-block">De 1 à 300m</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-lg-6">
-                                    <input id="height" type="text" name="turbine_height" value="<?php echo $turbine['turbine_height'] ?>" class="form-control" placeholder="60"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error shift2"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good shift2"></span>
-                                    <span class="input-group-addon">m</span>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <input id="height" type="text" name="turbine_height" value="<?php echo $turbine['turbine_height'] ?>" class="form-control" placeholder="60"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error shift2"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good shift2"></span>
+                                        <span class="input-group-addon">m</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer la hauteur du moyeu l'éolienne (de 1 à 300 m).<br><br>
+                                           <i>Le moyeu de l'éolienne est la pèce rotative en haut de mat qui reçoit les pales.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                           title="<b>AIDE : Hauteur du moyeu</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -166,11 +188,24 @@
                                     <span class="error help-block">De 0 à 20m/s</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-lg-6">
-                                    <input id="cut-inSpeed" type="text" name="turbine_start_speed" value="<?php echo $turbine['turbine_start_speed'] ?>" class="form-control" placeholder="3,0"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error shift5"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good shift5"></span>
-                                    <span class="input-group-addon">m/s</span>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <input id="cut-inSpeed" type="text" name="turbine_start_speed" value="<?php echo $turbine['turbine_start_speed'] ?>" class="form-control" placeholder="3,0"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error shift5"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good shift5"></span>
+                                        <span class="input-group-addon">m/s</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer la vitesse de démarrage de l'éolienne (entre 0 et 20 m/s).<br><br>
+                                           <i>La vitesse de démarrage de l'éolienne est la vitesse à partir de laquelle l'éolienne commence à tourner et à produire de l'électricité.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                           title="<b>AIDE : Vitesse de démarrage</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -180,11 +215,24 @@
                                     <span class="error help-block">De 10 à 40m/s</span>
                                     <span class="good help-block"></span>
                                 </div>
-                                <div class="input-group col-lg-6">
-                                    <input id="cut-outSpeed" type="text" name="turbine_stop_speed" value="<?php echo $turbine['turbine_stop_speed'] ?>" class="form-control" placeholder="25"/>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback error shift5"></span>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback good shift5"></span>
-                                    <span class="input-group-addon">m/s</span>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <input id="cut-outSpeed" type="text" name="turbine_stop_speed" value="<?php echo $turbine['turbine_stop_speed'] ?>" class="form-control" placeholder="25"/>
+                                        <span class="glyphicon glyphicon-remove form-control-feedback error shift5"></span>
+                                        <span class="glyphicon glyphicon-ok form-control-feedback good shift5"></span>
+                                        <span class="input-group-addon">m/s</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="pop">
+                                        <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                           data-content="Entrer la vitesse de coupure de l'éolienne (entre 10 et 40 m/s).<br><br>
+                                           <i>La vitesse de coupure de l'éolienne est la vitesse à laquelle l'éolienne s'arrête de tourner par sécurité.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
+                                           title="<b>AIDE : Vitesse de coupure</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
+                                    </div>
                                 </div>
                             </div>
                           
@@ -199,6 +247,11 @@
 
                                     <div class="panel-heading">
                                         <b>Courbe de puissance</b>
+                                        <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
+                                           data-content="<i>La vitesse du vent varie en permanence. Pour prévoir la production d'énergie d'une éolienne il faut connaître la vitesse du vent et sa fréquence associée.</i>"
+                                           title="<b>AIDE : Courbe de puissance</b>">
+                                            <span class="glyphicon glyphicon-question-sign"></span>
+                                        </a>
                                     </div>
 
                                     <div class="panel-body">
@@ -272,12 +325,12 @@ $(function () {
         
         $('#turbName').keyup(function() {
         $('#divTurbName').addClass('has-feedback');
-        $('#turbName').val().length > 0 && $('#turbName').val().length <=20 ? $('#divTurbName').addClass('has-success').removeClass('has-error') && $('#divTurbName').find('.good').show() && $('#divTurbName').find('.error').hide() : $('#divTurbName').addClass('has-error').removeClass('has-success') && $('#divTurbName').find('.error').show() && $('#divTurbName').find('.good').hide();       
+        $('#turbName').val().length > 0 && $('#turbName').val().length <=30 ? $('#divTurbName').addClass('has-success').removeClass('has-error') && $('#divTurbName').find('.good').show() && $('#divTurbName').find('.error').hide() : $('#divTurbName').addClass('has-error').removeClass('has-success') && $('#divTurbName').find('.error').show() && $('#divTurbName').find('.good').hide();       
         });
         
         $('#nbBlade').keyup(function() {
         $('#divNbBlade').addClass('has-feedback');
-        $('#nbBlade').val() > 0 && $('#nbBlade').val() <=50 && $('#nbBlade').val() !== '' ? $('#divNbBlade').addClass('has-success').removeClass('has-error') && $('#divNbBlade').find('.good').show() && $('#divNbBlade').find('.error').hide() : $('#divNbBlade').addClass('has-error').removeClass('has-success') && $('#divNbBlade').find('.error').show() && $('#divNbBlade').find('.good').hide();       
+        $('#nbBlade').val() > 0 && $('#nbBlade').val() <=50 && parseFloat($('#nbBlade').val()) === parseInt($('#nbBlade').val()) && $('#nbBlade').val() !== '' ? $('#divNbBlade').addClass('has-success').removeClass('has-error') && $('#divNbBlade').find('.good').show() && $('#divNbBlade').find('.error').hide() : $('#divNbBlade').addClass('has-error').removeClass('has-success') && $('#divNbBlade').find('.error').show() && $('#divNbBlade').find('.good').hide();       
         });
         
         $('#nominalPower').keyup(function() {
@@ -333,5 +386,16 @@ $(function () {
         
         
     });
+
+
+//popover
+$(function (){
+   $(".pop").popover(); 
+});
+// Contain the popover within the body NOT the element it was called in.
+$('[data-toggle="popover"]').popover({
+    container: 'body'
+});
+
 
 </script>
