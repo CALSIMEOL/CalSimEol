@@ -80,16 +80,4 @@ class Controller_Turbine extends Controller_Template
 
 		Response::redirect_back('turbine/list');
 	}
-
-	public function action_turbineParameters() {
-		if (Input::method() == 'POST')
-		{
-			Response::redirect('turbine/list');
-		}
-		else
-		{
-			$this->template->title = 'Paramètre éolienne';
-			$this->template->content = View::forge('turbine/turbineParameters');;
-		}
-	}
 }

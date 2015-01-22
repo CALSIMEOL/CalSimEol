@@ -13,7 +13,7 @@ class Controller_Place extends Controller_Template
 		$this->template->content = ViewModel::forge('place/list');
 	}
 
-	public function action_add()
+	public function action_add($db = 1)
 	{
 		$data = array();
 
@@ -37,7 +37,7 @@ class Controller_Place extends Controller_Template
 		$this->template->content = View::forge('place/siteParameters', $data);
 	}
 
-	public function action_edit($id)
+	public function action_edit($id, $db = 1)
 	{
 		$data = array();
 
@@ -51,7 +51,13 @@ class Controller_Place extends Controller_Template
 		{
 			$place->set($fieldset->validated());
 
-			if ($place->save())
+			if (! $db)
+			{
+				Cookie::set('simulation_place', base64_encode(serialize($place->to_array())));
+				Response::redirect_back('simulate/choose');
+			}
+
+			if ($db and $place->save())
 			{
 				Response::redirect_back('place/list');
 			}
@@ -79,44 +85,5 @@ class Controller_Place extends Controller_Template
 	public function action_import()
 	{
 		return 'Importer site (EolAtlas).';
-	}
-
-	public function action_choose()
-	{
-		if (Input::method() == 'POST')
-		{
-			switch (Input::post('place_choice'))
-			{
-				case 'import':
-					Response::redirect('place/import');
-				break;
-
-				case 'manual':
-					Response::redirect('place/add');
-				break;
-
-				default:
-			}
-		}
-
-		$data['places'] = Model_Place::find('all');
-
-		$this->template->title = 'Choix site';
-		$this->template->content = View::forge('place/choose', $data);
-	}
-
-	public function action_siteParameters()
-	{
-		Response::redirect('place/add');
-
-		if (Input::method() == 'POST')
-		{
-			Response::redirect('place/list');
-		}
-		else
-		{
-			$this->template->title = 'Ajout site';
-			$this->template->content = View::forge('place/siteParameters');
-		}
 	}
 }
