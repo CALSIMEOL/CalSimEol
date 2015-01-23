@@ -269,19 +269,19 @@
 
                                                         <tr>
                                                             <th width=22%>Direction</th>
-                                                            <th>Heurs/an</th>
+                                                            <th>Heures/an</th>
                                                             <th>Vitesse moyenne &nbsp;</th>
                                                             <th>&nbsp <span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
                                                         </tr>
 
-                                                        <tr><td>Nord</td><td><input type="text" id="windProb1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Ouest</td><td><input type="text" id="windProb3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Sud</td><td><input type="text" id="windProb5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Sud-est</td><td><input type="text" id="windProb6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Est</td><td><input type="text" id="windProb7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" class="form-control input-sm windMean"/></td><td></td></tr>
-                                                        <tr><td>Nord-est</td><td><input type="text" id="windProb8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Nord</td><td><input type="text" id="windProb1" name="wind_probability_1" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean1" name="wind_mean_speed_1" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Nord-ouest</td><td><input type="text" id="windProb2" name="wind_probability_2" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean2" name="wind_mean_speed_2" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Ouest</td><td><input type="text" id="windProb3" name="wind_probability_3" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean3" name="wind_mean_speed_3" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud-ouest</td><td><input type="text" id="windProb4" name="wind_probability_4" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean4" name="wind_mean_speed_4" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud</td><td><input type="text" id="windProb5" name="wind_probability_5" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean5" name="wind_mean_speed_5" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Sud-est</td><td><input type="text" id="windProb6" name="wind_probability_6" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean6" name="wind_mean_speed_6" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Est</td><td><input type="text" id="windProb7" name="wind_probability_7" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean7" name="wind_mean_speed_7" class="form-control input-sm windMean"/></td><td></td></tr>
+                                                        <tr><td>Nord-est</td><td><input type="text" id="windProb8" name="wind_probability_8" class="form-control input-sm windProb"/></td><td><input type="text" id="windMean8" name="wind_mean_speed_8" class="form-control input-sm windMean"/></td><td></td></tr>
 
                                                     </table>
                                                     <span class="error help-block">Nombre total d'heures doit être égal à 8760 h et vitesse moyenne comprise entre 0 et 20 m.s<sup>-1</sup></span>
@@ -397,7 +397,7 @@
 
                                                     <tr>
                                                         <td align=center>0</td>
-                                                        <td><input type="text" id="windProbability" class="form-control input-sm"/></td>
+                                                        <td><input type="text" id="windProbability" name="place_propability_0" class="form-control input-sm"/></td>
                                                         <td></td>
                                                     </tr>
                                                     
@@ -661,7 +661,7 @@ $(function () {
 function addRow(){
     if (windSpeed<30){
         windSpeed++;
-        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
+        $('#windTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" name="place_probability_'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
         $('#nbWindLines').val(windSpeed);
     }
     else{

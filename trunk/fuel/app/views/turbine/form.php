@@ -270,7 +270,7 @@
 
                                                     <tr>
                                                         <td align=center>0</td>
-                                                        <td><input type="text" id="windProbability" class="form-control input-sm"/></td>
+                                                        <td><input type="text" id="turbinePower" name="tubine_power_0" class="form-control input-sm"/></td>
                                                         <td></td>
                                                     </tr>
                                                     
@@ -312,7 +312,7 @@ var windSpeed =0;
 function addRow(){
     if (windSpeed<30){
         windSpeed++;
-        $('#powerTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
+        $('#powerTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="turbinePower'+windSpeed+'" name="turbine_power_'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
         $('#nbPowerLines').val(windSpeed);
     }
     else{
