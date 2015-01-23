@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 23 Janvier 2015 à 12:49
+-- Généré le: Ven 23 Janvier 2015 à 13:55
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.16
 
@@ -30,7 +30,7 @@ USE `calsimeol_dev`;
 
 CREATE TABLE IF NOT EXISTS `cse_place_rosewind` (
   `place_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `wind_speed` float NOT NULL,
+  `wind_mean_speed` float NOT NULL,
   `wind_direction` varchar(255) NOT NULL,
   `wind_probability` float NOT NULL,
   PRIMARY KEY (`place_id`),
