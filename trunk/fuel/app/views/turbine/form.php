@@ -258,25 +258,31 @@
 
                                         <br/>
                                         <div id="displayWindTable">
-                                            <table id="powerTable" class="table table-striped table-condensed center-block">
+                                            
+                                            <div class="col-sm-offset-1 col-sm-11">
+                                                <table id="powerTable" class="table table-responsive table-striped table-condensed center-block">
 
-                                                <tr>
-                                                    <th>Vitesse [m.s<sup>-1</sup>]</th>
-                                                    <th>Puissance [kW] &nbsp;</th>
-                                                    <th>&nbsp;<span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td><input id="windSpeed0" type="text" class="form-control input-sm"/></td>
-                                                    <td><input id="power0" type="text" class="form-control input-sm"/></td>
-                                                    <td></td>
-                                                </tr>
+                                                    <tr>
+                                                        <th>Vitesse [m/s]</th>
+                                                        <th>Puissance [kW]</th>
+                                                        <th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
+                                                    </tr>
 
-                                            </table>
-                                            <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale. Les vitesses saisies doivent être comprises entre 0 et 50 m/s</span>
-                                            <span class="good help-block"></span>
-                                            <br><br>
-                                            <span class="pull-right btn btn-default" onclick="addRow()">Ajouter une ligne</span>
+                                                    <tr>
+                                                        <td align=center>0</td>
+                                                        <td><input type="text" id="windProbability" class="form-control input-sm"/></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                                <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale. Les vitesses saisies doivent être comprises entre 0 et 50 m/s</span>
+                                                <span class="good help-block"></span>
+                                                <br><br>
+                                                <div class="pull-right">
+                                                    <span class="btn btn-info btn-xs" onclick="addRow()"><span class="glyphicon glyphicon-plus"></span> Ajouter une ligne</span>
+                                                    <span class="btn btn-danger btn-xs" onclick="deleteRow()"><span class="glyphicon glyphicon-trash"></span> Supprimer une ligne</span>
+                                                </div>
+                                            </div>
                                             
                                         </div>
 
@@ -301,19 +307,26 @@
 <!-------------------------------------------------------------------------JavaScript------------------------------------------------------------->
 
 <script type="text/javascript">
-var index =0;
-//adding a row within power table
+var windSpeed =0;
+//adding a row within wind table
 function addRow(){
-    index++;
-    $('#powerTable').append('<tr><td><input id="windSpeed'+index+'" type="text" class="form-control input-sm"/></td><td><input id="power'+index+'" type="text" class="form-control input-sm"/></td><td><div class="cross"><a href="#cross" class="cross" onclick="removeRow()"><span class="glyphicon glyphicon-remove"></span></a></div></td></tr>');
-    $('#nbPowerLines').val(index);
+    if (windSpeed<30){
+        windSpeed++;
+        $('#powerTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
+        $('#nbPowerLines').val(windSpeed);
+    }
+    else{
+        
+    }
 }
 
-//remove a row within power table
-function removeRow(){
-    $('#powerTable').on('click', '.cross', function() {var $this = $(this); $this.closest('tr').remove(); } );
-    index--;
-    $('#nbPowerLines').val(index);
+//delete a row within wind table
+function deleteRow(){
+if(windSpeed>0){
+        $('#powerTable tr:last').remove();
+        windSpeed--;
+        $('#nbPowerLines').val(windSpeed);
+    }
 }
 
 //generation of feedback icons for each input
