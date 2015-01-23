@@ -362,7 +362,7 @@
                                                     </div>
                                                     <div class="col-xs-7">
                                                         <div class="input-group">
-                                                            <input id="ElevationOfTheMeasurement" type="text" class="form-control" placeholder="1000"/>
+                                                            <input id="ElevationOfTheMeasurement" type="text" name="place_altitude_meas" class="form-control" placeholder="1000"/>
                                                             <span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
                                                             <span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
                                                             <span class="input-group-addon">m</span>
@@ -437,7 +437,7 @@
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
                                                                     
-                                                                    <input id="averageWindSpeed1" type="text" class="form-control"/>
+                                                                    <input id="averageWindSpeed1" type="text" name="place_mean_speed_a" class="form-control"/>
                                                                     <span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
                                                                     <span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
                                                                     <span class="input-group-addon">m/s</span>
@@ -463,7 +463,7 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <input id="shape1" type="text" class="form-control" placeholder="15,00"/>
+                                                                <input id="shape1" type="text" name="place_sape_factor_a" class="form-control" placeholder="15,00"/>
                                                                 <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                                                 <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
@@ -502,7 +502,7 @@
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
                                                                 <div class="input-group">
-                                                                    <input id="averageWindSpeed2" type="text" class="form-control"/>
+                                                                    <input id="averageWindSpeed2" type="text" name="place_mean_speed_b" class="form-control"/>
                                                                     <span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
                                                                     <span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
                                                                     <span class="input-group-addon">m/s</span>
@@ -528,7 +528,7 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <input id="standardDeviation" type="text" class="form-control" placeholder="15,00"/>
+                                                                <input id="standardDeviation" type="text" name="place_std_deviation" class="form-control" placeholder="15,00"/>
                                                                 <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                                                 <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
@@ -566,7 +566,7 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <input id="scaleFactor" type="text" class="form-control"/>
+                                                                <input id="scaleFactor" type="text" name="place_scale_factor" class="form-control"/>
                                                                 <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                                                 <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
@@ -589,7 +589,7 @@
                                                                 <span class="good help-block"></span>
                                                             </div>
                                                             <div class="col-xs-11 -marginLR">
-                                                                <input id="shape2" type="text" class="form-control" placeholder="15,00"/>
+                                                                <input id="shape2" type="text" name="place_shape_factor_b" class="form-control" placeholder="15,00"/>
                                                                 <span class="glyphicon glyphicon-remove form-control-feedback error"></span>
                                                                 <span class="glyphicon glyphicon-ok form-control-feedback good"></span>
                                                             </div>
