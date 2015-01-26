@@ -4,12 +4,22 @@ class Model_TurbinePower extends \Orm\Model
 {
 	protected static $_table_name = 'cse_turbine_powers';
 
-	protected static $_primary_key = array('turbine_id', 'wind_speed');
+//	protected static $_primary_key = array('turbine_id', 'wind_speed');
+//	protected static $_primary_key = array('wind_speed');
+	protected static $_primary_key = array('turbine_power_id');
 
 	protected static $_properties = array(
-		'turbine_id' => array(
+		'turbine_power_id' => array(
 			'data_type' => 'int',
 			'label' => '#',
+			'validation' => array(
+				'required',
+			),
+			'form' => false,
+		),
+		'turbine_id' => array(
+			'data_type' => 'int',
+			'label' => 'Turbine ID',
 			'validation' => array(
 				'required',
 			),
