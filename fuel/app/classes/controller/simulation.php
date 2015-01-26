@@ -4,8 +4,7 @@ class Controller_Simulation extends Controller_Template
 {
 	public function action_index()
 	{
-		$this->template->title = 'Accueil';
-		$this->template->content = View::forge('home/index');
+		Response::redirect('simulation/choose');
 	}
 
 	public function action_choose()
@@ -84,7 +83,9 @@ class Controller_Simulation extends Controller_Template
 
 		print_r(_calcul($place, $turbine));
 
+		$data = array();
+
 		$this->template->title = '';
-		$this->template->content = '';
+		$this->template->content = View::forge('simulation/result', $data);
 	}
 }
