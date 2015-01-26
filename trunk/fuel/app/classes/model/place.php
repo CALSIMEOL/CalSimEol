@@ -32,6 +32,7 @@ class Model_Place extends \Orm\Model
 				'required',
 				'numeric_min' => array(0),
 			),
+			'default' => '0',
 		),
 		'place_latitude' => array(
 			'data_type'  => 'float',
@@ -40,6 +41,7 @@ class Model_Place extends \Orm\Model
 				'required',
 				'numeric_min' => array(0),
 			),
+			'default' => '0',
 		),
 		'place_altitude' => array(
 			'data_type'  => 'int',
@@ -48,6 +50,7 @@ class Model_Place extends \Orm\Model
 				'required',
 				'numeric_min' => array(0),
 			),
+			'default' => '0',
 		),
 		'place_mean_temp' => array(
 			'data_type'  => 'float',
@@ -56,6 +59,7 @@ class Model_Place extends \Orm\Model
 				'required',
 //				'numeric_min' => array(0),
 			),
+			'default' => '0',
 		),
 		'place_rugosity' => array(
 			'data_type'  => 'float',
@@ -64,6 +68,52 @@ class Model_Place extends \Orm\Model
 				'required',
 //				'numeric_min' => array(0),
 			),
+			'default' => '0',
+		),
+		'place_altitude_meas' => array(
+			'data_type'  => 'int',
+//			'label'      => '',
+			'validation' => array(
+				'required',
+//				'numeric_min' => array(0),
+			),
+			'default' => '0',
+		),
+		'place_mean_speed' => array(
+			'data_type'  => 'float',
+//			'label'      => '',
+			'validation' => array(
+				'required',
+//				'numeric_min' => array(0),
+			),
+			'default' => '0',
+		),
+		'place_std_deviation' => array(
+			'data_type'  => 'float',
+//			'label'      => '',
+			'validation' => array(
+				'required',
+//				'numeric_min' => array(0),
+			),
+			'default' => '0',
+		),
+		'place_shape_factor' => array(
+			'data_type'  => 'float',
+//			'label'      => '',
+			'validation' => array(
+				'required',
+//				'numeric_min' => array(0),
+			),
+			'default' => '0',
+		),
+		'place_scale_factor' => array(
+			'data_type'  => 'float',
+//			'label'      => '',
+			'validation' => array(
+				'required',
+//				'numeric_min' => array(0),
+			),
+			'default' => '0',
 		),
 	);
 
