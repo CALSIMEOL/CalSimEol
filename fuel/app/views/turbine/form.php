@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
-                        <input id="nbPowerLines" name="nbPowerLines" type="hidden"/>   
+                        <input id="nbPowerLines" name="turbine_powers" value="<?php echo $turbine['turbine_powers'] ?>" type="hidden" />   
                         <div class="form-group">
                             <legend>Paramétrage de l'éolienne</legend>
                         </div>
@@ -242,7 +242,7 @@
                             </div>
 
                             <div class="col-sm-offset-1 col-sm-5">
-      <!----------------------------------------------------------------------Power curve------------------------------------------------------------->
+      <!----------------------------------------------------------------------Power curve-------------------------------------------------------------->
                                 <div class="panel panel-default">
 
                                     <div class="panel-heading">
@@ -268,12 +268,20 @@
                                                         <th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
                                                     </tr>
 
-                                                    <tr>
-                                                        <td align=center>0</td>
+                                                    <!--<tr>
+                                                        <td align="center">0</td>
                                                         <td><input type="text" id="turbinePower" name="tubine_power_0" class="form-control input-sm"/></td>
                                                         <td></td>
+                                                    </tr>-->
+
+<?php foreach ($turbine['powers'] as $key => $power) : ?>
+                                                    <tr>
+                                                        <td align="center"><?php echo $power->wind_speed ?></td>
+                                                        <td><input type="text" name="turbine_power_<?php echo $power->wind_speed ?>" value="<?php echo $power->turbine_power ?>" class="form-control input-sm"/></td>
+                                                        <td></td>
                                                     </tr>
-                                                    
+<?php endforeach ?>
+
                                                 </table>
                                                 <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale. Les vitesses saisies doivent être comprises entre 0 et 50 m/s</span>
                                                 <span class="good help-block"></span>
@@ -304,16 +312,15 @@
     </div>
 
 
-<!-------------------------------------------------------------------------JavaScript------------------------------------------------------------->
+<!-------------------------------------------------------------------------JavaScript-------------------------------------------------------------->
 
 <script type="text/javascript">
 var windSpeed =0;
 //adding a row within wind table
 function addRow(){
     if (windSpeed<30){
-        windSpeed++;
         $('#powerTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="turbinePower'+windSpeed+'" name="turbine_power_'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
-        $('#nbPowerLines').val(windSpeed);
+        $('#nbPowerLines').val(++windSpeed);
     }
     else{
         

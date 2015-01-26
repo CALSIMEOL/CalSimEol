@@ -19,11 +19,15 @@ class Controller_Turbine extends Controller_Template
 //			'update' => false, // Not used
 		);
 
+		$turbine = new Model_Turbine();
+
 		$fieldset = Fieldset::forge()->add_model('Model_Turbine')->repopulate();
 
 		if ($fieldset->validation()->run())
 		{
-			if (Model_Turbine::forge($fieldset->validated())->save())
+			$turbine->set($fieldset->validated());
+
+			if ($turbine->save())
 			{
 				Response::redirect_back('turbine/list');
 			}
@@ -33,7 +37,7 @@ class Controller_Turbine extends Controller_Template
 			$data['messages'] = $fieldset->validation()->error();
 		}
 
-		$data['turbine'] = $fieldset->input();
+		$data['turbine'] = array_merge($fieldset->input(), array('powers' => $turbine->powers, 'turbine_powers' => Input::post('turbine_powers')));
 
 		$this->template->title = 'Ajouter une éolienne';
 		$this->template->content = View::forge('turbine/form', $data);
@@ -48,6 +52,37 @@ class Controller_Turbine extends Controller_Template
 		$turbine = Model_Turbine::find($id);
 
 		$turbine ? : Response::redirect_back('turbine/list');
+
+		$powers = array();
+		foreach ($turbine->powers as &$power)
+		{
+			if ($power->wind_speed < Input::post('turbine_powers', 0))
+			{
+				$powers[$power->wind_speed] = $power;
+			}
+			else
+			{
+				unset($power);
+			}
+		}
+
+		for ($i = 0; $i < Input::post('turbine_powers', 0); $i++)
+		{
+			if (!isset($powers[$i]))
+			{
+				$power = new Model_TurbinePower();
+				$power->turbine_id = $turbine->turbine_id;
+				$power->wind_speed = $i;
+			}
+			else
+			{
+				$power = $powers[$i];
+			}
+
+			$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+
+			$turbine->powers[$i] = $power;
+		}
 
 		$fieldset = Fieldset::forge()->add_model('Model_Turbine')->populate($turbine);
 
@@ -65,8 +100,7 @@ class Controller_Turbine extends Controller_Template
 			$data['messages'] = $fieldset->validation()->error();
 		}
 
-		$data['turbine'] = array_merge($turbine->to_array(), $fieldset->input());
-//		$data['turbine']['powers'] = $turbine->powers;
+		$data['turbine'] = array_merge($turbine->to_array(), $fieldset->input(), array('powers' => $turbine->powers, 'turbine_powers' => count($turbine['powers'])));
 
 		$this->template->title = 'Editer';
 		$this->template->content = View::forge('turbine/form', $data);
