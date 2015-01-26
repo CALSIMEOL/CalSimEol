@@ -42,12 +42,17 @@ class Controller_Simulation extends Controller_Template
 
 				default:
 			}
+
+			$place = Model_Place::find($place_id);
+			$turbine = Model_Turbine::find($turbine_id);
+
+			$place and $turbine ? Response::redirect('simulation/run/'.$place_id.'/'.$turbine_id) : null;
 		}
 
-		$function = function ($cookie_name)
-		{
-			return ($cookie = Cookie::get($cookie_name, null)) ? unserialize(base64_decode($cookie)) : array();
-		};
+//		$function = function ($cookie_name)
+//		{
+//			return ($cookie = Cookie::get($cookie_name, null)) ? unserialize(base64_decode($cookie)) : array();
+//		};
 
 //		$data['place'] = isset($place_id) ? Model_Place::find($place_id) : Model_Place::forge($function('simulation_place'));
 //		$data['place'] = $place_id > 0 ? Model_Place::find($place_id) : null;
@@ -60,11 +65,26 @@ class Controller_Simulation extends Controller_Template
 		$data['turbines'] = Model_Turbine::find('all');
 
 		$this->template->title = 'Choix site';
-		$this->template->content = View::forge('simulate/choose', $data);
+		$this->template->content = View::forge('simulation/choose', $data);
 	}
 
 	public function action_run($place_id, $turbine_id)
 	{
-		Model_Place::find($place_id) and Model_Turbine::find($turbine_id) ? : Response::redirect_back('simulation/choose');
+		$place = Model_Place::find($place_id);
+		$turbine = Model_Turbine::find($turbine_id);
+
+		$place and $turbine ? : Response::redirect_back('simulation/choose');
+
+//		var_export($place->to_array());
+//		$array = $turbine->to_array();
+//		$array['powers'] = array_map(function ($o) { return $o->to_array(); }, $turbine->powers);
+//		var_export($array);
+
+		require_once APPPATH . '/vendor/process.php';
+
+		print_r(_calcul($place, $turbine));
+
+		$this->template->title = '';
+		$this->template->content = '';
 	}
 }
