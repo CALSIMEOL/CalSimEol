@@ -268,11 +268,11 @@
                                                         <th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
                                                     </tr>
 
-                                                    <!--<tr>
+                                                    <tr>
                                                         <td align="center">0</td>
                                                         <td><input type="text" id="turbinePower" name="tubine_power_0" class="form-control input-sm"/></td>
                                                         <td></td>
-                                                    </tr>-->
+                                                    </tr>
 
 <?php foreach ($turbine['powers'] as $key => $power) : ?>
                                                     <tr>
