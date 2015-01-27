@@ -84,6 +84,13 @@ html { height: 100% }
     display: none;
 }
 
+#tab3{
+    display: none;
+}
+
+#tab4{
+    display: none;
+}
 
 /*-------------------------modification bootstrap.css-------------------------*/
 body{
