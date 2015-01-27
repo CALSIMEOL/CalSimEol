@@ -1,21 +1,17 @@
-<!-- Simulation - list wind turbine -->
+<!-- List wind turbine -->
 
 <div class="row">
     <div class="clearness col-sm-12">
 
         <div class="row">
-            <div class="lead col-sm-3">
-                <h1>Simulation</h1>
+            <div class="lead col-sm-4">
+                <h1>Liste des éoliennes</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-offset-1 col-sm-10">
 
-                <div class="form-group">
-                    <legend>Liste d'éoliennes</legend>
-                </div>
-                <br>
 
       <!----------------------------------------------------------------Wind turbine list------------------------------------------------------------------>
                             <table class="table table-striped">

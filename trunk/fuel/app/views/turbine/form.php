@@ -1,11 +1,11 @@
-<!-- Simulation - Wind turbine parameters -->
+<!-- Add wind turbine -->
 
     <div class="row">
         <div class="clearness col-sm-12">
 
             <div class="row">
-                <div class="lead col-sm-3">
-                    <h1>Simulation</h1>
+                <div class="lead col-sm-4">
+                    <h1>Ajout d'une éolienne</h1>
                 </div>
             </div>
 

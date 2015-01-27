@@ -1,11 +1,11 @@
-<!-- Simulation - Site parameters - manual -->
+<!-- Add site -->
 
 	<div class="row">
 		<div class="clearness col-sm-12">
 
 			<div class="row">
-				<div class="lead col-sm-3">
-					<h1>Simulation</h1>
+				<div class="lead col-sm-4">
+					<h1>Ajout d'un site éolien</h1>
 				</div>
 			</div>
 
@@ -386,29 +386,46 @@
 										<br>
 										<div id="displayWindTable">
 											
-											<div class="col-sm-offset-1 col-sm-11">
+											<div class="col-sm-12">
 												<table id="windTable" class="table table-responsive table-striped table-condensed center-block">
 
 													<tr>
 														<th>Vitesse [m/s]</th>
-														<th>Heures/an</th>
+														<th>Occurences/an</th>
+                                                                                                                <th>Vitesse [m/s]</th>
+														<th>Occurences/an</th>                                                                                                                
 														<th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
 													</tr>
 
-													<tr>
-														<td align=center>0</td>
-														<td><input type="text" id="windProbability" name="place_propability_0" class="form-control input-sm"/></td>
-														<td></td>
-													</tr>
+													<tr><td align=center>0</td><td><input type="text" id="windProbability0" name="place_propability_0" class="form-control input-sm"/></td><td align=center>16</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>1</td><td><input type="text" id="windProbability1" name="place_propability_1" class="form-control input-sm"/></td><td align=center>17</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>2</td><td><input type="text" id="windProbability2" name="place_propability_2" class="form-control input-sm"/></td><td align=center>18</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>3</td><td><input type="text" id="windProbability3" name="place_propability_3" class="form-control input-sm"/></td><td align=center>19</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>4</td><td><input type="text" id="windProbability4" name="place_propability_4" class="form-control input-sm"/></td><td align=center>20</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>5</td><td><input type="text" id="windProbability5" name="place_propability_5" class="form-control input-sm"/></td><td align=center>21</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>6</td><td><input type="text" id="windProbability6" name="place_propability_6" class="form-control input-sm"/></td><td align=center>22</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>7</td><td><input type="text" id="windProbability7" name="place_propability_7" class="form-control input-sm"/></td><td align=center>23</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>8</td><td><input type="text" id="windProbability8" name="place_propability_8" class="form-control input-sm"/></td><td align=center>24</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>9</td><td><input type="text" id="windProbability9" name="place_propability_9" class="form-control input-sm"/></td><td align=center>25</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>10</td><td><input type="text" id="windProbability10" name="place_propability_10" class="form-control input-sm"/></td><td align=center>26</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>11</td><td><input type="text" id="windProbability11" name="place_propability_11" class="form-control input-sm"/></td><td align=center>27</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>12</td><td><input type="text" id="windProbability12" name="place_propability_12" class="form-control input-sm"/></td><td align=center>28</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>13</td><td><input type="text" id="windProbability13" name="place_propability_13" class="form-control input-sm"/></td><td align=center>29</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>14</td><td><input type="text" id="windProbability14" name="place_propability_14" class="form-control input-sm"/></td><td align=center>30</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td align=center>15</td><td><input type="text" id="windProbability15" name="place_propability_15" class="form-control input-sm"/></td></tr>
+                                                                                                        
 													
 												</table>
 												<span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
 												<span class="good help-block"></span>
 												<br><br>
-												<div class="pull-right">
+                                                                                                
+												<!-- ADD AND DELETE ROW WITHIN WIND TABLE
+                                                                                                <div class="pull-right">
 													<span class="btn btn-info btn-xs" onclick="addRow()"><span class="glyphicon glyphicon-plus"></span> Ajouter une ligne</span>
 													<span class="btn btn-danger btn-xs" onclick="deleteRow()"><span class="glyphicon glyphicon-trash"></span> Supprimer une ligne</span>
-												</div>
+												</div>-->
+                                                                                                
 											</div>
 											
 										</div>
@@ -657,6 +674,9 @@ $(function () {
 		windRose();
 	});
 
+
+/* ADD AND DELETE ROW WITHIN WIND TABLE
+
 //adding a row within wind table
 function addRow(){
 	if (windSpeed<30){
@@ -668,7 +688,6 @@ function addRow(){
 		
 	}
 }
-
 //delete a row within wind table
 function deleteRow(){
 if(windSpeed>0){
@@ -677,6 +696,8 @@ if(windSpeed>0){
 		$('#nbWindLines').val(windSpeed);
 	}
 }
+
+*/
 
 //intoxicate non selected option
 function intoxicateOption(){
