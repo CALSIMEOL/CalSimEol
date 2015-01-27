@@ -16,12 +16,18 @@
                     <tr>
                         <th>#</th>
                         <th>Nom</th>
+                        <th>Altitude</th>
+                        <th>Temp. Moy.</th>
+                        <th>Vent Moy.</th>
                         <th>Actions</th>
                     </tr>
 <?php foreach ($places as $place) : ?>
                     <tr>
                         <td><?php echo $place['place_id'] ?></td>
                         <td><?php echo $place['place_name'] ?></td>
+                        <td><?php echo $place['place_altitude'] ?></td>
+                        <td><?php echo $place['place_mean_temp'] ?></td>
+                        <td><?php echo $place['place_mean_speed'] ?></td>
                         <td>
                             <a href="<?php echo Uri::create('place/edit/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                             <a href="<?php echo Uri::create('place/delete/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>

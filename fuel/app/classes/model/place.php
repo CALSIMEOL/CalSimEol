@@ -17,7 +17,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Name',
 			'validation' => array(
 				'required',
-				'max_length' => array(255),
+				'max_length' => array(30),
 				'min_length' => array(1),
 			),
 			'form' => array(
@@ -30,7 +30,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Longitude (in degrees)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(-180, 180),
 			),
 			'default' => '0',
 		),
@@ -39,7 +39,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Latitude (in degrees)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(-180, 180),
 			),
 			'default' => '0',
 		),
@@ -48,7 +48,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Altitude (in meters)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(-500, 8000),
 			),
 			'default' => '0',
 		),
@@ -57,7 +57,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Temp (in degrees celcius)',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(-50, 50),
 			),
 			'default' => '0',
 		),
@@ -66,7 +66,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Rugosity',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(0.0002, 2),
 			),
 			'default' => '0',
 		),
@@ -75,7 +75,7 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(-500, 8000),
 			),
 			'default' => '0',
 		),
@@ -84,7 +84,7 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(0.1, 20),
 			),
 			'default' => '0',
 		),
@@ -93,7 +93,7 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(0.1, 50),
 			),
 			'default' => '0',
 		),
@@ -102,7 +102,7 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(0.5, 5),
 			),
 			'default' => '0',
 		),
@@ -111,7 +111,7 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-//				'numeric_min' => array(0),
+				'numeric_between' => array(0.1, 20),
 			),
 			'default' => '0',
 		),
