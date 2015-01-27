@@ -192,7 +192,7 @@
 								<div class="col-lg-7">
 									<label for="roughnesslength" class="control-label">Longueur de rugosité :</label>
 									<br>
-									<span class="error help-block">Entre 0 et 2 m</span>
+									<span class="error help-block">Entre 0.0002 et 2 m</span>
 									<span class="good help-block"></span>
 								</div>
 								<div class="col-xs-7 -marginLR">
@@ -206,7 +206,7 @@
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-										   data-content="Entrer une longueur de rugosité comprise entre 0 et 2 m.<br><br>
+										   data-content="Entrer une longueur de rugosité comprise entre 0.0002 et 2 m.<br><br>
 										   <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est à dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
 										   <br><small><a href='http://eolienne.f4jr.org/rugosite' target='_blank'>Cliquer ici pour des exemples de longueurs de rugosités</a></small></i>
 										   <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
@@ -454,7 +454,7 @@
 															<div class="col-xs-11 -marginLR">
 																<div class="input-group">
 																	
-																	<input id="averageWindSpeed1" type="text" name="place_mean_speed" value="<?php echo $place['place_mean_speed'] ?>" class="form-control"/>
+																	<input id="averageWindSpeed1" type="text" name="place_mean_speed" value="<?php echo $place['place_mean_speed'] ?>" class="form-control" placeholder="5.5"/>
 																	<span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
 																	<span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
 																	<span class="input-group-addon">m/s</span>
@@ -480,7 +480,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="shape1" type="text" name="place_sape_factor" class="form-control" placeholder="15,00"/>
+																<input id="shape1" type="text" name="place_sape_factor" class="form-control" placeholder="2"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
@@ -519,7 +519,7 @@
 															</div>
 															<div class="col-xs-11 -marginLR">
 																<div class="input-group">
-																	<input id="averageWindSpeed2" type="text" name="place_mean_speed" value="<?php echo $place['place_mean_speed'] ?>" class="form-control"/>
+																	<input id="averageWindSpeed2" type="text" name="place_mean_speed" value="<?php echo $place['place_mean_speed'] ?>" class="form-control" placeholder="5.5"/>
 																	<span class="glyphicon glyphicon-remove form-control-feedback shift5 error"></span>
 																	<span class="glyphicon glyphicon-ok form-control-feedback shift5 good"></span>
 																	<span class="input-group-addon">m/s</span>
@@ -545,7 +545,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php $place['place_std_deviation'] ?>" class="form-control" placeholder="15,00"/>
+																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php $place['place_std_deviation'] ?>" class="form-control" placeholder="20.5"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
@@ -583,7 +583,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="scaleFactor" type="text" name="place_scale_factor" value="<?php echo $place['place_scale_factor'] ?>" class="form-control"/>
+																<input id="scaleFactor" type="text" name="place_scale_factor" value="<?php echo $place['place_scale_factor'] ?>" class="form-control" placeholder="5.5"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
@@ -606,7 +606,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="shape2" type="text" name="place_shape_factor" value="<?php echo $place['place_shape_factor'] ?>" class="form-control" placeholder="15,00"/>
+																<input id="shape2" type="text" name="place_shape_factor" value="<?php echo $place['place_shape_factor'] ?>" class="form-control" placeholder="2"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
@@ -766,7 +766,7 @@ $(function () {
 		
 		$('#roughnesslength').keyup(function() {
 		$('#divRoughness').addClass('has-feedback');
-		$('#roughnesslength').val() >= -50 && $('#roughnesslength').val() <=50 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
+		$('#roughnesslength').val() >= 0.0002 && $('#roughnesslength').val() <=2 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
 		});
 		
 		$('.windProb').keyup(function() {
