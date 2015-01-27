@@ -81,9 +81,7 @@ class Controller_Simulation extends Controller_Template
 
 		require_once APPPATH . '/vendor/process.php';
 
-		print_r(_calcul($place, $turbine));
-
-		$data = array();
+		$data = _calcul($place, $turbine);
 
 		$this->template->title = '';
 		$this->template->content = View::forge('simulation/result', $data);
