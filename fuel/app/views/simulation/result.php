@@ -13,40 +13,32 @@
                     <div class="lead col-sm-6">
                        <table id="" class="table table-responsive table-striped table-condensed">
                           <tr>
-                            <th>Puissance moyenne surfacique en entrée :</th>
-                            <td></td>
+                              <td><b>&nbsp Puissance moyenne surfacique en entrée :</b></td><td> XXXX </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <th>Puissance moyenne en entrée :</th>
-                            <td></td>
+                            <td><b>&nbsp Puissance moyenne en entrée :</td><td> XXXX </td><td>kWh</td>
                           </tr>
                           <tr>
-                            <th>Vitesse de vent pour puissance maximale :</th>
-                            <td></td>
+                            <td><b>&nbsp Vitesse de vent pour puissance maximale :</td><td> XXXX </td><td>m/s</td>
                           </tr>
                           <tr>
-                            <th>Vitesse moyenne à hauteur du moyeu :</th>
-                            <td></td>
+                            <td><b>&nbsp Vitesse moyenne à hauteur du moyeu :</td><td> XXXX </td><td>m/s</td>
                           </tr>
                         </table>
                     </div>
                     <div class="lead col-sm-6">
                        <table id="" class="table table-responsive table-striped table-condensed">
                           <tr>
-                            <th>Puissance moyenne surfacique en sortie :</th>
-                            <td></td>
+                            <td><b>&nbsp Puissance moyenne surfacique en sortie :</td><td> XXXX </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <th>Puissance moyenne en sortie :</th>
-                            <td></td>
+                            <td><b>&nbsp Puissance moyenne en sortie :</td><td> XXXX </td><td>kW</td>
                           </tr>
                           <tr>
-                            <th>Production totale annuelle :</th>
-                            <td></td>
+                            <td><b>&nbsp Production totale annuelle :</td><td> XXXX </td><td>kWh/an</td>
                           </tr>
                           <tr>
-                            <th>Facteur de charge :</th>
-                            <td></td>
+                            <td><b>&nbsp Facteur de charge :</td><td> XXXX </td><td>%</td>
                           </tr>
                         </table>
                     </div>
