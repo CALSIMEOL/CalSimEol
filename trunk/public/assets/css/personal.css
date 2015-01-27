@@ -142,4 +142,10 @@ body{
 .table{
     margin-bottom: 10px;
 }
+.table th{
+    background-color: #f5f5f5;
+}
+.table-striped > tbody > tr {
+  background-color: #ffffff;
+}
 /*----------------------------------------------------------------------------*/
