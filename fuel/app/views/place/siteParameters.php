@@ -269,7 +269,7 @@
 
 														<tr>
 															<th width=22%>Direction</th>
-															<th>Heures/an</th>
+															<th>Occurences/an</th>
 															<th>Vitesse moyenne &nbsp;</th>
 															<th>&nbsp <span class="glyphicon glyphicon-remove form-control-feedback error"></span><span class="glyphicon glyphicon-ok form-control-feedback good"></span></th>
 														</tr>
