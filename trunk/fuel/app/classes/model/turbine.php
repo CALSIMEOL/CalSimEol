@@ -17,7 +17,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Turbine Reference',
 			'validation' => array(
 				'required',
-				'max_length' => array(255),
+				'max_length' => array(30),
 				'min_length' => array(1),
 			),
 			'form' => array(
@@ -30,7 +30,7 @@ class Model_Turbine extends \Orm\Model
 			'label' => 'Turbine Manufacturer',
 			'validation' => array(
 				'required',
-				'max_length' => array(255),
+				'max_length' => array(20),
 				'min_length' => array(1),
 			),
 			'form' => array(
@@ -43,7 +43,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Puissance nominale (en kW)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(1, 10000),
 			),
 		),
 		'turbine_blades' => array(
@@ -51,7 +51,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Nombre de pales',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(1, 50),
 			),
 		),
 		'turbine_diameter' => array(
@@ -59,7 +59,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Diamètre du rotor (en m)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(1, 500),
 			),
 		),
 		'turbine_height' => array(
@@ -67,7 +67,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Hauteur du moyeu (en m)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(1, 300),
 			),
 		),
 		'turbine_start_speed' => array(
@@ -75,7 +75,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Vitesse de démarrage du rotor (en m.s<sub>-1</sub>)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(0, 20),
 			),
 		),
 		'turbine_stop_speed' => array(
@@ -83,7 +83,7 @@ class Model_Turbine extends \Orm\Model
 			'label'      => 'Vitesse d\'arrêt du rotor (en m.s<sub>-1</sub>)',
 			'validation' => array(
 				'required',
-				'numeric_min' => array(0),
+				'numeric_between' => array(10, 40),
 			),
 		),
 	);

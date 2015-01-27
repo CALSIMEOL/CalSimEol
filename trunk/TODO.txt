@@ -1,9 +1,25 @@
--> Vérifier tout les blindage "en live"
--> Vérifier les blindage PHP
--> Enlever les action modif et supr des éoliennes "sûr"
--> Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
--> Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
+########## A FAIRE
 
--> Imposer 30 valeurs pour le tableau de la courbe de puissance de turbine/form.php :
-	-faire avec des boucles for
-	-refaire le tableau de siteParameters de la même façon
+;; ANTOINE
+
+* Vérifier les blindage PHP
+* Enlever les action modif et supr des éoliennes "sûr"
+* Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
+* Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
+
+* Imposer 30 valeurs pour le tableau de la courbe de puissance de turbine/form.php :
+	- faire avec des boucles for
+	- refaire le tableau de siteParameters de la même façon
+
+;; TOM & JERRY
+
+* Vérifier tout les blindage "en live"
+* Embélir la liste des éoliennes
+* Embélir la liste des sites
+
+########## FAIT
+
+;; 27/01/2015
+
+* Ajout de détails sur la liste des éoliennes
+* Ajout de détails sur la liste des sites

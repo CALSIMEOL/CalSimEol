@@ -18,12 +18,26 @@
                                     <tr>
                                             <th>#</th>
                                             <th>Nom</th>
+                                            <th>Constructeur</th>
+                                            <th>P. Nom.</th>
+                                            <th>Pales</th>
+                                            <th>Diamètre</th>
+                                            <th>H. Moyeu</th>
+                                            <th>V. Démarrage</th>
+                                            <th>V. Arrêt</th>
                                             <th>Actions</th>
                                     </tr>
 <?php foreach ($turbines as $turbine) : ?>
                                     <tr>
                                             <td><?php echo $turbine['turbine_id'] ?></td>
                                             <td><?php echo $turbine['turbine_name'] ?></td>
+                                            <td><?php echo $turbine['turbine_manufacturer'] ?></td>
+                                            <td><?php echo $turbine['turbine_power'] ?></td>
+                                            <td><?php echo $turbine['turbine_blades'] ?></td>
+                                            <td><?php echo $turbine['turbine_diameter'] ?></td>
+                                            <td><?php echo $turbine['turbine_height'] ?></td>
+                                            <td><?php echo $turbine['turbine_start_speed'] ?></td>
+                                            <td><?php echo $turbine['turbine_stop_speed'] ?></td>
                                             <td>
                             <a href="<?php echo Uri::create('turbine/edit/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                             <a href="<?php echo Uri::create('turbine/delete/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>

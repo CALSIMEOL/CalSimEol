@@ -8,6 +8,10 @@ class Model_TurbinePower extends \Orm\Model
 //	protected static $_primary_key = array('wind_speed');
 	protected static $_primary_key = array('turbine_power_id');
 
+	protected static $_conditions = array(
+		'order_by' => array('wind_speed' => 'asc'),
+	);
+
 	protected static $_properties = array(
 		'turbine_power_id' => array(
 			'data_type' => 'int',
