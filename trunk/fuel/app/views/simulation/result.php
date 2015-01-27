@@ -10,7 +10,7 @@
                 </div>
                 
                 <div class="row">
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                        <table class="table table-responsive table-striped table-condensed">
                           <tr>
                               <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> XXXX </td><td>W/m<sup>2</sup></td>
@@ -26,7 +26,7 @@
                           </tr>
                         </table>
                     </div>
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                        <table class="table table-responsive table-striped table-condensed">
                           <tr>
                             <td><b>&nbsp; Puissance moyenne surfacique en sortie :</td><td> <?php echo $power_mean ?> </td><td>W/m<sup>2</sup></td>
