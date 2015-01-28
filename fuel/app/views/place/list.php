@@ -24,7 +24,7 @@
 <?php foreach ($places as $place) : ?>
                     <tr>
                         <td><?php echo $place['place_id'] ?></td>
-                        <td><?php echo $place['place_name'] ?></td>
+                        <td><b><?php echo $place['place_name'] ?></b></td>
                         <td><?php echo $place['place_altitude'] ?></td>
                         <td><?php echo $place['place_mean_temp'] ?></td>
                         <td><?php echo $place['place_mean_speed'] ?></td>
