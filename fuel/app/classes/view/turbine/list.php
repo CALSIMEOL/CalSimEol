@@ -4,8 +4,19 @@ class View_Turbine_List extends ViewModel
 {
 	public function view()
 	{
+		$query = Model_Turbine::query();
+
+		$search = Input::get('search');
+
+		if ($search)
+		{
+			$query->where('turbine_name', 'LIKE', '%'.$search.'%')
+				->or_where('turbine_manufacturer', 'LIKE', '%'.$search.'%');
+		}
+
 		$config = array(
-			'total_items' => Model_Turbine::count(),
+//			'total_items' => Model_Turbine::count(),
+			'total_items' => $query->count(),
 			'per_page' => 10,
 			'uri_segment' => 3,
 
@@ -29,7 +40,7 @@ class View_Turbine_List extends ViewModel
 
 		$pagination = Pagination::forge('turbine-list-pagination', $config);
 
-		$this->turbines = Model_Turbine::query()
+		$this->turbines = $query
 								->rows_offset($pagination->offset)
 								->rows_limit($pagination->per_page)
 								->get();
