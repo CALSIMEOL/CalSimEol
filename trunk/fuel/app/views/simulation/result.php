@@ -47,12 +47,12 @@
                 
                 
                  <div class="row">
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">Distribution des vents</div>
-                                <div class="panel-body">
-                                      <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-plus"></span>Afficher/Masquer tableau</span>
-                                        <br><table id="tab1" class="table table-striped table-condensed">
+                                <div class="panel-body"><br>
+                                      <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-plus"></span>Afficher/Masquer tableau</span><br><br>
+                                        <table id="tab1" class="table table-striped table-condensed">
                                                 <tbody><tr>
                                                         <th>Vitesse stabilisée [m/s]</th>
                                                         <th>Weibull à l'altitude du site [%]</th>
@@ -94,13 +94,12 @@
                             </div>
                         </div>
                      
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">Caractérisation de l'éolienne</div>
-                                <div class="panel-body">
-
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span>
-                                    <br><table id="tab2" class="table table-striped table-condensed">
+                                <div class="panel-body"><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <table id="tab2" class="table table-striped table-condensed">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
                                                     <th>Puissance [kW]</th>
@@ -144,13 +143,12 @@
                  </div>
                 
                   <div class="row">
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">Puissance produite</div>
-                                <div class="panel-body">
-
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span>
-                                    <br><table id="tab3" class="table table-striped table-condensed nodisplay">
+                                <div class="panel-body"><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <table id="tab3" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
                                                     <th>Puissance produite [kW]</th>
@@ -191,13 +189,12 @@
                         </div>
                     </div>
                     
-                    <div class="lead col-sm-6">
+                    <div class="col-sm-6">
                        <div class="panel panel-default">
                             <div class="panel-heading">Densité de puissance</div>
-                            <div class="panel-body">
-
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span>
-                                    <br><table id="tab4" class="table table-striped table-condensed nodisplay">
+                            <div class="panel-body"><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <table id="tab4" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
                                                     <th>Densité de puissance en entrée [w/m<sup>2</sup>]</th>
