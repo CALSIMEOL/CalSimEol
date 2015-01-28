@@ -2,10 +2,9 @@
 
 ;; ANTOINE
 
-* Vérifier les blindage PHP
-* Enlever les action modif et supr des éoliennes "sûr"
-* Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
-* Marquer comme "non garantie/vérifie/validé" les éoliennes ajouté par les utilisateurs
+* Vérifier les blindages PHP
+* Enlever les actions modifications et suppression des éoliennes "sûres"
+* Marquer comme "non garantie/vérifiée/validée" les éoliennes ajoutées par les utilisateurs
 
 * Imposer 30 valeurs pour le tableau de la courbe de puissance de turbine/form.php :
 	- faire avec des boucles for
