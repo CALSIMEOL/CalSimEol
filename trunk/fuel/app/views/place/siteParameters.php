@@ -316,7 +316,7 @@
 									</div>
 
 									<div class="panel-body">
-
+                                                                            <div id="windDistributionChart"></div>
 										<div class="form-inline">
 											<div class="row">
 												<div class="col-xs-3">
@@ -723,6 +723,36 @@ $(function () {
 
 
 $(function () {
+                
+                $('#windDistributionChart').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Wind distribution'
+                },
+                xAxis: {
+                    title: {
+                        text: 'Wind speed (m/s)'
+                    },
+                    tickInterval: 2,
+                    min: 0,
+                    max: 30
+                },
+                yAxis: {
+                    title: {
+                        text: 'Probability (%)'
+                    },
+                    gridLineWidth: 1,
+                    min: 0
+                },
+                
+                series: [{ 
+                            name: 'Weibull distribution',
+                            data: []
+                        }]
+                });
+    
 		$('#siteName').keyup(function() {
 		$('#divSiteName').addClass('has-feedback');
 		$('#siteName').val().length > 0 && $('#siteName').val().length <=20 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
@@ -805,33 +835,151 @@ $(function () {
 		
 		$('#averageWindSpeed1').keyup(function() {
 		$('#divAverageSpeed').addClass('has-feedback');
+                var chart = $('#windDistributionChart').highcharts();
+                chart.series[0].update({
+                    data: []
+                });
 		$('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();	 
-		});
+		$('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var Vm = parseFloat($('#averageWindSpeed1').val());
+                    var k = parseFloat($('#shape1').val());
+                    var x;
+                    var gamma;
+                    var a;
+                    x=1+1/k;
+                    gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
+                    a=Vm/gamma;
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
+                    
+                });
 		
 		$('#shape1').keyup(function() {
 		$('#divShapeFactor').addClass('has-feedback');
-		$('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();	 
+                var chart = $('#windDistributionChart').highcharts();
+                chart.series[0].update({
+                    data: []
+                });
+		$('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
+                $('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var Vm = parseFloat($('#averageWindSpeed1').val());
+                    var k = parseFloat($('#shape1').val());
+                    var x;
+                    var gamma;
+                    var a;
+                    x=1+1/k;
+                    gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
+                    a=Vm/gamma;
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
 		});
 		
 		$('#averageWindSpeed2').keyup(function() {
 		$('#divAverageSpeed2').addClass('has-feedback');
+                var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
 		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' ? $('#divAverageSpeed2').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed2').find('.good').show() && $('#divAverageSpeed2').find('.error').hide()  : $('#divAverageSpeed2').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed2').find('.error').show() && $('#divAverageSpeed2').find('.good').hide();	 
-		});
+		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ?$(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var Vm = parseFloat($('#averageWindSpeed2').val());
+                    var sigma = parseFloat($('#standardDeviation').val());
+                    var k;
+                    var x;
+                    var gamma;
+                    var a;
+                    k=Math.pow(0.9874/(sigma/Vm),1.0983);
+                    x=1+1/k;
+                    gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
+                    a=Vm/gamma;
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
+                });
 		
 		$('#standardDeviation').keyup(function() {
 		$('#divStdDeviation').addClass('has-feedback');
+                var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
 		$('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ? $('#divStdDeviation').addClass('has-success').removeClass('has-error') && $('#divStdDeviation').find('.good').show() && $('#divStdDeviation').find('.error').hide()  : $('#divStdDeviation').addClass('has-error').removeClass('has-success') && $('#divStdDeviation').find('.error').show() && $('#divStdDeviation').find('.good').hide();	 
-		});
+		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ?$(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var Vm = parseFloat($('#averageWindSpeed2').val());
+                    var sigma = parseFloat($('#standardDeviation').val());
+                    var k;
+                    var x;
+                    var gamma;
+                    var a;
+                    k=Math.pow(0.9874/(sigma/Vm),1.0983);
+                    x=1+1/k;
+                    gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
+                    a=Vm/gamma;
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
+                });
 		
 		$('#scaleFactor').keyup(function() {
 		$('#divScaleFactor').addClass('has-feedback');
 		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
-		});
+		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
+                    var k = parseFloat($('#shape2').val());
+                    var a = parseFloat($('#scaleFactor').val()); 
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
+                });
 		
 		$('#shape2').keyup(function() {
 		$('#divShapeFactor2').addClass('has-feedback');
+                var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
 		$('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $('#divShapeFactor2').addClass('has-success').removeClass('has-error') && $('#divShapeFactor2').find('.good').show() && $('#divShapeFactor2').find('.error').hide()  : $('#divShapeFactor2').addClass('has-error').removeClass('has-success') && $('#divShapeFactor2').find('.error').show() && $('#divShapeFactor2').find('.good').hide();	 
-		});
+		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var k = parseFloat($('#shape2').val());
+                    var a = parseFloat($('#scaleFactor').val());
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }
+                    ) 
+                : null;
+                });
 		
 		$('#ElevationOfTheMeasurement').keyup(function() {
 		$('#divElevation').addClass('has-feedback');
@@ -852,6 +1000,8 @@ $(function () {
 		}
 		totalHours2 ===8760 && totalHours2 !== '' ? $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide():  $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
 	});
+        
+                
 			
 		
 });
