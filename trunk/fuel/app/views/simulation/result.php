@@ -32,13 +32,13 @@
                             <td><b>&nbsp; Puissance moyenne surfacique en sortie :</td><td> XXX </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en sortie :</td><td> <?php echo $power_mean ?> </td><td>kW</td>
+                            <td><b>&nbsp; Puissance moyenne en sortie :</td><td> <?php echo round($power_mean, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Production totale annuelle :</td><td> <?php echo $production ?> </td><td>kWh/an</td>
+                            <td><b>&nbsp; Production totale annuelle :</td><td> <?php echo round($production, 2) ?> </td><td>kWh/an</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Facteur de charge :</td><td> <?php echo $charge_factor ?> </td><td>%</td>
+                            <td><b>&nbsp; Facteur de charge :</td><td> <?php echo round($charge_factor * 100, 2) ?> </td><td>%</td>
                           </tr>
                         </table>
                     </div>
@@ -59,7 +59,7 @@
                                                         <th>Weibull à la hauteur du moyeu [%]</th>
                                                 </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
-                                                <tr><td><?php echo $i ?></td><td><?php echo $weibull_measure[$i] ?></td><td><?php echo $weibull_moyeu[$i] ?></td></tr>
+                                                <tr><td><?php echo round($i, 2) ?></td><td><?php echo round($weibull_measure[$i] * 100, 2) ?></td><td><?php echo round($weibull_moyeu[$i] *100, 2) ?></td></tr>
 <?php endfor ?>
                                         </tbody></table>
                                  </div>
@@ -98,7 +98,7 @@
                                                     <th>Puissance produite [kW]</th>
                                             </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo $production_power[$i] ?></td></tr>
+                                            <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i], 2) ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                                 </div>
@@ -118,7 +118,7 @@
                                                     <th>Densité de puissance en sortie [w/m<sup>2</sup>]</th>
                                             </tr>
 <?php for ($i = 0; $i <= 300; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo $density_input[$i] ?></td><td><?php echo $density_input_betz[$i] ?></td><td><?php echo $density_output[$i] ?></td></tr>
+                                            <tr><td><?php echo $i ?></td><td><?php echo round($density_input[$i], 2) ?></td><td><?php echo round($density_input_betz[$i], 2) ?></td><td><?php echo round($density_output[$i], 2) ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                             </div>
