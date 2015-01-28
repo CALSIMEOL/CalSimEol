@@ -448,7 +448,7 @@
 															<div class="col-lg-9 -marginLR">
 																<label for="averageWindSpeed1" class="control-label">Vitesse moyenne vent : </label>
 																<br>
-																<span class="error help-block">Entre 0.1 et 20 m/s</span>
+																<span class="error help-block">Entre 1 et 12 m/s</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -463,7 +463,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer une vitesse entre 0.1 et 20 m/s.<br><br>
+																	   data-content="Entrer une vitesse entre 1 et 12 m/s.<br><br>
 																	   <i>Moyenne des vitesses de vents enregistrées sur le site pendant une année.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
 																	   title="<b>AIDE : Vitesse moyenne du vent</b>">
@@ -476,7 +476,7 @@
 															<div class="col-lg-8 -marginLR">
 																<label for="shape1" class="control-label">Facteur de forme k :</label>
 																<br>
-																<span class="error help-block">Entre 0.5 et 5</span>
+																<span class="error help-block">Entre 1 et 5</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -487,7 +487,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer une valeur comprise entre 0.5 et 5.<br><br>
+                                                                                                                                           data-content="Entrer une valeur comprise<br>entre 1 et 5.<br><br>
 																	   <i>k est le facteur de forme de Weibull. Il donne la forme de la distribution des vents. Une valeur faible implique un vent très variable alors qu'un vent constant implique une valeur élevée.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 																	   title="<b>AIDE : Facteur de forme K</b>">
@@ -514,7 +514,7 @@
 															<div class="col-lg-9 -marginLR">
 																<label for="averageWindSpeed2" class="control-label">Vitesse moyenne vent : </label>
 																<br>
-																<span class="error help-block">Entre 0.1 et 20m.s<sup>-1</sup></span>
+																<span class="error help-block">Entre 1 et 12 m.s<sup>-1</sup></span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -528,7 +528,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer une vitesse entre 0.1 et 20 m/s.<br><br>
+																	   data-content="Entrer une vitesse entre 1 et 12 m/s.<br><br>
 																	   <i>Moyenne des vitesses de vents enregistrées sur le site pendant une année.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
 																	   title="<b>AIDE : Vitesse moyenne du vent</b>">
@@ -541,18 +541,18 @@
 															<div class="col-lg-8 -marginLR">
 																<label for="standardDeviation" class="control-label">Ecart type &sigma; :</label>
 																<br>
-																<span class="error help-block">Entre 0.1 et 50</span>
+																<span class="error help-block">Entre 0.1 et 15</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php $place['place_std_deviation'] ?>" class="form-control" placeholder="20.5"/>
+																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php $place['place_std_deviation'] ?>" class="form-control" placeholder="5"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer un nombre entre 0.1 et 50.<br><br>
+																	   data-content="Entrer un nombre entre 0.1 et 15.<br><br>
 																	   <i>L'écart type &sigma; est la mesure de la dispertion d'une variable aléatoire comme la vitesse du vent.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 																	   title="<b>AIDE : Ecart type &sigma;</b>">
@@ -579,7 +579,7 @@
 															<div class="col-lg-8 -marginLR">
 																<label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
 																<br>
-																<span class="error help-block">Entre 0.1 et 20</span>
+																<span class="error help-block">Entre 2 et 10</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -590,7 +590,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer un nombre entre 0.1 et 20.<br><br>
+																	   data-content="Entrer un nombre entre 2 et 10.<br><br>
 																	   <i>A est le facteur d'échelle de Weibull exprimé en m/s. Il permet d'exprimer la chronologie d'une vitesse caractéristique. A est proportionnel à la vitesse moyenne du vent.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 																	   title="<b>AIDE : Facteur de forme K</b>">
@@ -839,8 +839,8 @@ $(function () {
                 chart.series[0].update({
                     data: []
                 });
-		$('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();	 
-		$('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
+		$('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();	 
+		$('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed1').val());
                     var k = parseFloat($('#shape1').val());
@@ -866,8 +866,8 @@ $(function () {
                 chart.series[0].update({
                     data: []
                 });
-		$('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
-                $('#averageWindSpeed1').val() >= 0.1 && $('#averageWindSpeed1').val() <=20 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
+		$('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
+                $('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed1').val());
                     var k = parseFloat($('#shape1').val());
@@ -892,8 +892,8 @@ $(function () {
                     chart.series[0].update({
                         data: []
                     });
-		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' ? $('#divAverageSpeed2').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed2').find('.good').show() && $('#divAverageSpeed2').find('.error').hide()  : $('#divAverageSpeed2').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed2').find('.error').show() && $('#divAverageSpeed2').find('.good').hide();	 
-		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ?$(function () {
+		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' ? $('#divAverageSpeed2').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed2').find('.good').show() && $('#divAverageSpeed2').find('.error').hide()  : $('#divAverageSpeed2').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed2').find('.error').show() && $('#divAverageSpeed2').find('.good').hide();	 
+		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ?$(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed2').val());
                     var sigma = parseFloat($('#standardDeviation').val());
@@ -920,8 +920,8 @@ $(function () {
                     chart.series[0].update({
                         data: []
                     });
-		$('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ? $('#divStdDeviation').addClass('has-success').removeClass('has-error') && $('#divStdDeviation').find('.good').show() && $('#divStdDeviation').find('.error').hide()  : $('#divStdDeviation').addClass('has-error').removeClass('has-success') && $('#divStdDeviation').find('.error').show() && $('#divStdDeviation').find('.good').hide();	 
-		$('#averageWindSpeed2').val() >= 0.1 && $('#averageWindSpeed2').val() <=20 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=50 && $('#standardDeviation').val() !== '' ?$(function () {
+		$('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ? $('#divStdDeviation').addClass('has-success').removeClass('has-error') && $('#divStdDeviation').find('.good').show() && $('#divStdDeviation').find('.error').hide()  : $('#divStdDeviation').addClass('has-error').removeClass('has-success') && $('#divStdDeviation').find('.error').show() && $('#divStdDeviation').find('.good').hide();	 
+		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ?$(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed2').val());
                     var sigma = parseFloat($('#standardDeviation').val());
@@ -944,8 +944,8 @@ $(function () {
 		
 		$('#scaleFactor').keyup(function() {
 		$('#divScaleFactor').addClass('has-feedback');
-		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
-		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
+		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     chart.series[0].update({
                         data: []
@@ -968,7 +968,7 @@ $(function () {
                         data: []
                     });
 		$('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $('#divShapeFactor2').addClass('has-success').removeClass('has-error') && $('#divShapeFactor2').find('.good').show() && $('#divShapeFactor2').find('.error').hide()  : $('#divShapeFactor2').addClass('has-error').removeClass('has-success') && $('#divShapeFactor2').find('.error').show() && $('#divShapeFactor2').find('.good').hide();	 
-		$('#scaleFactor').val() >= 0.1 && $('#scaleFactor').val() <=20 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var k = parseFloat($('#shape2').val());
                     var a = parseFloat($('#scaleFactor').val());
