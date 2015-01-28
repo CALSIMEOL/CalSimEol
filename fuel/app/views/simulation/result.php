@@ -13,23 +13,23 @@
                     <div class="col-sm-6">
                        <table class="table table-responsive table-striped table-condensed">
                           <tr>
-                              <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> XXXX </td><td>W/m<sup>2</sup></td>
+                              <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> XXX </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> XXXX </td><td>kWh</td>
+                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> XXX </td><td>kWh</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> XXXX </td><td>m/s</td>
+                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> XXX </td><td>m/s</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Vitesse moyenne à hauteur du moyeu :</td><td> XXXX </td><td>m/s</td>
+                            <td><b>&nbsp; Vitesse moyenne à hauteur du moyeu :</td><td> XXX </td><td>m/s</td>
                           </tr>
                         </table>
                     </div>
                     <div class="col-sm-6">
                        <table class="table table-responsive table-striped table-condensed">
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne surfacique en sortie :</td><td> XXXX </td><td>W/m<sup>2</sup></td>
+                            <td><b>&nbsp; Puissance moyenne surfacique en sortie :</td><td> XXX </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
                             <td><b>&nbsp; Puissance moyenne en sortie :</td><td> <?php echo $power_mean ?> </td><td>kW</td>
