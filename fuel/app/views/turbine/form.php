@@ -248,7 +248,9 @@
                                     <div class="panel-heading">
                                         <b>Courbe de puissance</b>
                                         <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
-                                           data-content="<i>La vitesse du vent varie en permanence. Pour prévoir la production d'énergie d'une éolienne il faut connaître la vitesse du vent et sa fréquence associée.</i>"
+                                           data-content="Entrer, pour chaque valeur de vent, la puissance de sortie de l'éolienne (en kW).<br><br>
+                                           <i>La courbe de puissance est un graphe qui représente la puissance de sortie d'une éolienne à différentes vitesses de vent.</i><br><br>
+                                           <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                            title="<b>AIDE : Courbe de puissance</b>">
                                             <span class="glyphicon glyphicon-question-sign"></span>
                                         </a>

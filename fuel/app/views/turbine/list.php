@@ -30,8 +30,8 @@
 <?php foreach ($turbines as $turbine) : ?>
                                     <tr>
                                             <td><?php echo $turbine['turbine_id'] ?></td>
-                                            <td><?php echo $turbine['turbine_name'] ?></td>
-                                            <td><?php echo $turbine['turbine_manufacturer'] ?></td>
+                                            <td><b><?php echo $turbine['turbine_name'] ?></b></td>
+                                            <td><b><?php echo $turbine['turbine_manufacturer'] ?></b></td>
                                             <td><?php echo $turbine['turbine_power'] ?></td>
                                             <td><?php echo $turbine['turbine_blades'] ?></td>
                                             <td><?php echo $turbine['turbine_diameter'] ?></td>
@@ -51,7 +51,7 @@
 
       <!-----------------------------------------------------------turbine list navigation bar------------------------------------------------------------->
         <div class="row">
-                <div class="col-sm-offset-1 col-sm-4">
+                <div class="col-sm-offset-1 col-sm-4"><br>
                         <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter</a>
                 </div>
                 <div class="col-sm-4">

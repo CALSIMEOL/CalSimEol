@@ -344,8 +344,8 @@
 												</div>
 												<div class="col-xs-1">
 													<a href="#pop" class="pop pull-left" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" style="margin-top: 13px"
-														data-content="Entrer pour chaque vitesse de vent son occurence en heures/an. La somme des occurances heure/an doit être égale à 8760h.
-														<br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+														data-content="Entrer pour chaque vitesse de vent sa fréquence d'occurence (en jour, heure ou minute) ou sa probabilité. Les valeurs saisies seront ramené à une probabilité pour les calcules.<br><br>
+                                                                                                                <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 														title="<b>AIDE : Paramètrage détaillé de la distribution des vents</b>">
 														 <span class="glyphicon glyphicon-question-sign"></span>
 													 </a>
