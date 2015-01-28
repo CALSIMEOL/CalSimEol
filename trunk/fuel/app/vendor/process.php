@@ -64,7 +64,7 @@ function _calcul($place, $turbine)
 	$k = $place->place_shape_factor;
 	$A = $place->place_scale_factor;
 	$output_power = array();
-	foreach ($turbine->powers as $power) $output_power[$power->wind_speed] = $turbine->turbine_power;
+	foreach ($turbine->powers as $power) $output_power[] = array($power->wind_speed, $power->turbine_power);
 	$temp_celsius = $place->place_mean_temp;
 	$hauteur_eolienne = $turbine->turbine_height;
 	$puissance_nominale = $turbine->turbine_power;
@@ -151,7 +151,7 @@ $microtime = microtime(true);
 $Weibull = new Weibull($A, $k);
 	
 //Weibull à l'altitude de mesure du vent
-for($j=0;$j<30;$j++)
+for($j=0;$j<=30;$j++)
 {	
 	$production[$j][0]=$j;
 	$production[$j][1]=$Weibull->pdf($output_power[$j][0]);
@@ -163,20 +163,20 @@ $Vm_extrapol=$vitesse_moyenne+(log($hauteur_eolienne/$rugosite)/log($hauteur/$ru
 $A1=$Vm_extrapol/$gamma;
 //Calcul d'une nouvelle Weibull avec le nouveau A
 $Weibull1 = new Weibull($A1, $k);
-for($j=0;$j<30;$j++)
+for($j=0;$j<=30;$j++)
 {	
 	$production[$j][2]=$Weibull1->pdf($output_power[$j][0]);
 }
 
 //Nombre d'heures où la vitesse v est observée
-for($h=0;$h<30;$h++)
+for($h=0;$h<=30;$h++)
 {
 	$production[$h][3]=$production[$h][2]*8760;
 	//echo $tableau3[$h][1].'<br/>';
 }
 
 //Energie produite par l'éolienne
-for($v=0;$v<30;$v++)
+for($v=0;$v<=30;$v++)
 {
 	$production[$v][4]=$production[$v][3]*$output_power[$v][1];
 	//echo $tableau3[$v][2].'<br/>';
@@ -184,7 +184,7 @@ for($v=0;$v<30;$v++)
 
 //Calcul de la production totale sur l'année
 $production_totale_annee=0;
-for($u=0; $u<30; $u++)
+for($u=0; $u<=30; $u++)
 {
 	$production_totale_annee=$production_totale_annee+$production[$u][4];
 }
@@ -282,17 +282,41 @@ for($y=0; $y<301; $y++)
 	$result = array();
 
 //	$array['mean_speed'] = $vitesse_moyenne;
-//	$array['weibull']['altitude_mesure_vent'] = $production[$j][1];
-//	$array['weibull']['nouveau_a'] = $production[$j][2];
 //	$array['power_output'] = $production[$v][4];
 	$array['production'] = $production_totale_annee;
 	$array['power_mean'] = $puissance_moyenne;
 	$array['charge_factor'] = $facteur_charge;
+
+	$array['weibull'] = array();
+	$array['weibull_measure'] = array();
+	$array['weibull_moyeu'] = array();
+	for ($i = 0; $i <= 30; $i++)
+	{
+		$array['weibull_measure'][] = $production[$i][1];
+		$array['weibull_moyeu'][] = $production[$i][2];
+	}
+
+	$array['turbine_power'] = array();
+	$array['cp'] = array();
+	for ($i = 0; $i <= 30; $i++)
+	{
+		$array['turbine_power'][] = $output_power[$i][1];
+//		$array['cp'][] = $tampon[];
+		$array['cp'][] = '?';
+	}
+
+	$array['production_power'] = array();
+	for ($i = 0; $i <= 30; $i++)
+	{
+		$array['production_power'][] = $production[$i][4];
+	}
+
 	$array['density_input'] = array();
 	$array['density_output'] = array();
-	for ($i = 0; $i < 301; $i++)
+	for ($i = 0; $i <= 300; $i++)
 	{
 		$array['density_input'][] = $density[$i][3];
+		$array['density_input_betz'][] = $density[$i][6];
 		$array['density_output'][] = $tampon[$i][1];
 	}
 

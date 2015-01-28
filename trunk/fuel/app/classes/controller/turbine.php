@@ -53,22 +53,9 @@ class Controller_Turbine extends Controller_Template
 
 		$turbine ? : Response::redirect_back('turbine/list');
 
-		$powers = array();
-		foreach ($turbine->powers as &$power)
+		for ($i = 0; $i <= 30; $i++)
 		{
-			if ($power->wind_speed < Input::post('turbine_powers', 0))
-			{
-				$powers[$power->wind_speed] = $power;
-			}
-			else
-			{
-				unset($power);
-			}
-		}
-
-		for ($i = 0; $i < Input::post('turbine_powers', 0); $i++)
-		{
-			if (!isset($powers[$i]))
+			if (!isset($turbine->powers[$i]))
 			{
 				$power = new Model_TurbinePower();
 				$power->turbine_id = $turbine->turbine_id;
@@ -76,7 +63,7 @@ class Controller_Turbine extends Controller_Template
 			}
 			else
 			{
-				$power = $powers[$i];
+				$power = $turbine->powers[$i];
 			}
 
 			$power->turbine_power = Input::post('turbine_power_'.$i, 0);
