@@ -293,7 +293,7 @@ for($y=0; $y<301; $y++)
 	for ($i = 0; $i < 301; $i++)
 	{
 		$array['density_input'][] = $density[$i][3];
-		$array['density_input'][] = $tampon[$i][1];
+		$array['density_output'][] = $tampon[$i][1];
 	}
 
 	return $array;

@@ -202,7 +202,7 @@
                                                     <th>Densité de puissance en sortie [w/m<sup>2</sup>]</th>
                                             </tr>
 <?php for ($i = 0; $i < 301; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo $density_input[$i] ?></td><td></td><td><?php echo $density_input[$i] ?></td></tr>
+                                            <tr><td><?php echo $i ?></td><td><?php echo $density_input[$i] ?></td><td></td><td><?php echo $density_output[$i] ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                             </div>
