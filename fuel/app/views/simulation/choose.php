@@ -38,7 +38,7 @@
                                     </select>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="form-group">
                                 <legend>Choix de l'éolienne</legend>
                             </div>

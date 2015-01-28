@@ -34,7 +34,7 @@ html { height: 100% }
     color:black;
 }
 
-/**/
+/*Popover decimal warning*/
 .decimalWarning{
     font-style: italic;
     font-size: 13px;
@@ -158,5 +158,9 @@ body{
 }
 .table-striped > tbody > tr {
   background-color: #ffffff;
+}
+
+.table td{
+    text-align: center;
 }
 /*----------------------------------------------------------------------------*/
