@@ -39,8 +39,8 @@
                                             <td><?php echo $turbine['turbine_start_speed'] ?></td>
                                             <td><?php echo $turbine['turbine_stop_speed'] ?></td>
                                             <td>
-                            <a href="<?php echo Uri::create('turbine/edit/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                            <a href="<?php echo Uri::create('turbine/delete/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('turbine/edit/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning<?php if ($turbine->turbine_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('turbine/delete/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger<?php if ($turbine->turbine_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                                             </td>
                                     </tr>
 <?php endforeach ?>
