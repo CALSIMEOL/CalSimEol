@@ -76,7 +76,7 @@ class Controller_Turbine extends Controller_Template
 		$turbine = Model_Turbine::find($id);
 
 		// Redirige à la lisye sir l'éolienne n'exite pas
-		$turbine ? : Response::redirect_back('turbine/list');
+		$turbine and !$turbine->turbine_verified ? : Response::redirect_back('turbine/list');
 
 		// Récupère les points de la coube de puissance
 		$powers = array();
