@@ -1,18 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Jeu 29 Janvier 2015 à 13:04
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client: localhost
+-- Généré le: Jeu 29 Janvier 2015 à 15:17
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
--- Base de données :  `calsimeol_dev`
+-- Base de données: `calsimeol_dev`
 --
+CREATE DATABASE IF NOT EXISTS `calsimeol_dev` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `calsimeol_dev`;
 
 -- --------------------------------------------------------
 
@@ -1071,34 +1079,38 @@ CREATE TABLE IF NOT EXISTS `cse_turbines` (
 --
 
 INSERT INTO `cse_turbines` (`turbine_id`, `turbine_name`, `turbine_manufacturer`, `turbine_power`, `turbine_blades`, `turbine_diameter`, `turbine_height`, `turbine_start_speed`, `turbine_stop_speed`, `turbine_verified`) VALUES
-(1, 'Alstom ECO 80 1,67 Class 2A', '', 1670, 3, 80, 80, 3, 25, 1),
-(2, 'Alstom ECO 80 1,67 Class 3A', '', 1670, 3, 80, 80, 3, 25, 1),
-(3, 'Alstom ECO 80 2.0 Class 2A', '', 2000, 3, 80, 80, 4, 25, 1),
-(4, 'Alstom ECO 86 1.67 Class 3A', '', 1670, 3, 85.5, 80, 3, 25, 1),
-(5, 'Alstom ECO 100 3.0 Class 2A', '', 3000, 3, 100.8, 90, 3, 25, 1),
-(6, 'Alstom ECO 110 3.0 Class 3A', '', 3000, 3, 109.8, 90, 3, 25, 1),
-(7, 'Enercon E44', '', 900, 3, 44, 55, 2, 25, 1),
-(8, 'Enercon E53', '', 800, 3, 53, 73, 2, 25, 1),
-(9, 'Enercon E70', '', 2300, 3, 71, 80, 2, 25, 1),
-(10, 'Enercon E82', '', 2000, 3, 82, 80, 2, 25, 1),
-(11, 'Nordex N90', '', 2300, 3, 90, 80, 3, 25, 1),
-(12, 'Nordex N80', '', 2500, 3, 80, 60, 4, 25, 1),
-(13, 'Nordex S77', '', 1500, 3, 77, 61.5, 3, 20, 1),
-(14, 'Nordex S70', '', 1500, 3, 70, 65, 3, 25, 1),
-(15, 'Nordex N62', '', 1300, 3, 62, 60, 3, 25, 1),
-(16, 'Nordex N60', '', 1300, 3, 60, 46, 3, 25, 1),
-(17, 'Nordex N54', '', 1000, 3, 54, 50, 4, 25, 1),
-(18, 'Nordex N50', '', 800, 3, 50, 46, 3, 25, 1),
-(19, 'Nordex N43', '', 600, 3, 43, 40, 3, 25, 1),
-(20, 'Nordex N29', '', 250, 3, 29, 30, 4, 25, 1),
-(21, 'Nordex N27', '', 150, 3, 27, 30, 3, 25, 1),
-(22, 'Vestas V80 2000', '', 2000, 3, 80, 80, 4, 25, 1),
-(23, 'Vestas V66 1750', '', 1750, 3, 66, 66, 4, 25, 1),
-(24, 'Vestas V66 1650', '', 1650, 3, 66, 60, 4.5, 25, 1),
-(25, 'Vestas V52 850', '', 850, 3, 52, 44, 4, 25, 1),
-(26, 'Vestas V47 660', '', 660, 3, 47, 40, 4, 25, 1),
-(27, 'Vestas V44 600', '', 600, 3, 44, 35, 4, 20, 1),
-(28, 'Vestas V42 600', '', 600, 3, 42, 35, 4, 25, 1),
-(29, 'Vestas V39 600', '', 600, 3, 39, 35, 4, 30, 1),
-(30, 'Vestas V29 225', '', 225, 3, 29, 31.5, 3.5, 25, 1),
-(31, 'Vestas V27 225', '', 225, 3, 27, 31.5, 3.5, 25, 1);
+(1, 'ECO 80 1,67 Class 2A', 'Alstom', 1670, 3, 80, 80, 3, 25, 1),
+(2, 'ECO 80 1,67 Class 3A', 'Alstom', 1670, 3, 80, 80, 3, 25, 1),
+(3, 'ECO 80 2.0 Class 2A', 'Alstom', 2000, 3, 80, 80, 4, 25, 1),
+(4, 'ECO 86 1.67 Class 3A', 'Alstom', 1670, 3, 85.5, 80, 3, 25, 1),
+(5, 'ECO 100 3.0 Class 2A', 'Alstom', 3000, 3, 100.8, 90, 3, 25, 1),
+(6, 'ECO 110 3.0 Class 3A', 'Alstom', 3000, 3, 109.8, 90, 3, 25, 1),
+(7, 'E44', 'Enercon', 900, 3, 44, 55, 2, 25, 1),
+(8, 'E53', 'Enercon', 800, 3, 53, 73, 2, 25, 1),
+(9, 'E70', 'Enercon', 2300, 3, 71, 80, 2, 25, 1),
+(10, 'E82', 'Enercon', 2000, 3, 82, 80, 2, 25, 1),
+(11, 'N90', 'Nordex', 2300, 3, 90, 80, 3, 25, 1),
+(12, 'N80', 'Nordex', 2500, 3, 80, 60, 4, 25, 1),
+(13, 'S77', 'Nordex', 1500, 3, 77, 61.5, 3, 20, 1),
+(14, 'S70', 'Nordex', 1500, 3, 70, 65, 3, 25, 1),
+(15, 'N62', 'Nordex', 1300, 3, 62, 60, 3, 25, 1),
+(16, 'N60', 'Nordex', 1300, 3, 60, 46, 3, 25, 1),
+(17, 'N54', 'Nordex', 1000, 3, 54, 50, 4, 25, 1),
+(18, 'N50', 'Nordex', 800, 3, 50, 46, 3, 25, 1),
+(19, 'N43', 'Nordex', 600, 3, 43, 40, 3, 25, 1),
+(20, 'N29', 'Nordex', 250, 3, 29, 30, 4, 25, 1),
+(21, 'N27', 'Nordex', 150, 3, 27, 30, 3, 25, 1),
+(22, 'V80 2000', 'Vestas', 2000, 3, 80, 80, 4, 25, 1),
+(23, 'V66 1750', 'Vestas', 0, 3, 66, 66, 4, 25, 1),
+(24, 'V66 1650', 'Vestas', 1650, 3, 66, 60, 4.5, 25, 1),
+(25, 'V52 850', 'Vestas', 850, 3, 52, 44, 4, 25, 1),
+(26, 'V47 660', 'Vestas', 660, 3, 47, 40, 4, 25, 1),
+(27, 'V44 600', 'Vestas', 600, 3, 44, 35, 4, 20, 1),
+(28, 'V42 600', 'Vestas', 600, 3, 42, 35, 4, 25, 1),
+(29, 'V39 600', 'Vestas', 600, 3, 39, 35, 4, 30, 1),
+(30, 'V29 225', 'Vestas', 225, 3, 29, 31.5, 3.5, 25, 1),
+(31, 'V27 225', 'Vestas', 225, 3, 27, 31.5, 3.5, 25, 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
