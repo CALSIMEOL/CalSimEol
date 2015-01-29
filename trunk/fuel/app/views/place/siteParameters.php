@@ -398,20 +398,20 @@
 													</tr>
 
 													<tr><td>0</td><td><input type="text" id="windProbability0" name="place_propability_0" class="form-control input-sm"/></td><td >16</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>1</td><td><input type="text" id="windProbability1" name="place_propability_1" class="form-control input-sm"/></td><td>17</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>2</td><td><input type="text" id="windProbability2" name="place_propability_2" class="form-control input-sm"/></td><td>18</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>3</td><td><input type="text" id="windProbability3" name="place_propability_3" class="form-control input-sm"/></td><td>19</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>4</td><td><input type="text" id="windProbability4" name="place_propability_4" class="form-control input-sm"/></td><td>20</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>5</td><td><input type="text" id="windProbability5" name="place_propability_5" class="form-control input-sm"/></td><td>21</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>6</td><td><input type="text" id="windProbability6" name="place_propability_6" class="form-control input-sm"/></td><td>22</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>7</td><td><input type="text" id="windProbability7" name="place_propability_7" class="form-control input-sm"/></td><td>23</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>8</td><td><input type="text" id="windProbability8" name="place_propability_8" class="form-control input-sm"/></td><td>24</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>9</td><td><input type="text" id="windProbability9" name="place_propability_9" class="form-control input-sm"/></td><td>25</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>10</td><td><input type="text" id="windProbability10" name="place_propability_10" class="form-control input-sm"/></td><td>26</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>11</td><td><input type="text" id="windProbability11" name="place_propability_11" class="form-control input-sm"/></td><td>27</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>12</td><td><input type="text" id="windProbability12" name="place_propability_12" class="form-control input-sm"/></td><td>28</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>13</td><td><input type="text" id="windProbability13" name="place_propability_13" class="form-control input-sm"/></td><td>29</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>14</td><td><input type="text" id="windProbability14" name="place_propability_14" class="form-control input-sm"/></td><td>30</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>1</td><td><input type="text" id="windProbability1" name="place_propability_1" class="form-control input-sm"/></td><td>17</td><td><input type="text" id="windProbability17" name="place_propability_17" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>2</td><td><input type="text" id="windProbability2" name="place_propability_2" class="form-control input-sm"/></td><td>18</td><td><input type="text" id="windProbability18" name="place_propability_18" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>3</td><td><input type="text" id="windProbability3" name="place_propability_3" class="form-control input-sm"/></td><td>19</td><td><input type="text" id="windProbability19" name="place_propability_19" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>4</td><td><input type="text" id="windProbability4" name="place_propability_4" class="form-control input-sm"/></td><td>20</td><td><input type="text" id="windProbability20" name="place_propability_20" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>5</td><td><input type="text" id="windProbability5" name="place_propability_5" class="form-control input-sm"/></td><td>21</td><td><input type="text" id="windProbability21" name="place_propability_21" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>6</td><td><input type="text" id="windProbability6" name="place_propability_6" class="form-control input-sm"/></td><td>22</td><td><input type="text" id="windProbability22" name="place_propability_22" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>7</td><td><input type="text" id="windProbability7" name="place_propability_7" class="form-control input-sm"/></td><td>23</td><td><input type="text" id="windProbability23" name="place_propability_23" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>8</td><td><input type="text" id="windProbability8" name="place_propability_8" class="form-control input-sm"/></td><td>24</td><td><input type="text" id="windProbability24" name="place_propability_24" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>9</td><td><input type="text" id="windProbability9" name="place_propability_9" class="form-control input-sm"/></td><td>25</td><td><input type="text" id="windProbability25" name="place_propability_25" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>10</td><td><input type="text" id="windProbability10" name="place_propability_10" class="form-control input-sm"/></td><td>26</td><td><input type="text" id="windProbability26" name="place_propability_26" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>11</td><td><input type="text" id="windProbability11" name="place_propability_11" class="form-control input-sm"/></td><td>27</td><td><input type="text" id="windProbability27" name="place_propability_27" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>12</td><td><input type="text" id="windProbability12" name="place_propability_12" class="form-control input-sm"/></td><td>28</td><td><input type="text" id="windProbability28" name="place_propability_28" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>13</td><td><input type="text" id="windProbability13" name="place_propability_13" class="form-control input-sm"/></td><td>29</td><td><input type="text" id="windProbability29" name="place_propability_29" class="form-control input-sm"/></td><td></td></tr>
+                                                                                                        <tr><td>14</td><td><input type="text" id="windProbability14" name="place_propability_14" class="form-control input-sm"/></td><td>30</td><td><input type="text" id="windProbability30" name="place_propability_30" class="form-control input-sm"/></td><td></td></tr>
                                                                                                         <tr><td>15</td><td><input type="text" id="windProbability15" name="place_propability_15" class="form-control input-sm"/></td></tr>
                                                                                                         
 													
@@ -865,6 +865,7 @@ $(function () {
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
                     data: []
+                    
                 });
 		$('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
                 $('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
@@ -983,23 +984,58 @@ $(function () {
 		
 		$('#ElevationOfTheMeasurement').keyup(function() {
 		$('#divElevation').addClass('has-feedback');
-		$('#ElevationOfTheMeasurement').val() >= -500 && $('#ElevationOfTheMeasurement').val() <=3000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
+		$('#ElevationOfTheMeasurement').val() >= 0.1 && $('#ElevationOfTheMeasurement').val() <=2000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
 		});
 		
 		$('form').on('keyup', "input[id*='windProbability']", function() {
 		var totalHours2 = 0;
 		$('#windTable').addClass('has-feedback');
-		if (windSpeed===0){
-			totalHours2 = totalHours2 + parseInt($('#windProbability').val());
-		}
-		else {
-			totalHours2 = totalHours2 + parseInt($('#windProbability').val());
-			for(var j=1;j <= windSpeed;j++){
-				totalHours2 = totalHours2 + parseInt($('#windProbability'+j+'').val());
-			}
-		}
-		totalHours2 ===8760 && totalHours2 !== '' ? $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide():  $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
-	});
+                var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
+                for(var v=0;v < 31;v++){
+                        totalHours2 = totalHours2 + parseFloat($('#windProbability'+v+'').val());
+                }
+		!isNaN(totalHours2) ? $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide():  $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
+                !isNaN(totalHours2) ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var total=0;
+                    for(var v=0;v<31;v++)
+                    {
+                         total=total+parseFloat($('#windProbability'+v+'').val());
+                    }
+                    var Vm=0;
+                    for(var v=0;v<31;v++)
+                    {
+                         Vm=Vm+(v*parseFloat($('#windProbability'+v+'').val()))/total;
+                    }
+                    var expectedValue=0;
+                    var expectedValueSquare=0;
+                    for(var v=0;v<31;v++)
+                    {
+                         expectedValue=expectedValue+(v*parseFloat($('#windProbability'+v+'').val())/total);
+                         expectedValueSquare=expectedValueSquare+(Math.pow(v,2)*parseFloat($('#windProbability'+v+'').val())/total);
+                    }
+                    var sigma=Math.sqrt(expectedValueSquare-Math.pow(expectedValue,2));
+                    var k;
+                    var x;
+                    var gamma;
+                    var a;
+                    k=Math.pow(0.9874/(sigma/Vm),1.0983);
+                    x=1+1/k;
+                    gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
+                    a=Vm/gamma;
+                    if (k>=0.5 || k<=5 || a>=2 || a<=10)
+                        {
+                            for(var v=0;v<31;v++)
+                            {
+                                chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                            }
+                        }
+                    else alert("Les paramètres de Weibull calculés à partir de votre table d'occurence sont anormalement faibles ou élevés. Le graphique ne sera donc pas tracé.");
+                    }) : null;
+            });
         
                 
 			
