@@ -346,7 +346,7 @@ $(function () {
                     title: {
                         text: 'Wind speed (m/s)'
                     },
-                    tickInterval: 2,
+                    tickInterval: 5,
                     min: 0,
                     max: 30
                 },
@@ -360,7 +360,7 @@ $(function () {
                 
                 series: [{ 
                             name: 'Power',
-                            data: []
+                            data: [<?php foreach ($turbine['powers'] as $power) printf('[%f,%f],', $power->wind_speed, $power->turbine_power) ?>]
                         },{
                             
                             name: 'Cp (for a density of 1.17 kg/m3)',
