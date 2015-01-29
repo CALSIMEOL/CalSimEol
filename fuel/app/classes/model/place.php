@@ -39,7 +39,7 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Latitude (in degrees)',
 			'validation' => array(
 				'required',
-				'numeric_between' => array(-180, 180),
+				'numeric_between' => array(-90, 90),
 			),
 			'default' => '0',
 		),

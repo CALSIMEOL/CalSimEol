@@ -84,6 +84,35 @@ class Controller_Place extends Controller_Template
 
 	public function action_import()
 	{
-		return 'Importer site (EolAtlas).';
+		if (Input::post())
+		{
+			$url = 'http://eolatlas.890m.com/mickael/stationProche.php';
+//			$url.= '?latitude='.Input::post('place_latitude', 0);
+//			$url.= '&longitude='.Input::post('place_longitude', 0);
+
+			$response = Request::forge($url, 'curl')->execute()->response();
+
+			if ($response->status == 200 and is_array($response->body))
+			{
+				// {"id":"247","nom":"Marseille","latitude":"43.29695","longitude":"5.38107","facteurForme":"0","facteurEchelle":"0","hauteur":"0"}
+				$station = $response->body;
+
+				$place = new Model_Place();
+				$place->place_name = sprintf('EA%d - %s', $station['id'], $station['nom']);
+				$place->place_latitude = $station['latitude'];
+				$place->place_longitude = $station['longitude'];
+				$place->place_shape_factor = $station['facteurForme'];
+				$place->place_scale_factor = $station['facteurEchelle'];
+				$place->place_altitude = $station['hauteur'];
+
+				if ($place->save())
+				{
+					Response::redirect('place/edit/'.$place->place_id);
+				}
+			}
+		}
+
+		$this->template->title = "EolAtlas";
+		$this->template->content = View::forge('place/import');
 	}
 }
