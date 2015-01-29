@@ -260,7 +260,7 @@
 
                                         <br/>
                                         <div id="displayWindTable">
-                                            
+                                            <div id="powerDistributionChart"></div>
                                             <div class="col-sm-offset-1 col-sm-11">
                                                 <table id="powerTable" class="table table-responsive table-striped table-condensed center-block">
 
@@ -334,6 +334,40 @@ if(windSpeed>0){
 
 //generation of feedback icons for each input
 $(function () {
+    
+        $('#powerDistributionChart').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Power curve'
+                },
+                xAxis: {
+                    title: {
+                        text: 'Wind speed (m/s)'
+                    },
+                    tickInterval: 2,
+                    min: 0,
+                    max: 30
+                },
+                yAxis: {
+                    title: {
+                        text: 'Power (kW)'
+                    },
+                    gridLineWidth: 1,
+                    min: 0
+                },
+                
+                series: [{ 
+                            name: 'Power',
+                            data: []
+                        },{
+                            
+                            name: 'Cp (for a density of 1.17 kg/m3)',
+                            data: []
+                        }]
+                });
+    
         $('#turbManufacturer').keyup(function() {
         $('#divTurbineManufacturer').addClass('has-feedback');
         $('#turbManufacturer').val().length > 0 && $('#turbManufacturer').val().length <=20 ? $('#divTurbineManufacturer').addClass('has-success').removeClass('has-error') && $('#divTurbineManufacturer').find('.good').show() && $('#divTurbineManufacturer').find('.error').hide() : $('#divTurbineManufacturer').addClass('has-error').removeClass('has-success') && $('#divTurbineManufacturer').find('.error').show() && $('#divTurbineManufacturer').find('.good').hide();       
@@ -376,6 +410,13 @@ $(function () {
         
         $('form').on('keyup', "input[id*='windSpeed']", function() {
         $('#displayWindTable').addClass('has-feedback');
+        var chart = $('#windDistributionChart').highcharts();
+        chart.series[0].update({
+            data: []
+        });
+        chart.series[1].update({
+            data: []
+        });
             for(var j=0;j <= index;j++){
                 if($('#power'+j+'').val() >= 0 && $('#power'+j+'').val() <= parseInt($('#nominalPower').val()) && $('#power'+j+'').val() !== '' && $('#windSpeed'+j+'').val() >= 0 && $('#windSpeed'+j+'').val() <= 50 && $('#windSpeed'+j+'').val() !== ''){
                     $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide();
