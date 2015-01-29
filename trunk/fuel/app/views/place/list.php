@@ -10,6 +10,20 @@
         </div>
 
         <div class="row">
+            <div class="col-sm-offset-1 col-sm-5">
+                <form class="form-group" role="search">
+                    <label for="namePlace" class="control-label">Rechercher un site : </label>
+                    <div class="input-group">
+                            <input id="namePlace" class="form-control" type="text" name="search" placeholder="Entrer un site"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-sm-offset-1 col-sm-10">
 
                 <table class="table table-striped">

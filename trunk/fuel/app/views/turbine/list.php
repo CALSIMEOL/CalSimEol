@@ -10,8 +10,22 @@
         </div>
 
         <div class="row">
+            <div class="col-sm-offset-1 col-sm-5">
+                <form class="form-group" role="search">
+                    <label for="nameTurbine" class="control-label">Rechercher une éolienne : </label>
+                    <div class="input-group">
+                            <input id="nameTurbine" class="form-control" type="text" name="search" placeholder="Entrer un modèle"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-sm-offset-1 col-sm-10">
-
+    
 
       <!----------------------------------------------------------------Wind turbine list------------------------------------------------------------------>
                             <table class="table table-striped">
