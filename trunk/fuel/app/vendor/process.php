@@ -13,38 +13,39 @@ use PHPStats\ProbabilityDistribution\Weibull;
 
 function calcul($vitesse_moyenne,$k,$A)
 {
-	$output_power=array();
-	$output_power[0]=array(0,0);
-	$output_power[1]=array(1,0);
-	$output_power[2]=array(2,0);
-	$output_power[3]=array(3,0);
-	$output_power[4]=array(4,66);
-	$output_power[5]=array(5,166);
-	$output_power[6]=array(6,288);
-	$output_power[7]=array(7,473);
-	$output_power[8]=array(8,709);
-	$output_power[9]=array(9,1000);
-	$output_power[10]=array(10,1316);
-	$output_power[11]=array(11,1651);
-	$output_power[12]=array(12,1860);
-	$output_power[13]=array(13,1968);
-	$output_power[14]=array(14,2000);
-	$output_power[15]=array(15,2000);
-	$output_power[16]=array(16,2000);
-	$output_power[17]=array(17,2000);
-	$output_power[18]=array(18,2000);
-	$output_power[19]=array(19,2000);
-	$output_power[20]=array(20,2000);
-	$output_power[21]=array(21,2000);
-	$output_power[22]=array(22,2000);
-	$output_power[23]=array(23,2000);
-	$output_power[24]=array(24,2000);
-	$output_power[25]=array(25,2000);
-	$output_power[26]=array(26,0);
-	$output_power[27]=array(27,0);
-	$output_power[28]=array(28,0);
-	$output_power[29]=array(29,0);
-	$output_power[30]=array(30,0);
+//Site Brest Tableur
+$output_power=array();
+$output_power[0]=array(0,0);
+$output_power[1]=array(1,0);
+$output_power[2]=array(2,0);
+$output_power[3]=array(3,0);
+$output_power[4]=array(4,44.1);
+$output_power[5]=array(5,135);
+$output_power[6]=array(6,261);
+$output_power[7]=array(7,437);
+$output_power[8]=array(8,669);
+$output_power[9]=array(9,957);
+$output_power[10]=array(10,1279);
+$output_power[11]=array(11,1590);
+$output_power[12]=array(12,1823);
+$output_power[13]=array(13,1945);
+$output_power[14]=array(14,1988);
+$output_power[15]=array(15,1998);
+$output_power[16]=array(16,2000);
+$output_power[17]=array(17,2000);
+$output_power[18]=array(18,2000);
+$output_power[19]=array(19,2000);
+$output_power[20]=array(20,2000);
+$output_power[21]=array(21,2000);
+$output_power[22]=array(22,2000);
+$output_power[23]=array(23,2000);
+$output_power[24]=array(24,2000);
+$output_power[25]=array(25,2000);
+$output_power[26]=array(26,0);
+$output_power[27]=array(27,0);
+$output_power[28]=array(28,0);
+$output_power[29]=array(29,0);
+$output_power[30]=array(30,0);
 
 	$temp_celsius=15;
 	$hauteur_eolienne=80;
@@ -71,6 +72,8 @@ function _calcul($place, $turbine)
 	$diametre = $turbine->turbine_diameter;
 	$rugosite = $place->place_rugosity;
 	$hauteur = $place->place_altitude_meas;
+	$hauteur_site = $place->place_altitude;
+
 //$vitesse_moyenne, $k, $A, $output_power, $temp_celsius, $hauteur_eolienne, $puissance_nominale, $diametre, $rugosite, $hauteur
 //Tableau de puissance de sortie de l'éolienne (récupérée bdd Tom) ; Vitesse stabilisée (0 à 30) imposée
 //Colonne 0 = vitesse stabilisée ; Colonne 1 = puissance de sortie
@@ -140,7 +143,6 @@ $sigma=(0.9874*$vitesse_moyenne)/(exp(log($k)/1.0983));
 //Valeurs récupérées
 $temp_kelvin=$temp_celsius+273.15;
 $surface=(pi()*pow($diametre,2))/4;
-$rho=((pow(((288-0.0065*$hauteur_eolienne)/288),5.225))*1013*28.97)/(8.314*$temp_kelvin);
 //$rho1=1.225652;
 
 
@@ -200,77 +202,102 @@ $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 //echo $facteur_charge.'<br/>';
 
 
+	//Calcul de la densité de l'air
+	$h1=$hauteur_eolienne+$hauteur_site; //hauteur du rotor par rapport à la hauteur de référence
+	$T_rotor_kelvin=288.15-($h1*0.0065); //Tref mer(15 °C)-(h1*grad de temp vertical)
+	$pression_rotor=101325*(pow(($T_rotor_kelvin/288.15),(9.81/(287.04*0.0065))));//Pref mer * (T_rotor_kelvin/Tref mer)^(g/R*grad temp)
+	$rho=$pression_rotor/(287.04*$T_rotor_kelvin);
+	//echo $rho.'<br/>';
+	
 //Vitesse du vent par pas de 0.1 m/s
-$density=array();
-$density[0][0]=0;
-$density[0][2]=$Weibull1->pdf($density[0][0]);
-$density[0][3]=0.5*$rho*pow($density[0][0],3)*$density[0][2];
-$density[0][1]=$output_power[0][1];
 
-$tampon=array();
-$tampon[0][0]=0;
-$tampon[0][1]=0;
+	$density=array();
+	$density[0][0]=0;
+	$density[0][1]=$output_power[0][1];
+	$density[0][2]=$Weibull1->pdf($density[0][0]);
+	$density[0][3]=0.5*$rho*pow($density[0][0],3);
+	$density[0][4]=$density[0][2]*$density[0][3];
+	$density[0][5]=0;
+	$density[0][6]=$density[0][3]*(16/27);
+	$density[0][7]=$density[0][3]*$density[0][5];
+	$density[0][8]=0;
 
-for($w=1; $w<301; $w++)
-{
-	//Vitesse du vent par pas de 0.1 m/s
-	$density[$w][0]=$density[$w-1][0]+0.1;
-	//echo $tableau4[$w][0].'<br/>';
-	
-	//Distribution de Weibull sur les paramètres A et k et la variable vitesse du vent par pas de 0.1
-	$density[$w][2]=$Weibull1->pdf($density[$w][0]);
-	//echo $tableau4[$w][2].'<br/>';
-	
-	//Densité de puissance du vent en entrée par m² de rotor
-	$density[$w][3]=0.5*$rho*pow($density[$w][0],3)*$density[$w][2];
-	//echo $tableau4[$w][3].'<br>';
+	$tampon=array();
+	$tampon[0][0]=0;
+	$tampon[0][1]=0;
+	$tampon[0][2]=$output_power[0][1];
+	$tampon[0][3]=0;
 
-	//Interpolation de la courbe de puissance de l'éolienne en fonction de la vitesse du vent par pas de 0.1 m/s
-	if(is_int($w/10)==true)
-	{
-		$density[$w/10][1]=$output_power[$w/10][1];
-		//echo $tableau4[$w/10][1].'<br/>';
-	}
-	else
-	{
-		$density[$w/10][1]=($density[($w/10)-0.1][1])+(((($output_power[(integer)(($w/10)+1)][1]))-($output_power[(integer)($w/10)][1]))/10);
-		//echo $tableau4[($w/10)][1].'<br/>';
-		//echo $tableau1[$w/10][1].'<br/>';
-	}
+	$coef_puissance=array();
+	$coef_puissance[0][0]=0;
 	
-	//echo $w/10 .' -> '.$tableau4[$w/10][1].'<br/>';
-	//echo $w/10 .' -> '.$tableau4[$w/10][1].'  '.$tableau4[($w/10)-0.1][1].'  '.$tableau1[(integer)(($w/10)+1)][1].'  '.$tableau1[(integer)($w/10)][1].'<br/>';
-	
-	
-	//Coefficient de puissance
-	if((0.5*$rho*pow($density[$w][0],3)*$surface)!=0)
+	$somme_densite_entree=0;
+	$somme_densite_sortie=0;
+
+	for($w=1; $w<301; $w++)
 	{
-		$density[$w/10][5]=(1000*$density[$w/10][1])/(0.5*$rho*pow($density[$w][0],3)*$surface);
-		$tampon[$w][0]=$density[$w/10][5];
-	}
-	else
-	{
-		$density[$w/10][5]=0;
-		$tampon[$w][0]=0;
-	}
-	//echo $w/10 .' -> '.$tableau4[$w/10][5].'<br>';
-	//echo $w/10 .' -> '.$tableau5[$w][0].'<br>';
+		//Vitesse du vent par pas de 0.1 m/s
+		$density[$w][0]=$density[$w-1][0]+0.1;
+		//echo $density[$w][0].'<br/>';
+	
+		//Distribution de Weibull sur les paramètres A1 et k et la variable vitesse du vent par pas de 0.1
+		$density[$w][2]=$Weibull1->pdf($density[$w][0]);
+		//echo $density[$w][2].'<br/>';
+	
+		//Densité de puissance du vent en entrée par m² de rotor
+		$density[$w][3]=0.5*$rho*pow($density[$w][0],3);
+		//echo $density[$w][3].'<br>';
 		
-	//Densité de puissance en sortie d'éolienne par m² de rotor
-	$density[$w/10][6]=($density[$w/10][5]*$density[$w][3]);
-	$tampon[$w][1]=$density[$w/10][6];
-	//echo $w/10 .' -> '.$tableau4[$w/10][6].'<br>';
-
-
-//Densité de puissance en entrée réduite à la limite de Betz
-$density[$w][6]=$density[$w][3]*(16/27);
-
-//Densité de puissance en sortie d'éolienne par m² de rotor
-$density[$w/10][7]=($density[$w/10][5]*$density[$w][3]);
-$tampon[$w][1]=$density[$w/10][6];
-//echo $w/10 .' -> '.$tableau4[$w/10][6].'<br>';
+		//Densité de puissance en entrée réduite à la limite de Betz
+		$density[$w][6]=$density[$w][3]*(16/27);
+		
+		//Densité moyenne de la puissance d'entrée du vent
+		$density[$w][4]=$density[$w][2]*$density[$w][3];
+		$somme_densite_entree=$somme_densite_entree+$density[$w][4];
+		$densite_moy_entree=$somme_densite_entree/10;
+		//echo $densite_moy_entree.'<br>';
+		
+		//Interpolation de la courbe de puissance de l'éolienne en fonction de la vitesse du vent par pas de 0.1 m/s
+		if(is_int($w/10)==true)
+		{
+			$density[$w/10][1]=$output_power[$w/10][1];
+			$tampon[$w][2]=$density[$w/10][1];
+		}
+		else
+		{
+			$density[$w/10][1]=($density[($w/10)-0.1][1])+(((($output_power[(integer)(($w/10)+1)][1]))-($output_power[(integer)($w/10)][1]))/10);
+			$tampon[$w][2]=$density[$w/10][1];
+		}
 	
-}
+		//Coefficient de puissance
+		if((0.5*$rho*pow($density[$w][0],3)*$surface)!=0)
+		{
+			$density[$w/10][5]=(1000*$density[$w/10][1])/(0.5*$rho*pow($density[$w][0],3)*$surface);
+			$tampon[$w][0]=$density[$w/10][5];
+		}
+		else
+		{
+			$density[$w/10][5]=0;
+			$tampon[$w][0]=0;
+		}
+		
+		//Etablir le coefficient de puissance dans un tableau de 0 à 30 au pas de 1 m/s
+		if(is_int($w/10)==true)
+		{
+		$coef_puissance[$w/10][0]=$tampon[$w][0];
+		}
+		
+		//Densité de puissance en sortie d'éolienne par m² de rotor
+		$density[$w/10][7]=($density[$w/10][5]*$density[$w][3]);
+		$tampon[$w][1]=$density[$w/10][7];
+		
+		//Densité moyenne de la puissance de sortie
+		$tampon[$w][3]=$tampon[$w][1]*$density[$w][2];
+		$somme_densite_sortie=$somme_densite_sortie+$tampon[$w][3];
+		$densite_moy_sortie=$somme_densite_sortie/10;
+	}
+
+	$puissance_moy_entree = $densite_moy_entree * $surface;
 
 for($y=0; $y<301; $y++)
 {
@@ -280,6 +307,12 @@ for($y=0; $y<301; $y++)
 
 
 	$result = array();
+
+	$array['density_mean_input'] = $densite_moy_entree;
+	$array['power_mean_input'] = $puissance_moy_entree;
+	$array['moyeu_mean_speed'] = $Vm_extrapol;
+
+	$array['density_mean_output'] = $densite_moy_sortie;
 
 //	$array['mean_speed'] = $vitesse_moyenne;
 //	$array['power_output'] = $production[$v][4];
@@ -301,8 +334,7 @@ for($y=0; $y<301; $y++)
 	for ($i = 0; $i <= 30; $i++)
 	{
 		$array['turbine_power'][] = $output_power[$i][1];
-//		$array['cp'][] = $tampon[];
-		$array['cp'][] = '?';
+		$array['cp'][] = $coef_puissance[$i][0];
 	}
 
 	$array['production_power'] = array();
