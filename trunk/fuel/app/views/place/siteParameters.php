@@ -126,7 +126,7 @@
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-										   data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
+										   data-content="Entrer une altitude comprise entre 1 et 3000 m.<br><br>
 										   <i>L'altitude est l'élévation verticale d'un lieu par rapport au niveau de la mer.</i>
 										   <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 										   title="<b>AIDE : Altitude du site</b>">
@@ -177,7 +177,7 @@
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-										   data-content="<i>La masse volumique de l'air carractérise la masse d'air contenue dans un volume de 1 m<sup>2</sup>.
+										   data-content="<i>La masse volumique de l'air carractérise la masse d'air contenue dans un volume de 1 m<sup>3</sup>.
 										   Elle varie avec la température et l'altitude.</i><br>
 										   <?php echo str_replace('"', "'", Asset::img('densityForm.png', array('class' => 'img-responsive'))) ?>
 										   <small>&rho; : masse volumique de l'air h : altitude T : température en kelvin</small>"
@@ -371,7 +371,7 @@
 													<div class="col-xs-1">
 														<div class="pop">
 															<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-															   data-content="Entrer une altitude comprise entre -500 et 3000 m.<br><br>
+															   data-content="Entrer une altitude comprise entre 1 et 3000 m.<br><br>
 															   <i>L'altitude de la prise de mesure est l'élévation verticale (par rapport au niveau de la mer) à laquelle ont été mesurés les vitesses de vents pour ce site.</i><br><br>
 															   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 															   accesskey=""title="<b>AIDE : Altitude de la prise de mesure</b>">
@@ -660,9 +660,9 @@
 		$('input[type="radio"][name="distribSources"]:checked').val() === 'simple' ? $('#windsimple').css({'display': 'block'}) : $('#windsimple').css({'display': 'none'});
 		$('input[type="radio"][name="distribSources"]:checked').val() === 'detailed' ? $('#displayWindTable').css({'display': 'block'}) : $('#displayWindTable').css({'display': 'none'});
 	}
-$(function () {
-	windDistribution();
-});
+        $(function () {
+            windDistribution();
+        });
 
 //Displaying wind rose
 	function windRose(){
@@ -700,7 +700,7 @@ if(windSpeed>0){
 */
 
 //intoxicate non selected option
-function intoxicateOption(){
+        function intoxicateOption(){
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').find("*").prop('disabled', false) : $('#option1').find("*").prop('disabled', true);
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').css({'opacity': '1'}) : $('#option1').css({'opacity': '0.33'});
 //		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option2').find("*").val(''):null;
@@ -717,130 +717,141 @@ function intoxicateOption(){
 //	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option2').find("*").val(''):null;
 		
 	}
-$(function () {
-	intoxicateOption();
-});
+        $(function () {
+            intoxicateOption();
+        });
 
 
-$(function () {
-                
-                $('#windDistributionChart').highcharts({
-                chart: {
-                    type: 'spline'
-                },
+        $(function () {
+            //plot an empty chart when the page is loaded
+            $('#windDistributionChart').highcharts({
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Wind distribution'
+            },
+            xAxis: {
                 title: {
-                    text: 'Wind distribution'
+                    text: 'Wind speed (m/s)'
                 },
-                xAxis: {
-                    title: {
-                        text: 'Wind speed (m/s)'
-                    },
-                    tickInterval: 2,
-                    min: 0,
-                    max: 30
+                tickInterval: 2,
+                min: 0,
+                max: 30
+            },
+            yAxis: {
+                title: {
+                    text: 'Probability (%)'
                 },
-                yAxis: {
-                    title: {
-                        text: 'Probability (%)'
-                    },
-                    gridLineWidth: 1,
-                    min: 0
-                },
-                
-                series: [{ 
-                            name: 'Weibull distribution',
-                            data: []
-                        }]
-                });
-    
-		$('#siteName').keyup(function() {
-		$('#divSiteName').addClass('has-feedback');
-		$('#siteName').val().length > 0 && $('#siteName').val().length <=20 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
-		});
-		
-		$('#latitude').keyup(function() {
-		$('#divLatitude').addClass('has-feedback');
-		$('#latitude').val() >= -90 && $('#latitude').val() <=90 && $('#latitude').val() !== '' ? $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide()  : $('#divLatitude').addClass('has-error').removeClass('has-success') && $('#divLatitude').find('.error').show() && $('#divLatitude').find('.good').hide();	 
-		});
-		
-		$('#longitude').keyup(function() {
-		$('#divLongitude').addClass('has-feedback');
-		$('#longitude').val() >= -180 && $('#longitude').val() <=180 && $('#longitude').val() !== '' ? $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide()  : $('#divLongitude').addClass('has-error').removeClass('has-success') && $('#divLongitude').find('.error').show() && $('#divLongitude').find('.good').hide();	 
-		});
-		
-		$('#altitude').keyup(function() {
-		$('#divAltitude').addClass('has-feedback');
-		$('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
-		$('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
-			var altitude = parseFloat($('#altitude').val()); 
-			var temp = parseFloat($('#averageannualtemp').val()); 
-			var density; 
-			density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
-			density=density.toFixed(5);
-			return density;})
-		: $('#density').val('');
-		});
-		
-		$('#averageannualtemp').keyup(function() {
-		$('#divTemp').addClass('has-feedback');
-		$('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
-		$('#altitude').val() >= -500 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
-			var altitude = parseFloat($('#altitude').val()); 
-			var temp = parseFloat($('#averageannualtemp').val()); 
-			var density; 
-			density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
-			density=density.toFixed(5);
-			return density;})
-		: $('#density').val('');
-		});
-		
-		$('#roughnesslength').keyup(function() {
-		$('#divRoughness').addClass('has-feedback');
-		$('#roughnesslength').val() >= 0.0002 && $('#roughnesslength').val() <=2 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
-		});
-		
-		$('.windProb').keyup(function() {
-		var totalHours = 0;
-		$('#roseTable').addClass('has-feedback');
-		for(var j=1;j <= 8;j++){
-			totalHours = totalHours + parseInt($('#windProb'+j+'').val());
-		}
-		for(j=1;j <= 8;j++){
-			if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
-				$('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
-			}
-			else {
-				$('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
-				break;
-			}
-		}
-		});
-		
-		$('.windMean').keyup(function() {
-		var totalHours = 0;
-		$('#roseTable').addClass('has-feedback');
-		for(var j=1;j <= 8;j++){
-			totalHours = totalHours + parseInt($('#windProb'+j+'').val());
-		}
-		for(j=1;j <= 8;j++){
-			if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
-				$('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
-			}
-			else {
-				$('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
-				break;
-			}
-		}
-		});
-		
-		$('#averageWindSpeed1').keyup(function() {
-		$('#divAverageSpeed').addClass('has-feedback');
+                gridLineWidth: 1,
+                min: 0
+            },
+
+            series: [{ 
+                        name: 'Weibull distribution',
+                        data: []
+                    }]
+            });
+            
+            //input verification and feedback when the user modifies the site name
+            $('#siteName').keyup(function() {
+                $('#divSiteName').addClass('has-feedback');
+                $('#siteName').val().length > 0 && $('#siteName').val().length <=20 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
+            });
+            
+            //input verification and feedback when the user modifies the latitude
+            $('#latitude').keyup(function() {
+                $('#divLatitude').addClass('has-feedback');
+                $('#latitude').val() >= -90 && $('#latitude').val() <=90 && $('#latitude').val() !== '' ? $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide()  : $('#divLatitude').addClass('has-error').removeClass('has-success') && $('#divLatitude').find('.error').show() && $('#divLatitude').find('.good').hide();	 
+            });
+            
+            //input verification and feedback when the user modifies the longitude
+            $('#longitude').keyup(function() {
+                $('#divLongitude').addClass('has-feedback');
+                $('#longitude').val() >= -180 && $('#longitude').val() <=180 && $('#longitude').val() !== '' ? $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide()  : $('#divLongitude').addClass('has-error').removeClass('has-success') && $('#divLongitude').find('.error').show() && $('#divLongitude').find('.good').hide();	 
+            });
+
+            //input verification, calculation/display of the density and feedback when the user modifies the altitude
+            $('#altitude').keyup(function() {
+                $('#divAltitude').addClass('has-feedback');
+                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
+                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                        var altitude = parseFloat($('#altitude').val()); 
+                        var temp = parseFloat($('#averageannualtemp').val()); 
+                        var density; 
+                        density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+                        density=density.toFixed(5);
+                        return density
+                        ;})
+                : $('#density').val('');
+            });
+            
+            //input verification, calculation/display of the density and feedback when the user modifies the mean temperature
+            $('#averageannualtemp').keyup(function() {
+                $('#divTemp').addClass('has-feedback');
+                $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
+                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                        var altitude = parseFloat($('#altitude').val()); 
+                        var temp = parseFloat($('#averageannualtemp').val()); 
+                        var density; 
+                        density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+                        density=density.toFixed(5);
+                        return density
+                        ;})
+                : $('#density').val('');
+            });
+
+            //input verification and feedback when the user modifies the roughness length
+            $('#roughnesslength').keyup(function() {
+                $('#divRoughness').addClass('has-feedback');
+                $('#roughnesslength').val() >= 0.0002 && $('#roughnesslength').val() <=2 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
+            });
+            
+            //
+            $('.windProb').keyup(function() {
+            var totalHours = 0;
+            $('#roseTable').addClass('has-feedback');
+            for(var j=1;j <= 8;j++){
+                    totalHours = totalHours + parseInt($('#windProb'+j+'').val());
+            }
+            for(j=1;j <= 8;j++){
+                    if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
+                            $('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
+                    }
+                    else {
+                            $('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
+                            break;
+                    }
+            }
+            });
+            
+            //
+            $('.windMean').keyup(function() {
+            var totalHours = 0;
+            $('#roseTable').addClass('has-feedback');
+            for(var j=1;j <= 8;j++){
+                    totalHours = totalHours + parseInt($('#windProb'+j+'').val());
+            }
+            for(j=1;j <= 8;j++){
+                    if($('#windMean'+j+'').val() >= 0 && $('#windMean'+j+'').val() <=20 && $('#windMean'+j+'').val() !== '' && totalHours ===8760 && totalHours !== ''){
+                            $('#roseTable').addClass('has-success').removeClass('has-error') && $('#roseTable').find('.good').show() && $('#roseTable').find('.error').hide();
+                    }
+                    else {
+                            $('#roseTable').addClass('has-error').removeClass('has-success') && $('#roseTable').find('.error').show() && $('#roseTable').find('.good').hide();
+                            break;
+                    }
+            }
+            });
+            
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the mean speed option 1
+            $('#averageWindSpeed1').keyup(function() {
+                $('#divAverageSpeed').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
                     data: []
                 });
-		$('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();	 
-		$('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $(function () {
+                $('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' ? $('#divAverageSpeed').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed').find('.good').show() && $('#divAverageSpeed').find('.error').hide()  : $('#divAverageSpeed').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed').find('.error').show() && $('#divAverageSpeed').find('.good').hide();	 
+                $('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed1').val());
                     var k = parseFloat($('#shape1').val());
@@ -854,13 +865,12 @@ $(function () {
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
-                    
-                });
+            });
 		
-		$('#shape1').keyup(function() {
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the shape factor option 1
+            $('#shape1').keyup(function() {
 		$('#divShapeFactor').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -882,17 +892,17 @@ $(function () {
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
-		});
-		
-		$('#averageWindSpeed2').keyup(function() {
+            });
+            
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the mean speed option 2
+            $('#averageWindSpeed2').keyup(function() {
 		$('#divAverageSpeed2').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
-                    chart.series[0].update({
+                chart.series[0].update({
                         data: []
-                    });
+                });
 		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' ? $('#divAverageSpeed2').addClass('has-success').removeClass('has-error') && $('#divAverageSpeed2').find('.good').show() && $('#divAverageSpeed2').find('.error').hide()  : $('#divAverageSpeed2').addClass('has-error').removeClass('has-success') && $('#divAverageSpeed2').find('.error').show() && $('#divAverageSpeed2').find('.good').hide();	 
 		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ?$(function () {
                     var chart = $('#windDistributionChart').highcharts();
@@ -910,17 +920,17 @@ $(function () {
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
-                });
+            });
 		
-		$('#standardDeviation').keyup(function() {
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the standard deviation option 2
+            $('#standardDeviation').keyup(function() {
 		$('#divStdDeviation').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
-                    chart.series[0].update({
+                chart.series[0].update({
                         data: []
-                    });
+                });
 		$('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ? $('#divStdDeviation').addClass('has-success').removeClass('has-error') && $('#divStdDeviation').find('.good').show() && $('#divStdDeviation').find('.error').hide()  : $('#divStdDeviation').addClass('has-error').removeClass('has-success') && $('#divStdDeviation').find('.error').show() && $('#divStdDeviation').find('.good').hide();	 
 		$('#averageWindSpeed2').val() >= 1 && $('#averageWindSpeed2').val() <=12 && $('#averageWindSpeed2').val() !== '' && $('#standardDeviation').val() >= 0.1 && $('#standardDeviation').val() <=15 && $('#standardDeviation').val() !== '' ?$(function () {
                     var chart = $('#windDistributionChart').highcharts();
@@ -938,36 +948,36 @@ $(function () {
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
-                });
+            });
 		
-		$('#scaleFactor').keyup(function() {
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the scale factor option 3   
+            $('#scaleFactor').keyup(function() {
 		$('#divScaleFactor').addClass('has-feedback');
+                var chart = $('#windDistributionChart').highcharts();
+                chart.series[0].update({
+                    data: []
+                });
 		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
 		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
-                    var chart = $('#windDistributionChart').highcharts();
-                    chart.series[0].update({
-                        data: []
-                    });
                     var k = parseFloat($('#shape2').val());
                     var a = parseFloat($('#scaleFactor').val()); 
                     for(var v=0;v<31;v++)
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
                 });
 		
-		$('#shape2').keyup(function() {
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the shape factor option 3    
+            $('#shape2').keyup(function() {
 		$('#divShapeFactor2').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
-                    chart.series[0].update({
-                        data: []
-                    });
+                chart.series[0].update({
+                    data: []
+                });
 		$('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $('#divShapeFactor2').addClass('has-success').removeClass('has-error') && $('#divShapeFactor2').find('.good').show() && $('#divShapeFactor2').find('.error').hide()  : $('#divShapeFactor2').addClass('has-error').removeClass('has-success') && $('#divShapeFactor2').find('.error').show() && $('#divShapeFactor2').find('.good').hide();	 
 		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
@@ -977,23 +987,24 @@ $(function () {
                     {
                          chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
                     }
-                    }
-                    ) 
+                    }) 
                 : null;
-                });
+            });
 		
-		$('#ElevationOfTheMeasurement').keyup(function() {
+            //input verification and feedback when the user modifies the elevation of the measure
+            $('#ElevationOfTheMeasurement').keyup(function() {
 		$('#divElevation').addClass('has-feedback');
-		$('#ElevationOfTheMeasurement').val() >= 0.1 && $('#ElevationOfTheMeasurement').val() <=2000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
-		});
-		
-		$('form').on('keyup', "input[id*='windProbability']", function() {
+		$('#ElevationOfTheMeasurement').val() >= 1 && $('#ElevationOfTheMeasurement').val() <=3000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
+            });
+            
+            //input verification, calculation/display of the Weibull curve and feedback when the user modifies the wind table
+            $('form').on('keyup', "input[id*='windProbability']", function() {
 		var totalHours2 = 0;
 		$('#windTable').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
-                    chart.series[0].update({
-                        data: []
-                    });
+                chart.series[0].update({
+                    data: []
+                });
                 for(var v=0;v < 31;v++){
                         totalHours2 = totalHours2 + parseFloat($('#windProbability'+v+'').val());
                 }
@@ -1034,14 +1045,10 @@ $(function () {
                             }
                         }
                     else alert("Les paramètres de Weibull calculés à partir de votre table d'occurence sont anormalement faibles ou élevés. Le graphique ne sera donc pas tracé.");
-                    }) : null;
-            });
-        
-                
-			
-		
+                    }) 
+                : null;
+            });		
 });
-
 
 //popover
 $(function (){

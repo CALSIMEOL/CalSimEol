@@ -46,12 +46,12 @@
                                             <td><?php echo $turbine['turbine_id'] ?></td>
                                             <td><b><?php echo $turbine['turbine_name'] ?></b></td>
                                             <td><b><?php echo $turbine['turbine_manufacturer'] ?></b></td>
-                                            <td><?php echo $turbine['turbine_power'] ?></td>
+                                            <td><?php echo $turbine['turbine_power'].' kW' ?></td>
                                             <td><?php echo $turbine['turbine_blades'] ?></td>
-                                            <td><?php echo $turbine['turbine_diameter'] ?></td>
-                                            <td><?php echo $turbine['turbine_height'] ?></td>
-                                            <td><?php echo $turbine['turbine_start_speed'] ?></td>
-                                            <td><?php echo $turbine['turbine_stop_speed'] ?></td>
+                                            <td><?php echo $turbine['turbine_diameter'].' m' ?></td>
+                                            <td><?php echo $turbine['turbine_height'].' m' ?></td>
+                                            <td><?php echo $turbine['turbine_start_speed'].'m/s' ?></td>
+                                            <td><?php echo $turbine['turbine_stop_speed'].'m/s' ?></td>
                                             <td>
                             <a href="<?php echo Uri::create('turbine/edit/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-warning<?php if ($turbine->turbine_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                             <a href="<?php echo Uri::create('turbine/delete/:id', array('id' => $turbine['turbine_id'])) ?>" class="btn btn-xs btn-danger<?php if ($turbine->turbine_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
