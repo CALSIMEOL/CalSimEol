@@ -87,8 +87,8 @@ class Controller_Place extends Controller_Template
 		if (Input::post())
 		{
 			$url = 'http://eolatlas.890m.com/mickael/stationProche.php';
-//			$url.= '?latitude='.Input::post('place_latitude', 0);
-//			$url.= '&longitude='.Input::post('place_longitude', 0);
+			$url.= '?latitude='.Input::post('place_latitude', 0);
+			$url.= '&longitude='.Input::post('place_longitude', 0);
 
 			$response = Request::forge($url, 'curl')->execute()->response();
 
