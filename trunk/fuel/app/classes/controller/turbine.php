@@ -135,7 +135,7 @@ class Controller_Turbine extends Controller_Template
 	{
 		$turbine = $id > 0 ? Model_Turbine::find($id) : false;
 
-		$turbine ? $turbine->delete() : null;
+		$turbine and !$turbine->turbine_verified ? $turbine->delete() : null;
 
 		Response::redirect_back('turbine/list');
 	}

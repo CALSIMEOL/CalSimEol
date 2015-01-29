@@ -9,8 +9,8 @@ class Model_Turbine extends \Orm\Model
 	protected static $_properties = array(
 		'turbine_id' => array(
 			'data_type' => 'int',
-			'label' => '#',
-			'form' => false,
+			'label'     => '#',
+			'form'      => false,
 		),
 		'turbine_name' => array(
 			'data_type'  => 'varchar',
@@ -20,23 +20,23 @@ class Model_Turbine extends \Orm\Model
 				'max_length' => array(30),
 				'min_length' => array(1),
 			),
-			'form' => array(
+			'form'       => array(
 				'type' => 'text',
 			),
-			'default' => 'My turbine ###',
+			'default'    => 'My turbine ###',
 		),
 		'turbine_manufacturer' => array(
-			'data_type' => 'varchar',
-			'label' => 'Turbine Manufacturer',
+			'data_type'  => 'varchar',
+			'label'      => 'Turbine Manufacturer',
 			'validation' => array(
 				'required',
 				'max_length' => array(20),
 				'min_length' => array(1),
 			),
-			'form' => array(
+			'form'       => array(
 				'type' => 'text',
 			),
-			'default' => 'My windturbine',
+			'default'    => 'My windturbine',
 		),
 		'turbine_power' => array(
 			'data_type'  => 'float',
@@ -85,6 +85,15 @@ class Model_Turbine extends \Orm\Model
 				'required',
 				'numeric_between' => array(10, 40),
 			),
+		),
+		'turbine_verified' => array(
+			'data_type'  => 'bool',
+			'label'      => '',
+//			'validation' => array(
+//				'required',
+//			),
+//			'form'       => false,
+			'default'    => '0',
 		),
 	);
 
