@@ -24,6 +24,18 @@ class Controller_Turbine extends Controller_Template
 		// Instanciation d'une nouvelle éolienne
 		$turbine = new Model_Turbine();
 
+		// Récupère et enregistre les points pour la courbe de puissance
+		for ($i = 0; $i <= 30; $i++)
+		{
+			// Instanciation d'un modèle pour chaque points de la courbe de puissance
+			$power = new Model_TurbinePower();
+			$power->wind_speed = $i;
+			$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+
+			// Association de l'instance créée à la nouvelle éolienne
+			$turbine->powers[] = $power;
+		}
+
 		// Chargement du formulaire pour la saisie des informatioins de l'éolienne
 		$fieldset = Fieldset::forge()->add_model('Model_Turbine')->repopulate();
 
@@ -32,18 +44,6 @@ class Controller_Turbine extends Controller_Template
 		{
 			// Met à jour les informations du modèle avec les informations saisies par l'utilisateur
 			$turbine->set($fieldset->validated());
-
-			// Récup_re et enregistre les points pour la courbe de puissance
-			for ($i = 0; $i <= 30; $i++)
-			{
-				// Instanciation d'un modèle pour chaque points de la courbe de puissance
-				$power = new Model_TurbinePower();
-				$power->wind_speed = $i;
-				$power->turbine_power = Input::post('turbine_power_'.$i, 0);
-
-				// Association de l'instance créée à la nouvelle éolienne
-				$turbine->powers[] = $power;
-			}
 
 			// Sauvegarde de l'éolienne
 			if ($turbine->save())
