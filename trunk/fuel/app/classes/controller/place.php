@@ -13,16 +13,40 @@ class Controller_Place extends Controller_Template
 		$this->template->content = ViewModel::forge('place/list');
 	}
 
-	public function action_add($db = 1)
+	public function action_add()
 	{
-		$data = array();
+		$data = array(
+//			'update' => false, // Not used
+		);
 
+		//
+		$place = new Model_Place();
+
+		//
+		for ($i = 0; $i <= 30; $i++)
+		{
+			//
+			$point = new Model_PlaceWeibull();
+			$point->wind_speed = $i;
+			$point->place_probability = Input::post('place_propability_'.$i, 0);
+
+			//
+			$place->weibull[] = $point;
+		}
+
+		//
 		$fieldset = Fieldset::forge()->add_model('Model_Place')->repopulate();
 
+		//
 		if ($fieldset->validation()->run())
 		{
-			if (Model_Place::forge($fieldset->validated())->save())
+			//
+			$place->set($fieldset->validated());
+
+			//
+			if ($place->save())
 			{
+				//
 				Response::redirect_back('place/list');
 			}
 		}
@@ -31,43 +55,72 @@ class Controller_Place extends Controller_Template
 			$data['messages'] = $fieldset->validation()->error();
 		}
 
-		$data['place'] = $fieldset->input();
+		$data['place'] = array_merge($fieldset->input(), array('weibull' => $place->weibull));
 
 		$this->template->title = "Ajouter un site";
 		$this->template->content = View::forge('place/siteParameters', $data);
 	}
 
-	public function action_edit($id, $db = 1)
+	public function action_edit($id)
 	{
-		$data = array();
+		$data = array(
+//			'update' => true, // Not used
+		);
 
+		// Récupère le site par son identifiant
 		$place = Model_Place::find($id);
 
+		// Redirige à la liste si le site n'existe pas
 		$place ? : Response::redirect_back('place/list');
 
+		// Récupère les points de la distribution des vents
+		$weibull = array();
+		foreach ($place->weibull as $point)
+		{
+			$weibull[$point->wind_speed] = $point;
+		}
+
+		// Complète la liste des points
+		for ($i = 0; $i <= 30; $i++)
+		{
+			if (!isset($weibull[$i]))
+			{
+				$point = new Model_PlaceWeibull();
+				$point->place_id = $place->place_id;
+				$place->wind_speed = $i;
+				$place->place_probability = Input::post('place_probability_'.$i, 0);
+
+				$place->weibull[] = $point;
+			}
+			else
+			{
+				$place->weibull[$weibull[$i]->place_weibull_id]->place_probability = Input::post('place_probability_'.$i, $place->weibull[$weibull[$i]->place_weibull_id]->place_probability);
+			}
+		}
+
+		//
 		$fieldset = Fieldset::forge()->add_model('Model_Place')->populate($place);
 
+		//
 		if ($fieldset->validation()->run())
 		{
+			//
 			$place->set($fieldset->validated());
 
-			if (! $db)
+			// Sauvegarde des modifications
+			if ($place->save())
 			{
-				Cookie::set('simulation_place', base64_encode(serialize($place->to_array())));
-				Response::redirect_back('simulate/choose');
-			}
-
-			if ($db and $place->save())
-			{
+				// Redirige l'utilisateur sur la liste des sites si la mise à jour a réussie
 				Response::redirect_back('place/list');
 			}
 		}
 		else
 		{
+			// Récupère la liste des erreurs de validations
 			$data['messages'] = $fieldset->validation()->error();
 		}
 
-		$data['place'] = array_merge($place->to_array(), $fieldset->input());
+		$data['place'] = array_merge($place->to_array(), $fieldset->input(), array('weibull' => $place->weibull));
 
 		$this->template->title = 'Edition de '.$place->place_name;
 		$this->template->content = View::forge('place/siteParameters', $data);

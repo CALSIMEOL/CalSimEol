@@ -30,7 +30,7 @@ class Model_TurbinePower extends \Orm\Model
 			'form' => false,
 		),
 		'wind_speed' => array(
-			'data_type' => 'int',
+			'data_type' => 'float',
 			'label' => 'Vitesse du vent (m.s<sup>-1</sup>',
 			'validation' => array(
 				'required',
@@ -41,7 +41,7 @@ class Model_TurbinePower extends \Orm\Model
 			'default' => '0.00',
 		),
 		'turbine_power' => array(
-			'data_type' => 'int',
+			'data_type' => 'float',
 			'label' => 'Puissance (en kW)',
 			'validation' => array(
 				'required',
