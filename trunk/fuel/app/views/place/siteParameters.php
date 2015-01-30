@@ -392,31 +392,21 @@
 													<tr>
 														<th>Vitesse [m/s]</th>
 														<th>Occurences/an</th>
-                                                                                                                <th>Vitesse [m/s]</th>
-														<th>Occurences/an</th>                                                                                                                
+                                                                                                              
 														<th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
 													</tr>
 
-													<tr><td>0</td><td><input type="text" id="windProbability0" name="place_propability_0" class="form-control input-sm"/></td><td >16</td><td><input type="text" id="windProbability16" name="place_propability_16" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>1</td><td><input type="text" id="windProbability1" name="place_propability_1" class="form-control input-sm"/></td><td>17</td><td><input type="text" id="windProbability17" name="place_propability_17" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>2</td><td><input type="text" id="windProbability2" name="place_propability_2" class="form-control input-sm"/></td><td>18</td><td><input type="text" id="windProbability18" name="place_propability_18" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>3</td><td><input type="text" id="windProbability3" name="place_propability_3" class="form-control input-sm"/></td><td>19</td><td><input type="text" id="windProbability19" name="place_propability_19" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>4</td><td><input type="text" id="windProbability4" name="place_propability_4" class="form-control input-sm"/></td><td>20</td><td><input type="text" id="windProbability20" name="place_propability_20" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>5</td><td><input type="text" id="windProbability5" name="place_propability_5" class="form-control input-sm"/></td><td>21</td><td><input type="text" id="windProbability21" name="place_propability_21" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>6</td><td><input type="text" id="windProbability6" name="place_propability_6" class="form-control input-sm"/></td><td>22</td><td><input type="text" id="windProbability22" name="place_propability_22" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>7</td><td><input type="text" id="windProbability7" name="place_propability_7" class="form-control input-sm"/></td><td>23</td><td><input type="text" id="windProbability23" name="place_propability_23" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>8</td><td><input type="text" id="windProbability8" name="place_propability_8" class="form-control input-sm"/></td><td>24</td><td><input type="text" id="windProbability24" name="place_propability_24" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>9</td><td><input type="text" id="windProbability9" name="place_propability_9" class="form-control input-sm"/></td><td>25</td><td><input type="text" id="windProbability25" name="place_propability_25" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>10</td><td><input type="text" id="windProbability10" name="place_propability_10" class="form-control input-sm"/></td><td>26</td><td><input type="text" id="windProbability26" name="place_propability_26" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>11</td><td><input type="text" id="windProbability11" name="place_propability_11" class="form-control input-sm"/></td><td>27</td><td><input type="text" id="windProbability27" name="place_propability_27" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>12</td><td><input type="text" id="windProbability12" name="place_propability_12" class="form-control input-sm"/></td><td>28</td><td><input type="text" id="windProbability28" name="place_propability_28" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>13</td><td><input type="text" id="windProbability13" name="place_propability_13" class="form-control input-sm"/></td><td>29</td><td><input type="text" id="windProbability29" name="place_propability_29" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>14</td><td><input type="text" id="windProbability14" name="place_propability_14" class="form-control input-sm"/></td><td>30</td><td><input type="text" id="windProbability30" name="place_propability_30" class="form-control input-sm"/></td><td></td></tr>
-                                                                                                        <tr><td>15</td><td><input type="text" id="windProbability15" name="place_propability_15" class="form-control input-sm"/></td></tr>
+													<?php foreach ($place['weibull'] as $weibull) : ?>
+                                                                                                        <tr>
+                                                                                                            <td align="center"><?php echo $weibull->wind_speed ?></td>
+                                                                                                            <td><input type="text" id="windProbability<?php echo $weibull->wind_speed ?>" name="place_probability_<?php echo $weibull->wind_speed ?>" value="<?php echo $weibull->place_probability ?>" class="form-control input-sm"/></td>
+                                                                                                            <td></td>
+                                                                                                        </tr>
+                                                                                                        <?php endforeach ?>
                                                                                                         
 													
 												</table>
-												<span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
+												<span class="error help-block">Les occurences doivent être renseignées numériquement pour chaque valeur de vent.</span>
 												<span class="good help-block"></span>
 												<br><br>
                                                                                                 

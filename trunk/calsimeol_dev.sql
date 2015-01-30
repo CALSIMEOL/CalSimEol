@@ -1,33 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Ven 30 Janvier 2015 à 12:48
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client: localhost
+-- Généré le: Ven 30 Janvier 2015 à 14:03
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---
--- Base de données :  `calsimeol_dev`
---
 
--- --------------------------------------------------------
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Structure de la table `cse_place_rosewind`
+-- Base de données: `calsimeol_dev`
 --
-
-CREATE TABLE IF NOT EXISTS `cse_place_rosewind` (
-  `place_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `wind_mean_speed` float NOT NULL,
-  `wind_direction` varchar(255) NOT NULL,
-  `wind_probability` float NOT NULL,
-  PRIMARY KEY (`place_id`),
-  KEY `place_id` (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE DATABASE IF NOT EXISTS `calsimeol_dev` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `calsimeol_dev`;
 
 -- --------------------------------------------------------
 
@@ -36,11 +29,14 @@ CREATE TABLE IF NOT EXISTS `cse_place_rosewind` (
 --
 
 CREATE TABLE IF NOT EXISTS `cse_place_weibull` (
+  `place_weibull_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `place_id` int(10) unsigned NOT NULL,
   `wind_speed` float NOT NULL,
   `place_probability` float NOT NULL,
-  KEY `ws_id` (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`place_weibull_id`),
+  KEY `ws_id` (`place_id`),
+  KEY `place_id` (`place_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -57,12 +53,19 @@ CREATE TABLE IF NOT EXISTS `cse_places` (
   `place_mean_temp` float NOT NULL,
   `place_rugosity` float NOT NULL,
   `place_altitude_meas` int(11) NOT NULL,
-  `place_mean_speed` float DEFAULT NULL,
-  `place_std_deviation` float DEFAULT NULL,
-  `place_shape_factor` float DEFAULT NULL,
-  `place_scale_factor` float DEFAULT NULL,
+  `place_mean_speed` float NOT NULL,
+  `place_std_deviation` float NOT NULL,
+  `place_shape_factor` float NOT NULL,
+  `place_scale_factor` float NOT NULL,
   PRIMARY KEY (`place_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `cse_places`
+--
+
+INSERT INTO `cse_places` (`place_id`, `place_name`, `place_longitude`, `place_latitude`, `place_altitude`, `place_mean_temp`, `place_rugosity`, `place_altitude_meas`, `place_mean_speed`, `place_std_deviation`, `place_shape_factor`, `place_scale_factor`) VALUES
+(1, 'Karup', 9.16, 56.31, 36, 9, 0.02, 46, 7.62, 3.5, 2.155, 8.6);
 
 -- --------------------------------------------------------
 
@@ -1093,7 +1096,7 @@ INSERT INTO `cse_turbines` (`turbine_id`, `turbine_name`, `turbine_manufacturer`
 (20, 'N29', 'Nordex', 250, 3, 29, 30, 4, 25, 1),
 (21, 'N27', 'Nordex', 150, 3, 27, 30, 3, 25, 1),
 (22, 'V80 2000', 'Vestas', 2000, 3, 80, 80, 4, 25, 1),
-(23, 'V66 1750', 'Vestas', 1750, 3, 66, 66, 4, 25, 1),
+(23, 'V66 1750', 'Vestas', 0, 3, 66, 66, 4, 25, 1),
 (24, 'V66 1650', 'Vestas', 1650, 3, 66, 60, 4.5, 25, 1),
 (25, 'V52 850', 'Vestas', 850, 3, 52, 44, 4, 25, 1),
 (26, 'V47 660', 'Vestas', 660, 3, 47, 40, 4, 25, 1),
@@ -1102,3 +1105,7 @@ INSERT INTO `cse_turbines` (`turbine_id`, `turbine_name`, `turbine_manufacturer`
 (29, 'V39 600', 'Vestas', 600, 3, 39, 35, 4, 30, 1),
 (30, 'V29 225', 'Vestas', 225, 3, 29, 31.5, 3.5, 25, 1),
 (31, 'V27 225', 'Vestas', 225, 3, 27, 31.5, 3.5, 25, 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

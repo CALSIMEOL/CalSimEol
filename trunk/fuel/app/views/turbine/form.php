@@ -273,19 +273,14 @@
 <?php foreach ($turbine['powers'] as $power) : ?>
                                                     <tr>
                                                         <td align="center"><?php echo $power->wind_speed ?></td>
-                                                        <td><input type="text" name="turbine_power_<?php echo $power->wind_speed ?>" value="<?php echo $power->turbine_power ?>" class="form-control input-sm"/></td>
+                                                        <td><input type="text" id="power<?php echo $power->wind_speed ?>" name="turbine_power_<?php echo $power->wind_speed ?>" value="<?php echo $power->turbine_power ?>" class="form-control input-sm"/></td>
                                                         <td></td>
                                                     </tr>
 <?php endforeach ?>
 
                                                 </table>
-                                                <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale. Les vitesses saisies doivent être comprises entre 0 et 50 m/s</span>
+                                                <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale.</span>
                                                 <span class="good help-block"></span>
-                                                <br><br>
-                                                <div class="pull-right">
-                                                    <span class="btn btn-info btn-xs" onclick="addRow()"><span class="glyphicon glyphicon-plus"></span> Ajouter une ligne</span>
-                                                    <span class="btn btn-danger btn-xs" onclick="deleteRow()"><span class="glyphicon glyphicon-trash"></span> Supprimer une ligne</span>
-                                                </div>
                                             </div>
                                             
                                         </div>
@@ -368,10 +363,6 @@ $(function () {
                 series: [{ 
                             name: 'Power',
                             data: [<?php foreach ($turbine['powers'] as $power) printf('[%f,%f],', $power->wind_speed, $power->turbine_power) ?>]
-                        },{
-                            
-                            name: 'Cp (for a density of 1.17 kg/m3)',
-                            data: []
                         }]
                 });
         
@@ -424,35 +415,22 @@ $(function () {
         });
         
         //
-        $('form').on('keyup', "input[id*='windSpeed']", function() {
+        $('form').on('focusout', "input[id*='power']", function() {
             $('#displayWindTable').addClass('has-feedback');
-            var chart = $('#windDistributionChart').highcharts();
+            var chart = $('#powerDistributionChart').highcharts();
             chart.series[0].update({
                 data: []
             });
-            chart.series[1].update({
-                data: []
-            });
-            for(var j=0;j <= index;j++){
-                if($('#power'+j+'').val() >= 0 && $('#power'+j+'').val() <= parseInt($('#nominalPower').val()) && $('#power'+j+'').val() !== '' && $('#windSpeed'+j+'').val() >= 0 && $('#windSpeed'+j+'').val() <= 50 && $('#windSpeed'+j+'').val() !== ''){
+            for(var v=0;v < 31;v++){
+                if($('#power'+v+'').val() >= 0 && $('#power'+v+'').val() <= parseInt($('#nominalPower').val()) && $('#power'+v+'').val() !== ''){
                     $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide();
+                    chart.series[0].addPoint([v,parseFloat($('#power'+v+'').val())]); 
                 }
                 else {
                     $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
-                    break;
-                }
-            }
-        });
-        
-        //
-        $('form').on('keyup', "input[id*='power']", function() {
-            $('#displayWindTable').addClass('has-feedback');
-            for(var j=0;j <= index;j++){
-                if($('#power'+j+'').val() >= 0 && $('#power'+j+'').val() <= parseInt($('#nominalPower').val()) && $('#power'+j+'').val() !== '' && $('#windSpeed'+j+'').val() >= 0 && $('#windSpeed'+j+'').val() <= 50 && $('#windSpeed'+j+'').val() !== ''){
-                    $('#displayWindTable').addClass('has-success').removeClass('has-error') && $('#displayWindTable').find('.good').show() && $('#displayWindTable').find('.error').hide();
-                }
-                else {
-                    $('#displayWindTable').addClass('has-error').removeClass('has-success') && $('#displayWindTable').find('.error').show() && $('#displayWindTable').find('.good').hide();
+                    chart.series[0].update({
+                        data: []
+                    });
                     break;
                 }
             }
