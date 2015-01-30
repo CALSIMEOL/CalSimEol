@@ -14,7 +14,7 @@
                 <form class="form-group" role="search">
                     <label for="nameTurbine" class="control-label">Rechercher une éolienne : </label>
                     <div class="input-group">
-                            <input id="nameTurbine" class="form-control" type="text" name="search" placeholder="Entrer un modèle"/>
+                            <input id="nameTurbine" class="form-control" type="text" name="search" placeholder="Saisir un critère souhaité"/>
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">Go!</button>
                             </span>

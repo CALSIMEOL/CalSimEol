@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <select id="select" name="turbine_choice" class="form-control" >
-                                        <optgroup label="Sites">
+                                        <optgroup label="Catalogue">
 <?php if (count($turbines) != 0) : ?>
     <?php foreach ($turbines as $turbine) : ?>
                                             <option value="<?php echo $turbine->turbine_id ?>"<?php echo $sim_turbine == $turbine->turbine_id ? ' selected' : '' ?>><?php echo $turbine->turbine_name ?></option>
