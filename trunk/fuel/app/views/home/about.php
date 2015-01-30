@@ -11,13 +11,32 @@
                     </div>
                 </div>
                 
-                <p class="lead">
-                    Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper.
+                <p class="about">
+                    Dans le contexte actuel de transition énergétique, l’énergie éolienne tient une place importante et a un rôle à jouer. Dans cette optique, l’ECE Paris, école d’ingénieur généraliste, forme ses étudiants pour qu’ils puissent répondre à ces nouvelles problématiques. Une part du programme du cours d’énergies renouvelables de ces étudiants est consacrée à l’énergie éolienne. 
                 </p>
                 
-                <p class="lead">
-                    Itaque verae amicitiae difficillime reperiuntur in iis qui in honoribus reque publica versantur; ubi enim istum invenias qui honorem amici anteponat suo? Quid? Haec ut omittam, quam graves, quam difficiles plerisque videntur calamitatum societates! Ad quas non est facile inventu qui descendant. Quamquam Ennius recte.
-                    Paphius quin etiam et Cornelius senatores, ambo venenorum artibus pravis se polluisse confessi, eodem pronuntiante Maximino sunt interfecti. pari sorte etiam procurator monetae extinctus est. Sericum enim et Asbolium supra dictos, quoniam cum hortaretur passim nominare, quos vellent, adiecta religione firmarat, nullum igni vel ferro se puniri iussurum, plumbi validis ictibus interemit. et post hoe flammis Campensem aruspicem dedit, in negotio eius nullo sacramento constrictus.
+                <p class="about">
+                    Pourtant, il n’existe pas de logiciel adapté aux exigences de ce cours. L’objectif du projet CALSIMEOL est de répondre aux besoins de ces étudiants et de leur professeur en développant une solution pour l’éolien équivalente au logiciel PVSyst qui est utilisé académiquement pour l’énergie solaire.
+                </p>
+                
+                <p class="about">
+                    Ce projet s'inscrit dans le cadre d'un projet de fin d’études qui intervient en troisième année du cycle ingénieur de l’ECE Paris, avant le stage de fin d’études, sur un mois à temps plein. Il s’agit pour les étudiants de mettre en œuvre l’ensemble des connaissances acquises au cours du cycle ingénieur afin de réaliser un projet valorisable.
+                    Notre valorisation prend la forme d'une contribution au logiciel libre. Ainsi, notre code source est disponible ici sous la forme d'un fichier zippé : <a href='..//.zip'>Télécharger le code source</a>
+                </p>
+                    
+                <p class="about">
+                    Le site www.calsimeol.fr a été développé par notre équipe qui se compose de :
+                </p>
+                <ul>
+                    <li>Anaïs PELLETIER en tant que chef d'équipe (<a href='mailto:apelleti@ece.fr'>apelleti@ece.fr</a>)</li>
+                    <li>Antoine BORGAZZI en tant qu'architecte informatique (<a href='mailto:borgazzi@ece.fr'>borgazzi@ece.fr</a>)</li>
+                    <li>David MAIRESSE en tant que développeur PHP (<a href='mailto:mairesse@ece.fr'>mairesse@ece.fr</a>)</li>
+                    <li>Cyprien JOYEUX en tant que responsable interface (<a href='mailto:joyeux@ece.fr'>joyeux@ece.fr</a>)</li>
+                    <li>Tom BOISGARD en tant que responsable bases de données et scripts (<a href='mailto:boisgard@ece.fr'>boisgard@ece.fr</a>)</li>
+                </ul>
+                
+                <p class="about">
+                    
                 </p>
 
         </div>
