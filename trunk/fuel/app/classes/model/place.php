@@ -83,7 +83,7 @@ class Model_Place extends \Orm\Model
 			'data_type'  => 'float',
 //			'label'      => '',
 			'validation' => array(
-				'required',
+//				'required',
 				'numeric_between' => array(0.1, 20),
 			),
 			'default' => '0',
@@ -92,7 +92,7 @@ class Model_Place extends \Orm\Model
 			'data_type'  => 'float',
 //			'label'      => '',
 			'validation' => array(
-				'required',
+//				'required',
 				'numeric_between' => array(0.1, 50),
 			),
 			'default' => '0',
@@ -101,7 +101,7 @@ class Model_Place extends \Orm\Model
 			'data_type'  => 'float',
 //			'label'      => '',
 			'validation' => array(
-				'required',
+//				'required',
 				'numeric_between' => array(0.5, 5),
 			),
 			'default' => '0',
@@ -110,7 +110,7 @@ class Model_Place extends \Orm\Model
 			'data_type'  => 'float',
 //			'label'      => '',
 			'validation' => array(
-				'required',
+//				'required',
 				'numeric_between' => array(0.1, 20),
 			),
 			'default' => '0',
