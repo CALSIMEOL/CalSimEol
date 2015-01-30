@@ -1037,6 +1037,8 @@ if(windSpeed>0){
                     x=1+1/k;
                     gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
                     a=Vm/gamma;
+                    alert(a);
+                    alert(k);
                     if (k>=0.5 || k<=5 || a>=2 || a<=10)
                         {
                             for(var v=0;v<31;v++)
