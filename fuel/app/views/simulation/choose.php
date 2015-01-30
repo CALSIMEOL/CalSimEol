@@ -49,7 +49,7 @@
                                         <optgroup label="Catalogue">
 <?php if (count($turbines) != 0) : ?>
     <?php foreach ($turbines as $turbine) : ?>
-                                            <option value="<?php echo $turbine->turbine_id ?>"<?php echo $sim_turbine == $turbine->turbine_id ? ' selected' : '' ?>><?php echo $turbine->turbine_name ?></option>
+                                            <option value="<?php echo $turbine->turbine_id ?>"<?php echo $sim_turbine == $turbine->turbine_id ? ' selected' : '' ?>><?php echo $turbine->turbine_manufacturer.' '.$turbine->turbine_name ?></option>
     <?php endforeach ?>
 <?php else : ?>
                                             <option value="default"<?php echo $sim_turbine == 'default' ? ' selected' : '' ?>>Il n'y a pas d'éoliennes</option>
