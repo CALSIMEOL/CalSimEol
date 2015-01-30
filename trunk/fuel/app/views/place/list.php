@@ -14,7 +14,7 @@
                 <form class="form-group" role="search">
                     <label for="namePlace" class="control-label">Rechercher un site : </label>
                     <div class="input-group">
-                            <input id="namePlace" class="form-control" type="text" name="search" placeholder="Entrer un site"/>
+                            <input id="namePlace" class="form-control" type="text" name="search" placeholder="Saisir un critère souhaité"/>
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">Go!</button>
                             </span>

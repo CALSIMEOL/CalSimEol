@@ -350,13 +350,20 @@ $(function () {
                     min: 0,
                     max: 30
                 },
-                yAxis: {
+                yAxis: [{
                     title: {
                         text: 'Power (kW)'
                     },
                     gridLineWidth: 1,
                     min: 0
-                },
+                },{
+                    title: {
+                        text: 'Cp'
+                    },
+                    gridLineWidth: 1,
+                    min: 0,
+                    opposite: true
+                }],
                 
                 series: [{ 
                             name: 'Power',
