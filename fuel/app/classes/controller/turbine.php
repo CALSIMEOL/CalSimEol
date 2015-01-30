@@ -75,7 +75,7 @@ class Controller_Turbine extends Controller_Template
 		// Récupère l'éolienne par son identifiant
 		$turbine = Model_Turbine::find($id);
 
-		// Redirige à la lisye sir l'éolienne n'exite pas
+		// Redirige à la liste si l'éolienne n'exite pas ou si elle est vérifiée
 		$turbine and !$turbine->turbine_verified ? : Response::redirect_back('turbine/list');
 
 		// Récupère les points de la coube de puissance
@@ -115,7 +115,7 @@ class Controller_Turbine extends Controller_Template
 			// Sauvegarde des modifications
 			if ($turbine->save())
 			{
-				// Redirige l'utilisateur sur la liste des éoliennes si la mise à jour réussi
+				// Redirige l'utilisateur sur la liste des éoliennes si la mise à jour réussie
 				Response::redirect_back('turbine/list');
 			}
 		}

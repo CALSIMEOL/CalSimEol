@@ -68,7 +68,7 @@ class Model_Place extends \Orm\Model
 				'required',
 				'numeric_between' => array(0.0002, 2),
 			),
-			'default' => '0',
+			'default' => '0.0002',
 		),
 		'place_altitude_meas' => array(
 			'data_type'  => 'int',
@@ -86,7 +86,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 20),
 			),
-			'default' => '0',
+			'default' => '0.1',
 		),
 		'place_std_deviation' => array(
 			'data_type'  => 'float',
@@ -95,7 +95,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 50),
 			),
-			'default' => '0',
+			'default' => '0.1',
 		),
 		'place_shape_factor' => array(
 			'data_type'  => 'float',
@@ -104,7 +104,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.5, 5),
 			),
-			'default' => '0',
+			'default' => '0.5',
 		),
 		'place_scale_factor' => array(
 			'data_type'  => 'float',
@@ -113,17 +113,17 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 20),
 			),
-			'default' => '0',
+			'default' => '0.1',
 		),
 	);
 
-/*	protected static $_has_many = array(
-		'powers' => array(
-			'model_to' => 'Model_TurbinePower',
-			'key_from' => 'turbine_id',
-			'key_to' => 'turbine_id',
+	protected static $_has_many = array(
+		'weibull' => array(
+			'model_to' => 'Model_PlaceWeibull',
+			'key_from' => 'place_id',
+			'key_to' => 'place_id',
 			'cascade_save' => true,
 			'cascade_delete' => true,
 		),
-	);//*/
+	);
 }

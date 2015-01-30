@@ -322,7 +322,7 @@
 												<div class="col-xs-3">
 													<div class="radio">
 														<label for="simple" class="radio">
-														<input type="radio" name="distribSources" value="simple" id="simple" checked="" onclick="windDistribution()"> Simple </label>
+														<input type="radio" name="distribSources" value="simple" id="simple"<?php if (Input::post('distribSources') == 'simple') echo ' checked' ?> onclick="windDistribution()"> Simple </label>
 													</div>
 												</div>
 												<div class="col-xs-1">
@@ -339,7 +339,7 @@
 												<div class="col-xs-offset-2 col-xs-3">
 													<div class="radio">
 														<label for="detailed" class="radio">
-														<input type="radio" name="distribSources" value="detailed" id="detailed" onclick="windDistribution()"> Détaillé </label>
+														<input type="radio" name="distribSources" value="detailed"<?php if (Input::post('distribSources') == 'detailed') echo ' checked' ?> id="detailed" onclick="windDistribution()"> Détaillé </label>
 													</div>
 												</div>
 												<div class="col-xs-1">
@@ -392,21 +392,25 @@
 													<tr>
 														<th>Vitesse [m/s]</th>
 														<th>Occurences/an</th>
-                                                                                                              
+														<th>Vitesse [m/s]</th>
+														<th>Occurences/an</th>
 														<th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
 													</tr>
+<?php $i = 0; $c = 2 ?>
+<?php foreach ($place['weibull'] as $point) : ?>
+	<?php if ($i % $c == 0) : ?>
+													<tr>
+	<?php endif ?>
+														<td><?php echo $point->wind_speed ?></td><td><input type="text" id="windProbability<?php echo $point->wind_speed ?>" name="place_propability_<?php echo $point->wind_speed ?>" value="<?php echo $point->place_probability ?>" class="form-control input-sm"/></td>
+	<?php if ($i % $c == $c - 1) : ?>
+														<td></td>
+													</tr>
+	<?php endif ?>
+	<?php $i++ ?>
+<?php endforeach ?>
 
-													<?php foreach ($place['weibull'] as $weibull) : ?>
-                                                                                                        <tr>
-                                                                                                            <td align="center"><?php echo $weibull->wind_speed ?></td>
-                                                                                                            <td><input type="text" id="windProbability<?php echo $weibull->wind_speed ?>" name="place_probability_<?php echo $weibull->wind_speed ?>" value="<?php echo $weibull->place_probability ?>" class="form-control input-sm"/></td>
-                                                                                                            <td></td>
-                                                                                                        </tr>
-                                                                                                        <?php endforeach ?>
-                                                                                                        
-													
 												</table>
-												<span class="error help-block">Les occurences doivent être renseignées numériquement pour chaque valeur de vent.</span>
+												<span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
 												<span class="good help-block"></span>
 												<br><br>
                                                                                                 
@@ -725,7 +729,7 @@ if(windSpeed>0){
                 title: {
                     text: 'Wind speed (m/s)'
                 },
-                tickInterval: 2,
+                tickInterval: 5,
                 min: 0,
                 max: 30
             },
@@ -739,7 +743,7 @@ if(windSpeed>0){
 
             series: [{ 
                         name: 'Weibull distribution',
-                        data: []
+                        data: [<?php foreach ($place['weibull'] as $point) printf('[%f,%f],', $point->wind_speed, $point->place_probability) ?>]
                     }]
             });
             
