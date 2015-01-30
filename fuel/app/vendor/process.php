@@ -74,11 +74,6 @@ function _calcul($place, $turbine)
 	$hauteur = $place->place_altitude_meas;
 	$hauteur_site = $place->place_altitude;
 
-//$vitesse_moyenne, $k, $A, $output_power, $temp_celsius, $hauteur_eolienne, $puissance_nominale, $diametre, $rugosite, $hauteur
-//Tableau de puissance de sortie de l'éolienne (récupérée bdd Tom) ; Vitesse stabilisée (0 à 30) imposée
-//Colonne 0 = vitesse stabilisée ; Colonne 1 = puissance de sortie
-//Simulation d'un tableau
-
 //Cas où l'utilisateur rentre son tableau
 //Tableau d'occurence des vents
 //Colonne 0 = vitesse stabilisée (imposée) ; Colonne 1 = Occurence des vents
@@ -128,7 +123,7 @@ $gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X
 
 $A=$vitesse_moyenne/$gamma; //Facteur d'échelle;
 }
-
+//L'utilisateur fournit A et k
 elseif($A!=0)
 {
 //Calcul du gamma d'Euler avec l'approximation de Stirling
@@ -143,64 +138,63 @@ $sigma=(0.9874*$vitesse_moyenne)/(exp(log($k)/1.0983));
 //Valeurs récupérées
 $temp_kelvin=$temp_celsius+273.15;
 $surface=(pi()*pow($diametre,2))/4;
-//$rho1=1.225652;
 
 
 $production=array();
-//Distribution de Weibull avec les paramètre A et k sur la variable Vitesse stabilisée
+//Calcul de Weibull avec A non extrapolé / Weibull à l'altitude de mesure du vent
 $microtime = microtime(true);
 
 $Weibull = new Weibull($A, $k);
-	
-//Weibull à l'altitude de mesure du vent
+
 for($j=0;$j<=30;$j++)
 {	
 	$production[$j][0]=$j;
 	$production[$j][1]=$Weibull->pdf($output_power[$j][0]);
 }
 
-//Extrapolation verticale de la vitesse moyenne
-//hauteur = altitude de mesure du vent ; hauteur et rugosité récupérée de l'utilisateur
-$Vm_extrapol=$vitesse_moyenne+(log($hauteur_eolienne/$rugosite)/log($hauteur/$rugosite));
+//Extrapolation de la vitesse moyenne et déduction d'un nouveau A
+$Vm_extrapol=$vitesse_moyenne*(log($hauteur_eolienne/$rugosite)/log($hauteur/$rugosite));
 $A1=$Vm_extrapol/$gamma;
-//Calcul d'une nouvelle Weibull avec le nouveau A
+
+//Calcul d'une nouvelle Weibull avec le nouveau A (A1)
 $Weibull1 = new Weibull($A1, $k);
 for($j=0;$j<=30;$j++)
 {	
 	$production[$j][2]=$Weibull1->pdf($output_power[$j][0]);
 }
 
-//Nombre d'heures où la vitesse v est observée
-for($h=0;$h<=30;$h++)
-{
-	$production[$h][3]=$production[$h][2]*8760;
-	//echo $tableau3[$h][1].'<br/>';
-}
-
-//Energie produite par l'éolienne
-for($v=0;$v<=30;$v++)
-{
-	$production[$v][4]=$production[$v][3]*$output_power[$v][1];
-	//echo $tableau3[$v][2].'<br/>';
-}
-
 //Calcul de la production totale sur l'année
-$production_totale_annee=0;
-for($u=0; $u<=30; $u++)
-{
-	$production_totale_annee=$production_totale_annee+$production[$u][4];
-}
+	//Nombre d'heures où la vitesse v est observée
+	for($h=0;$h<31;$h++)
+	{
+		$production[$h][3]=$production[$h][2]*8760;
+		//echo $tableau3[$h][1].'<br/>';
+	}
 
-//echo $production_totale_annee.'<br/>';
+	//Energie produite par l'éolienne
+	for($v=0;$v<31;$v++)
+	{
+		$production[$v][4]=$production[$v][3]*$output_power[$v][1];
+		//echo $tableau3[$v][2].'<br/>';
+	}
 
-//Calcul de la puissance moyenne
-$puissance_moyenne=$production_totale_annee/8760;
-//echo $puissance_moyenne.'<br/>';
+	//Calcul de la production totale sur l'année
+	$production_totale_annee=0;
+	for($u=0; $u<31; $u++)
+	{
+		$production_totale_annee=$production_totale_annee+$production[$u][4];
+	}
+	//echo $production_totale_annee.'<br/>';
 
 //Calcul du facteur de charge
 $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 //echo $facteur_charge.'<br/>';
 
+
+//Calcul de la puissance moyenne
+
+	$puissance_moyenne=$production_totale_annee/8760;
+	//echo $puissance_moyenne.'<br/>';
 
 	//Calcul de la densité de l'air
 	$h1=$hauteur_eolienne+$hauteur_site; //hauteur du rotor par rapport à la hauteur de référence
@@ -209,8 +203,6 @@ $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 	$rho=$pression_rotor/(287.04*$T_rotor_kelvin);
 	//echo $rho.'<br/>';
 	
-//Vitesse du vent par pas de 0.1 m/s
-
 	$density=array();
 	$density[0][0]=0;
 	$density[0][1]=$output_power[0][1];
@@ -298,12 +290,6 @@ $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 	}
 
 	$puissance_moy_entree = $densite_moy_entree * $surface;
-
-for($y=0; $y<301; $y++)
-{
-	//echo $y/10 .' -> '.$tableau5[$y][1].'<br>';
-	//echo $y/10 .' -> '.$tableau5[$y][0].'<br>';
-}
 
 
 	$result = array();
