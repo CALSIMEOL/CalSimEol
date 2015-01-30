@@ -11,6 +11,63 @@ use PHPStats\ProbabilityDistribution\Weibull;
 /////////////////////////////////////////////////////////////////FONCTION DE CALCUL///////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function occ($array)
+{
+	//Somme des occurences
+	$somme_occurence=0;
+	for($i=0; $i<31; $i++)
+	{
+		$somme_occurence=$somme_occurence+$occurence[$i][1];
+	}
+	//echo $somme_occurence.'<br>';
+
+	//Probabilité de chaque vent
+	$proba=array();
+	for($j=0; $j<31; $j++)
+	{
+		$proba[$j][0]=($occurence[$j][1])/($somme_occurence);
+		//echo $j .' -> '.$proba[$j][0].'<br>';
+	}
+
+	$Vm=0;
+	//Calcul de la vitesse moyenne
+	for($u=0; $u<31; $u++)
+	{
+		$proba[$u][1]=$proba[$u][0]*$occurence[$u][0];
+		$Vm=$Vm+$proba[$u][1];
+		//echo $u .' -> '.$proba[$u][1].'<br>';
+	}
+
+	$esperance=0;
+	//Calcul de sigma
+	for($v=0; $v<31; $v++)
+	{
+		$proba[$v][2]=$proba[$v][0]*pow($occurence[$v][0],2);
+		$esperance=$esperance+$proba[$v][2];
+	}
+	$sigma=sqrt($esperance-pow($Vm,2));
+	//echo $sigma.'<br>';
+
+	//Calcul de k
+	$k=pow(0.9874/($sigma/$Vm),1.0983);
+	//echo $k.'<br>';
+
+	//Calcul de A avec le gamma d'Euler - approximation de Stirling
+	$X=1+(1/$k);
+	$gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
+
+	$A=$Vm/$gamma;
+	//echo $A.'<br>';
+	
+	$result=array(
+		'Vm' => $Vm,
+		'k' => $k,
+		'A' => $A
+		);
+		
+	return $result;
+}
+
 function calcul($vitesse_moyenne,$k,$A)
 {
 //Site Brest Tableur
@@ -74,6 +131,11 @@ function _calcul($place, $turbine)
 	$hauteur = $place->place_altitude_meas;
 	$hauteur_site = $place->place_altitude;
 
+	if ($k == null)
+	{
+		$k=pow(0.9874/($place->place_std_deviation/$vitesse_moyenne),1.0983);
+	}
+	
 //Cas où l'utilisateur rentre son tableau
 //Tableau d'occurence des vents
 //Colonne 0 = vitesse stabilisée (imposée) ; Colonne 1 = Occurence des vents
