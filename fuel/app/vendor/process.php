@@ -325,11 +325,17 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			$density[$w/10][1]=($density[($w/10)-0.1][1])+(((($output_power[(integer)(($w/10)+1)][1]))-($output_power[(integer)($w/10)][1]))/10);
 			$tampon[$w][2]=$density[$w/10][1];
 		}
+		
+		if($w>250 AND $w<301)
+		{
+			$tampon[$w][2]=0;
+		}
 	
 		//Coefficient de puissance
 		if((0.5*$rho*pow($density[$w][0],3)*$surface)!=0)
 		{
-			$density[$w/10][5]=(1000*$density[$w/10][1])/(0.5*$rho*pow($density[$w][0],3)*$surface);
+			//$density[$w/10][5]=(1000*$density[$w/10][1])/(0.5*$rho*pow($density[$w][0],3)*$surface);
+			$density[$w/10][5]=(1000*$tampon[$w][2])/(0.5*$rho*pow($density[$w][0],3)*$surface);
 			$tampon[$w][0]=$density[$w/10][5];
 		}
 		else
