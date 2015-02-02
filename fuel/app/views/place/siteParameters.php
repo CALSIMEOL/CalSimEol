@@ -394,7 +394,6 @@
 														<th>Occurences/an</th>
 														<th>Vitesse [m/s]</th>
 														<th>Occurences/an</th>
-														<th><span class="glyphicon glyphicon-remove form-control-feedback error shift"></span><span class="glyphicon glyphicon-ok form-control-feedback good shift"></span></th>
 													</tr>
 <?php $i = 0; $c = 2 ?>
 <?php foreach ($place['weibull'] as $point) : ?>
