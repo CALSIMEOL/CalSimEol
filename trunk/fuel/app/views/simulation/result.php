@@ -16,7 +16,7 @@
                               <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> <?php echo round($density_mean_input, 2) ?> </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> <?php echo round($power_mean_input, 2) ?> </td><td>kWh</td>
+                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> <?php echo round($power_mean_input, 2)/1000 ?> </td><td>kW</td>
                           </tr>
                           <tr>
                             <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> XXX </td><td>m/s</td>
@@ -51,6 +51,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Distribution des vents</div>
                                 <div class="panel-body"><br>
+                                      <div id="chart1"></div>
                                       <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-plus"></span>Afficher/Masquer tableau</span><br><br>
                                         <table id="tab1" class="table table-striped table-condensed">
                                                 <tbody><tr>
@@ -70,6 +71,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Caractérisation de l'éolienne</div>
                                 <div class="panel-body"><br>
+                                    <div id="chart2"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
                                     <table id="tab2" class="table table-striped table-condensed">
                                             <tbody><tr>
@@ -91,6 +93,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Puissance produite</div>
                                 <div class="panel-body"><br>
+                                    <div id="chart3"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
                                     <table id="tab3" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
@@ -98,7 +101,7 @@
                                                     <th>Puissance produite [kW]</th>
                                             </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i], 2) ?></td></tr>
+                                            <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i]/1000, 2) ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                                 </div>
@@ -109,6 +112,7 @@
                        <div class="panel panel-default">
                             <div class="panel-heading">Densité de puissance</div>
                             <div class="panel-body"><br>
+                                    <div id="chart4"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
                                     <table id="tab4" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
@@ -151,7 +155,160 @@ $(function () {
                     $('#tab4').css('display') === 'none' ? $('#tab4').css({'display': 'inline'}) : $('#tab4').css({'display': 'none'});
                 });
                 
-            });
+                 $('#chart1').highcharts({
+                    chart: {
+                        type: 'spline'
+                    },
+                    title: {
+                        text: 'Wind distribution'
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Wind speed (m/s)'
+                        },
+                        tickInterval: 5,
+                        min: 0,
+                        max: 30
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Probability (%)'
+                        },
+                        gridLineWidth: 1,
+                        min: 0
+                    },
+                    plotOptions: {
+                            series: {
+                                marker: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                    series: [{ 
+                                name: 'Weibull distribution',
+                                data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],',$i ,$weibull_measure[$i] * 100) ?>]
+                            }]
+                    });
+                    
+                    $('#chart2').highcharts({
+                        chart: {
+                            type: 'spline'
+                        },
+                        title: {
+                            text: 'Power curve'
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Wind speed (m/s)'
+                            },
+                            tickInterval: 5,
+                            min: 0,
+                            max: 30
+                        },
+                        yAxis: [{
+                            title: {
+                                text: 'Power (kW)'
+                            },
+                            gridLineWidth: 1,
+                            min: 0
+                        },{
+                            title: {
+                                text: 'Cp'
+                            },
+                            gridLineWidth: 1,
+                            min: 0,
+                            opposite: true
+                        }],
+                        plotOptions: {
+                            series: {
+                                marker: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        series: [{ 
+                                    name: 'Power',
+                                    data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $turbine_power[$i]) ?>]
+                                },{
+                                    name: 'Cp',
+                                    yAxis: 1,
+                                    data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $cp[$i]) ?>]
+                                }]
+                        });
+                        
+                        $('#chart3').highcharts({
+                        chart: {
+                            type: 'spline'
+                        },
+                        title: {
+                            text: 'Local production'
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Wind speed (m/s)'
+                            },
+                            tickInterval: 5,
+                            min: 0,
+                            max: 30
+                        },
+                        yAxis: [{
+                            title: {
+                                text: 'Production (kW)'
+                            },
+                            gridLineWidth: 1,
+                            min: 0
+                        }],
+                        plotOptions: {
+                            series: {
+                                marker: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        series: [{ 
+                                    name: 'Production',
+                                    data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $production_power[$i]/1000)?>]
+                                }]
+                        });
+                        
+                        $('#chart4').highcharts({
+                        chart: {
+                            type: 'area'
+                        },
+                        
+                        title: {
+                            text: 'Power density'
+                        },
+                        xAxis: {
+                            title: {
+                                text: 'Wind speed (m/s)'
+                            },
+                            tickInterval: 5,
+                            min: 0,
+                            max: 30
+                        },
+                        yAxis: [{
+                            title: {
+                                text: 'Power density (kW)'
+                            },
+                            gridLineWidth: 1,
+                            min: 0
+                        }],
+
+                        series: [{ 
+                                    name: 'Input power density',
+                                    data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_input[$i])?>]
+                                },{
+                                    name: 'Input power density with Betz',
+                                    data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_input_betz[$i])?>]
+                                },{
+                                    name: 'Output density power',
+                                    data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_output[$i])?>]
+                                }]
+                        });
+                        
+
+                    });
                 
 
      
