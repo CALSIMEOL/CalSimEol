@@ -55,8 +55,8 @@
                         <td><?php echo $place['place_scale_factor'] ?></td>
                         <td><?php echo $place['place_shape_factor'] ?></td>
                         <td>
-                            <a href="<?php echo Uri::create('place/edit/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-warning" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                            <a href="<?php echo Uri::create('place/delete/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-danger" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('place/edit/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-warning<?php if ($place->place_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                            <a href="<?php echo Uri::create('place/delete/:id', array('id' => $place['place_id'])) ?>" class="btn btn-xs btn-danger<?php if ($place->place_verified) echo ' disabled' ?>" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                         </td>
                     </tr>
 <?php endforeach ?>

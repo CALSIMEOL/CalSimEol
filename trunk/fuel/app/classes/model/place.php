@@ -115,6 +115,11 @@ class Model_Place extends \Orm\Model
 			),
 			'default' => '5',
 		),
+		'place_verified' => array(
+			'data_type' => 'bool',
+			'label'     => '',
+			'default'   => '0',
+		),
 	);
 
 	protected static $_has_many = array(

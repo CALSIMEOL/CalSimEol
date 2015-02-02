@@ -44,6 +44,32 @@ class Controller_Place extends Controller_Template
 			$place->set($fieldset->validated());
 
 			//
+			if (Input::post('distribSources') == 'simple')
+			switch (Input::post('choiceOption'))
+			{
+				case 'opt1':
+					$place->place_scale_factor = 0;
+				break;
+
+				case 'opt2':
+					$place->place_shape_factor = pow(0.9874 / ($place->place_std_deviation / $place->place_mean_speed), 1.0983);
+					$place->place_scale_factor = 0;
+				break;
+
+				case 'opt3':
+					$place->place_mean_speed = 0;
+				break;
+
+				default:
+			}
+
+			//
+			if (Input::post('distribSources') == 'detailed')
+			{
+				//
+			}
+
+			//
 			if ($place->save())
 			{
 				//
@@ -71,7 +97,7 @@ class Controller_Place extends Controller_Template
 		$place = Model_Place::find($id);
 
 		// Redirige à la liste si le site n'existe pas
-		$place ? : Response::redirect_back('place/list');
+		$place and !$place->place_verified ? : Response::redirect_back('place/list');
 
 		// Récupère les points de la distribution des vents
 		$weibull = array();
@@ -130,7 +156,7 @@ class Controller_Place extends Controller_Template
 	{
 		$place = Model_Place::find($id);
 
-		! $place ? : $place->delete();
+		!$place or $place->place_verified ? : $place->delete();
 
 		Response::redirect_back('place/list');
 	}

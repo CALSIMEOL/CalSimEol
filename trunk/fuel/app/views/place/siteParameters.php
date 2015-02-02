@@ -538,7 +538,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php $place['place_std_deviation'] ?>" class="form-control" placeholder="5"/>
+																<input id="standardDeviation" type="text" name="place_std_deviation" value="<?php echo $place['place_std_deviation'] ?>" class="form-control" placeholder="5"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>
