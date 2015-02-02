@@ -14,9 +14,9 @@
                 <form class="form-group" role="search">
                     <label for="nameTurbine" class="control-label">Rechercher une éolienne : </label>
                     <div class="input-group">
-                            <input id="nameTurbine" class="form-control" type="text" name="search" placeholder="Saisir un critère souhaité"/>
+                            <input id="nameTurbine" class="form-control" type="text" name="search" placeholder="Saisir un critère souhaité" type="submit"/>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                             </span>
                     </div>
                 </form>
@@ -67,7 +67,7 @@
         <div class="row">
                 <div class="col-sm-offset-1 col-sm-4"><br>
                         <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter</a>
-                </div>
+                </div> 
                 <div class="col-sm-4">
 <?php echo $pagination ?>
                 </div>

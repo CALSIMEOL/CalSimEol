@@ -16,7 +16,7 @@
                     <div class="input-group">
                             <input id="namePlace" class="form-control" type="text" name="search" placeholder="Saisir un critère souhaité"/>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
+                                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                             </span>
                     </div>
                 </form>
@@ -64,8 +64,9 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-sm-offset-1 col-sm-4">
+                <div class="col-sm-offset-1 col-sm-5">
                     <a href="<?php echo Uri::create('place/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
+                    <a href="<?php echo Uri::create('place/import') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> &nbsp; Importer</a>
                 </div>
                 <div class="col-sm-4">
 <?php echo $pagination ?>
