@@ -350,49 +350,49 @@ $(function () {
                 });
         
         //input verification and feedback when the user modifies the manufacturer
-        $('#turbManufacturer').focusout(function() {
+        $('#turbManufacturer').keyup(function() {
             $('#divTurbineManufacturer').addClass('has-feedback');
             $('#turbManufacturer').val().length > 0 && $('#turbManufacturer').val().length <=20 ? $('#divTurbineManufacturer').addClass('has-success').removeClass('has-error') && $('#divTurbineManufacturer').find('.good').show() && $('#divTurbineManufacturer').find('.error').hide() : $('#divTurbineManufacturer').addClass('has-error').removeClass('has-success') && $('#divTurbineManufacturer').find('.error').show() && $('#divTurbineManufacturer').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the model
-        $('#turbName').focusout(function() {
+        $('#turbName').keyup(function() {
             $('#divTurbName').addClass('has-feedback');
             $('#turbName').val().length > 0 && $('#turbName').val().length <=30 ? $('#divTurbName').addClass('has-success').removeClass('has-error') && $('#divTurbName').find('.good').show() && $('#divTurbName').find('.error').hide() : $('#divTurbName').addClass('has-error').removeClass('has-success') && $('#divTurbName').find('.error').show() && $('#divTurbName').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the number of blades
-        $('#nbBlade').focusout(function() {
+        $('#nbBlade').keyup(function() {
             $('#divNbBlade').addClass('has-feedback');
             $('#nbBlade').val() > 0 && $('#nbBlade').val() <=50 && parseFloat($('#nbBlade').val()) === parseInt($('#nbBlade').val()) && $('#nbBlade').val() !== '' ? $('#divNbBlade').addClass('has-success').removeClass('has-error') && $('#divNbBlade').find('.good').show() && $('#divNbBlade').find('.error').hide() : $('#divNbBlade').addClass('has-error').removeClass('has-success') && $('#divNbBlade').find('.error').show() && $('#divNbBlade').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the nominal power
-        $('#nominalPower').focusout(function() {
+        $('#nominalPower').keyup(function() {
             $('#divNominalPower').addClass('has-feedback');
             $('#nominalPower').val() > 0 && $('#nominalPower').val() <=10000 && $('#nominalPower').val() !== '' ? $('#divNominalPower').addClass('has-success').removeClass('has-error') && $('#divNominalPower').find('.good').show() && $('#divNominalPower').find('.error').hide() : $('#divNominalPower').addClass('has-error').removeClass('has-success') && $('#divNominalPower').find('.error').show() && $('#divNominalPower').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the rotor diameter
-        $('#diameter').focusout(function() {
+        $('#diameter').keyup(function() {
             $('#divDiameter').addClass('has-feedback');
             $('#diameter').val() > 0 && $('#diameter').val() <=500 && $('#diameter').val() !== '' ? $('#divDiameter').addClass('has-success').removeClass('has-error') && $('#divDiameter').find('.good').show() && $('#divDiameter').find('.error').hide() : $('#divDiameter').addClass('has-error').removeClass('has-success') && $('#divDiameter').find('.error').show() && $('#divDiameter').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the height
-        $('#height').focusout(function() {
+        $('#height').keyup(function() {
             $('#divHeight').addClass('has-feedback');
             $('#height').val() > 0 && $('#height').val() <=300 && $('#height').val() !== '' ? $('#divHeight').addClass('has-success').removeClass('has-error') && $('#divHeight').find('.good').show() && $('#divHeight').find('.error').hide() : $('#divHeight').addClass('has-error').removeClass('has-success') && $('#divHeight').find('.error').show() && $('#divHeight').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the cut-in speed
-        $('#cut-inSpeed').focusout(function() {
+        $('#cut-inSpeed').keyup(function() {
             $('#divCutInSpeed').addClass('has-feedback');
             $('#cut-inSpeed').val() > 0 && $('#cut-inSpeed').val() <=20 && $('#cut-inSpeed').val() !== '' ? $('#divCutInSpeed').addClass('has-success').removeClass('has-error') && $('#divCutInSpeed').find('.good').show() && $('#divCutInSpeed').find('.error').hide() : $('#divCutInSpeed').addClass('has-error').removeClass('has-success') && $('#divCutInSpeed').find('.error').show() && $('#divCutInSpeed').find('.good').hide();       
         });
         
         //input verification and feedback when the user modifies the cut-out speed
-        $('#cut-outSpeed').focusout(function() {
+        $('#cut-outSpeed').keyup(function() {
         $('#divCutOutSpeed').addClass('has-feedback');
         $('#cut-outSpeed').val() >= 10 && $('#cut-outSpeed').val() <=40 && $('#cut-outSpeed').val() !== '' ? $('#divCutOutSpeed').addClass('has-success').removeClass('has-error') && $('#divCutOutSpeed').find('.good').show() && $('#divCutOutSpeed').find('.error').hide() : $('#divCutOutSpeed').addClass('has-error').removeClass('has-success') && $('#divCutOutSpeed').find('.error').show() && $('#divCutOutSpeed').find('.good').hide();       
         });

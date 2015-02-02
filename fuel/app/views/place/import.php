@@ -32,7 +32,7 @@
                                     <b>Coordonées géographiques</b>
                                     <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
                                        data-content="Entrer les coordonées géographiques de votre site dans les champs ci-dessous ou cliquez sur la carte.<br><br>
-                                       <i>Les coordonnées seront envoyé à EolAtlas, qui nous renverra les données de la stations météo la plus proche.</i><br><br>
+                                       <i>Les coordonnées seront envoyées à EolAtlas, qui renverra les données de la station météo la plus proche.</i><br><br>
                                        <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
                                        title="<b>AIDE : Courbe de puissance</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
@@ -130,8 +130,10 @@ $(function () {
 
 function placeMarker(location) {
 
-  $('#placeLatitude').val(location.k);
-  $('#placeLongitude').val(location.D);
+  $('#latitude').val(location.k);
+  $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide();
+  $('#longitude').val(location.D);
+  $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide();
 
   if(marker){ //on vÃ©rifie si le marqueur existe
     marker.setPosition(location); //on change sa position
