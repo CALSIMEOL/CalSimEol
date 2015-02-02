@@ -252,6 +252,9 @@ for($j=0;$j<=30;$j++)
 $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 //echo $facteur_charge.'<br/>';
 
+//Calcul de la vitesse de vent délivrant la densité maximale de puissance en entrée de l'éolienne
+$Vmax=$A1*(pow(($k+2)/$k,1/$k));
+//echo $Vmax.'<br/>';
 
 //Calcul de la puissance moyenne
 
