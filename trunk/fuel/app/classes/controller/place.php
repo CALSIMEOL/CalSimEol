@@ -139,7 +139,8 @@ class Controller_Place extends Controller_Template
 	{
 		if (Input::post())
 		{
-			$url = 'http://eolatlas.890m.com/mickael/stationProche.php';
+//			$url = 'http://eolatlas.890m.com/mickael/stationProche.php';
+			$url = 'http://eol.calsimeol.fr/eol/fics_php/stationProche.php';
 			$url.= '?latitude='.Input::post('place_latitude', 0);
 			$url.= '&longitude='.Input::post('place_longitude', 0);
 
@@ -151,12 +152,12 @@ class Controller_Place extends Controller_Template
 				$station = $response->body;
 
 				$place = new Model_Place();
-				$place->place_name = sprintf('EA%d - %s', $station['id'], $station['nom']);
+				$place->place_name = sprintf('EA%d - %s', $station['idStation'], $station['nom']);
 				$place->place_latitude = $station['latitude'];
 				$place->place_longitude = $station['longitude'];
 				$place->place_shape_factor = $station['facteurForme'];
 				$place->place_scale_factor = $station['facteurEchelle'];
-				$place->place_altitude = $station['hauteur'];
+				$place->place_altitude = $station['altitude'];
 
 				if ($place->save())
 				{

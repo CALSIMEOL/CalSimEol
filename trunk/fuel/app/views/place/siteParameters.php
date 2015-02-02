@@ -324,7 +324,7 @@
 												<div class="col-xs-3">
 													<div class="radio">
 														<label for="simple" class="radio">
-														<input type="radio" name="distribSources" value="simple" id="simple"<?php if (Input::post('distribSources') == 'simple') echo ' checked' ?> onclick="windDistribution()"> Simple </label>
+														<input type="radio" name="distribSources" value="simple" id="simple"<?php if (Input::post('distribSources', 'simple') == 'simple') echo ' checked' ?> onclick="windDistribution()"> Simple </label>
 													</div>
 												</div>
 												<div class="col-xs-1">
@@ -432,7 +432,7 @@
 											<div class="row">
 												<div class="col-xs-2">
 													<br><br><br>
-													<input type="radio" name="choiceOption" id="opt1" value="opt1" checked="" onclick="intoxicateOption()">
+													<input type="radio" name="choiceOption" id="opt1" value="opt1"<?php if (Input::post('choiceOption', 'opt1') == 'opt1') echo ' checked' ?> onclick="intoxicateOption()">
 												</div>
 												<div id="option1" class="col-xs-10 panel panel-default">
 													<br>
@@ -498,7 +498,7 @@
 											<div class="row">
 												<div class="col-xs-2">
 													<br><br><br>
-													<input type="radio" name="choiceOption" id="opt2" value="opt2" onclick="intoxicateOption()">
+													<input type="radio" name="choiceOption" id="opt2" value="opt2"<?php if (Input::post('choiceOption') == 'opt2') echo ' checked' ?> onclick="intoxicateOption()">
 												</div>
 												<div id="option2" class="col-xs-10 panel panel-default">
 													<br>
@@ -563,7 +563,7 @@
 											<div class="row">
 												<div class="col-xs-2">
 													<br><br><br>
-													<input type="radio" name="choiceOption" id="opt3" value="opt3" onclick="intoxicateOption()">
+													<input type="radio" name="choiceOption" id="opt3" value="opt3"<?php if (Input::post('choiceOption') == 'opt3') echo ' checked' ?> onclick="intoxicateOption()">
 												</div>
 												<div id="option3" class="col-xs-10 panel panel-default">
 													<br>
