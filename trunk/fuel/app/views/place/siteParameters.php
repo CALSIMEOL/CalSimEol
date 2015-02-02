@@ -729,32 +729,32 @@
             });
             
             //input verification and feedback when the user modifies the site name
-            $('#siteName').focusout(function() {
+            $('#siteName').keyup(function() {
                 $('#divSiteName').addClass('has-feedback');
                 $('#siteName').val().length > 0 && $('#siteName').val().length <=20 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
             });
             
             //input verification and feedback when the user modifies the latitude
-            $('#latitude').focusout(function() {
+            $('#latitude').keyup(function() {
                 $('#divLatitude').addClass('has-feedback');
                 $('#latitude').val() >= -90 && $('#latitude').val() <=90 && $('#latitude').val() !== '' ? $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide()  : $('#divLatitude').addClass('has-error').removeClass('has-success') && $('#divLatitude').find('.error').show() && $('#divLatitude').find('.good').hide();	 
             });
             
             //input verification and feedback when the user modifies the longitude
-            $('#longitude').focusout(function() {
+            $('#longitude').keyup(function() {
                 $('#divLongitude').addClass('has-feedback');
                 $('#longitude').val() >= -180 && $('#longitude').val() <=180 && $('#longitude').val() !== '' ? $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide()  : $('#divLongitude').addClass('has-error').removeClass('has-success') && $('#divLongitude').find('.error').show() && $('#divLongitude').find('.good').hide();	 
             });
 
             //input verification, calculation/display of the density and feedback when the user modifies the altitude
-            $('#altitude').focusout(function() {
+            $('#altitude').keyup(function() {
                 $('#divAltitude').addClass('has-feedback');
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
                
             });
             
             //input verification, calculation/display of the density and feedback when the user modifies the mean temperature
-            $('#averageannualtemp').focusout(function() {
+            $('#averageannualtemp').keyup(function() {
                 $('#divTemp').addClass('has-feedback');
                 $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
@@ -768,7 +768,7 @@
             });
 
             //input verification and feedback when the user modifies the roughness length
-            $('#roughnesslength').focusout(function() {
+            $('#roughnesslength').keyup(function() {
                 $('#divRoughness').addClass('has-feedback');
                 $('#roughnesslength').val() >= 0.0002 && $('#roughnesslength').val() <=2 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
             });
@@ -810,7 +810,7 @@
             }); */
             
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the mean speed option 1
-            $('#averageWindSpeed1').focusout(function() {
+            $('#averageWindSpeed1').keyup(function() {
                 $('#divAverageSpeed').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -836,7 +836,7 @@
             });
 		
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the shape factor option 1
-            $('#shape1').focusout(function() {
+            $('#shape1').keyup(function() {
 		$('#divShapeFactor').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -863,7 +863,7 @@
             });
             
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the mean speed option 2
-            $('#averageWindSpeed2').focusout(function() {
+            $('#averageWindSpeed2').keyup(function() {
 		$('#divAverageSpeed2').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -891,7 +891,7 @@
             });
 		
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the standard deviation option 2
-            $('#standardDeviation').focusout(function() {
+            $('#standardDeviation').keyup(function() {
 		$('#divStdDeviation').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -919,7 +919,7 @@
             });
 		
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the scale factor option 3   
-            $('#scaleFactor').focusout(function() {
+            $('#scaleFactor').keyup(function() {
 		$('#divScaleFactor').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -938,7 +938,7 @@
                 });
 		
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the shape factor option 3    
-            $('#shape2').focusout(function() {
+            $('#shape2').keyup(function() {
 		$('#divShapeFactor2').addClass('has-feedback');
                 var chart = $('#windDistributionChart').highcharts();
                 chart.series[0].update({
@@ -958,7 +958,7 @@
             });
 		
             //input verification and feedback when the user modifies the elevation of the measure
-            $('#ElevationOfTheMeasurement').focusout(function() {
+            $('#ElevationOfTheMeasurement').keyup(function() {
 		$('#divElevation').addClass('has-feedback');
 		$('#ElevationOfTheMeasurement').val() >= 1 && $('#ElevationOfTheMeasurement').val() <=500 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
             });
