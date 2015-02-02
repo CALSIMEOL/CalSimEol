@@ -28,7 +28,7 @@
     
 
       <!----------------------------------------------------------------Wind turbine list------------------------------------------------------------------>
-                            <table class="table table-striped">
+                            <table class="table table-striped table-responsive">
                                     <tr>
                                             <th>#</th>
                                             <th>Nom</th>

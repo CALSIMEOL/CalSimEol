@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-sm-offset-1 col-sm-10">
 
-                <table class="table table-striped">
+                <table class="table table-striped table-responsive">
                     <tr>
                         <th>#</th>
                         <th>Nom</th>
