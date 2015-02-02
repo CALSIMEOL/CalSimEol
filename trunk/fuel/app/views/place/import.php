@@ -24,7 +24,7 @@
 
         <div class="row" style="margin-top: 20px">
             <div class="col-sm-offset-1 col-sm-10">
-                <form method="post">
+                <form class="form-horizontal marginLR" method="post">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="panel panel-default">
@@ -39,17 +39,63 @@
                                     </a>
                                 </div>
                                 <div class="panel-body">
-                                    <br />
-                                    <div class="form-group">
-                                        <label for="placeLatitude" class="control-label">Latitude</label>
-                                        <input type="text" class="form-control" name="place_latitude" id="placeLatitude" placeholder="0" aria-describedby="placeLatitudeHelp">
-                                        <span id="placeLatitudeHelp" class="help-block">Latitude du site (-90 à 90).</span>
+                                    <br>                                    
+                                    <div id="divLatitude" class="form-group">
+                                            <div class="col-md-4">
+                                                    <label for="latitude" class="control-label">Latitude : </label>
+                                                    <br>
+                                                    <span class="error help-block">Entre -90 et 90°</span>
+                                                    <span class="good help-block"></span>
+                                            </div>
+                                            <div class="col-xs-7 -marginLR">
+                                                    <div class="input-group">
+                                                            <input id="latitude" type="text" name="place_latitude" class="form-control" placeholder="49.50"/>
+                                                            <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
+                                                            <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
+                                                            <span class="input-group-addon">°</span>
+                                                    </div>
+                                            </div>
+                                            <div class="col-xs-1">
+                                                    <div class="pop">
+                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                               data-content="Entrer une latitude comprise entre -90° et 90°.<br><br>
+                                                               <i>La latitude correspond au positionnement nord/sud d'un point et est représentée par une valeur angulaire. Elle varie entre 0° à l'équateur et +/- 90° aux pôles.</i>
+                                                               <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                               title="<b>AIDE : Latitude du site</b>">
+                                                                    <span class="glyphicon glyphicon-question-sign"></span>
+                                                            </a>
+                                                    </div>
+                                            </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="placeLongitude" class="control-label">Longitude</label>
-                                        <input type="text" class="form-control" name="place_longitude" id="placeLongitude" placeholder="0" aria-describedby="placeLongitudeHelp">
-                                        <span id="placeLongitudeHelp" class="help-block">Longitude du site (-180 à 180).</span>
+                                    
+                                    <div id="divLongitude" class="form-group">
+                                            <div class="col-md-4">
+                                                    <label for="longitude" class="control-label">Longitude : </label>
+                                                    <br>
+                                                    <span class="error help-block">Entre -180 et 180°</span>
+                                                    <span class="good help-block"></span>
+                                            </div>
+                                            <div class="col-xs-7 -marginLR">
+                                                    <div class="input-group">
+                                                            <input id="longitude" type="text" name="place_longitude" class="form-control" placeholder="123.50"/>
+                                                            <span class="glyphicon glyphicon-remove form-control-feedback shift error"></span>
+                                                            <span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
+                                                            <span class="input-group-addon">°</span>
+                                                    </div>
+                                            </div>
+                                            <div class="col-xs-1">
+                                                    <div class="pop">
+                                                            <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
+                                                               data-content="Entrer une longitude comprise entre -180° et 180°.<br><br>
+                                                               <i>La longitude correspond au positionnement est/ouest d'un point et est représentée par une valeur angulaire. Elle varie entre 0° (méridien de Greenwich) et +/- 180°.</i>
+                                                               <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                                               title="<b>AIDE : Longitude du site</b>">
+                                                                    <span class="glyphicon glyphicon-question-sign"></span>
+                                                            </a>
+                                                    </div>
+                                            </div>
                                     </div>
+                                    
                                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</button>
                                 </div>
                             </div>
@@ -96,7 +142,21 @@ function placeMarker(location) {
     });
   }
 }    
-    
+        
+    $(function () {
+            //input verification and feedback when the user modifies the latitude
+            $('#latitude').keyup(function() {
+                $('#divLatitude').addClass('has-feedback');
+                $('#latitude').val() >= -90 && $('#latitude').val() <=90 && $('#latitude').val() !== '' ? $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide()  : $('#divLatitude').addClass('has-error').removeClass('has-success') && $('#divLatitude').find('.error').show() && $('#divLatitude').find('.good').hide();	 
+            });
+            
+            //input verification and feedback when the user modifies the longitude
+            $('#longitude').keyup(function() {
+                $('#divLongitude').addClass('has-feedback');
+                $('#longitude').val() >= -180 && $('#longitude').val() <=180 && $('#longitude').val() !== '' ? $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide()  : $('#divLongitude').addClass('has-error').removeClass('has-success') && $('#divLongitude').find('.error').show() && $('#divLongitude').find('.good').hide();	 
+            });
+        });
+
 //popover
 $(function (){
    $(".pop").popover(); 

@@ -66,7 +66,7 @@
 										<span class="glyphicon glyphicon-ok form-control-feedback shift good"></span>
 										<span class="input-group-addon">°</span>
 									</div>
-							   </div>
+                                                                </div>
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
@@ -668,7 +668,7 @@
 	});
 */
 
-//intoxicate non selected option
+        //intoxicate non selected option
         function intoxicateOption(){
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').find("*").prop('disabled', false) : $('#option1').find("*").prop('disabled', true);
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').css({'opacity': '1'}) : $('#option1').css({'opacity': '0.33'});
