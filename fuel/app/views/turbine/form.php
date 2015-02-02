@@ -310,25 +310,6 @@
 
 <script type="text/javascript">
 var windSpeed =0;
-//adding a row within wind table
-function addRow(){
-    if (windSpeed<30){
-        $('#powerTable').append('<tr><td align=center>'+windSpeed+'</td><td><input type="text" id="turbinePower'+windSpeed+'" name="turbine_power_'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
-        $('#nbPowerLines').val(++windSpeed);
-    }
-    else{
-        
-    }
-}
-
-//delete a row within wind table
-function deleteRow(){
-if(windSpeed>0){
-        $('#powerTable tr:last').remove();
-        windSpeed--;
-        $('#nbPowerLines').val(windSpeed);
-    }
-}
 
 //generation of feedback icons for each input
 $(function () {

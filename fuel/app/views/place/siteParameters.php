@@ -222,6 +222,7 @@
 
 
 				  <!------------------------------------------------wind rose------------------------------------------------------------>
+                                  <!-- NOT USED OPTION (WIND ROSE)
 								<div class="col-sm-12 -marginLR" style="margin-left: -30px">
 									<div class="panel panel-default">
 
@@ -297,6 +298,7 @@
 										</div>
 									</div>
 								</div>
+                                  -->
 				  <!-------------------------------------------------------------------------------------------------------------------->				  
 							</div>
 	  <!---------------------------------------------------------------------------------------------------------------------------------------------------------------->						  
@@ -655,7 +657,7 @@
             windDistribution();
         });
 
-//Displaying wind rose
+/*Displaying wind rose NOT USED OPTION (WIND ROSE)
 	function windRose(){
 		
 		$('input[type="radio"][name="roseSources"]:checked').val() === 'unknown' ? $('#unknowRose').css({'display': 'block'}) : $('#unknowRose').css({'display': 'none'});
@@ -664,48 +666,24 @@
 	$(function () {
 		windRose();
 	});
-
-
-/* ADD AND DELETE ROW WITHIN WIND TABLE
-
-//adding a row within wind table
-function addRow(){
-	if (windSpeed<30){
-		windSpeed++;
-		$('#windTable').append('<tr><td>'+windSpeed+'</td><td><input type="text" id="windProbability'+windSpeed+'" name="place_probability_'+windSpeed+'" class="form-control input-sm"/></td><td></td></tr>');
-		$('#nbWindLines').val(windSpeed);
-	}
-	else{
-		
-	}
-}
-//delete a row within wind table
-function deleteRow(){
-if(windSpeed>0){
-		$('#windTable tr:last').remove();
-		windSpeed--;
-		$('#nbWindLines').val(windSpeed);
-	}
-}
-
 */
 
 //intoxicate non selected option
         function intoxicateOption(){
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').find("*").prop('disabled', false) : $('#option1').find("*").prop('disabled', true);
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option1').css({'opacity': '1'}) : $('#option1').css({'opacity': '0.33'});
-//		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option2').find("*").val(''):null;
-//		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option3').find("*").val(''):null;
+		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option2').find("*").val(''):null;
+		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt1' ? $('#option3').find("*").val(''):null;
 		
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option2').find("*").prop('disabled', false) : $('#option2').find("*").prop('disabled', true);
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option2').css({'opacity': '1'}) : $('#option2').css({'opacity': '0.33'});
-//	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option1').find("*").val(''):null;
-//	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option3').find("*").val(''):null;
+	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option1').find("*").val(''):null;
+	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt2' ? $('#option3').find("*").val(''):null;
 		
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option3').find("*").prop('disabled', false) : $('#option3').find("*").prop('disabled', true);
 		$('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option3').css({'opacity': '1'}) : $('#option3').css({'opacity': '0.33'});
-//	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option1').find("*").val(''):null;
-//	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option2').find("*").val(''):null;
+	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option1').find("*").val(''):null;
+	  $('input[type="radio"][name="choiceOption"]:checked').val() === 'opt3' ? $('#option2').find("*").val(''):null;
 		
 	}
         $(function () {
@@ -798,7 +776,7 @@ if(windSpeed>0){
                 $('#roughnesslength').val() >= 0.0002 && $('#roughnesslength').val() <=2 && $('#roughnesslength').val() !== '' ? $('#divRoughness').addClass('has-success').removeClass('has-error') && $('#divRoughness').find('.good').show() && $('#divRoughness').find('.error').hide()  : $('#divRoughness').addClass('has-error').removeClass('has-success') && $('#divRoughness').find('.error').show() && $('#divRoughness').find('.good').hide();	 
             });
             
-            //
+            /* NOT USED OPTION (WIND ROSE)
             $('.windProb').keyup(function() {
             var totalHours = 0;
             $('#roseTable').addClass('has-feedback');
@@ -832,7 +810,7 @@ if(windSpeed>0){
                             break;
                     }
             }
-            });
+            }); */
             
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the mean speed option 1
             $('#averageWindSpeed1').keyup(function() {
