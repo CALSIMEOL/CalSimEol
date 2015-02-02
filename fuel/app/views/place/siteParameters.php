@@ -407,10 +407,8 @@
 													</tr>
 	<?php endif ?>
 	<?php $i++ ?>
-<?php endforeach ?>
-
-												</table>
-												<span class="error help-block">Nombre total d'heures doit être égal à 8760 h</span>
+<?php endforeach ?>												</table>
+												<span class="error help-block">Les occurences doivent être renseignées numériquement pour chaque valeur de vent.</span>
 												<span class="good help-block"></span>
 												<br><br>
                                                                                                 
