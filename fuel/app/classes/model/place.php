@@ -48,9 +48,9 @@ class Model_Place extends \Orm\Model
 			'label'      => 'Place Altitude (in meters)',
 			'validation' => array(
 				'required',
-				'numeric_between' => array(-500, 8000),
+				'numeric_between' => array(1, 3000),
 			),
-			'default' => '0',
+			'default' => '1',
 		),
 		'place_mean_temp' => array(
 			'data_type'  => 'float',
@@ -59,7 +59,7 @@ class Model_Place extends \Orm\Model
 				'required',
 				'numeric_between' => array(-50, 50),
 			),
-			'default' => '0',
+			'default' => '15',
 		),
 		'place_rugosity' => array(
 			'data_type'  => 'float',
@@ -75,9 +75,9 @@ class Model_Place extends \Orm\Model
 //			'label'      => '',
 			'validation' => array(
 				'required',
-				'numeric_between' => array(-500, 8000),
+				'numeric_between' => array(1, 3000),
 			),
-			'default' => '0',
+			'default' => '10',
 		),
 		'place_mean_speed' => array(
 			'data_type'  => 'float',
@@ -86,7 +86,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 20),
 			),
-			'default' => '0.1',
+			'default' => '5',
 		),
 		'place_std_deviation' => array(
 			'data_type'  => 'float',
@@ -95,7 +95,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 50),
 			),
-			'default' => '0.1',
+			'default' => '3',
 		),
 		'place_shape_factor' => array(
 			'data_type'  => 'float',
@@ -104,7 +104,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.5, 5),
 			),
-			'default' => '0.5',
+			'default' => '2',
 		),
 		'place_scale_factor' => array(
 			'data_type'  => 'float',
@@ -113,7 +113,7 @@ class Model_Place extends \Orm\Model
 //				'required',
 				'numeric_between' => array(0.1, 20),
 			),
-			'default' => '0.1',
+			'default' => '5',
 		),
 	);
 
