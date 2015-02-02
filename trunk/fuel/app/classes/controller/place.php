@@ -155,8 +155,8 @@ class Controller_Place extends Controller_Template
 				$place->place_name = sprintf('EA%d - %s', $station['idStation'], $station['nom']);
 				$place->place_latitude = $station['latitude'];
 				$place->place_longitude = $station['longitude'];
-				$place->place_shape_factor = $station['facteurForme'];
-				$place->place_scale_factor = $station['facteurEchelle'];
+				$place->place_shape_factor = $station['facteurForme']; // k
+				$place->place_scale_factor = $station['facteurEchelle']; // A
 				$place->place_altitude = $station['altitude'];
 
 				if ($place->save())
