@@ -131,8 +131,10 @@ $(function () {
 function placeMarker(location) {
 
   $('#latitude').val(location.k);
+  $('#divLatitude').addClass('has-feedback');
   $('#divLatitude').addClass('has-success').removeClass('has-error') && $('#divLatitude').find('.good').show() && $('#divLatitude').find('.error').hide();
   $('#longitude').val(location.D);
+  $('#divLongitude').addClass('has-feedback');
   $('#divLongitude').addClass('has-success').removeClass('has-error') && $('#divLongitude').find('.good').show() && $('#divLongitude').find('.error').hide();
 
   if(marker){ //on vÃ©rifie si le marqueur existe
