@@ -4,8 +4,18 @@ class View_Place_List extends ViewModel
 {
 	public function view()
 	{
+		$query = Model_Place::query();
+
+		$search = Input::get('search');
+
+		if ($search)
+		{
+			$query->where('place_name', 'LIKE', '%'.$search.'%');
+		}
+
 		$config = array(
-			'total_items' => Model_Place::count(),
+//			'total_items' => Model_Place::count(),
+			'total_items' => $query->count(),
 			'per_page' => 10,
 			'uri_segment' => 3,
 
@@ -29,7 +39,7 @@ class View_Place_List extends ViewModel
 
 		$pagination = Pagination::forge('turbine-list-pagination', $config);
 
-		$this->places = Model_Place::query()
+		$this->places = $query
 								->rows_offset($pagination->offset)
 								->rows_limit($pagination->per_page)
 								->get();
