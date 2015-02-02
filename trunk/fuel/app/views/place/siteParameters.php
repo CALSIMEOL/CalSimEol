@@ -112,7 +112,7 @@
 								<div class="col-md-4">
 									<label for="altitude" class="control-label">Altitude : </label>
 									<br>
-									<span class="error help-block">Entre -500 et 3000 mètres</span>
+									<span class="error help-block">Entre 1 et 3000 mètres</span>
 									<span class="good help-block"></span>
 								</div>
 								<div class="col-xs-7 -marginLR">
@@ -744,15 +744,16 @@
             $('#altitude').keyup(function() {
                 $('#divAltitude').addClass('has-feedback');
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
-                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#density').val(function() {
                         var altitude = parseFloat($('#altitude').val()); 
-                        var temp = parseFloat($('#averageannualtemp').val()); 
+                        $('#averageannualtemp').val(288.15-0.0065*altitude-273.15);
+                        var temp = parseFloat($('#averageannualtemp').val())+273.15;
                         var density; 
-                        density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+                        density=((101325*Math.pow((temp/288.15),(9.81/(287.04*0.0065))))/(287.04*temp)); 
                         density=density.toFixed(5);
                         return density
                         ;})
-                : $('#density').val('');
+                : null;
             });
             
             //input verification, calculation/display of the density and feedback when the user modifies the mean temperature
@@ -760,10 +761,9 @@
                 $('#divTemp').addClass('has-feedback');
                 $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && $('#averageannualtemp').val() >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
-                        var altitude = parseFloat($('#altitude').val()); 
-                        var temp = parseFloat($('#averageannualtemp').val()); 
+                        var temp = parseFloat($('#averageannualtemp').val())+273.15; 
                         var density; 
-                        density=(1013*28.97*Math.pow(((288-0.0065*altitude)/288),5.225))/(8.314*(temp+273.15)); 
+                        density=((101325*Math.pow((temp/288.15),(9.81/(287.04*0.0065))))/(287.04*temp)); 
                         density=density.toFixed(5);
                         return density
                         ;})
@@ -1006,8 +1006,6 @@
                     x=1+1/k;
                     gamma=Math.exp(-x)*Math.pow(x,x-0.5)*Math.sqrt(2*Math.PI)*(1+1/(12*x)+1/(288*Math.pow(x,2))-139/(51840*Math.pow(x,3))-571/(2488320*Math.pow(x,4))+163879/(209018880*Math.pow(x,5)));
                     a=Vm/gamma;
-                    alert(a);
-                    alert(k);
                     if (k>=0.5 || k<=5 || a>=2 || a<=10)
                         {
                             for(var v=0;v<31;v++)
