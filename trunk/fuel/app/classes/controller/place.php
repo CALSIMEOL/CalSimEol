@@ -87,8 +87,8 @@ class Controller_Place extends Controller_Template
 			{
 				$point = new Model_PlaceWeibull();
 				$point->place_id = $place->place_id;
-				$place->wind_speed = $i;
-				$place->place_probability = Input::post('place_probability_'.$i, 0);
+				$point->wind_speed = $i;
+				$point->place_probability = Input::post('place_probability_'.$i, 0);
 
 				$place->weibull[] = $point;
 			}
