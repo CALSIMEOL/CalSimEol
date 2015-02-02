@@ -357,9 +357,9 @@
 											<div class="row">
 												<div id="divElevation">
 													<div class="col-lg-7">
-														<label for="ElevationOfTheMeasurement" class="control-label">Altitude de la prise de mesure : </label>
+														<label for="ElevationOfTheMeasurement" class="control-label">Hauteur de la prise de mesure : </label>
 														<br>
-														<span class="error help-block">Entre -500 et 3000 m</span>
+														<span class="error help-block">Entre 1 et 500 m</span>
 														<span class="good help-block"></span>
 													</div>
 													<div class="col-xs-7">
@@ -373,8 +373,8 @@
 													<div class="col-xs-1">
 														<div class="pop">
 															<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-															   data-content="Entrer une altitude comprise entre 1 et 3000 m.<br><br>
-															   <i>L'altitude de la prise de mesure est l'élévation verticale (par rapport au niveau de la mer) à laquelle ont été mesurés les vitesses de vents pour ce site.</i><br><br>
+															   data-content="Entrer une hauteur comprise entre 1 et 500 m.<br><br>
+															   <i>La hauteur de la prise de mesure est l'élévation verticale par rapport au sol à laquelle ont été mesurées les vitesses de vents pour ce site.</i><br><br>
 															   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 															   accesskey=""title="<b>AIDE : Altitude de la prise de mesure</b>">
 																<span class="glyphicon glyphicon-question-sign"></span>
@@ -963,7 +963,7 @@
             //input verification and feedback when the user modifies the elevation of the measure
             $('#ElevationOfTheMeasurement').keyup(function() {
 		$('#divElevation').addClass('has-feedback');
-		$('#ElevationOfTheMeasurement').val() >= 1 && $('#ElevationOfTheMeasurement').val() <=3000 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
+		$('#ElevationOfTheMeasurement').val() >= 1 && $('#ElevationOfTheMeasurement').val() <=500 && $('#ElevationOfTheMeasurement').val() !== '' ? $('#divElevation').addClass('has-success').removeClass('has-error') && $('#divElevation').find('.good').show() && $('#divElevation').find('.error').hide()  : $('#divElevation').addClass('has-error').removeClass('has-success') && $('#divElevation').find('.error').show() && $('#divElevation').find('.good').hide();
             });
             
             //input verification, calculation/display of the Weibull curve and feedback when the user modifies the wind table

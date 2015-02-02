@@ -4,22 +4,39 @@
     <div class="clearness col-sm-12">
 
         <div class="row">
-            <div class="lead col-sm-4">
+            <div class="lead col-sm-5">
                 <h1>Importer un site</h1>
             </div>
         </div>
-
+                
         <div class="row">
+            <div class="col-sm-offset-1 col-sm-3">
+                <a href="http://eol.calsimeol.fr/eol"  target="_blank"><?php echo Asset::img('EolAtlas.png', array('class' => 'img-responsive')) ?></a>
+            </div>
+            <div class="col-sm-7 text" style="padding-top: 20px;">
+                <p>EolAtlas est un atlas éolien sur lequel l’utilisateur peut trouver les données sur le vent d’un site (les données climatiques viennent de Météo France).</p>
+                <p>Sont ajoutés également, différents filtres donnant les zones d’exclusion dans lesquelles des parcs éoliens ne peuvent pas être installés
+                    (réserves naturelles, zones militaires…).</p>
+                <p>Vous pouvez visiter le site d'EolAtlas pour choisir un site en fonction de tous ces élements : <a href="http://eol.calsimeol.fr/eol"  target="_blank">Site d'EolAtlas</a></p>
+            </div>
+        </div>
+                
+
+        <div class="row" style="margin-top: 20px">
             <div class="col-sm-offset-1 col-sm-10">
                 <form method="post">
                     <div class="row">
                         <div class="col-sm-6">
-							<div align="center" id="googleMap" style="width:400px;height:400px"></div>
-                        </div>
-                        <div class="col-sm-6">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Coordonées géographiques</h3>
+                                    <b>Coordonées géographiques</b>
+                                    <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
+                                       data-content="Entrer les coordonées géographiques de votre site dans les champs ci-dessous ou cliquez sur la carte.<br><br>
+                                       <i>Les coordonnées seront envoyé à EolAtlas, qui nous renverra les données de la stations météo la plus proche.</i><br><br>
+                                       <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
+                                       title="<b>AIDE : Courbe de puissance</b>">
+                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                    </a>
                                 </div>
                                 <div class="panel-body">
                                     <br />
@@ -36,6 +53,9 @@
                                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</button>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-bottom: 20px">
+                            <div align="center" id="googleMap" style="width:100%;height:400px"></div>
                         </div>
                     </div>
                 </form>
@@ -75,54 +95,16 @@ function placeMarker(location) {
     map: map
     });
   }
-}
-
-/*       function showAddress(address) {
-       var map = new GMap2(document.getElementById("googleMap"));
-       map.addControl(new GSmallMapControl());
-       map.addControl(new GMapTypeControl());
-       if (geocoder) {
-        geocoder.getLatLng(
-          address,
-          function(point) {
-            if (!point) {
-              alert(address + " not found");
-            } else {
-          document.getElementById("lat").innerHTML = point.lat().toFixed(5);
-       document.getElementById("lng").innerHTML = point.lng().toFixed(5);
-         map.clearOverlays()
-            map.setCenter(point, 14);
-   var marker = new GMarker(point, {draggable: true});  
-         map.addOverlay(marker);
-
-        GEvent.addListener(marker, "dragend", function() {
-      var pt = marker.getPoint();
-         map.panTo(pt);
-      document.getElementById("lat").innerHTML = pt.lat().toFixed(5);
-         document.getElementById("lng").innerHTML = pt.lng().toFixed(5);
-        });
+}    
+    
+//popover
+$(function (){
+   $(".pop").popover(); 
+});
+// Contain the popover within the body NOT the element it was called in.
+$('[data-toggle="popover"]').popover({
+    container: 'body'
+});
 
 
-     GEvent.addListener(map, "moveend", function() {
-          map.clearOverlays();
-    var center = map.getCenter();
-          var marker = new GMarker(center, {draggable: true});
-          map.addOverlay(marker);
-          document.getElementById("lat").innerHTML = center.lat().toFixed(5);
-       document.getElementById("lng").innerHTML = center.lng().toFixed(5);
-
-     GEvent.addListener(marker, "dragend", function() {
-     var pt = marker.getPoint();
-        map.panTo(pt);
-    document.getElementById("lat").innerHTML = pt.lat().toFixed(5);
-       document.getElementById("lng").innerHTML = pt.lng().toFixed(5);
-        });
- 
-        });
-
-            }
-          }
-        );
-      }
-    }//*/
     </script>

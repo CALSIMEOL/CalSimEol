@@ -14,9 +14,16 @@ html { height: 100% }
     margin-bottom: 20px;
 }
 
-/*About page*/
-.about{
-font-size:large;
+/*layout text*/
+.text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .text {
+    font-size: 18px;
+  }
 }
 
 /*background for all pages*/
@@ -104,12 +111,10 @@ body{
     padding-top: 50px;
 }
 .lead {
-  margin-bottom: 0px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  font-size: 17px;
   font-weight: 300;
   line-height: 1.4;
-  text-align: center;
-  padding: 20px 15px;
 }
 @media (min-width: 768px) {
   .lead {

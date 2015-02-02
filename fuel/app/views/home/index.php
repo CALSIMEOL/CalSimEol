@@ -11,13 +11,9 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12"> 
-                <p class="lead">
-                    CALSIMEOL est un logiciel à vocation pédagogique. Grâce à une ergonomie adaptée, il est simple d’utilisation et peut être utilisé par des personnes non initiées à l’énergie éolienne.
-                </p>
-                <p class="lead">
-                    CALSIMEOL pourra servir aux collectivités locales ou particuliers souhaitant développer un projet de parc éolien. Il permet de réaliser une première approximation et de donner les premiers chiffres dimensionnant du projet.
-                </p>
+            <div class="col-sm-12 lead" style="text-align: center; padding: 20px 15px"> 
+                <p>CALSIMEOL est un logiciel à vocation pédagogique. Grâce à une ergonomie adaptée, il est simple d’utilisation et peut être utilisé par des personnes non initiées à l’énergie éolienne.</p>
+                <p>CALSIMEOL pourra servir aux collectivités locales ou particuliers souhaitant développer un projet de parc éolien. Il permet de réaliser une première approximation et de donner les premiers chiffres dimensionnant du projet.</p>
             </div>
         </div>
 
