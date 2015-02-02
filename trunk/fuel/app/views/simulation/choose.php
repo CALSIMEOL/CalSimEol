@@ -29,10 +29,9 @@
                                             <option value="default"<?php echo $sim_place == 'default' ? ' selected' : '' ?>>Il n'y a pas de sites</option>
 <?php endif ?>
 
-
                                         </optgroup>
                                         <optgroup label="Autre">
-                                            <option value="import"<?php echo $sim_place == 'import' ? ' selected' : '' ?>>Choix d'un site dans la base de données de EolAtlas</option>
+                                            <option value="import"<?php echo $sim_place == 'import' ? ' selected' : '' ?>>Choix d'un site dans la base de données de EolAtlas</span></option>
                                             <option value="manual"<?php echo $sim_place == 'manual' ? ' selected' : '' ?>>Création manuelle d'un site</option>
                                         </optgroup>
                                     </select>
