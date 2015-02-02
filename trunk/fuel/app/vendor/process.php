@@ -214,6 +214,7 @@ for($j=0;$j<=30;$j++)
 	$production[$j][1]=$Weibull->pdf($output_power[$j][0]);
 }
 
+
 //Extrapolation de la vitesse moyenne et déduction d'un nouveau A
 $Vm_extrapol=$vitesse_moyenne*(log($hauteur_eolienne/$rugosite)/log($hauteur/$rugosite));
 $A1=$Vm_extrapol/$gamma;
@@ -263,8 +264,8 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 
 	//Calcul de la densité de l'air
 	$h1=$hauteur_eolienne+$hauteur_site; //hauteur du rotor par rapport à la hauteur de référence
-	$T_rotor_kelvin=288.15-($h1*0.0065); //Tref mer(15 °C)-(h1*grad de temp vertical)
-	$pression_rotor=101325*(pow(($T_rotor_kelvin/288.15),(9.81/(287.04*0.0065))));//Pref mer * (T_rotor_kelvin/Tref mer)^(g/R*grad temp)
+	$T_rotor_kelvin=$temp_kelvin-($h1*0.0065); //Tref mer(15 °C)-(h1*grad de temp vertical)
+	$pression_rotor=101325*(pow(($T_rotor_kelvin/$temp_kelvin),(9.81/(287.04*0.0065))));//Pref mer * (T_rotor_kelvin/Tref mer)^(g/R*grad temp)
 	$rho=$pression_rotor/(287.04*$T_rotor_kelvin);
 	//echo $rho.'<br/>';
 	
