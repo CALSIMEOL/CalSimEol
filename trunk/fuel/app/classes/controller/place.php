@@ -166,7 +166,7 @@ class Controller_Place extends Controller_Template
 		if (Input::post())
 		{
 //			$url = 'http://eolatlas.890m.com/mickael/stationProche.php';
-			$url = 'http://eol.calsimeol.fr/eol/fics_php/stationProche.php';
+			$url = 'http://eol.calsimeol.fr/fics_php/stationProche.php';
 			$url.= '?latitude='.Input::post('place_latitude', 0);
 			$url.= '&longitude='.Input::post('place_longitude', 0);
 
