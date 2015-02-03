@@ -66,14 +66,16 @@
         </div>
 
       <!-----------------------------------------------------------turbine list navigation bar------------------------------------------------------------->
-        <div class="row">
-                <div class="col-sm-offset-1 col-xs-4"><br>
-                        <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter</a>
-                </div> 
-                <div class="col-xs-8">
+        <div class="row"> 
+                <div class="col-sm-offset-5 col-xs-10">
 <?php echo $pagination ?>
                 </div>
         </div>
+      <div class="row">
+            <div class="col-sm-offset-1 col-xs-4">
+                    <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter une éolienne</a>
+            </div>          
+      </div>
       <!--------------------------------------------------------------------------------------------------------------------------------------------------->
       
     </div>

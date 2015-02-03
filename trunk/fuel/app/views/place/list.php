@@ -66,13 +66,15 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-sm-offset-1 col-sm-5">
-                    <a href="<?php echo Uri::create('place/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ajouter</a>
-                    <a href="<?php echo Uri::create('place/import') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> &nbsp; Importer</a>
-                </div>
-                <div class="col-sm-4">
+                <div class="col-sm-offset-5 col-sm-4">
 <?php echo $pagination ?>
                 </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-8">
+                <a href="<?php echo Uri::create('place/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter un site</a> &nbsp; 
+                <a href="<?php echo Uri::create('place/import') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-import" aria-hidden="true"></span> &nbsp; Importer un sit d'EolAtlas</a>
+            </div>
         </div>
     </div>
 </div>

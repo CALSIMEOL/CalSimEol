@@ -29,6 +29,9 @@
         <?php echo Asset::js('modules/exporting.js'); ?>
     </head>
     <body>
+        
+        <noscript>Ce site nécessite JavaScript pour fonvtionner, veuillez l'activer.</noscript>
+        
         <!-- navigation bar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
