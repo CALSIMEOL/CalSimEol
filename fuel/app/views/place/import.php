@@ -34,7 +34,7 @@
                                        data-content="Entrer les coordonées géographiques de votre site dans les champs ci-dessous ou cliquez sur la carte.<br><br>
                                        <i>Les coordonnées seront envoyées à EolAtlas, qui renverra les données de la station météo la plus proche.</i><br><br>
                                        <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
-                                       title="<b>AIDE : Courbe de puissance</b>">
+                                       title="<b>AIDE : Coordonées géographiques</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
                                     </a>
                                 </div>
