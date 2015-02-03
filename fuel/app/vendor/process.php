@@ -226,6 +226,7 @@ for($j=0;$j<=30;$j++)
 	$production[$j][2]=$Weibull1->pdf($output_power[$j][0]);
 }
 
+/*
 //Calcul de la production totale sur l'année
 	//Nombre d'heures où la vitesse v est observée
 	for($h=0;$h<31;$h++)
@@ -252,6 +253,7 @@ for($j=0;$j<=30;$j++)
 //Calcul du facteur de charge
 $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 //echo $facteur_charge.'<br/>';
+*/
 
 //Calcul de la vitesse de vent délivrant la densité maximale de puissance en entrée de l'éolienne
 $Vmax=$A1*(pow(($k+2)/$k,1/$k));
@@ -259,7 +261,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 
 //Calcul de la puissance moyenne
 
-	$puissance_moyenne=$production_totale_annee/8760;
+	//$puissance_moyenne=$production_totale_annee/8760;
 	//echo $puissance_moyenne.'<br/>';
 
 	//Calcul de la densité de l'air
@@ -268,6 +270,13 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 	$pression_rotor=101325*(pow(($T_rotor_kelvin/$temp_kelvin),(9.81/(287.04*0.0065))));//Pref mer * (T_rotor_kelvin/Tref mer)^(g/R*grad temp)
 	$rho=$pression_rotor/(287.04*$T_rotor_kelvin);
 	//echo $rho.'<br/>';
+	
+	$energy=array();
+	$energy[0][0]=0;
+	$energy[0][1]=0;
+	$energy[0][2]=0;
+	$energy[0][3]=0;
+	$energy[0][4]=0;
 	
 	$density=array();
 	$density[0][0]=0;
@@ -331,6 +340,20 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 		{
 			$tampon[$w][2]=0;
 		}
+		
+		//Calcul de la production totale sur l'année
+		//Nombre d'heures où la vitesse v est observée
+			$energy[$w][3]=$density[$w][2]*8760;
+			//echo $tableau3[$h][1].'<br/>';
+
+		//Energie produite par l'éolienne
+			$energy[$w][4]=$energy[$w][3]*$tampon[$w][2];
+			//echo $tableau3[$v][2].'<br/>';
+
+		//Calcul de la production totale sur l'année
+			$production_totale_annee=$production_totale_annee+$energy[$w][4];
+			$production_totale_annee1=$production_totale_annee/10;
+		//echo $production_totale_annee.'<br/>';
 	
 		//Coefficient de puissance
 		if((0.5*$rho*pow($density[$w][0],3)*$surface)!=0)
@@ -345,10 +368,12 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			$tampon[$w][0]=0;
 		}
 		
-		//Etablir le coefficient de puissance dans un tableau de 0 à 30 au pas de 1 m/s
+		//Etablir le coefficient de puissance + Nombre d'heures où la vitesse v est observée + Energie produite par l'éolienne dans un tableau de 0 à 30 au pas de 1 m/s
 		if(is_int($w/10)==true)
 		{
-		$coef_puissance[$w/10][0]=$tampon[$w][0];
+			$coef_puissance[$w/10][0]=$tampon[$w][0];
+			$production[$w/10][3]=$energy[$w][3];
+			$production[$w/10][4]=$energy[$w][4];
 		}
 		
 		//Densité de puissance en sortie d'éolienne par m² de rotor
@@ -360,6 +385,15 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 		$somme_densite_sortie=$somme_densite_sortie+$tampon[$w][3];
 		$densite_moy_sortie=$somme_densite_sortie/10;
 	}
+	
+	//echo $production_totale_annee1.'<br/>';	
+	
+	$puissance_moyenne=$production_totale_annee1/8760;
+	//echo $puissance_moyenne.'<br/>';
+	
+	//Calcul du facteur de charge
+	$facteur_charge=$production_totale_annee1/(8760*$puissance_nominale);
+	//echo $facteur_charge.'<br/>';	
 
 	$puissance_moy_entree = $densite_moy_entree * $surface;
 
@@ -374,7 +408,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 
 //	$array['mean_speed'] = $vitesse_moyenne;
 //	$array['power_output'] = $production[$v][4];
-	$array['production'] = $production_totale_annee;
+	$array['production'] = $production_totale_annee1;
 	$array['power_mean'] = $puissance_moyenne;
 	$array['charge_factor'] = $facteur_charge;
 
