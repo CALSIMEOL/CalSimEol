@@ -11,15 +11,21 @@ use PHPStats\ProbabilityDistribution\Weibull;
 /////////////////////////////////////////////////////////////////FONCTION DE CALCUL///////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function occ($array)
+function occ($place)
 {
+	$occurence = array();
+	foreach ($place->weibull as $point)
+	{
+		$occurence[] = array($point->wind_speed, $point->place_probability);
+	}
+
 	//Somme des occurences
 	$somme_occurence=0;
 	for($i=0; $i<31; $i++)
 	{
 		$somme_occurence=$somme_occurence+$occurence[$i][1];
 	}
-	//echo $somme_occurence.'<br>';
+	echo $somme_occurence.'<br>';
 
 	//Probabilit� de chaque vent
 	$proba=array();
