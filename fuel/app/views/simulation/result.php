@@ -52,7 +52,7 @@
                             <div class="panel-heading">Distribution des vents</div>
                                 <div class="panel-body"><br>
                                       <div id="chart1"></div>
-                                      <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-plus"></span>Afficher/Masquer tableau</span><br><br>
+                                      <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / Masquer tableau</span><br><br>
                                         <table id="tab1" class="table table-striped table-condensed">
                                                 <tbody><tr>
                                                         <th>Vitesse stabilisée [m/s]</th>
@@ -72,7 +72,7 @@
                             <div class="panel-heading">Caractérisation de l'éolienne</div>
                                 <div class="panel-body"><br>
                                     <div id="chart2"></div>
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
                                     <table id="tab2" class="table table-striped table-condensed">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
@@ -94,7 +94,7 @@
                             <div class="panel-heading">Puissance produite</div>
                                 <div class="panel-body"><br>
                                     <div id="chart3"></div>
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
                                     <table id="tab3" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
@@ -113,7 +113,7 @@
                             <div class="panel-heading">Densité de puissance</div>
                             <div class="panel-body"><br>
                                     <div id="chart4"></div>
-                                    <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-plus"></span>Afficher / masquer tableau</span><br><br>
+                                    <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
                                     <table id="tab4" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
