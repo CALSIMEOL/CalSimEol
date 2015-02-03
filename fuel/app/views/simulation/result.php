@@ -56,7 +56,7 @@
                                         <table id="tab1" class="table table-striped table-condensed">
                                                 <tbody><tr>
                                                         <th>Vitesse stabilisée [m/s]</th>
-                                                        <th>Weibull à l'altitude du site [%]</th>
+                                                        <th>Weibull à l'altitude de mesure [%]</th>
                                                         <th>Weibull à la hauteur du moyeu [%]</th>
                                                 </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
@@ -91,14 +91,14 @@
                   <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Puissance produite</div>
+                            <div class="panel-heading">Energie produite</div>
                                 <div class="panel-body"><br>
                                     <div id="chart3"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
                                     <table id="tab3" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
-                                                    <th>Puissance produite [kW]</th>
+                                                    <th>Energie produite [kW]</th>
                                             </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
                                             <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i]/1000, 2) ?></td></tr>
@@ -160,11 +160,11 @@ $(function () {
                         type: 'spline'
                     },
                     title: {
-                        text: 'Wind distribution'
+                        text: 'Distribution des vents'
                     },
                     xAxis: {
                         title: {
-                            text: 'Wind speed (m/s)'
+                            text: 'Vitesse de vent (m/s)'
                         },
                         tickInterval: 5,
                         min: 0,
@@ -172,7 +172,7 @@ $(function () {
                     },
                     yAxis: {
                         title: {
-                            text: 'Probability (%)'
+                            text: 'Probabilité (%)'
                         },
                         gridLineWidth: 1,
                         min: 0
@@ -184,9 +184,9 @@ $(function () {
                                 }
                             }
                         },
-                    series: [{ 
-                                name: 'Weibull distribution',
-                                data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],',$i ,$weibull_measure[$i] * 100) ?>]
+                    series: [{
+                                name: 'Distribution de Weibull à altitude de moyeu',
+                                data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],',$i ,$weibull_moyeu[$i] * 100) ?>]
                             }]
                     });
                     
@@ -195,11 +195,11 @@ $(function () {
                             type: 'spline'
                         },
                         title: {
-                            text: 'Power curve'
+                            text: 'Courbe de puissance'
                         },
                         xAxis: {
                             title: {
-                                text: 'Wind speed (m/s)'
+                                text: 'Vitesse de vent (m/s)'
                             },
                             tickInterval: 5,
                             min: 0,
@@ -207,7 +207,7 @@ $(function () {
                         },
                         yAxis: [{
                             title: {
-                                text: 'Power (kW)'
+                                text: 'Puissance (kW)'
                             },
                             gridLineWidth: 1,
                             min: 0
@@ -227,10 +227,10 @@ $(function () {
                             }
                         },
                         series: [{ 
-                                    name: 'Power',
+                                    name: 'Puissance éolienne',
                                     data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $turbine_power[$i]) ?>]
                                 },{
-                                    name: 'Cp',
+                                    name: 'Coefficient de puissance',
                                     yAxis: 1,
                                     data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $cp[$i]) ?>]
                                 }]
@@ -241,11 +241,11 @@ $(function () {
                             type: 'spline'
                         },
                         title: {
-                            text: 'Local production'
+                            text: "Production d'énergie"
                         },
                         xAxis: {
                             title: {
-                                text: 'Wind speed (m/s)'
+                                text: 'Vitesse de vent (m/s)'
                             },
                             tickInterval: 5,
                             min: 0,
@@ -277,11 +277,11 @@ $(function () {
                         },
                         
                         title: {
-                            text: 'Power density'
+                            text: 'Densité de puissance'
                         },
                         xAxis: {
                             title: {
-                                text: 'Wind speed (m/s)'
+                                text: 'Vitesse de vent (m/s)'
                             },
                             tickInterval: 5,
                             min: 0,
@@ -289,20 +289,20 @@ $(function () {
                         },
                         yAxis: [{
                             title: {
-                                text: 'Power density (kW)'
+                                text: 'Densité de puissance (W/m2)'
                             },
                             gridLineWidth: 1,
                             min: 0
                         }],
 
                         series: [{ 
-                                    name: 'Input power density',
+                                    name: 'Densité de puissance en entrée',
                                     data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_input[$i])?>]
                                 },{
-                                    name: 'Input power density with Betz',
+                                    name: 'Densité de puissance en entrée avec Betz',
                                     data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_input_betz[$i])?>]
                                 },{
-                                    name: 'Output density power',
+                                    name: 'Densité de puissance en sortie',
                                     data: [<?php for ($i = 0; $i <= 300; $i++) printf('[%f,%f],', $i/10, $density_output[$i])?>]
                                 }]
                         });
