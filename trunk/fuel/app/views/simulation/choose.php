@@ -14,7 +14,13 @@
                         <form class="form-horizontal marginLR" method="post">
 
                             <div class="form-group">
-                                <legend>Choix du site</legend>
+                                <legend>Choix du site
+                                    <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
+                                       data-content='Choisir un site parmis la liste ou aller dans le menu "liste sites" pour en créer un nouvreau.'
+                                       title="<b>AIDE : Choix du site</b>">
+                                            <span class="glyphicon glyphicon-question-sign small"></span>
+                                    </a>
+                                </legend>
                             </div>
 
                             <div class="form-group">
@@ -30,16 +36,23 @@
 <?php endif ?>
 
                                         </optgroup>
-                                        <optgroup label="Autre">
+                                        <!--NOT USED OPTION--
+                                            <optgroup label="Autre">
                                             <option value="import"<?php echo $sim_place == 'import' ? ' selected' : '' ?>>Choix d'un site dans la base de données de EolAtlas</span></option>
                                             <option value="manual"<?php echo $sim_place == 'manual' ? ' selected' : '' ?>>Création manuelle d'un site</option>
-                                        </optgroup>
+                                        </optgroup>-->
                                     </select>
                                 </div>
                             </div>
-                            <br>
+                            <br><br>
                             <div class="form-group">
-                                <legend>Choix de l'éolienne</legend>
+                                <legend>Choix de l'éolienne
+                                    <a href="#pop" class="pop pull-right" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto" style="margin-top: 1px"
+                                       data-content='Choisir un site parmis la liste ou aller dans le menu "liste éoliennes" pour en créer une nouvelle.'
+                                       title="<b>AIDE : Choix de l'éolienne</b>">
+                                            <span class="glyphicon glyphicon-question-sign small"></span>
+                                    </a>
+                                </legend>
                             </div>
 
                             <div class="form-group">
@@ -56,9 +69,10 @@
 
 
                                         </optgroup>
-                                        <optgroup label="Autre">
+                                        <!--NOT USED OPTION--
+                                            <optgroup label="Autre">
                                             <option value="manual"<?php $sim_turbine == 'manual' ? ' selected' : '' ?>>Création manuelle d'une éolienne</option>
-                                        </optgroup>
+                                        </optgroup>-->
                                     </select>
                                 </div>
                             </div>
@@ -74,3 +88,16 @@
             </div>
         </div>
 
+<script type="text/javascript">
+
+//popover
+$(function (){
+   $(".pop").popover(); 
+});
+// Contain the popover within the body NOT the element it was called in.
+$('[data-toggle="popover"]').popover({
+	container: 'body'
+});
+
+
+</script>
