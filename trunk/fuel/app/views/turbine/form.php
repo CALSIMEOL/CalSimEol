@@ -322,11 +322,11 @@ $(function () {
                     type: 'spline'
                 },
                 title: {
-                    text: 'Power curve'
+                    text: 'Courbe de puissance'
                 },
                 xAxis: {
                     title: {
-                        text: 'Wind speed (m/s)'
+                        text: 'Vitesse de vent (m/s)'
                     },
                     tickInterval: 5,
                     min: 0,
@@ -334,7 +334,7 @@ $(function () {
                 },
                 yAxis: [{
                     title: {
-                        text: 'Power (kW)'
+                        text: 'Puissance (kW)'
                     },
                     gridLineWidth: 1,
                     min: 0
@@ -347,7 +347,7 @@ $(function () {
                             }
                         },
                 series: [{ 
-                            name: 'Power',
+                            name: 'Puissance éolienne',
                             data: [<?php foreach ($turbine['powers'] as $power) printf('[%f,%f],', $power->wind_speed, $power->turbine_power) ?>]
                         }]
                 });

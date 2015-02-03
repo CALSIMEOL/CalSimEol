@@ -698,11 +698,11 @@
                 type: 'spline'
             },
             title: {
-                text: 'Wind distribution'
+                text: 'Distribution des vents'
             },
             xAxis: {
                 title: {
-                    text: 'Wind speed (m/s)'
+                    text: 'Vitesse de vent (m/s)'
                 },
                 tickInterval: 5,
                 min: 0,
@@ -710,7 +710,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Probability (%)'
+                    text: 'Probabilité (%)'
                 },
                 gridLineWidth: 1,
                 min: 0
@@ -723,7 +723,7 @@
                             }
                         },
             series: [{ 
-                        name: 'Weibull distribution',
+                        name: 'Distribution de Weibull',
                         data: [<?php foreach ($place['weibull'] as $point) printf('[%f,%f],', $point->wind_speed, $point->place_probability) ?>]
                     }]
             });
