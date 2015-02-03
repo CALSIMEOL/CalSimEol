@@ -121,8 +121,8 @@
                                                     <th>Densité de puissance en entrée avec limite de Betz [w/m<sup>2</sup>]</th>
                                                     <th>Densité de puissance en sortie [w/m<sup>2</sup>]</th>
                                             </tr>
-<?php for ($i = 0; $i <= 300; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo round($density_input[$i], 2) ?></td><td><?php echo round($density_input_betz[$i], 2) ?></td><td><?php echo round($density_output[$i], 2) ?></td></tr>
+<?php for ($i = 0; $i <= 300; $i+= 10) : ?>
+                                            <tr><td><?php echo $i / 10 ?></td><td><?php echo round($density_input[$i], 2) ?></td><td><?php echo round($density_input_betz[$i], 2) ?></td><td><?php echo round($density_output[$i], 2) ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                             </div>
