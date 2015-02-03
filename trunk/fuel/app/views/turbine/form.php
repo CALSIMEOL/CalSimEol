@@ -145,7 +145,7 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer le diamètre du rotor de l'éolienne (de 1 à 500 m).<br><br>
-                                           <i>Le rotor est la partie tourante de l'éolienne. Il est composé des pales et du moyeu en son centre.</i><br><br>
+                                           <i>Le rotor est la partie tournante de l'éolienne. Il est composé des pales et du moyeu en son centre.</i><br><br>
                                            <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                            title="<b>AIDE : Diamètre du rotor</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
@@ -173,7 +173,7 @@
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
                                            data-content="Entrer la hauteur du moyeu l'éolienne (de 1 à 300 m).<br><br>
-                                           <i>Le moyeu de l'éolienne est la pèce rotative en haut de mat qui reçoit les pales.</i><br><br>
+                                           <i>Le moyeu de l'éolienne est la pièce rotative en haut de mat qui reçoit les pales.</i><br><br>
                                            <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                            title="<b>AIDE : Hauteur du moyeu</b>">
                                         <span class="glyphicon glyphicon-question-sign"></span>
@@ -185,7 +185,7 @@
                             <div id="divCutInSpeed" class="form-group">
                                 <div class="col-lg-5">
                                     <label for="cut-inSpeed" class="control-label">Vitesse de démarrage : </label>
-                                    <span class="error help-block">De 0 à 20m/s</span>
+                                    <span class="error help-block">De 0.01 à 20m/s</span>
                                     <span class="good help-block"></span>
                                 </div>
                                 <div class="col-xs-6">
@@ -199,7 +199,7 @@
                                 <div class="col-xs-1">
                                     <div class="pop">
                                         <a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                           data-content="Entrer la vitesse de démarrage de l'éolienne (entre 0 et 20 m/s).<br><br>
+                                           data-content="Entrer la vitesse de démarrage de l'éolienne (entre 0.01 et 20 m/s).<br><br>
                                            <i>La vitesse de démarrage de l'éolienne est la vitesse à partir de laquelle l'éolienne commence à tourner et à produire de l'électricité.</i><br><br>
                                            <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
                                            title="<b>AIDE : Vitesse de démarrage</b>">
