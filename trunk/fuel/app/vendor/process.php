@@ -305,6 +305,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 	$tampon[0][1]=0;
 	$tampon[0][2]=$output_power[0][1];
 	$tampon[0][3]=0;
+	$tampon[0][4]=0;
 
 	$coef_puissance=array();
 	$coef_puissance[0][0]=0;
@@ -329,6 +330,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 		
 		//Densit� de puissance en entr�e r�duite � la limite de Betz
 		$density[$w][6]=$density[$w][3]*(16/27);
+		$tampon[$w][4]=$density[$w][6]*$density[$w][2];
 		
 		//Densit� moyenne de la puissance d'entr�e du vent
 		$density[$w][4]=$density[$w][2]*$density[$w][3];
@@ -452,9 +454,9 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 	$array['density_output'] = array();
 	for ($i = 0; $i <= 300; $i++)
 	{
-		$array['density_input'][] = $density[$i][3];
-		$array['density_input_betz'][] = $density[$i][6];
-		$array['density_output'][] = $tampon[$i][1];
+		$array['density_input'][] = $density[$i][4];
+		$array['density_input_betz'][] = $tampon[$i][4];
+		$array['density_output'][] = $tampon[$i][3];
 	}
 
 	return $array;
