@@ -11,13 +11,13 @@
                 
         <div class="row">
             <div class="col-sm-offset-1 col-sm-3">
-                <a href="http://eol.calsimeol.fr/eol"  target="_blank"><?php echo Asset::img('EolAtlas.png', array('class' => 'img-responsive')) ?></a>
+                <a href="http://eol.calsimeol.fr" target="_blank"><?php echo Asset::img('EolAtlas.png', array('class' => 'img-responsive')) ?></a>
             </div>
             <div class="col-sm-7 text" style="padding-top: 20px;">
                 <p>EolAtlas est un atlas éolien sur lequel l’utilisateur peut trouver les données sur le vent d’un site (les données climatiques viennent de Météo France).</p>
                 <p>Sont ajoutés également, différents filtres donnant les zones d’exclusion dans lesquelles des parcs éoliens ne peuvent pas être installés
                     (réserves naturelles, zones militaires…).</p>
-                <p>Vous pouvez visiter le site d'EolAtlas pour choisir un site en fonction de tous ces élements : <a href="http://www.eol.calsimeol.fr"  target="_blank">Site d'EolAtlas</a></p>
+                <p>Vous pouvez visiter le site d'EolAtlas pour choisir un site en fonction de tous ces élements : <a href="http://eol.calsimeol.fr"  target="_blank">Site d'EolAtlas</a></p>
             </div>
         </div>
                 
