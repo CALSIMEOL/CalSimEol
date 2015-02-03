@@ -30,7 +30,9 @@
     </head>
     <body>
         
-        <noscript>Ce site nécessite JavaScript pour fonvtionner, veuillez l'activer.</noscript>
+        <noscript style="color: #ff0000;"><br>
+        <b><span class="glyphicon glyphicon-alert"></span> &nbsp; Ce site nécessite JavaScript pour fonvtionner, veuillez l'activer. &nbsp; <span class="glyphicon glyphicon-alert"></span></b>
+        </noscript>
         
         <!-- navigation bar -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
