@@ -73,12 +73,11 @@
                 <footer class="modal-footer">
                     <div><?php echo Asset::img('ECE_COUL_CMJN copie.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></div>
                     <div class='text-center'>
-                    <span id="copyright">
-                        <a href="<?php echo Uri::create('index/index') ?>">CALSIMEOL</a> is released under the ? license.<br>
-                        <small>Framework version: <?php echo Fuel::VERSION; ?></small>
-                    </span>
+                        <span id="copyright">
+                            &nbsp;CALSIMEOL is released under the license :&nbsp;<br>
+                            <a href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank"><?php echo Asset::img('by-nc.eu_petit.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></a>
+                        </span>
                     </div>
-                    <p>Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
                 </footer>
             </div>
         </div>

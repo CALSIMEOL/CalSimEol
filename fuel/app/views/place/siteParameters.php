@@ -38,7 +38,7 @@
 								<div class="col-md-4">
 									<label for="siteName" class="control-label">Nom : </label>
 									<br>
-									<span class="error help-block">De 1 à 20 caractères</span>
+									<span class="error help-block">De 1 à 50 caractères</span>
 									<span class="good help-block"></span> 
 								</div>
 								<div class="col-xs-7 -marginLR">
@@ -49,7 +49,7 @@
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-										   data-content="Entrer un nom pour ce site entre 1 et 20 caractères." title="<b>AIDE : Nom du site</b>">
+										   data-content="Entrer un nom pour ce site entre 1 et 50 caractères." title="<b>AIDE : Nom du site</b>">
 											<span class="glyphicon glyphicon-question-sign"></span>
 									</a>
 									</div>
@@ -181,10 +181,10 @@
 								<div class="col-xs-1">
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-										   data-content="<i>La masse volumique de l'air carractérise la masse d'air contenue dans un volume de 1 m<sup>3</sup>.
+										   data-content="<i>La masse volumique de l'air caractérise la masse d'air contenue dans un volume de 1 m<sup>3</sup>.
 										   Elle varie avec la température et l'altitude.</i><br>
 										   <?php echo str_replace('"', "'", Asset::img('densityForm.png', array('class' => 'img-responsive'))) ?>
-										   <small>&rho; : masse volumique de l'air h : altitude T : température en kelvin</small>"
+										   <small>&rho; : masse volumique de l'air<br>h : altitude<br>T : température en kelvin</small>"
 										   title="<b>AIDE : Masse volumique de l'air</b>">
 											<span class="glyphicon glyphicon-question-sign"></span>
 										</a>
@@ -211,7 +211,7 @@
 									<div class="pop">
 										<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
 										   data-content="Entrer une longueur de rugosité comprise entre 0.0002 et 2 m.<br><br>
-										   <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est à dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
+										   <i>La longueur de rugosité est la hauteur au dessus du sol où s'applique la condition d'adhérance, c'est-à-dire où le vecteur vent moyen est égal au vecteur nul. Elle dépend de l'homogénéité du terrain et du type d'obstacles.
 										   <br><small><a href='http://eolienne.f4jr.org/rugosite' target='_blank'>Cliquer ici pour des exemples de longueurs de rugosités</a></small></i>
 										   <br><br><span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 										   title="<b>AIDE : Longueur de rugosité</b>">
@@ -350,7 +350,7 @@
 												</div>
 												<div class="col-xs-1">
 													<a href="#pop" class="pop pull-left" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="top" style="margin-top: 13px"
-														data-content="Entrer pour chaque vitesse de vent sa fréquence d'occurence (en jour, heure ou minute) ou sa probabilité. Les valeurs saisies seront ramené à une probabilité pour les calculs.<br><br>
+														data-content="Entrer pour chaque vitesse de vent sa fréquence d'occurence (en jour, heure ou minute) ou sa probabilité. Les valeurs saisies seront ramenées à une probabilité pour les calculs.<br><br>
                                                                                                                 <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 														title="<b>AIDE : Paramètrage détaillé de la distribution des vents</b>">
 														 <span class="glyphicon glyphicon-question-sign"></span>
@@ -368,7 +368,7 @@
 													</div>
 													<div class="col-xs-7">
 														<div class="input-group">
-															<input id="ElevationOfTheMeasurement" type="text" name="place_altitude_meas" value="<?php echo $place['place_altitude_meas'] ?>" class="form-control" placeholder="1000"/>
+															<input id="ElevationOfTheMeasurement" type="text" name="place_altitude_meas" value="<?php echo $place['place_altitude_meas'] ?>" class="form-control" placeholder="10"/>
 															<span class="glyphicon glyphicon-remove form-control-feedback shift2 error"></span>
 															<span class="glyphicon glyphicon-ok form-control-feedback shift2 good"></span>
 															<span class="input-group-addon">m</span>
@@ -398,9 +398,9 @@
 
 													<tr>
 														<th>Vitesse [m/s]</th>
-														<th>Occurences/an</th>
+														<th>Occurences</th>
 														<th>Vitesse [m/s]</th>
-														<th>Occurences/an</th>
+														<th>Occurences</th>
 													</tr>
 <?php $i = 0; $c = 2 ?>
 <?php foreach ($place['weibull'] as $point) : ?>
@@ -475,7 +475,7 @@
 															<div class="col-lg-8 -marginLR">
 																<label for="shape1" class="control-label">Facteur de forme k :</label>
 																<br>
-																<span class="error help-block">Entre 1 et 5</span>
+																<span class="error help-block">Entre 0.5 et 5</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -486,7 +486,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-                                                                                                                                           data-content="Entrer une valeur comprise<br>entre 1 et 5.<br><br>
+                                                                                                                                           data-content="Entrer une valeur comprise<br>entre 0.5 et 5.<br><br>
 																	   <i>k est le facteur de forme de Weibull. Il donne la forme de la distribution des vents. Une valeur faible implique un vent très variable alors qu'un vent constant implique une valeur élevée.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 																	   title="<b>AIDE : Facteur de forme K</b>">
@@ -592,7 +592,7 @@
 																	   data-content="Entrer un nombre entre 2 et 10.<br><br>
 																	   <i>A est le facteur d'échelle de Weibull exprimé en m/s. Il permet d'exprimer la chronologie d'une vitesse caractéristique. A est proportionnel à la vitesse moyenne du vent.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
-																	   title="<b>AIDE : Facteur de forme K</b>">
+																	   title="<b>AIDE : Facteur d'échelle A</b>">
 																		<span class="glyphicon glyphicon-question-sign"></span>
 																	</a>
 																</div>
@@ -612,7 +612,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer une valeur comprise entre 0.5 et 5.<br><br>
+                                                                                                                                           data-content="Entrer une valeur comprise<br>entre 0.5 et 5.<br><br>
 																	   <i>k est le facteur de forme de Weibull. Il donne la forme de la distribution des vents. Une valeur faible implique un vent très variable alors qu'un vent constant implique une valeur élevée.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur<br>décimal.</span>"
 																	   title="<b>AIDE : Facteur de forme K</b>">
@@ -731,7 +731,7 @@
             //input verification and feedback when the user modifies the site name
             $('#siteName').keyup(function() {
                 $('#divSiteName').addClass('has-feedback');
-                $('#siteName').val().length > 0 && $('#siteName').val().length <=20 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
+                $('#siteName').val().length > 0 && $('#siteName').val().length <=50 ? $('#divSiteName').addClass('has-success').removeClass('has-error') && $('#divSiteName').find('.good').show() && $('#divSiteName').find('.error').hide() : $('#divSiteName').addClass('has-error').removeClass('has-success') && $('#divSiteName').find('.error').show() && $('#divSiteName').find('.good').hide();	   
             });
             
             //input verification and feedback when the user modifies the latitude
@@ -843,7 +843,7 @@
                     data: []
                     
                 });
-		$('#shape1').val() >= 1 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
+		$('#shape1').val() >= 0.5 && $('#shape1').val() <=5 && $('#shape1').val() !== '' ? $('#divShapeFactor').addClass('has-success').removeClass('has-error') && $('#divShapeFactor').find('.good').show() && $('#divShapeFactor').find('.error').hide()  : $('#divShapeFactor').addClass('has-error').removeClass('has-success') && $('#divShapeFactor').find('.error').show() && $('#divShapeFactor').find('.good').hide();
                 $('#averageWindSpeed1').val() >= 1 && $('#averageWindSpeed1').val() <=12 && $('#averageWindSpeed1').val() !== '' && $('#shape1').val() >= 0.5 && $('#shape1').val() <=50 && $('#shape1').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var Vm = parseFloat($('#averageWindSpeed1').val());
