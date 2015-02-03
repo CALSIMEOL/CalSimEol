@@ -35,7 +35,7 @@
                             <td><b>&nbsp; Puissance moyenne en sortie :</td><td> <?php echo round($power_mean, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Production totale annuelle :</td><td> <?php echo round($production/1000, 2) ?> </td><td>MWh/an</td>
+                            <td><b>&nbsp; Production totale annuelle :</td><td> <?php echo round($production/1000, 2) ?> </td><td>kWh/an</td>
                           </tr>
                           <tr>
                             <td><b>&nbsp; Facteur de charge :</td><td> <?php echo round($charge_factor * 100, 2) ?> </td><td>%</td>
@@ -98,7 +98,7 @@
                                     <table id="tab3" class="table table-striped table-condensed nodisplay">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
-                                                    <th>Energie produite [kW]</th>
+                                                    <th>Energie produite [kWh]</th>
                                             </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
                                             <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i]/1000, 2) ?></td></tr>
@@ -185,7 +185,7 @@ $(function () {
                             }
                         },
                     series: [{
-                                name: 'Distribution de Weibull à altitude de moyeu',
+                                name: 'Distribution de Weibull à hauteur de moyeu',
                                 data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],',$i ,$weibull_moyeu[$i] * 100) ?>]
                             }]
                     });
@@ -197,6 +197,7 @@ $(function () {
                         title: {
                             text: 'Courbe de puissance'
                         },
+                        colors: ['#339900', '#6633CC'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'
@@ -243,6 +244,7 @@ $(function () {
                         title: {
                             text: "Production d'énergie"
                         },
+                        colors: ['#663333'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'
@@ -253,7 +255,7 @@ $(function () {
                         },
                         yAxis: [{
                             title: {
-                                text: 'Production (kW)'
+                                text: 'Production (kWh)'
                             },
                             gridLineWidth: 1,
                             min: 0
@@ -266,7 +268,7 @@ $(function () {
                             }
                         },
                         series: [{ 
-                                    name: 'Production',
+                                    name: 'Energie éolienne',
                                     data: [<?php for ($i = 0; $i <= 30; $i++) printf('[%f,%f],', $i, $production_power[$i]/1000)?>]
                                 }]
                         });
@@ -275,10 +277,10 @@ $(function () {
                         chart: {
                             type: 'area'
                         },
-                        
                         title: {
                             text: 'Densité de puissance'
                         },
+                        colors: ['#FF0000', '#FF6600', '#FFFF00'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'

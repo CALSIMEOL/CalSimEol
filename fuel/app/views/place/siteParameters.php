@@ -750,7 +750,15 @@
             $('#altitude').keyup(function() {
                 $('#divAltitude').addClass('has-feedback');
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' ? $('#divAltitude').addClass('has-success').removeClass('has-error') && $('#divAltitude').find('.good').show() && $('#divAltitude').find('.error').hide()  : $('#divAltitude').addClass('has-error').removeClass('has-success') && $('#divAltitude').find('.error').show() && $('#divAltitude').find('.good').hide();
-               
+                $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && parseFloat($('#averageannualtemp').val()) >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                        var altitude = parseFloat($('#altitude').val());
+                        var temp = parseFloat($('#averageannualtemp').val())+273.15; 
+                        var density; 
+                        density=(101325*(28.97/1000)*(Math.pow(((288-0.0065*altitude)/288),5.225)))/(8.314*temp);  
+                        density=density.toFixed(5);
+                        return density
+                        ;})
+                : $('#density').val('');
             });
             
             //input verification, calculation/display of the density and feedback when the user modifies the mean temperature
@@ -758,9 +766,10 @@
                 $('#divTemp').addClass('has-feedback');
                 parseFloat($('#averageannualtemp').val()) >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#divTemp').addClass('has-success').removeClass('has-error') && $('#divTemp').find('.good').show() && $('#divTemp').find('.error').hide()  : $('#divTemp').addClass('has-error').removeClass('has-success') && $('#divTemp').find('.error').show() && $('#divTemp').find('.good').hide();
                 $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && parseFloat($('#averageannualtemp').val()) >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                        var altitude = parseFloat($('#altitude').val());
                         var temp = parseFloat($('#averageannualtemp').val())+273.15; 
                         var density; 
-                        density=((101325*Math.pow((temp/288.15),(9.81/(287.04*0.0065))))/(287.04*temp)); 
+                        density=(101325*(28.97/1000)*(Math.pow(((288-0.0065*altitude)/288),5.225)))/(8.314*temp); 
                         density=density.toFixed(5);
                         return density
                         ;})
