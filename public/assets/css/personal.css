@@ -68,7 +68,7 @@ html { height: 100% }
 #logoECE{
     margin: auto;
     margin-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
 }
 #copyright   {

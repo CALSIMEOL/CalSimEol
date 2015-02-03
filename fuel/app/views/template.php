@@ -71,7 +71,7 @@
 
                 <!-- licence + school logo -->
                 <footer class="modal-footer">
-                    <div><?php echo Asset::img('ECE_COUL_CMJN copie.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></div>
+                    <a href="http://www.ece.fr/" target="_blank"><?php echo Asset::img('ECE_COUL_CMJN copie.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></a>
                     <div class='text-center'>
                         <span id="copyright">
                             &nbsp;CALSIMEOL is released under the license :&nbsp;<br>
