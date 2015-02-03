@@ -28,7 +28,8 @@
     
 
       <!----------------------------------------------------------------Wind turbine list------------------------------------------------------------------>
-                            <table class="table table-responsive table-striped table-condensed">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-condensed">
                                     <tr>
                                             <th>#</th>
                                             <th>Nom</th>
@@ -59,16 +60,17 @@
                                     </tr>
 <?php endforeach ?>
                             </table>
+                        </div>
       <!--------------------------------------------------------------------------------------------------------------------------------------------------->
             </div>
         </div>
 
       <!-----------------------------------------------------------turbine list navigation bar------------------------------------------------------------->
         <div class="row">
-                <div class="col-sm-offset-1 col-sm-4"><br>
+                <div class="col-sm-offset-1 col-xs-4"><br>
                         <a href="<?php echo Uri::create('turbine/add') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp; Ajouter</a>
                 </div> 
-                <div class="col-sm-4">
+                <div class="col-xs-8">
 <?php echo $pagination ?>
                 </div>
         </div>

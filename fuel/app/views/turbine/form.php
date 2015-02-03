@@ -262,26 +262,29 @@
                                         <div id="displayWindTable">
                                             <div id="powerDistributionChart"></div>
                                             <div class="col-sm-12">
-                                                <table id="windTable" class="table table-responsive table-striped table-condensed center-block">
+                                                <div class="table-responsive">
+                                                    <table id="windTable" class="table table-striped table-condensed">
 
-                                                    <tr>
-                                                            <th>Vitesse [m/s]</th>
-                                                            <th>Puissance [kW]</th>
-                                                            <th>Vitesse [m/s]</th>
-                                                            <th>Puissance [kW]</th>
-                                                    </tr>
-<?php $i = 0; $c = 2 ?>
-<?php foreach ($turbine['powers'] as $power) : ?>
-<?php if ($i % $c == 0) : ?>
-                                                    <tr>
-<?php endif ?>
-                                                            <td><?php echo $power->wind_speed ?></td><td><input type="text" id="power<?php echo $power->wind_speed ?>" name="turbine_power_<?php echo $power->wind_speed ?>" value="<?php echo $power->turbine_power ?>" class="form-control input-sm"/></td>
-<?php if ($i % $c == $c - 1) : ?>
-                                                            <td></td>
-                                                    </tr>
-<?php endif ?>
-<?php $i++ ?>
-<?php endforeach ?>                                 </table>
+                                                        <tr>
+                                                                <th>Vitesse [m/s]</th>
+                                                                <th>Puissance [kW]</th>
+                                                                <th>Vitesse [m/s]</th>
+                                                                <th>Puissance [kW]</th>
+                                                        </tr>
+    <?php $i = 0; $c = 2 ?>
+    <?php foreach ($turbine['powers'] as $power) : ?>
+    <?php if ($i % $c == 0) : ?>
+                                                        <tr>
+    <?php endif ?>
+                                                                <td><?php echo $power->wind_speed ?></td>
+                                                                <td><input type="text" id="power<?php echo $power->wind_speed ?>" name="turbine_power_<?php echo $power->wind_speed ?>" value="<?php echo $power->turbine_power ?>" class="form-control input-sm"/></td>
+    <?php if ($i % $c == $c - 1) : ?>
+                                                                <td></td>
+                                                        </tr>
+    <?php endif ?>
+    <?php $i++ ?>
+    <?php endforeach ?>                             </table>
+                                                </div>
                                                 <span class="error help-block">Les puissances saisies doivent être comprises entre 0kW et la puissance nominale.</span>
                                                 <span class="good help-block"></span>
                                             </div>

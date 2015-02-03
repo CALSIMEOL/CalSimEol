@@ -389,7 +389,8 @@
 										<div id="displayWindTable">
 											
 											<div class="col-sm-12">
-												<table id="windTable" class="table table-responsive table-striped table-condensed center-block">
+                                                                                            <div class="table-responsive">
+												<table id="windTable" class="table table-striped table-condensed center-block">
 
 													<tr>
 														<th>Vitesse [m/s]</th>
@@ -408,10 +409,11 @@
 													</tr>
 	<?php endif ?>
 	<?php $i++ ?>
-<?php endforeach ?>												</table>
-												<span class="error help-block">Les occurences doivent être renseignées numériquement pour chaque valeur de vent.</span>
-												<span class="good help-block"></span>
-												<br><br>
+<?php endforeach ?>                                                                               </table>
+                                                                                            </div>
+                                                                                            <span class="error help-block">Les occurences doivent être renseignées numériquement pour chaque valeur de vent.</span>
+                                                                                            <span class="good help-block"></span>
+                                                                                            <br><br>
                                                                                                 
 												<!-- ADD AND DELETE ROW WITHIN WIND TABLE
                                                                                                 <div class="pull-right">
