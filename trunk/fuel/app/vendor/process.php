@@ -21,7 +21,7 @@ function occ($array)
 	}
 	//echo $somme_occurence.'<br>';
 
-	//Probabilité de chaque vent
+	//Probabilitï¿½ de chaque vent
 	$proba=array();
 	for($j=0; $j<31; $j++)
 	{
@@ -136,9 +136,9 @@ function _calcul($place, $turbine)
 		$k=pow(0.9874/($place->place_std_deviation/$vitesse_moyenne),1.0983);
 	}
 	
-//Cas où l'utilisateur rentre son tableau
+//Cas oï¿½ l'utilisateur rentre son tableau
 //Tableau d'occurence des vents
-//Colonne 0 = vitesse stabilisée (imposée) ; Colonne 1 = Occurence des vents
+//Colonne 0 = vitesse stabilisï¿½e (imposï¿½e) ; Colonne 1 = Occurence des vents
 //Simulation d'un tableau
 
 /*
@@ -176,14 +176,14 @@ $tableau2[29]=array(108,29);
 $tableau2[30]=array(110,30);
 */
 
-//Dans le cas où l'utilisateur fournit Vm et k / Vm et sigma
+//Dans le cas oï¿½ l'utilisateur fournit Vm et k / Vm et sigma
 if($A==0)
 {
 //Calcul du gamma d'Euler avec l'approximation de Stirling
 $X=1+(1/$k);
 $gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
 
-$A=$vitesse_moyenne/$gamma; //Facteur d'échelle;
+$A=$vitesse_moyenne/$gamma; //Facteur d'ï¿½chelle;
 }
 //L'utilisateur fournit A et k
 elseif($A!=0)
@@ -197,13 +197,18 @@ $vitesse_moyenne=$A*$gamma;
 $sigma=(0.9874*$vitesse_moyenne)/(exp(log($k)/1.0983));
 }
 
-//Valeurs récupérées
+//Valeurs rï¿½cupï¿½rï¿½es
 $temp_kelvin=$temp_celsius+273.15;
 $surface=(pi()*pow($diametre,2))/4;
 
 
 $production=array();
-//Calcul de Weibull avec A non extrapolé / Weibull à l'altitude de mesure du vent
+$production[0][0]=0;
+$production[0][1]=0;
+$production[0][2]=0;
+$production[0][3]=0;
+$production[0][4]=0;
+//Calcul de Weibull avec A non extrapolï¿½ / Weibull ï¿½ l'altitude de mesure du vent
 $microtime = microtime(true);
 
 $Weibull = new Weibull($A, $k);
@@ -215,7 +220,7 @@ for($j=0;$j<=30;$j++)
 }
 
 
-//Extrapolation de la vitesse moyenne et déduction d'un nouveau A
+//Extrapolation de la vitesse moyenne et dï¿½duction d'un nouveau A
 $Vm_extrapol=$vitesse_moyenne*(log($hauteur_eolienne/$rugosite)/log($hauteur/$rugosite));
 $A1=$Vm_extrapol/$gamma;
 
@@ -227,22 +232,22 @@ for($j=0;$j<=30;$j++)
 }
 
 /*
-//Calcul de la production totale sur l'année
-	//Nombre d'heures où la vitesse v est observée
+//Calcul de la production totale sur l'annï¿½e
+	//Nombre d'heures oï¿½ la vitesse v est observï¿½e
 	for($h=0;$h<31;$h++)
 	{
 		$production[$h][3]=$production[$h][2]*8760;
 		//echo $tableau3[$h][1].'<br/>';
 	}
 
-	//Energie produite par l'éolienne
+	//Energie produite par l'ï¿½olienne
 	for($v=0;$v<31;$v++)
 	{
 		$production[$v][4]=$production[$v][3]*$output_power[$v][1];
 		//echo $tableau3[$v][2].'<br/>';
 	}
 
-	//Calcul de la production totale sur l'année
+	//Calcul de la production totale sur l'annï¿½e
 	$production_totale_annee=0;
 	for($u=0; $u<31; $u++)
 	{
@@ -255,7 +260,7 @@ $facteur_charge=$production_totale_annee/(8760*$puissance_nominale);
 //echo $facteur_charge.'<br/>';
 */
 
-//Calcul de la vitesse de vent délivrant la densité maximale de puissance en entrée de l'éolienne
+//Calcul de la vitesse de vent dï¿½livrant la densitï¿½ maximale de puissance en entrï¿½e de l'ï¿½olienne
 $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 //echo $Vmax.'<br/>';
 
@@ -264,9 +269,9 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 	//$puissance_moyenne=$production_totale_annee/8760;
 	//echo $puissance_moyenne.'<br/>';
 
-	//Calcul de la densité de l'air
-	$h1=$hauteur_eolienne+$hauteur_site; //hauteur du rotor par rapport à la hauteur de référence
-	$T_rotor_kelvin=$temp_kelvin-($h1*0.0065); //Tref mer(15 °C)-(h1*grad de temp vertical)
+	//Calcul de la densitï¿½ de l'air
+	$h1=$hauteur_eolienne+$hauteur_site; //hauteur du rotor par rapport ï¿½ la hauteur de rï¿½fï¿½rence
+	$T_rotor_kelvin=$temp_kelvin-($h1*0.0065); //Tref mer(15 ï¿½C)-(h1*grad de temp vertical)
 	$pression_rotor=101325*(pow(($T_rotor_kelvin/$temp_kelvin),(9.81/(287.04*0.0065))));//Pref mer * (T_rotor_kelvin/Tref mer)^(g/R*grad temp)
 	$rho=$pression_rotor/(287.04*$T_rotor_kelvin);
 	//echo $rho.'<br/>';
@@ -300,6 +305,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 	
 	$somme_densite_entree=0;
 	$somme_densite_sortie=0;
+        $production_totale_annee=0;
 
 	for($w=1; $w<301; $w++)
 	{
@@ -307,24 +313,24 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 		$density[$w][0]=$density[$w-1][0]+0.1;
 		//echo $density[$w][0].'<br/>';
 	
-		//Distribution de Weibull sur les paramètres A1 et k et la variable vitesse du vent par pas de 0.1
+		//Distribution de Weibull sur les paramï¿½tres A1 et k et la variable vitesse du vent par pas de 0.1
 		$density[$w][2]=$Weibull1->pdf($density[$w][0]);
 		//echo $density[$w][2].'<br/>';
 	
-		//Densité de puissance du vent en entrée par m² de rotor
+		//Densitï¿½ de puissance du vent en entrï¿½e par mï¿½ de rotor
 		$density[$w][3]=0.5*$rho*pow($density[$w][0],3);
 		//echo $density[$w][3].'<br>';
 		
-		//Densité de puissance en entrée réduite à la limite de Betz
+		//Densitï¿½ de puissance en entrï¿½e rï¿½duite ï¿½ la limite de Betz
 		$density[$w][6]=$density[$w][3]*(16/27);
 		
-		//Densité moyenne de la puissance d'entrée du vent
+		//Densitï¿½ moyenne de la puissance d'entrï¿½e du vent
 		$density[$w][4]=$density[$w][2]*$density[$w][3];
 		$somme_densite_entree=$somme_densite_entree+$density[$w][4];
 		$densite_moy_entree=$somme_densite_entree/10;
 		//echo $densite_moy_entree.'<br>';
 		
-		//Interpolation de la courbe de puissance de l'éolienne en fonction de la vitesse du vent par pas de 0.1 m/s
+		//Interpolation de la courbe de puissance de l'ï¿½olienne en fonction de la vitesse du vent par pas de 0.1 m/s
 		if(is_int($w/10)==true)
 		{
 			$density[$w/10][1]=$output_power[$w/10][1];
@@ -341,16 +347,16 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			$tampon[$w][2]=0;
 		}
 		
-		//Calcul de la production totale sur l'année
-		//Nombre d'heures où la vitesse v est observée
+		//Calcul de la production totale sur l'annï¿½e
+		//Nombre d'heures oï¿½ la vitesse v est observï¿½e
 			$energy[$w][3]=$density[$w][2]*8760;
 			//echo $tableau3[$h][1].'<br/>';
 
-		//Energie produite par l'éolienne
+		//Energie produite par l'ï¿½olienne
 			$energy[$w][4]=$energy[$w][3]*$tampon[$w][2];
 			//echo $tableau3[$v][2].'<br/>';
 
-		//Calcul de la production totale sur l'année
+		//Calcul de la production totale sur l'annï¿½e
 			$production_totale_annee=$production_totale_annee+$energy[$w][4];
 			$production_totale_annee1=$production_totale_annee/10;
 		//echo $production_totale_annee.'<br/>';
@@ -368,7 +374,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			$tampon[$w][0]=0;
 		}
 		
-		//Etablir le coefficient de puissance + Nombre d'heures où la vitesse v est observée + Energie produite par l'éolienne dans un tableau de 0 à 30 au pas de 1 m/s
+		//Etablir le coefficient de puissance + Nombre d'heures oï¿½ la vitesse v est observï¿½e + Energie produite par l'ï¿½olienne dans un tableau de 0 ï¿½ 30 au pas de 1 m/s
 		if(is_int($w/10)==true)
 		{
 			$coef_puissance[$w/10][0]=$tampon[$w][0];
@@ -376,11 +382,11 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			$production[$w/10][4]=$energy[$w][4];
 		}
 		
-		//Densité de puissance en sortie d'éolienne par m² de rotor
+		//Densitï¿½ de puissance en sortie d'ï¿½olienne par mï¿½ de rotor
 		$density[$w/10][7]=($density[$w/10][5]*$density[$w][3]);
 		$tampon[$w][1]=$density[$w/10][7];
 		
-		//Densité moyenne de la puissance de sortie
+		//Densitï¿½ moyenne de la puissance de sortie
 		$tampon[$w][3]=$tampon[$w][1]*$density[$w][2];
 		$somme_densite_sortie=$somme_densite_sortie+$tampon[$w][3];
 		$densite_moy_sortie=$somme_densite_sortie/10;
@@ -463,9 +469,9 @@ switch($choice)
 {
 //L'utilisateur fournit Vm et k
 case 1:
-	$Vm=5; //On récupère la vitesse moyenne de l'utilisateur
-	$k=2.0224; //On récupère k de l'utilisateur
-	//Si k n'est pas entré, on impose sa valeur à 2
+	$Vm=5; //On rï¿½cupï¿½re la vitesse moyenne de l'utilisateur
+	$k=2.0224; //On rï¿½cupï¿½re k de l'utilisateur
+	//Si k n'est pas entrï¿½, on impose sa valeur ï¿½ 2
 	$A=0;
 	
 	calcul($Vm,$k,$A);
@@ -474,8 +480,8 @@ break;
 
 //L'utilisateur fournit Vm et sigma
 case 2:
-	$Vm=5; //On récupère la vitesse moyenne de l'utilisateur
-	$sigma=2.599990559; //On récupère sigma de l'utilisateur
+	$Vm=5; //On rï¿½cupï¿½re la vitesse moyenne de l'utilisateur
+	$sigma=2.599990559; //On rï¿½cupï¿½re sigma de l'utilisateur
 	$k=pow(0.9874/($sigma/$Vm),1.0983);
 	$A=0;
 	
@@ -485,9 +491,9 @@ break;
 
 //L'utilisateur fournit A et k
 case 3:
-	$k=2.0224; //On récupère k de l'utilisateur
-	//Si k n'est pas entré, on impose sa valeur à 2
-	$A=5.6428566796076; //On récupère A de l'utilisateur
+	$k=2.0224; //On rï¿½cupï¿½re k de l'utilisateur
+	//Si k n'est pas entrï¿½, on impose sa valeur ï¿½ 2
+	$A=5.6428566796076; //On rï¿½cupï¿½re A de l'utilisateur
 	$Vm=0;
 	
 	calcul($Vm,$k,$A);
