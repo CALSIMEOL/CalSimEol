@@ -402,6 +402,7 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 
 	$array['density_mean_input'] = $densite_moy_entree;
 	$array['power_mean_input'] = $puissance_moy_entree;
+	$array['max_wind_speed'] = $Vmax;
 	$array['moyeu_mean_speed'] = $Vm_extrapol;
 
 	$array['density_mean_output'] = $densite_moy_sortie;

@@ -16,10 +16,10 @@
                               <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> <?php echo round($density_mean_input, 2) ?> </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> <?php echo round($power_mean_input, 2)/1000 ?> </td><td>kW</td>
+                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> <?php echo round($power_mean_input / 1000, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> XXX </td><td>m/s</td>
+                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> <?php echo round($max_wind_speed, 2) ?> </td><td>m/s</td>
                           </tr>
                           <tr>
                             <td><b>&nbsp; Vitesse moyenne à hauteur du moyeu :</td><td> <?php echo round($moyeu_mean_speed, 2) ?> </td><td>m/s</td>
