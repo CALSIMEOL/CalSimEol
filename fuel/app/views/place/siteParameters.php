@@ -407,7 +407,7 @@
 	<?php if ($i % $c == 0) : ?>
 													<tr>
 	<?php endif ?>
-														<td><?php echo $point->wind_speed ?></td><td><input type="text" id="windProbability<?php echo $point->wind_speed ?>" name="place_propability_<?php echo $point->wind_speed ?>" value="<?php echo $point->place_probability ?>" class="form-control input-sm"/></td>
+														<td><?php echo $point->wind_speed ?></td><td><input type="text" id="windProbability<?php echo $point->wind_speed ?>" name="place_probability_<?php echo $point->wind_speed ?>" value="<?php echo $point->place_probability ?>" class="form-control input-sm"/></td>
 	<?php if ($i % $c == $c - 1) : ?>
 														<td></td>
 													</tr>
