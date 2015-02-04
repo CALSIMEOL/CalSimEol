@@ -9,10 +9,14 @@
                 </div>
             </div>
 
-<?php if (isset($messages)) : ?>
+<?php if (isset($messages) and !empty($messages)) : ?>
+            <div class="alert alert-danger" role="alert">
+                <ul>
     <?php foreach ($messages as $message) : ?>
-            <div class="alert alert-danger" role="alert"><?php echo $message ?></div>
+                    <li><?php echo $message ?></li>
     <?php endforeach ?>
+                </ul>
+            </div>
 <?php endif ?>
 
             <div class="row">
