@@ -287,6 +287,9 @@ for($j=0;$j<=30;$j++)
 	$production[$j][1]=$Weibull->pdf($output_power[$j][0]);
 }
 
+$X=1+(1/$k);
+$gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
+
 
 //Extrapolation de la vitesse moyenne et d�duction d'un nouveau A
 $Vm_extrapol=$vitesse_moyenne*(log($hauteur_eolienne/$rugosite)/log($hauteur/$rugosite));
