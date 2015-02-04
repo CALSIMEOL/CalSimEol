@@ -30,8 +30,11 @@
     </head>
     <body>
         
-        <noscript style="color: #ff0000;"><br>
-        <b><span class="glyphicon glyphicon-alert"></span> &nbsp; Ce site nécessite JavaScript pour fonvtionner, veuillez l'activer. &nbsp; <span class="glyphicon glyphicon-alert"></span></b>
+        <noscript><br> &nbsp; 
+        <b style="color: #ff0000;background-color: rgba(255, 255, 255, 0.8);border-radius: 4px;"> &nbsp; 
+            <span class="glyphicon glyphicon-alert"></span> &nbsp;
+            Ce site nécessite JavaScript pour fonctionner, veuillez l'activer. &nbsp;
+            <span class="glyphicon glyphicon-alert"></span> &nbsp; </b> &nbsp; 
         </noscript>
         
         <!-- navigation bar -->
@@ -67,19 +70,17 @@
         </nav>
         <div class="container" style="padding-top:40px">
 <?php echo $content ?>
-            <div class="modal-footer">
 
                 <!-- licence + school logo -->
                 <footer class="modal-footer">
-                    <a href="http://www.ece.fr/" target="_blank"><?php echo Asset::img('ECE_COUL_CMJN copie.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></a>
+                    <div  style="margin-bottom: 10px;"><a href="http://www.ece.fr/" target="_blank"><?php echo Asset::img('ECE_COUL_CMJN copie.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></a></div>
                     <div class='text-center'>
                         <span id="copyright">
-                            &nbsp;CALSIMEOL is released under the license :&nbsp;<br>
+                            &nbsp;Le code source de ce site, ainsi que les données utilisées&nbsp;<br>&nbsp;et les résultats, sont sous licence CC-NY-NC 3.0.&nbsp;<br>
                             <a href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank"><?php echo Asset::img('by-nc.eu_petit.png', array('id' => 'logoECE', 'class' => 'img-responsive')) ?></a>
                         </span>
                     </div>
                 </footer>
-            </div>
         </div>
     </body>
 </html>
