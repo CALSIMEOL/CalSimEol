@@ -398,8 +398,7 @@ function _calcul($place, $turbine)
 		$array['density_input_betz'][] = $tampon[$i][4];
 		$array['density_output'][] = $tampon[$i][3];
 	}
-        
-        //récupération du nom du site et de l'éolienne pour l'afficher sur la page de résultat
+        //recuperation of the name of the site and the name of the wind turbine to display it on the results page
         $array['place_name'] = $place->place_name;
         $array['turbine_name'] = $turbine->turbine_manufacturer.' '.$turbine->turbine_name;
 
