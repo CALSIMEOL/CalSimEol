@@ -2,6 +2,8 @@
 
 class Controller_Turbine extends Controller_Template
 {
+	const MAX_WIND_SPEED = 30;
+
 	public function action_index()
 	{
 		// Redirection vers la liste d'éoliennes
@@ -25,12 +27,19 @@ class Controller_Turbine extends Controller_Template
 		$turbine = new Model_Turbine();
 
 		// Récupère et enregistre les points pour la courbe de puissance
-		for ($i = 0; $i <= 30; $i++)
+		for ($i = 0; $i <= self::MAX_WIND_SPEED; $i++)
 		{
 			// Instanciation d'un modèle pour chaque points de la courbe de puissance
 			$power = new Model_TurbinePower();
 			$power->wind_speed = $i;
-			$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+			if ($i >= Input::post('turbine_start_speed', 0) and $i <= Input::post('turbine_stop_speed', self::MAX_WIND_SPEED))
+			{
+				$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+			}
+			else
+			{
+				$power->turbine_power = 0;
+			}
 
 			// Association de l'instance créée à la nouvelle éolienne
 			$turbine->powers[] = $power;
@@ -86,14 +95,21 @@ class Controller_Turbine extends Controller_Template
 		}
 
 		// Complète la liste des points
-		for ($i = 0; $i <= 30; $i++)
+		for ($i = 0; $i <= self::MAX_WIND_SPEED; $i++)
 		{
 			if (!isset($powers[$i]))
 			{
 				$power = new Model_TurbinePower();
 				$power->turbine_id = $turbine->turbine_id;
 				$power->wind_speed = $i;
-				$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+				if ($i >= Input::post('turbine_start_speed', 0) and $i <= Input::post('turbine_stop_speed', self::MAX_WIND_SPEED))
+				{
+					$power->turbine_power = Input::post('turbine_power_'.$i, 0);
+				}
+				else
+				{
+					$power->turbine_power = 0;
+				}
 
 				$turbine->powers[] = $power;
 			}

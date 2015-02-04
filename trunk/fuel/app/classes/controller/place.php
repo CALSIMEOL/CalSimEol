@@ -21,6 +21,7 @@ class Controller_Place extends Controller_Template
 
 		//
 		$place = new Model_Place();
+		$place->place_verified = 0;
 
 		//
 		for ($i = 0; $i <= 30; $i++)
