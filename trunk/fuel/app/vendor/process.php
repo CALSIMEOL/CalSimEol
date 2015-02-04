@@ -375,6 +375,11 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 			//$density[$w/10][5]=(1000*$density[$w/10][1])/(0.5*$rho*pow($density[$w][0],3)*$surface);
 			$density[$w/10][5]=(1000*$tampon[$w][2])/(0.5*$rho*pow($density[$w][0],3)*$surface);
 			$tampon[$w][0]=$density[$w/10][5];
+			if($density[$w/10][5]>=0.59)
+			{
+				$density[$w/10][5]=0.59;
+				$tampon[$w][0]=$density[$w/10][5];
+			}
 		}
 		else
 		{
