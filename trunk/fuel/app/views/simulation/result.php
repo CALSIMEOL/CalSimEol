@@ -280,7 +280,7 @@ $(function () {
                         title: {
                             text: 'Densité de puissance'
                         },
-                        colors: ['#FF0000', '#FF6600', '#FFFF00'],
+                        colors: ['#fc6042', '#fcb941', '#eee657'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'
