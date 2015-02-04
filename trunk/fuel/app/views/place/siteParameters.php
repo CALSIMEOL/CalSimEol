@@ -4,7 +4,7 @@
 		<div class="clearness col-sm-12">
 
 			<div class="row">
-				<div class="lead col-sm-4">
+				<div class="lead col-sm-12">
 					<h1>Ajout d'un site éolien</h1>
 				</div>
 			</div>
