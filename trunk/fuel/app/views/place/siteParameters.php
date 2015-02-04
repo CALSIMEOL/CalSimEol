@@ -582,7 +582,7 @@
 															<div class="col-lg-8 -marginLR">
 																<label for="scaleFactor" class="control-label">Facteur d'échelle A : </label>
 																<br>
-																<span class="error help-block">Entre 2 et 10</span>
+																<span class="error help-block">Entre 1 et 10</span>
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
@@ -593,7 +593,7 @@
 															<div class="col-xs-1">
 																<div class="pop">
 																	<a href="#pop" class="pop" data-toggle="popover" data-html="true" data-trigger="focus" data-placement="auto"
-																	   data-content="Entrer un nombre entre 2 et 10.<br><br>
+																	   data-content="Entrer un nombre entre 1 et 10.<br><br>
 																	   <i>A est le facteur d'échelle de Weibull exprimé en m/s. Il permet d'exprimer la chronologie d'une vitesse caractéristique. A est proportionnel à la vitesse moyenne du vent.</i><br><br>
 																	   <span class='decimalWarning'><span class='glyphicon glyphicon-warning-sign'></span>&nbsp; Entrer un point comme séparateur décimal.</span>"
 																	   title="<b>AIDE : Facteur d'échelle A</b>">
@@ -714,7 +714,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Probabilité (%)'
+                    text: 'Probabilité (%)',
                 },
                 gridLineWidth: 1,
                 min: 0
@@ -731,13 +731,21 @@
                         data: [<?php foreach ($place['weibull'] as $point) printf('[%f,%f],', $point->wind_speed, $point->place_probability) ?>]
                     }]
             });
-            $('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+            $('#scaleFactor').val() >= 1 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && parseFloat($('#shape2').val()) >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
+                    chart.series[0].update({
+                        data: []
+                    });
                     var k = parseFloat($('#shape2').val());
                     var a = parseFloat($('#scaleFactor').val());
                     for(var v=0;v<31;v++)
                     {
-                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         if(v===0 && k<1){
+                             chart.series[0].addPoint([v,100]);
+                         }
+                         else{
+                             chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         }
                     }
                     }) 
                 : null;
@@ -949,13 +957,18 @@
                 chart.series[0].update({
                     data: []
                 });
-		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
-		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+		$('#scaleFactor').val() >= 1 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' ? $('#divScaleFactor').addClass('has-success').removeClass('has-error') && $('#divScaleFactor').find('.good').show() && $('#divScaleFactor').find('.error').hide()  : $('#divScaleFactor').addClass('has-error').removeClass('has-success') && $('#divScaleFactor').find('.error').show() && $('#divScaleFactor').find('.good').hide();	 
+		$('#scaleFactor').val() >= 1 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var k = parseFloat($('#shape2').val());
                     var a = parseFloat($('#scaleFactor').val()); 
                     for(var v=0;v<31;v++)
                     {
-                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         if(v===0 && k<1){
+                             chart.series[0].addPoint([v,100]);
+                         }
+                         else{
+                             chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         }
                     }
                     }) 
                 : null;
@@ -969,13 +982,18 @@
                     data: []
                 });
 		$('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $('#divShapeFactor2').addClass('has-success').removeClass('has-error') && $('#divShapeFactor2').find('.good').show() && $('#divShapeFactor2').find('.error').hide()  : $('#divShapeFactor2').addClass('has-error').removeClass('has-success') && $('#divShapeFactor2').find('.error').show() && $('#divShapeFactor2').find('.good').hide();	 
-		$('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+		$('#scaleFactor').val() >= 1 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
                     var chart = $('#windDistributionChart').highcharts();
                     var k = parseFloat($('#shape2').val());
                     var a = parseFloat($('#scaleFactor').val());
                     for(var v=0;v<31;v++)
                     {
-                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         if(v===0 && k<1){
+                             chart.series[0].addPoint([v,100]);
+                         }
+                         else{
+                             chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                         }
                     }
                     }) 
                 : null;
