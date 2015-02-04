@@ -213,7 +213,7 @@ $(function () {
                             type: 'spline'
                         },
                         title: {
-                            text: 'Courbe de puissance'
+                            text: "Caractéristiques de l'éolienne"
                         },
                         colors: ['#97d17a', '#4c8da6'],
                         xAxis: {
