@@ -212,6 +212,8 @@ class Controller_Place extends Controller_Template
 				// {"id":"247","nom":"Marseille","latitude":"43.29695","longitude":"5.38107","facteurForme":"0","facteurEchelle":"0","hauteur":"0"}
 				$station = $response->body;
 
+				require_once APPPATH . '/vendor/process.php';
+
 				$place = new Model_Place();
 				$place->place_name = sprintf('EA%d - %s', $station['idStation'], $station['nom']);
 				$place->place_latitude = $station['latitude'];
