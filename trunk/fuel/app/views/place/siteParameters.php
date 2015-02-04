@@ -731,6 +731,18 @@
                         data: [<?php foreach ($place['weibull'] as $point) printf('[%f,%f],', $point->wind_speed, $point->place_probability) ?>]
                     }]
             });
+            $('#scaleFactor').val() >= 2 && $('#scaleFactor').val() <=10 && $('#scaleFactor').val() !== '' && $('#shape2').val() >= 0.5 && $('#shape2').val() <=5 && $('#shape2').val() !== '' ? $(function () {
+                    var chart = $('#windDistributionChart').highcharts();
+                    var k = parseFloat($('#shape2').val());
+                    var a = parseFloat($('#scaleFactor').val());
+                    for(var v=0;v<31;v++)
+                    {
+                         chart.series[0].addPoint([v,((k/a)*Math.pow((v/a),(k-1))*Math.exp(-Math.pow((v/a),k)))*100]);
+                    }
+                    }) 
+                : null;
+            });
+            
             
             //input verification and feedback when the user modifies the site name
             $('#siteName').keyup(function() {
