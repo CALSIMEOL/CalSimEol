@@ -483,7 +483,7 @@
 																<span class="good help-block"></span>
 															</div>
 															<div class="col-xs-11 -marginLR">
-																<input id="shape1" type="text" name="place_sape_factor" class="form-control" placeholder="2"/>
+																<input id="shape1" type="text" name="place_shape_factor" class="form-control" placeholder="2"/>
 																<span class="glyphicon glyphicon-remove form-control-feedback error"></span>
 																<span class="glyphicon glyphicon-ok form-control-feedback good"></span>
 															</div>

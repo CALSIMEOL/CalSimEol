@@ -118,6 +118,7 @@ class Model_Place extends \Orm\Model
 		'place_verified' => array(
 			'data_type' => 'bool',
 			'label'     => '',
+			'validation' => array(),
 			'default'   => '0',
 		),
 	);
