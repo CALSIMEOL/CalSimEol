@@ -40,7 +40,7 @@
                             <td><b>&nbsp; Puissance moyenne en sortie :</b></td><td> <?php echo round($power_mean, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Production totale annuelle :</b></td><td> <?php echo round($production/1000, 2) ?> </td><td>kWh/an</td>
+                            <td><b>&nbsp; Production totale annuelle :</b></td><td> <?php echo round($production/1000, 2) ?> </td><td>MWh/an</td>
                           </tr>
                           <tr>
                             <td><b>&nbsp; Facteur de charge :</b></td><td> <?php echo round($charge_factor * 100, 2) ?> </td><td>%</td>
