@@ -741,7 +741,6 @@
                     }
                     }) 
                 : null;
-            });
             
             
             //input verification and feedback when the user modifies the site name
