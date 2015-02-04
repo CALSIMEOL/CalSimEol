@@ -4,7 +4,7 @@
             <div class="clearness col-sm-12">
                 
                 <div class="row">
-                    <div class="lead col-sm-3" style="margin-bottom:-20px">
+                    <div class="lead col-sm-12" style="margin-bottom:-20px">
                         <h1>Résultats</h1>
                     </div>
                 </div>
