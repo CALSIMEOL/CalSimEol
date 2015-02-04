@@ -65,10 +65,69 @@ function occ($place)
 	$A=$Vm/$gamma;
 	//echo $A.'<br>';
 	
+	$sigma=(0.9874*$Vm)/(exp(log($k)/1.0983));
+	
 	$result=array(
 		'Vm' => $Vm,
 		'k' => $k,
-		'A' => $A
+		'A' => $A,
+		'Sigma' => $sigma
+		);
+		
+	return $result;
+}
+
+function Vmk($Vm, $k)
+{
+	$X=1+(1/$k);
+	$gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
+
+	$A=$Vm/$gamma; //Facteur d'�chelle;
+	
+	$sigma=(0.9874*$Vm)/(exp(log($k)/1.0983));
+	
+	$result=array(
+		'Vm' => $Vm,
+		'k' => $k,
+		'A' => $A,
+		'Sigma' => $sigma
+		);
+		
+	return $result;
+}
+
+function Vmsigma($Vm, $sigma)
+{
+	$k=pow(0.9874/($sigma/$Vm),1.0983);
+	$X=1+(1/$k);
+	$gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
+
+	$A=$Vm/$gamma; //Facteur d'�chelle;
+	
+	$result=array(
+		'Vm' => $Vm,
+		'k' => $k,
+		'A' => $A,
+		'Sigma' => $sigma
+		);
+		
+	return $result;
+}
+
+function Ak($k, $A)
+{
+	$X=1+(1/$k);
+	$gamma=((pow($X,$X-0.5))*(exp(-$X))*(sqrt(2*pi()))*(1+(1/(12*$X))+(1/(288*pow($X,2)))-(139/(51840*(pow($X,3))))-(571/(2488320*(pow($X,4))))+(163879/(209018880*(pow($X,5)))))); //Gamma d'Euler;
+
+	$Vm=$A*$gamma;
+
+	$sigma=(0.9874*$Vm)/(exp(log($k)/1.0983));
+	
+	$result=array(
+		'Vm' => $Vm,
+		'k' => $k,
+		'A' => $A,
+		'Sigma' => $sigma
 		);
 		
 	return $result;
@@ -182,6 +241,7 @@ $tableau2[29]=array(108,29);
 $tableau2[30]=array(110,30);
 */
 
+/*
 //Dans le cas o� l'utilisateur fournit Vm et k / Vm et sigma
 if($A==0)
 {
@@ -202,6 +262,8 @@ $vitesse_moyenne=$A*$gamma;
 
 $sigma=(0.9874*$vitesse_moyenne)/(exp(log($k)/1.0983));
 }
+*/
+
 
 //Valeurs r�cup�r�es
 $temp_kelvin=$temp_celsius+273.15;
