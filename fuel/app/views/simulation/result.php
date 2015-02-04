@@ -4,8 +4,13 @@
             <div class="clearness col-sm-12">
                 
                 <div class="row">
-                    <div class="lead col-sm-3">
+                    <div class="lead col-sm-3" style="margin-bottom:-20px">
                         <h1>Résultats</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="lead col col-sm-10" style="margin-bottom:5px">
+                        <h3><?php echo $place_name ?> / <?php echo $turbine_name ?></h3>
                     </div>
                 </div>
                 
@@ -16,29 +21,29 @@
                               <td><b>&nbsp; Puissance moyenne surfacique en entrée :</b></td><td> <?php echo round($density_mean_input, 2) ?> </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en entrée :</td><td> <?php echo round($power_mean_input / 1000, 2) ?> </td><td>kW</td>
+                            <td><b>&nbsp; Puissance moyenne en entrée :</b></td><td> <?php echo round($power_mean_input / 1000, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</td><td> <?php echo round($max_wind_speed, 2) ?> </td><td>m/s</td>
+                            <td><b>&nbsp; Vitesse de vent pour puissance maximale :</b></td><td> <?php echo round($max_wind_speed, 2) ?> </td><td>m/s</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Vitesse moyenne à hauteur du moyeu :</td><td> <?php echo round($moyeu_mean_speed, 2) ?> </td><td>m/s</td>
+                            <td><b>&nbsp; Vitesse moyenne à hauteur du moyeu :</b></td><td> <?php echo round($moyeu_mean_speed, 2) ?> </td><td>m/s</td>
                           </tr>
                         </table>
                     </div>
                     <div class="col-sm-6">
                        <table class="table table-responsive table-striped table-condensed">
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne surfacique en sortie :</td><td> <?php echo round($density_mean_output, 2) ?> </td><td>W/m<sup>2</sup></td>
+                            <td><b>&nbsp; Puissance moyenne surfacique en sortie :</b></td><td> <?php echo round($density_mean_output, 2) ?> </td><td>W/m<sup>2</sup></td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Puissance moyenne en sortie :</td><td> <?php echo round($power_mean, 2) ?> </td><td>kW</td>
+                            <td><b>&nbsp; Puissance moyenne en sortie :</b></td><td> <?php echo round($power_mean, 2) ?> </td><td>kW</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Production totale annuelle :</td><td> <?php echo round($production/1000, 2) ?> </td><td>kWh/an</td>
+                            <td><b>&nbsp; Production totale annuelle :</b></td><td> <?php echo round($production/1000, 2) ?> </td><td>kWh/an</td>
                           </tr>
                           <tr>
-                            <td><b>&nbsp; Facteur de charge :</td><td> <?php echo round($charge_factor * 100, 2) ?> </td><td>%</td>
+                            <td><b>&nbsp; Facteur de charge :</b></td><td> <?php echo round($charge_factor * 100, 2) ?> </td><td>%</td>
                           </tr>
                         </table>
                     </div>
@@ -53,6 +58,7 @@
                                 <div class="panel-body"><br>
                                       <div id="chart1"></div>
                                       <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / Masquer tableau</span><br><br>
+                                      <div class="table-responsive">
                                         <table id="tab1" class="table table-striped table-condensed">
                                                 <tbody><tr>
                                                         <th>Vitesse stabilisée [m/s]</th>
@@ -62,7 +68,9 @@
 <?php for ($i = 0; $i <= 30; $i++) : ?>
                                                 <tr><td><?php echo round($i, 2) ?></td><td><?php echo round($weibull_measure[$i] * 100, 2) ?></td><td><?php echo round($weibull_moyeu[$i] *100, 2) ?></td></tr>
 <?php endfor ?>
-                                        </tbody></table>
+                                                </tbody>
+                                        </table>
+                                      </div>
                                  </div>
                             </div>
                         </div>
@@ -73,16 +81,19 @@
                                 <div class="panel-body"><br>
                                     <div id="chart2"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
-                                    <table id="tab2" class="table table-striped table-condensed" style="width:100%">
-                                            <tbody><tr>
-                                                    <th>Vitesse stabilisée [m/s]</th>
-                                                    <th>Puissance [kW]</th>
-                                                    <th>Cp</th>
-                                            </tr>
-<?php for ($i = 0; $i <= 30; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo $turbine_power[$i] ?></td><td><?php echo round($cp[$i], 2) ?></td></tr>
-<?php endfor ?>
-                                    </tbody></table>
+                                    <div class="table-responsive">
+                                        <table id="tab2" class="table table-striped table-condensed" style="width:100%">
+                                                <tbody><tr>
+                                                        <th>Vitesse stabilisée [m/s]</th>
+                                                        <th>Puissance [kW]</th>
+                                                        <th>Cp</th>
+                                                </tr>
+    <?php for ($i = 0; $i <= 30; $i++) : ?>
+                                                <tr><td><?php echo $i ?></td><td><?php echo $turbine_power[$i] ?></td><td><?php echo round($cp[$i], 2) ?></td></tr>
+    <?php endfor ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                              </div>
                         </div>
                     </div>
@@ -95,36 +106,42 @@
                                 <div class="panel-body"><br>
                                     <div id="chart3"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
-                                    <table id="tab3" class="table table-striped table-condensed nodisplay">
-                                            <tbody><tr>
-                                                    <th>Vitesse stabilisée [m/s]</th>
-                                                    <th>Energie produite [kWh]</th>
-                                            </tr>
-<?php for ($i = 0; $i <= 30; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i]/1000, 2) ?></td></tr>
-<?php endfor ?>
-                                    </tbody></table>
+                                    <div class="table-responsive">
+                                        <table id="tab3" class="table table-striped table-condensed nodisplay">
+                                                <tbody><tr>
+                                                        <th>Vitesse stabilisée [m/s]</th>
+                                                        <th>Energie produite [kWh]</th>
+                                                </tr>
+    <?php for ($i = 0; $i <= 30; $i++) : ?>
+                                                <tr><td><?php echo $i ?></td><td><?php echo round($production_power[$i]/1000, 2) ?></td></tr>
+    <?php endfor ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                         </div>
                     </div>
                     
                     <div class="col-sm-6">
                        <div class="panel panel-default">
-                            <div class="panel-heading"><b>Densité de puissance</></div>
+                            <div class="panel-heading"><b>Densité de puissance</b></div>
                             <div class="panel-body"><br>
                                     <div id="chart4"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
-                                    <table id="tab4" class="table table-striped table-condensed nodisplay">
-                                            <tbody><tr>
-                                                    <th>Vitesse stabilisée [m/s]</th>
-                                                    <th>Densité de puissance en entrée [w/m<sup>2</sup>]</th>
-                                                    <th>Densité de puissance en entrée avec limite de Betz [w/m<sup>2</sup>]</th>
-                                                    <th>Densité de puissance en sortie [w/m<sup>2</sup>]</th>
-                                            </tr>
-<?php for ($i = 0; $i <= 300; $i+= 10) : ?>
-                                            <tr><td><?php echo $i / 10 ?></td><td><?php echo round($density_input[$i], 2) ?></td><td><?php echo round($density_input_betz[$i], 2) ?></td><td><?php echo round($density_output[$i], 2) ?></td></tr>
-<?php endfor ?>
-                                    </tbody></table>
+                                    <div class="table-responsive">
+                                        <table id="tab4" class="table table-striped table-condensed nodisplay">
+                                                <tbody><tr>
+                                                        <th>Vitesse stabilisée [m/s]</th>
+                                                        <th>Densité de puissance en entrée [w/m<sup>2</sup>]</th>
+                                                        <th>Densité de puissance en entrée avec limite de Betz [w/m<sup>2</sup>]</th>
+                                                        <th>Densité de puissance en sortie [w/m<sup>2</sup>]</th>
+                                                </tr>
+    <?php for ($i = 0; $i <= 300; $i+= 10) : ?>
+                                                <tr><td><?php echo $i / 10 ?></td><td><?php echo round($density_input[$i], 2) ?></td><td><?php echo round($density_input_betz[$i], 2) ?></td><td><?php echo round($density_output[$i], 2) ?></td></tr>
+    <?php endfor ?>
+                                                </tbody>
+                                        </table>
+                                    </div>
                             </div>
                         </div>
                     </div>
