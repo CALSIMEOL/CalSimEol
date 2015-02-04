@@ -49,7 +49,7 @@
                  <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Distribution des vents</div>
+                            <div class="panel-heading"><b>Distribution des vents</b></div>
                                 <div class="panel-body"><br>
                                       <div id="chart1"></div>
                                       <span class="btn btn-info btn-xs pull-left" id="displayTab1"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / Masquer tableau</span><br><br>
@@ -69,18 +69,18 @@
                      
                     <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Caractérisation de l'éolienne</div>
+                            <div class="panel-heading"><b>Caractérisation de l'éolienne</b></div>
                                 <div class="panel-body"><br>
                                     <div id="chart2"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab2"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
-                                    <table id="tab2" class="table table-striped table-condensed">
+                                    <table id="tab2" class="table table-striped table-condensed" style="width:100%">
                                             <tbody><tr>
                                                     <th>Vitesse stabilisée [m/s]</th>
                                                     <th>Puissance [kW]</th>
                                                     <th>Cp</th>
                                             </tr>
 <?php for ($i = 0; $i <= 30; $i++) : ?>
-                                            <tr><td><?php echo $i ?></td><td><?php echo $turbine_power[$i] ?></td><td><?php echo $cp[$i] ?></td></tr>
+                                            <tr><td><?php echo $i ?></td><td><?php echo $turbine_power[$i] ?></td><td><?php echo round($cp[$i], 2) ?></td></tr>
 <?php endfor ?>
                                     </tbody></table>
                              </div>
@@ -91,7 +91,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Energie produite</div>
+                            <div class="panel-heading"><b>Energie produite</b></div>
                                 <div class="panel-body"><br>
                                     <div id="chart3"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab3"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
@@ -110,7 +110,7 @@
                     
                     <div class="col-sm-6">
                        <div class="panel panel-default">
-                            <div class="panel-heading">Densité de puissance</div>
+                            <div class="panel-heading"><b>Densité de puissance</></div>
                             <div class="panel-body"><br>
                                     <div id="chart4"></div>
                                     <span class="btn btn-info btn-xs pull-left" id="displayTab4"><span class="glyphicon glyphicon-list"></span>&nbsp; Afficher / masquer tableau</span><br><br>
@@ -170,6 +170,7 @@ $(function () {
                         min: 0,
                         max: 30
                     },
+                    colors:['#a55c8c'],
                     yAxis: {
                         title: {
                             text: 'Probabilité (%)'
@@ -197,7 +198,7 @@ $(function () {
                         title: {
                             text: 'Courbe de puissance'
                         },
-                        colors: ['#339900', '#6633CC'],
+                        colors: ['#97d17a', '#4c8da6'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'
@@ -244,7 +245,7 @@ $(function () {
                         title: {
                             text: "Production d'énergie"
                         },
-                        colors: ['#663333'],
+                        colors: ['#14CC88'],
                         xAxis: {
                             title: {
                                 text: 'Vitesse de vent (m/s)'
