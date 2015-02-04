@@ -528,6 +528,10 @@ $Vmax=$A1*(pow(($k+2)/$k,1/$k));
 		$array['density_input_betz'][] = $tampon[$i][4];
 		$array['density_output'][] = $tampon[$i][3];
 	}
+        
+        //récupération du nom du site et de l'éolienne pour l'afficher sur la page de résultat
+        $array['place_name'] = $place->place_name;
+        $array['turbine_name'] = $turbine->turbine_manufacturer.' '.$turbine->turbine_name;
 
 	return $array;
 }
