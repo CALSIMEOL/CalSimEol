@@ -45,36 +45,34 @@ class Controller_Place extends Controller_Template
 			$place->set($fieldset->validated());
 
 			//
-			if (Input::post('distribSources') == 'simple')
-			switch (Input::post('choiceOption'))
-			{
-				case 'opt1':
-					$place->place_scale_factor = 0;
-				break;
-
-				case 'opt2':
-					$place->place_shape_factor = pow(0.9874 / ($place->place_std_deviation / $place->place_mean_speed), 1.0983);
-					$place->place_scale_factor = 0;
-				break;
-
-				case 'opt3':
-					$place->place_mean_speed = 0;
-				break;
-
-				default:
-			}
+			require_once APPPATH . '/vendor/process.php';
 
 			//
-			if (Input::post('distribSources') == 'detailed')
-			{
-				require_once APPPATH . '/vendor/process.php';
+			if (Input::post('distribSources') == 'simple')
+				switch (Input::post('choiceOption'))
+				{
+					case 'opt1':
+						$result = Vmk($place->place_mean_speed, $place->place_shape_factor);
+					break;
 
+					case 'opt2':
+						$result = Vmsigma($place->place_mean_speed, $place->place_std_deviation);
+					break;
+
+					case 'opt3':
+						$result = Ak($place->place_shape_factor, $place->place_scale_factor);
+					break;
+
+					default:
+				}
+
+			if (Input::post('distribSources') == 'detailed')
 				$result = occ($place);
 
-				$place->place_mean_speed = $result['Vm'];
-				$place->place_shape_factor = $result['k'];
-				$place->place_scale_factor = $result['A'];
-			}
+			$place->place_mean_speed = $result['Vm'];
+			$place->place_std_deviation = $result['Sigma'];
+			$place->place_shape_factor = $result['k'];
+			$place->place_scale_factor = $result['A'];
 
 			//
 			if ($place->save())
@@ -168,6 +166,7 @@ class Controller_Place extends Controller_Template
 				$result = occ($place);
 
 				$place->place_mean_speed = $result['Vm'];
+				$place->place_std_deviation = $result['Sigma'];
 				$place->place_shape_factor = $result['k'];
 				$place->place_scale_factor = $result['A'];
 			}

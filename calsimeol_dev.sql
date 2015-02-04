@@ -17,21 +17,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cse_place_rosewind`
---
-
-CREATE TABLE IF NOT EXISTS `cse_place_rosewind` (
-  `place_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `wind_mean_speed` float NOT NULL,
-  `wind_direction` varchar(255) NOT NULL,
-  `wind_probability` float NOT NULL,
-  PRIMARY KEY (`place_id`),
-  KEY `place_id` (`place_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `cse_place_weibull`
 --
 
@@ -100,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `cse_places` (
   `place_std_deviation` float DEFAULT NULL,
   `place_shape_factor` float DEFAULT NULL,
   `place_scale_factor` float DEFAULT NULL,
-  `place_verified` tinyint(1) NOT NULL,
+  `place_verified` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`place_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
