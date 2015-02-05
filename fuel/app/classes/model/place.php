@@ -14,7 +14,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_name' => array(
 			'data_type'  => 'varchar',
-			'label'      => 'Place Name',
+			'label'      => 'Nom',
 			'validation' => array(
 				'required',
 				'max_length' => array(30),
@@ -27,7 +27,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_longitude' => array(
 			'data_type'  => 'float',
-			'label'      => 'Place Longitude (in degrees)',
+			'label'      => 'Longitude',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(-180, 180),
@@ -36,7 +36,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_latitude' => array(
 			'data_type'  => 'float',
-			'label'      => 'Place Latitude (in degrees)',
+			'label'      => 'Latitude',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(-90, 90),
@@ -45,7 +45,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_altitude' => array(
 			'data_type'  => 'int',
-			'label'      => 'Place Altitude (in meters)',
+			'label'      => 'Altitude',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(1, 3000),
@@ -54,7 +54,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_mean_temp' => array(
 			'data_type'  => 'float',
-			'label'      => 'Place Temp (in degrees celcius)',
+			'label'      => 'Température moyenne annuelle',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(-50, 50),
@@ -63,7 +63,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_rugosity' => array(
 			'data_type'  => 'float',
-			'label'      => 'Rugosité',
+			'label'      => 'Longueur de rugosité',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(0.0002, 2),
@@ -72,7 +72,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_altitude_meas' => array(
 			'data_type'  => 'int',
-			'label'      => 'Altitude de Mesure',
+			'label'      => 'Hauteur de la prise de mesure',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(1, 3000),
@@ -109,7 +109,7 @@ class Model_Place extends \Orm\Model
 		),
 		'place_verified' => array(
 			'data_type' => 'bool',
-			'label'     => '',
+			'label'     => '#',
 			'validation' => array(),
 			'default'   => '0',
 		),

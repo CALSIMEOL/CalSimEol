@@ -22,7 +22,6 @@
 			<div class="row">
 				<div class="col-sm-offset-1 col-sm-10">
 					<form class="form-horizontal marginLR" method="post">
-						<input id="nbWindLines" name="nbWindLines" type="hidden"/> 
 						<input type="hidden" name="place_mean_speed" value="<?php echo $place['place_mean_speed'] ?>" />
 						<input type="hidden" name="place_std_deviation" value="<?php echo $place['place_std_deviation'] ?>" />
 						<input type="hidden" name="place_shape_factor" value="<?php echo $place['place_shape_factor'] ?>" />
