@@ -89,10 +89,6 @@ class Model_Turbine extends \Orm\Model
 		'turbine_verified' => array(
 			'data_type'  => 'bool',
 			'label'      => '',
-//			'validation' => array(
-//				'required',
-//			),
-//			'form'       => false,
 			'default'    => '0',
 		),
 	);

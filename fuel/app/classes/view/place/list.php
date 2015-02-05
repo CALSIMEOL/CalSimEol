@@ -14,7 +14,6 @@ class View_Place_List extends ViewModel
 		}
 
 		$config = array(
-//			'total_items' => Model_Place::count(),
 			'total_items' => $query->count(),
 			'per_page' => 10,
 			'uri_segment' => 3,
