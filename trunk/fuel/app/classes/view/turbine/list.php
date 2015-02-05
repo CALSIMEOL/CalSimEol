@@ -15,7 +15,6 @@ class View_Turbine_List extends ViewModel
 		}
 
 		$config = array(
-//			'total_items' => Model_Turbine::count(),
 			'total_items' => $query->count(),
 			'per_page' => 10,
 			'uri_segment' => 3,

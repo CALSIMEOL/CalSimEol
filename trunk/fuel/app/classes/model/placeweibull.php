@@ -50,16 +50,4 @@ class Model_PlaceWeibull extends \Orm\Model
 			'default' => '0.00',
 		),
 	);
-
-	/*
-	protected static $_belongs_to = array(
-		'turbine' => array(
-			'model_to' => 'Model_Turbine',
-			'key_from' => 'turbine_id',
-			'key_to' => 'turbine_id',
-			'cascade_save' => false,
-			'cascade_delete' => false,
-		),
-	);
-	//*/
 }

@@ -4,8 +4,6 @@ class Model_TurbinePower extends \Orm\Model
 {
 	protected static $_table_name = 'cse_turbine_powers';
 
-//	protected static $_primary_key = array('turbine_id', 'wind_speed');
-//	protected static $_primary_key = array('wind_speed');
 	protected static $_primary_key = array('turbine_power_id');
 
 	protected static $_conditions = array(
@@ -52,16 +50,4 @@ class Model_TurbinePower extends \Orm\Model
 			'default' => '0.00',
 		),
 	);
-
-	/*
-	protected static $_belongs_to = array(
-		'turbine' => array(
-			'model_to' => 'Model_Turbine',
-			'key_from' => 'turbine_id',
-			'key_to' => 'turbine_id',
-			'cascade_save' => false,
-			'cascade_delete' => false,
-		),
-	);
-	//*/
 }
