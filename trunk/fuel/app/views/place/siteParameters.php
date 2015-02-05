@@ -749,6 +749,16 @@
                     }
                     }) 
                 : null;
+                
+             $('#altitude').val() >= 1 && $('#altitude').val() <=3000 && $('#altitude').val() !== '' && parseFloat($('#averageannualtemp').val()) >= -50 && $('#averageannualtemp').val() <=50 && $('#averageannualtemp').val() !== '' ? $('#density').val(function() {
+                var altitude = parseFloat($('#altitude').val());
+                var temp = parseFloat($('#averageannualtemp').val())+273.15; 
+                var density; 
+                density=(101325*(28.97/1000)*(Math.pow(((288-0.0065*altitude)/288),5.225)))/(8.314*temp);  
+                density=density.toFixed(5);
+                return density
+                ;}) 
+                : $('#density').val('');
             
             
             //input verification and feedback when the user modifies the site name
