@@ -157,7 +157,7 @@ class Controller_Turbine extends Controller_Template
 		}
 
 		// Récupèreles informations de l'éolienne pour pouvoir les afficher sur la page
-		$data['turbine'] = array_merge($turbine->to_array(), $fieldset->input(), array('powers' => $turbine->powers)));
+		$data['turbine'] = array_merge($turbine->to_array(), $fieldset->input(), array('powers' => $turbine->powers));
 
 		// Construit la page
 		$this->template->title = 'Editer';
