@@ -22,7 +22,6 @@
             <div class="row">
                 <div class="col-sm-offset-1 col-sm-10">
                     <form class="form-horizontal marginLR" method="post">
-                        <input id="nbPowerLines" name="turbine_powers" value="<?php echo $turbine['turbine_powers'] ?>" type="hidden" />   
                         <div class="form-group">
                             <legend>Paramétrage de l'éolienne</legend>
                         </div>

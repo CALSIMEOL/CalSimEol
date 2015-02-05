@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 02 Février 2015 à 16:53
+-- Généré le :  Jeu 05 Février 2015 à 15:31
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -27,44 +27,7 @@ CREATE TABLE IF NOT EXISTS `cse_place_weibull` (
   `place_probability` float NOT NULL,
   PRIMARY KEY (`place_weibull_id`),
   KEY `ws_id` (`place_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
-
---
--- Contenu de la table `cse_place_weibull`
---
-
-INSERT INTO `cse_place_weibull` (`place_weibull_id`, `place_id`, `wind_speed`, `place_probability`) VALUES
-(1, 1, 0, 0),
-(2, 1, 1, 0),
-(3, 1, 2, 0),
-(4, 1, 3, 0),
-(5, 1, 4, 0),
-(6, 1, 5, 0),
-(7, 1, 6, 0),
-(8, 1, 7, 0),
-(9, 1, 8, 0),
-(10, 1, 9, 0),
-(11, 1, 10, 0),
-(12, 1, 11, 0),
-(13, 1, 12, 0),
-(14, 1, 13, 0),
-(15, 1, 14, 0),
-(16, 1, 15, 0),
-(17, 1, 16, 0),
-(18, 1, 17, 0),
-(19, 1, 18, 0),
-(20, 1, 19, 0),
-(21, 1, 20, 0),
-(22, 1, 21, 0),
-(23, 1, 22, 0),
-(24, 1, 23, 0),
-(25, 1, 24, 0),
-(26, 1, 25, 0),
-(27, 1, 26, 0),
-(28, 1, 27, 0),
-(29, 1, 28, 0),
-(30, 1, 29, 0),
-(31, 1, 30, 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -87,14 +50,7 @@ CREATE TABLE IF NOT EXISTS `cse_places` (
   `place_scale_factor` float DEFAULT NULL,
   `place_verified` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`place_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Contenu de la table `cse_places`
---
-
-INSERT INTO `cse_places` (`place_id`, `place_name`, `place_longitude`, `place_latitude`, `place_altitude`, `place_mean_temp`, `place_rugosity`, `place_altitude_meas`, `place_mean_speed`, `place_std_deviation`, `place_shape_factor`, `place_scale_factor`, `place_verified`) VALUES
-(1, 'Brest', -4.48, 48.4, 90, 14.415, 0.055, 50, NULL, NULL, 2.015, 7.75, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

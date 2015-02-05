@@ -14,7 +14,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_name' => array(
 			'data_type'  => 'varchar',
-			'label'      => 'Turbine Reference',
+			'label'      => 'Modèle',
 			'validation' => array(
 				'required',
 				'max_length' => array(30),
@@ -23,11 +23,10 @@ class Model_Turbine extends \Orm\Model
 			'form'       => array(
 				'type' => 'text',
 			),
-			'default'    => 'My turbine ###',
 		),
 		'turbine_manufacturer' => array(
 			'data_type'  => 'varchar',
-			'label'      => 'Turbine Manufacturer',
+			'label'      => 'Constructeur',
 			'validation' => array(
 				'required',
 				'max_length' => array(20),
@@ -36,11 +35,10 @@ class Model_Turbine extends \Orm\Model
 			'form'       => array(
 				'type' => 'text',
 			),
-			'default'    => 'My windturbine',
 		),
 		'turbine_power' => array(
 			'data_type'  => 'float',
-			'label'      => 'Puissance nominale (en kW)',
+			'label'      => 'Puissance nominale',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(1, 10000),
@@ -56,7 +54,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_diameter' => array(
 			'data_type'  => 'int',
-			'label'      => 'Diamètre du rotor (en m)',
+			'label'      => 'Diamètre du rotor',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(1, 500),
@@ -64,7 +62,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_height' => array(
 			'data_type'  => 'int',
-			'label'      => 'Hauteur du moyeu (en m)',
+			'label'      => 'Hauteur du moyeu',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(1, 300),
@@ -72,7 +70,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_start_speed' => array(
 			'data_type'  => 'int',
-			'label'      => 'Vitesse de démarrage du rotor (en m.s<sub>-1</sub>)',
+			'label'      => 'Vitesse de démarrage',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(0, 20),
@@ -80,7 +78,7 @@ class Model_Turbine extends \Orm\Model
 		),
 		'turbine_stop_speed' => array(
 			'data_type'  => 'int',
-			'label'      => 'Vitesse d\'arrêt du rotor (en m.s<sub>-1</sub>)',
+			'label'      => 'Vitesse de coupure',
 			'validation' => array(
 				'required',
 				'numeric_between' => array(10, 40),
